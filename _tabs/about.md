@@ -14,5 +14,5 @@ order: 4
 ## Manager @ Clinical data analysis team
 
 
-![Profile-Image](about_main.JPG){: w="400" h="150" .right}
+![Profile-Image](about_main.JPG){: w="500" h="200" .normal}
 _at the Ponte Vecchio, Florence, Italy, Feb. 2019._
