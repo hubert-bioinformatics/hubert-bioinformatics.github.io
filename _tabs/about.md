@@ -1,5 +1,6 @@
 ---
 title: About
+img_path: /assets/img/about/
 icon: fas fa-info-circle
 order: 4
 ---
@@ -13,4 +14,4 @@ order: 4
 ## Manager @ Clinical data analysis team
 
 
-![Desktop View](./assets/img/about/about_main.jpg){: width="700" height="500" }
+![Profile-Image](about_main.jpg){: w="700" h="500" .normal}
