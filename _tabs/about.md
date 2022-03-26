@@ -11,7 +11,7 @@ order: 4
 
 
 ![Profile-Image](about_main.JPG){: w="500" h="200" .normal}
-_at the Ponte Vecchio, Florence, Italy<br>Feb. 2019._
+_at the Ponte Vecchio, Florence, Italy<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feb. 2019._
 
 #### Senior Researcher @ [Macrogen](https://www.macrogen.com/ko/main, "Macrogen")
 #### Manager @ [Clinical data analysis team](https://www.macrogen.com/ko/business/diagnosis/cancer, "Clinical data analysis team")
