@@ -13,4 +13,4 @@ order: 4
 ## Manager @ Clinical data analysis team
 
 
-![Desktop View](./assets/img/about/about_main.jpg){: width="700" height="400" }
+![Desktop View](./assets/img/about/about_main.jpg){: width="700" height="500" }
