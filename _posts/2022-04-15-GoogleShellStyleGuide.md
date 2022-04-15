@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Style Guide for Python Code - PEP8
+title: Style Guide for Shell - Google
 date: 2022-04-15 12:31:12 +0900
 published: true
-categories: [Programming, Python]
-tags: [python]
+categories: [Programming, Linux]
+tags: [linux,shell]
 img_path: /assets/img/post/
 ---
 
@@ -22,13 +22,13 @@ img_path: /assets/img/post/
  Linux에는 다음과 같은 여러 가지 shell이 존재합니다.
  <br><br>
  
- |Shell|Complete<br>path-name|Prompt for<br>root user|Prompt for<br>non-root user|
- |----------|--------------------|----------|----------|
- |Bourne shell<br>(sh)|/bin/sh<br>/sbin/sh|#|$|
- |GNU Bourne-Again shell<br>(bash)|/bin/bash|bash-VersionNumber#|bash-VersionNumber$|
- |C shell<br>(csh)|/bin/csh|#|%|
- |Korn shell<br>(ksh)|/bin/ksh|#|$|
- |Z shell<br>(zsh)|/bin/zsh|<hostname>#|<hostname>%|
+ Shell|Complete<br>path-name|Prompt for<br>root user|Prompt for<br>non-root user
+ ----------|--------------------|----------|----------
+ Bourne shell<br>(sh)|/bin/sh<br>/sbin/sh|#|$
+ GNU Bourne-Again shell<br>(bash)|/bin/bash|bash-VersionNumber#|bash-VersionNumber$
+ C shell<br>(csh)|/bin/csh|#|%
+ Korn shell<br>(ksh)|/bin/ksh|#|$
+ Z shell<br>(zsh)|/bin/zsh|<hostname>#|<hostname>%
  <br>
 
 
