@@ -22,14 +22,14 @@ img_path: /assets/img/post/
  Linux에는 다음과 같은 여러 가지 shell이 존재합니다.
  <br><br>
  
- Shell|Complete<br>path-name|Prompt for<br>root user|Prompt for<br>non-root user
- ----------|--------------------|----------|----------
- Bourne shell<br>(sh)|/bin/sh<br>/sbin/sh|#|$
- GNU Bourne-Again shell<br>(bash)|/bin/bash|bash-VersionNumber#|bash-VersionNumber$
- C shell<br>(csh)|/bin/csh|#|%
- Korn shell<br>(ksh)|/bin/ksh|#|$
- Z shell<br>(zsh)|/bin/zsh|<hostname>#|<hostname>%
- <br>
+|Shell|Complete<br>path-name|Prompt for<br>root user|Prompt for<br>non-root user|
+|----------|--------------------|----------|----------|
+|Bourne shell<br>(sh)|/bin/sh<br>/sbin/sh|#|$|
+|GNU Bourne-Again shell<br>(bash)|/bin/bash|bash-VersionNumber#|bash-VersionNumber$
+|C shell<br>(csh)|/bin/csh|#|%|
+|Korn shell<br>(ksh)|/bin/ksh|#|$|
+|Z shell<br>(zsh)|/bin/zsh|<hostname>#|<hostname>%|
+<br>
 
 
   * Bourne shell (sh): 1977년 AT&T사의 Bell 연구소에서 Stephen Bourne이 개발 했습니다. 최초의 bourne shell 입니다.
