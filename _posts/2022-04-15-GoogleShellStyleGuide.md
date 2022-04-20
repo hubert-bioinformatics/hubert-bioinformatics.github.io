@@ -23,7 +23,8 @@ img_path: /assets/img/post/
  <br><br>
  
 |Shell|Complete<br>path-name|Prompt for<br>root user|Prompt for<br>non-root user|
-|---|---|---|---|
+
+|-----|-----|-----|-----|
 
 |Bourne shell<br>\(sh\)|\/bin\/sh<br>\/sbin\/sh|#|$|
 
