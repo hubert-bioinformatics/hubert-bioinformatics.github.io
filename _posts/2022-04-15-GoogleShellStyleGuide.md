@@ -362,4 +362,6 @@ echo "$10$20$30"
 
 ## &nbsp;&nbsp;Quoting
 ***
- 
+ * Variables, command substitutions, spaces, 혹은 shell meta characters를 포함하는 문자열은 항상 quote를 사용합니다.
+
+ * Lists of elements의 안전한 quote를 위해서 array를 사용합니다. 
