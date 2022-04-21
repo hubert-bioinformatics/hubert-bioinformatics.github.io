@@ -294,3 +294,72 @@ case "${expression}" in
     ;; 
 esac
 ```
+<br><br>
+
+
+ 간단한 commands는 가독성이 떨어지지 않는한 pattern, ";;" 기호와 동일한 line에 놓습니다.
+
+```bash
+vervose='false'
+aflag=''
+bflag=''
+files=''
+while getopts 'abf:v' flag; do
+  case "${flag}" in
+    a) aflag='true' ;;
+    b) bflag='true' ;;
+    f) files="${OPTARG}" ;;
+    v) verbose='true' ;;
+    *) error "Unexpected option ${flag}" ;;
+  esac
+done
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Variable expansion
+***
+ Variable quote에서 선호되는 방식은 "$var"보다는 "**${var}**" 입니다. 하지만 script에서 원래 사용하던 방식을 준수하세요.
+
+```bash
+# Section of *recommended* cases.
+
+# Preferred style for 'special' variables:
+echo "Positional: $1" "$5" "$3"
+echo "Specials: !=$1, -=$-, _=$+. ?=$?, #=$# *=$* @=$@ \$=$$ ..."
+
+# Braces necessary:
+echo "many parameters: ${10}"
+
+# Braces avoiding confusion:
+# Output is "a0b0c0"
+set -- a b c
+echo "${1}0${2}0${3}0"
+
+# Preferred style for other variables:
+echo "PATH=${PATH}, PWD=${PWD}, mine=${some_var}"
+while read -r f; do
+  echo "file=${f}"
+done < < (find /tmp)
+```
+<br><br>
+
+
+```bash
+# Section of *discouraged* cases
+
+# Unquoted vars, unbraced vars, brace-delimited single letter
+# shell specials.
+echo a=$avar "b=$bvar" "PID=${$}" "${1}"
+
+# Confusing use: this is expanded as "${1}0${2}0${3}0",
+# not "${10}${20}${30}
+set -- a b c
+echo "$10$20$30"
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Quoting
+***
+ 
