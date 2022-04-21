@@ -136,7 +136,7 @@ fi
 
  * Returns: Returned values other than the default exit status of the last command run
 
- 예를들어,
+ 예를 들어,
 
 ```bash
 #######################################
@@ -180,4 +180,117 @@ function del_thing() {
 
 ## &nbsp;&nbsp;Implementation Comments
 ***
- 
+ Code에서 까다롭거나 명확하지 않은 부분, 혹은 흥미롭거나 중요한 부분에 comment를 사용하세요. 모든 내용을 comment에 담지 말고 간단히 적으세요.
+ <br><br>
+
+
+## &nbsp;&nbsp;TODO Comments
+***
+ Code의 임시내용, 단기적인 해결책, 충분하지만 완벽하지 않은 부분에 TODO comment를 사용합니다. [C++ 가이드](https://google.github.io/styleguide/cppguide.html#TODO_Comments, "C++ 가이드")를 준수합니다. 'TODO' 단어 자체는 모두 대문자를 표기하며, 문제에 대한 설명 내용과 함께 이름, e-mail 주소, 혹은 작성자를 대표하는 다른 표식자를 사용합니다. 이러한 형태의 주요 목적은 일관성 있는 'TODO'를 작성함으로써 추후 요청에 대한 자세한 내용을 검색할 수 있도록 하는데 있습니다. 'TODO'에서 언급한 작성자가 꼭 미래에 해당 문제를 해결해야 하는 것은 아니므로 항상 작성자 정보를 함께 기재합니다.
+
+ 예를 들어,
+
+```bash
+# TODO(mrmonkey): Handle the unlikely edge cases (bug ####)
+```
+<br><br>
+
+
+## Formatting
+***
+
+
+## &nbsp;&nbsp;Indentation
+***
+ Indent는 2-spaces를 사용합니다. Tab은 사용하지 않습니다. 가독성을 높이기 위해 block 사이에는 blank lines를 사용합니다.
+ <br><br>
+
+
+## &nbsp;&nbsp;Line Length and Long Strings
+***
+ Line의 최대 글자수는 80자 입니다. 그 이상의 문자가 들어간다면 "here document"나 "개행문자"를 사용합니다.
+
+```bash
+# DO use 'here document's
+cat <<END
+I am an exceptionally long
+string.
+END
+
+# Embedded newlines are ok too
+long_string="I am an exceptionally
+long string."
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Pipelines
+***
+ Pipeline은 하나의 line에 모두 들어가지 않으면 line당 하나로 분리해서 사용합니다. 이 때 새로운 line에 들어가는 pipeline은 2-spaces indent를 사용합니다. 이 규칙은 command 결합에 사용하는 '|', logical 결합에 사용하는 '||'와 '&&'에 적용됩니다.
+
+```bash
+# All fits on one line
+command1 | command2
+
+# Long commands
+command1 \
+  | command2 \
+  | command3 \
+  | command4
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Loops
+***
+ '**; do**'와 '**; then**'은 'while', 'for', 'if'와 동일한 line에 사용하세요.
+
+ 예를 들어,
+
+```bash
+# If inside a function, consider declaring the Loop variable as
+# a Local to avoid it Leaking into the global environment:
+# Local dir
+for dir in "#{dirs_to_cleanup[@]}"; do
+  if [[ -d "${dir}/${ORACLE_SID}" ]]; then
+    log_date "Cleaning up old files in ${dir}/${ORACLE_SID}"
+    rm "${dir}/${ORACLE_SID}/"*
+    if (( $? != 0 )); then
+      error_message
+    fi
+  else
+    mkdir -p "${dir}/${ORACLE_SID}"
+    if (( $? != 0 )); then
+      error_message
+    fi
+  fi
+done
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Case statement
+***
+ * 2-spaces indent를 사용합니다.
+
+ * One-line alternative는 닫는 부호 이후 ";;" 부호 이전에 space 한 개가 필요합니다.
+
+ * Long or multi-command alternatives는 pattern, actions, 그리고 ";;" 기호와 함께 복수 개의 lines로 나뉘어져야 합니다.
+
+ Matching expressions는 "case"와 "esac"로부터 한 단계 indent를 사용합니다. Multiline actions는 이로부터 한 단계 더 indent를 사용합니다. ";&"와 ";;&" notations는 사용하지 않습니다.
+
+```bash
+case "${expression}" in
+  a) 
+    variable="..." 
+    some_command "${variable}" "${other_expr}" ... 
+    ;; 
+  absolute)
+    actions="relative" 
+    another_command "${ations}" "${other_expr}" ... 
+    ;; 
+  *) 
+    error "Inexpected expression '${expression}'" 
+    ;; 
+esac
+```
