@@ -365,3 +365,107 @@ echo "$10$20$30"
  * Variables, command substitutions, spaces, 혹은 shell meta characters를 포함하는 문자열은 항상 quote를 사용합니다.
 
  * Lists of elements의 안전한 quote를 위해서 array를 사용합니다. 
+
+ * 정수로 정의된 shell-internal, readonly special variables는 선택적으로 quote를 사용합니다: "$?", "$#", "$$", "$!"
+
+ * Command options이나 path name이 아닌 "words"는 quote를 사용합니다.
+
+ * Literal 정수는 quote를 사용하지 않습니다.
+
+ * "$*"를 사용해야하는 특별한 이유가 있지 않다면 "**$@**"를 사용하세요.
+
+```bash
+# 'Single' quotes indicate that no substitution is desired.
+# "Double" quotes indicate that substitution is required/tolerated.
+
+# Simple examples
+
+# "quote command substitutions"
+# Note that quotes nested inside "$()" don't need escaping.
+flag="$(some_command and its args "$@" 'quoted separately')"
+
+# "quote variables"
+echo "${flag}"
+
+# Use arrays with quoted expansion for lists.
+declare -a FLAGS
+FLAGS=( --foo --bar='baz' )
+readonly FLAGS
+mybinary "${FLAGS[@]}"
+
+# It's ok to not quote internal integer variables.
+if (( $# > 3 )); then
+  echo "ppid=${PPID}"
+fi
+
+# "never quote literal integers"
+value=32
+# "quote command substitutions", even when you expect integers
+number="$(generate_number)"
+
+# "prefer quoting words", not compulsory
+readonly USE_INTEGER='true'
+
+# "quote shell meta characters"
+echo 'Hello stranger, and well met. Earn lots of $$$'
+echo "Process $$: Done making \$\$\$."
+
+# "command options or path names"
+# ($1 is assumed to contain a value here)
+grep -li Hugo /dev/null "$1"
+
+# Less simple examples
+# "quote variables, unless proven false": ccs might be empty
+git send-email --to "${reviewers}" ${ccs:+"--cc" "${ccs}"}
+
+# For passing on arguments,
+# "$@" is right almost every time, and
+# $* is wrong almost every time:
+
+# * $* and $@ will split on spaces, clobbering up arguments
+#   that contain spaces and dropping empty strings;
+# * "$@" will retain arguments as-is, so no args
+#   provided will result in no args being passed on;
+#   This is in most cases what you want to use for passing
+#   on arguments.
+# * "$*" expands to one argument, with all args joined
+#   by (usually) spaces,
+#   so no args provided will result in one empty string
+#   being passed on.
+# (Consult `man bash` for the nit-grits ;-)
+
+(set -- 1 "2 two" "3 three tres"; echo $#; set -- "$*"; echo "$#, $@")
+(set -- 1 "2 two" "3 three tres"; echo $#; set -- "$@"; echo "$#, $@")
+```
+<br><br>
+
+
+## Features and Bugs
+***
+
+
+## &nbsp;&nbsp;ShellCheck
+***
+ [ShellCheck Project](https://www.shellcheck.net/, "ShellCheck Project")는 입력한 shell scripts의 일반적인 bugs와 warnings를 확인해 주는 사이트 입니다.
+ <br><br>
+
+
+## &nbsp;&nbsp;Command Substitution
+***
+ Backticks 대신 "**$(command)**"를 사용합니다. Nested backticks는 내부에 escaping 문자로 "\"를 사용해야 합니다. 이에 반해 "**#(command)**" 형식은 읽기 쉽고 escaping도 필요하지 않습니다.
+
+ 예를 들어,
+
+```bash
+# This is preferred:
+var="$(command "$(commdna1)")"
+
+# This is not:
+var="`command \`command1\``"
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Test, [ ... ], and [[ ... ]]
+***
+ Back
