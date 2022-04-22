@@ -468,4 +468,180 @@ var="`command \`command1\``"
 
 ## &nbsp;&nbsp;Test, [ ... ], and [[ ... ]]
 ***
- Back
+ "[ ... ]", "test", "/usr/bin/[" 보다 "**[[ ... ]]**"가 선호되는 방식입니다. 후자 방식이 errors를 줄이고 정규표현식 사용이 가능하기 때문입니다.
+
+```bash
+# This ensures the string on the left is made up of characters in
+# the alnum character class followed by the string name.
+# Note that the RHS should not be quoted here.
+if [[ "filename" =~ &[[:alnum:]]+name ]]; then
+  echo "Match"
+fi
+
+# This matches the exact pattern "f*" (Does not match in this case)
+if [[ "filename" == "f*" ]]; then
+  echo "Match"
+fi
+```
+
+```bash
+# This gives a "too many arguments" error as f* is expanded to the
+# contents of the current directory
+if [ "filename" == f* ]; then
+  echo "Match"
+fi
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Testing Strings
+***
+ 가능하면 filter characters 방식보다 quote를 사용하세요.
+
+```bash
+# Do this:
+if [[ "${mu_var}" == "some_string" ]]; then
+  do_something
+fi
+
+# -z (string length is zero) and -n (string length is not zero) are
+# preffered over testing for an empty string
+if [[ -z "${my_var}" ]]; then
+  do_something
+fi
+
+# This is OK (ensure quotes on the empty side), but not preferred:
+if [[ "${my_var}" == "" ]]; then
+  do_something
+fi
+```
+
+```bash
+# Not this:
+if [[ "${my_var}X" == "some_stringX" ]]; then
+  do_something
+fi
+```
+
+ 혼란을 피하기 위해서 "-z"나 "-n" 옵션을 사용합니다.
+
+```bash
+# Use this
+if [[ -n "${my_var}" ]]; then
+  do_something
+fi
+
+# Instead of this
+if [[ "${my_var}" ]]; then
+  do_something
+fi
+```
+
+ Equality 표현은 "=" 대신 "**==**"을 사용합니다. 숫자를 비교할 때는 "**(( ... ))**" 혹은 "**-lt**", "**-gt**" 방식을 사용합니다.
+
+```bash
+# Use this
+if [[ "${my_var}" == "val" ]]; then
+  do_something
+fi
+
+if (( my_var > 3 )); then
+  do_something
+fi
+
+if [[ "${my_var}" -gt 3 ]]; then
+  do_something
+fi
+```
+
+```bash
+# Instead of this
+if [[ "${my_var}" = "val" ]]; then
+  do_something
+fi
+
+# Probably unintended lexicographical comparison.
+if [[ "${my_var}" > 3 ]]; then
+  # True for 4, false for 22.
+  do_something
+fi
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Wildcard Expansion of Filenames
+***
+ Wildcard를 사용한 파일명을 확장할 때는 명시적인 경로명을 사용합니다. 파일명이 "-"로 시작할 수도 있고, "*" 대신 "**./\***"가 훨씬 안전합니다.
+
+```bash
+# Here's the contents of the directory:
+# -f -r somedir somefile
+
+# Incorrectly deletes almost everything in the directory by force
+psa@bilby$ rm -v *
+removed directory: `somedir'
+removed `somefile'
+```
+
+```bash
+# As opposed to:
+psa@bilby$ rm -v ./*
+removed `./-f'
+removed `./-r'
+rm: cannot remove `./somedir': Is a directory
+removed `./somefile'
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Eval
+***
+ "**eval**"은 사용하지 않아야 합니다. Eval은 variable을 할당할 때 input을 삭제하고, 해당 변수들이 과거에 무엇이었는지 확인하지 않고도 할당할 수 있습니다.
+
+```bash
+# What does this set?
+# Did it succeed? In part or whole?
+eval $(set_my_variables)
+
+# What happens if one of the returned values has a space in it?
+variable="$(eval some_function)"
+```
+br><br>
+
+
+## &nbsp;&nbsp;Arrays
+***
+ Bash array는 lists of elements를 저장하고 quoting complications를 피하기 위해 사용합니다. 특히 argument lists에 적용됩니다. Array는 정렬된 strings collection을 저장하고 command나 loop문의 각각 elements로 안전하게 확장할 수 있습니다.
+
+```bash
+# An array is assigned using parentheses, and can be appended to
+# with +=( ... ).
+declare -a flags
+flags=(--foo --bar='baz')
+flags+=(--greeting="Hello ${name}")
+mybinary "${flags[@]}"
+```
+
+```bash
+# Don't use strings for sequences.
+flags='--foo --bar=baz'
+flags+=' --greeting="Hello world"' # This won't work as intended.
+mybinary ${flags}
+```
+
+```bash
+# Command expansions return single strings, not arrays. Avoid
+# unquoted expansion in array assignments because it won't
+# work correctly if the command output contains special
+# characters or whitespace.
+
+# This expands the listing output into a string, then does special keyword
+# expansion, and then whitespace splitting. Only then is it turned into a
+# list of words. The ls command may also change behavior based on the user's
+# active environment!
+declare -a files=($(ls /directory))
+
+# The get_arguments writes everything to STDOUT, but then goes through the
+# some expansion process above before turning into a list of arguments.
+mybinary $(get_arguments)
+```
