@@ -695,7 +695,7 @@ echo "${last_line}"
 
 ## &nbsp;&nbsp;Arithmetic
 ***
- 'let', '$[ ... ]', 'expr' 대신 '(( ... ))', '$(( ... ))'를 사용하세요.
+ "let", "$[ ... ]", "expr" 대신 "**(( ... ))**", "**$(( ... ))**"를 사용하세요.
 
 ```bash
 # Simple calculation used as text - note the use of $(( ... )) within
@@ -726,3 +726,161 @@ i=$( expr 4 + 4 )
 # Quoting can be error prone when using expr too.
 i=$( expr 4 '*' 4 )
 ```
+
+ 또한 "expr"보다 shell의 built-in arithmetic이 몇 배 더 빠릅니다. Variables를 사용할 때 "$(( ... ))" 안에서 "**${var}**" (그리고 "**$var**")) 형태가 필요하지 않습니다.
+
+```bash
+# N. B.: Remember to declare your variables as integers when
+# possible, and to prefer local variables over glovals.
+local -i hundred=$(( 10 * 10 ))
+declare -i five=$(( 10 / 2 ))
+
+# Increment the variable "i" by three.
+# Note that:
+#  - We do not write ${i} or $i.
+#  - We put a aspace after the (( and before the )).
+(( i += 3 ))
+
+# To decrement the variable "i" by five:
+(( i -= 5 ))
+
+# Do some complicated computations.
+# Note that normal ariithmetic operator precedence is observed.
+hr=2
+min=5
+sec=30
+echo $(( hr * 3600 + min * 60 + sec )) # prints 7530 as expected
+```
+<br><br>
+
+
+## Naming Conventions
+***
+
+
+## &nbsp;&nbsp;Function Names
+***
+ 소문자를 사용하고 두 개 이상 단어를 분리할 때 underscore를 사용합니다. 복수 개의 library는 "::" 기호로 분리합니다. Function name 다음에는 parentheses를 사용합니다.
+
+```bash
+# Single function
+my_func() {
+  ...
+}
+
+# Part of a package
+mypackage::my_func() {
+  ...
+}
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Variable Names
+***
+ Functiona names와 동일한 규칙을 따릅니다. 반복문 내 looping variable name은 서로 유사한 name을 사용합니다.
+
+```bash
+for zone in "${zones[@]}"; do
+  something_with "${zone}"
+done
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Constants and Environment Variable Names
+***
+ 모두 대문자를 사용하고 두 개 이상 단어를 분리할 때 underscore를 사용합니다. 파일의 최상단에 선언합니다.
+
+```bash
+# Constant
+readonly PATH_TO_FILES='/some/path'
+
+# Both constant and environment
+declare -xr ORACLE_SID='PROD'
+```
+
+ 명확성을 위해 "declare"보다 "**readonly**"나 "**export**" 사용을 권장합니다.
+
+```bash
+VERBOSE='false'
+while getopts 'v' flag; do
+  case "${flag}" in
+    v) VERBOSE='true' ;;
+  esac
+done
+readonly VERBOSE
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Source Filenames
+***
+ 소문자를 사용하고 두 개 이상 단어를 분리할 때 underscore를 사용합니다.
+<br><br>
+
+
+## &nbsp;&nbsp;Read-only Variables
+***
+ Read-only임을 확실히 하기 위해 "**reaonly**"나 "**declare -r**"을 사용합니다.
+
+```bash
+zip_version="$(dpkg --status zip | grep Version: | cut -d ' ' -f 2)"
+if [[ -z "${zip_version}" ]]; then
+  eooro_message
+else
+  readonly zip_version
+fi
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Use Local Variables
+***
+ Function-specific variables는 "**local**"과 함께 선언합니다. 선언과 assignment는 서로 다른 lines로 구분해야 합니다.
+
+```bash
+my_func2() {
+  local name="$1"
+
+  # Separate lines for declaration and assignment:
+  local my_var
+  my_var="$(my_func)"
+  (( $? == 0 )) || return
+
+  ...
+}
+```
+
+```bash
+my_func2() {
+  # DO NOT do this:
+  # $? will always be zero, as it contains the exit code of 'local', not my_func
+  local my_var="$(my_func)"
+  (( $? == 0 )) || return
+
+  ...
+}
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Function Location
+***
+ 모든 function은 파일의 constants 바로 아래 함께 놓아두세요. Functions 사이에 executable code를 숨겨 놓지 않습니다.
+ <br><br>
+
+
+## &nbsp;&nbsp;main
+***
+ "**main**" function은 적어도 한 개 이상의 다른 function을 포함하며 파일의 제일 아래에 위치합니다. 가장 마지막 non-comment line은 "**main**" function calling을 합니다.
+ <br><br>
+
+
+## Calling Commands
+***
+
+
+## &nbsp;&nbsp;Checking Return Values
+***
+ 
