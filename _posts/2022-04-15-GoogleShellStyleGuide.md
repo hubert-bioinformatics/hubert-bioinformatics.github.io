@@ -606,7 +606,7 @@ eval $(set_my_variables)
 # What happens if one of the returned values has a space in it?
 variable="$(eval some_function)"
 ```
-br><br>
+<br><br>
 
 
 ## &nbsp;&nbsp;Arrays
@@ -644,4 +644,85 @@ declare -a files=($(ls /directory))
 # The get_arguments writes everything to STDOUT, but then goes through the
 # some expansion process above before turning into a list of arguments.
 mybinary $(get_arguments)
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Pipes to While
+***
+ Pipe로 while을 연결하는 대신 process substitution이나 bash4+ builtin readarray를 사용하세요. Pipe는 subshell을 생성하는데 이 곳에서 수정되는 모든 variables는 parent shell에 공유되지 않기 때문입니다.
+
+```bash
+last_line='NULL'
+your_command | while read -r line; do
+  if [[ -n "{line}" ]]; then
+    last_line="${line}"
+  fi
+done
+
+# This will always output 'NULL'!
+echo "{last_line}"
+```
+
+ Process substitution도 마찬가지로 subshell을 생성하지만, subshell 내에서 while이나 다른 command 없이 while로 reditecting을 허용합니다.
+
+```bash
+last_line='NULL'
+while read line; do
+  if [[ -n "${line}" ]]; then
+    last_line="${line}"
+  fi
+done < <(your_command)
+
+# This will output the last non-empth line from your_command
+echo "${last_line}"
+```
+
+ 또는 내장된 readarray를 사용하세요. 위와 같은 이유로 pipe 대신 readarray와 함께 process substitution 방식을 사용합니다.
+
+```bash
+last_line='NULL'
+readarray -t lines < <(your_command)
+for line in "${lines[#]}"; do
+  if [[ -n "${line}" ]]; then
+    last_line="${line}"
+  fi
+done
+echo "${last_line}"
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Arithmetic
+***
+ 'let', '$[ ... ]', 'expr' 대신 '(( ... ))', '$(( ... ))'를 사용하세요.
+
+```bash
+# Simple calculation used as text - note the use of $(( ... )) within
+# a string.
+echo "$(( 2 + 2 )) is 4"
+
+# When performing arithmetic comparisons for testing
+if (( a < b )); then
+  ...
+fi
+
+# Some calculation assigned to a variable.
+(( i = 10 * j + 400 ))
+```
+
+```bash
+# This form is non-portable and deprecated
+i=$[2 * 10]
+
+# Despite appearances, 'let' isn't one of the declarative keywords,
+# so unquoted assignments are subject to globbing wordsplitting.
+# For the sake of simplicity, avoid 'let' and use (( ... ))
+let i="2 + 2"
+
+# The expr utility is an externak program and not a shell builtin.
+i=$( expr 4 + 4 )
+
+# Quoting can be error prone when using expr too.
+i=$( expr 4 '*' 4 )
 ```
