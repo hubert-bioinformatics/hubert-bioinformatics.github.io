@@ -883,4 +883,63 @@ my_func2() {
 
 ## &nbsp;&nbsp;Checking Return Values
 ***
- 
+ 항상 return values를 체크하고 관련 정보를 제공합니다. Unpiped commands에서는 "$?"를 사용하거나 "if"문을 통해서 확인합니다.
+
+```bash
+if ! mb "${file_list[@]}" "${dest_dir}/"; then
+  echo "Unable to move ${file_list[*]} to ${dest_dir}" >&2
+  exit 1
+fi
+
+# Or
+mv "${file_list[@]}" "${dest_dir}/"
+  echo "Unable to move ${file_list[*]} to ${dest_dir}" >&2
+  exit 1
+fi
+```
+
+ Bash는 또한 "**PIPESTATUS**" 변수를 가지고 있는데 모든 pipe의 return values를 체크하도록 허용합니다.
+
+```bash
+tar -cf - ./* | ( cd "${dir}" && tar -xf - )
+if (( PIPESTATUS[0] != 0 || PIPESTATUS[1] != 0 )); then
+  echo "Unable to rat files to ${dir}" >&2
+fi
+```
+
+ 하지만 "**PIPESTATUS**"는 다른 command를 사용하면 이를 덮어쓰기 때문에, pipe마다 발생하는 errors에 대해 서로 다른 대처가 필요한 경우 command를 실행한 이후 "**PIPESTATUS**"를 다른 변수에 할당해야 합니다.
+
+```bash
+tar -cf - ./* | ( cd "${DIR}" && tar -xf - )
+return_codes=( "${PIPESTATUS[@]}" )
+if (( return_codes[0] != 0 )); then
+  do_something
+fi
+if (( return_codes[1] != 0 )); then
+  do_something_else
+fi
+```
+<br><br>
+
+
+## &nbsp;&nbsp;Builtin Commands vs. External Commands
+***
+ Shell builtin commands와 분리된 프로세스 commands를 사용 가능하다면 shell builtin commands를 사용합니다.
+
+```bash
+# Prefer this:
+addition=$(( X + Y ))
+substitution="${string/#foo/bar}"
+
+# Instead of this:
+addition="$(expr "${X}" + "${Y}")"
+substitution="$(echo "${string}" | sed -e 's/^foo/bar/')"
+```
+<br><br>
+
+
+## Conclusion
+***
+ Use common sense and BE CONSISTENT.
+
+ Revision 2.02
