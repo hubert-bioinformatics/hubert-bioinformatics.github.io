@@ -20,7 +20,7 @@ img_path: /assets/img/post/
  영국은 유구한 역사를 지닌 나라답게 웅장한 크기를 자랑하는 castle과 오래된 건축물을 쉽게 찾아볼 수 있습니다. 사진은 영국 Hever Castle과 내부에 있는 미로입니다. 미로는 입구에서 출발하여 출구로 나가는 길을 찾아야 합니다. 갈림길이 나오면 어떤 길로 갈 것인지 선택하고, 막다른 길을 만나면 되돌아가야 합니다. 이것은 미로 문제입니다.
  <br><br>
 
- ![Post-Image](DFS_path)
+ ![Post-Image](DFS_path.png)
  _Hubert's commute path_
 
  매일 오고가는 출퇴근 경로입니다. 1.5시간이 소요되는 버스+지하철 조합을 이용합니다. 우리는 목적지까지 도달하는데 버스, 지하철, 택시, 자가용 등 다양한 교통수단을 사용할 수 있고 직통, 환승 등 조합에 따라 소요 시간은 천차만별 입니다. 대부분 가장 빠른 경로를 원하겠지요? 이것은 최적경로 찾기 문제입니다.
@@ -29,7 +29,7 @@ img_path: /assets/img/post/
  <br><br>
 
 
- ## Algorithm: Search
+## Algorithm: Search
 ***
 
  Search algorithm으로 문제를 해결할 수 있습니다. 이는 연속 변수나 이산 변수를 사용하여 일부 데이터 구조 안에 저장된 정보를 search하는 algorithm입니다.
@@ -38,7 +38,7 @@ img_path: /assets/img/post/
 
  * Agent: 주변 환경을 인식하고 상호작용하는 주체입니다.
  * State: 환경 내에서 agent가 배치된 모양입니다. Agent가 action을 시작하기 전 초기 위치를 initial state라고 합니다.
- * Actions: 특정 환경 안에서 문제가 주어졌을 때 agent가 선택 가능한 행동들을 의미합니다. **ACTIONS(s)**는 state s에서 실행가능한 모든 action을 반환합니다.
+ * Actions: 특정 환경 안에서 문제가 주어졌을 때 agent가 선택 가능한 행동들을 의미합니다. ACTIONS(s)는 state s에서 실행가능한 모든 action을 반환합니다.
  * Transition model: 특정 state에서 가능한 action을 취한 결과 나타나는 states를 설명하는 model입니다. RESULT(s, a)는 state s에서 action a를 수행한 result state를 반환합니다.
  * Simulation: Agent는 곧바로 action을 취하지 않습니다. 사전에 어떤 action이 가장 효율적인지 model을 사용하여 simulation을 진행합니다.
  * Goal test: action 결과로 얻은 state가 처음 목표로 했던 state인지 평가하는 것입니다.
@@ -47,7 +47,7 @@ img_path: /assets/img/post/
  <br><br>
 
 
- ## DFS (Deep-First Search)
+## DFS (Deep-First Search)
 ***
  DFS (Deep-First Search)는 search algorithm 종류 중 하나입니다. Goal test를 만족할 때까지 가장 깊은 단계 node까지 확장하며 search하는 방식입니다. DFS가 작동하는 process를 살펴보면 이해가 쉽습니다.
 
@@ -67,10 +67,10 @@ img_path: /assets/img/post/
 
  Node의 수를 V(Vertex), 연결선의 수를 E(Edge)라고 할 때, DFS의 공간 복잡도는 다음과 같습니다.
 
- * 인접 행렬인 경우: O($$V^2$$)
+ * 인접 행렬인 경우: O($V^2$)
  * 인접 리스트인 경우: O(V+E)
 
  시간 복잡도는 다음과 같습니다.
 
- * 인접 행렬인 경우: O($$V^2$$)
+ * 인접 행렬인 경우: O($V^2$)
  * 인접 리스트인 경우: O(V+E)
