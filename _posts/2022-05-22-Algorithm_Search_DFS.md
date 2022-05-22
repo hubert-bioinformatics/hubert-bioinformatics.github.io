@@ -32,7 +32,7 @@ img_path: /assets/img/post/
 ## Algorithm: Search
 ***
 
- Search algorithm으로 문제를 해결할 수 있습니다. 이는 연속 변수나 이산 변수를 사용하여 일부 데이터 구조 안에 저장된 정보를 search하는 algorithm입니다.
+ Search algorithm으로 문제를 해결할 수 있습니다. 연속 변수나 이산 변수를 사용하여 일부 데이터 구조 안에 저장된 정보를 search하는 algorithm입니다.
 
  Search algorithm 구성 요소는 다음과 같습니다.
 
