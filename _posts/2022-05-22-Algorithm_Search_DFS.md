@@ -104,6 +104,7 @@ img_path: /assets/img/post/
 <script src="https://gist.github.com/hubert-bioinformatics/fdc9ae6b5b5ec495ece3ad89d4df15ab.js"></script>
 
  Node class는 node 객체를 생성합니다. Node는 앞서 언급한 것처럼 agent state, parent node, 그리고 action에 대한 정보를 가지고 있습니다.
+ <br><br>
 
  <script src="https://gist.github.com/hubert-bioinformatics/4e2445d32bef30c75b9c39614a0c7c66.js"></script>
 
