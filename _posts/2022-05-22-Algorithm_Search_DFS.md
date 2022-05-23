@@ -94,6 +94,25 @@ img_path: /assets/img/post/
 
  1. Goal state인 node가 아닌 다른 last node들의 깊이가 깊을수록 많은 시간을 소비합니다.
  2. 항상 optimal solution을 찾는 것은 아닙니다. DFS는 goal state인 node를 만나는 순간 종료되기 때문입니다.
+ <br><br>
 
+
+## &nbsp;&nbsp;DFS 적용
+***
+ DFS를 미로 문제에 적용해 보겠습니다.
 
 <script src="https://gist.github.com/hubert-bioinformatics/fdc9ae6b5b5ec495ece3ad89d4df15ab.js"></script>
+
+ Node class는 node 객체를 생성합니다. Node는 앞서 언급한 것처럼 agent state, parent node, 그리고 action에 대한 정보를 가지고 있습니다.
+
+ <script src="https://gist.github.com/hubert-bioinformatics/4e2445d32bef30c75b9c39614a0c7c66.js"></script>
+
+ DFS는 stack structure를 사용하여 node를 search 합니다.
+
+ * StackFrontier() class: 비어있는 list 형태의 frontier 객체를 생성 합니다.
+ * add function: Frontier에 다음 단계 child node를 추가 합니다.
+ * contains_state function: Node가 이미 frontier에 들어 있는지 search 합니다.
+ * empty function: Frontier에 담긴 node count가 0인지 확인 합니다. Frontier에 더 이상 가져올 node가 없는지 확인하는 function 입니다.
+ * **remove** function (116 line): 본 class의 핵심 function 입니다. DFS는 stack structure를 사용하므로 가장 마지막 위치의 node를 가져옵니다.
+
+ <script src="https://gist.github.com/hubert-bioinformatics/4e2445d32bef30c75b9c39614a0c7c66.js"></script>
