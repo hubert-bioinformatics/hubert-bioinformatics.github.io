@@ -109,10 +109,24 @@ img_path: /assets/img/post/
 
  DFS는 stack structure를 사용하여 node를 search 합니다.
 
+ * Maze() class: 미로 문제가 담긴 파일을 읽습니다. 시작 위치(S), 종료 위치(E), 벽, 그리고 길을 파악하여 row * column 크기의 행렬로 정리합니다.
  * StackFrontier() class: 비어있는 list 형태의 frontier 객체를 생성 합니다.
+ * print_out function: 미로와 solution을 출력합니다.
+ * neighbors function: 현재 node에서 이동 가능한 node로의 방향과 좌표를 확인하고 모두 return 합니다.
+ * solve function: Solution을 발견하거나 더 이상 frontier에 search할 node가 남아있지 않을 때까지 search 과정을 반복 수행합니다.
+ * output_image function: 미로와 발견한 solution을 image 파일로 출력합니다.
  * add function: Frontier에 다음 단계 child node를 추가 합니다.
  * contains_state function: Node가 이미 frontier에 들어 있는지 search 합니다.
  * empty function: Frontier에 담긴 node count가 0인지 확인 합니다. Frontier에 더 이상 가져올 node가 없는지 확인하는 function 입니다.
  * **remove** function (116 line): 본 class의 핵심 function 입니다. DFS는 stack structure를 사용하므로 가장 마지막 위치의 node를 가져옵니다.
+ <br><br>
 
- <script src="https://gist.github.com/hubert-bioinformatics/4e2445d32bef30c75b9c39614a0c7c66.js"></script>
+
+## &nbsp;&nbsp;DFS 예제
+***
+ 미로 문제를 입력받아 solution을 찾아내는 과정입니다. 전체 code와 예제 파일은 [이 곳](https://github.com/hubert-bioinformatics/bioinformatics/tree/master/algorithm, "이 곳")에서 확인할 수 있습니다.
+
+ ![Post-Image](DFS_example.gif)
+ _DFS 미로 문제 예제_
+ 
+ 하지만 앞서 언급한 것처럼 DFS의 단점 중 하나는 항상 optimal solution을 찾는 것이 아니라는 것입니다. 위 예제 화면에서도 가까운 길을 두고 먼 길을 돌아 찾아 갔습니다. 이런 경우 optimal solution을 어떻게 찾을 수 있을까요? 바로 BFS(Breathe-First Search)를 사용하는 것입니다.
