@@ -11,7 +11,7 @@ img_path: /assets/img/post/
 ## Intro
 ***
 
- 시작하기에 앞서 몇 가지 문제와 해결방안을 던져보겠습니다.
+ 몇 가지 문제로 시작해 보겠습니다.
  <br><br>
 
  ![Post-Image](DFS_MazesatHeverCastle.png)
