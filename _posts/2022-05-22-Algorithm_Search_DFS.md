@@ -64,8 +64,14 @@ img_path: /assets/img/post/
  _DFS process_
 
  위 예시 과정에서 goal state는 node(E)입니다. DFS process에서 last node(F)에 다다르면 goal state인 node(E)와 일치하는지 확인합니다. 일치하지 않으므로 마지막 분기 node(B)로 돌아가서 같은 방식으로 process를 이어갑니다. 다시 last node(E)에 다다르면 goal state인 node(E)와 비교하고 일치하므로 explored set을 solution으로 return하고 DFS process를 종료합니다.
+ <br><br>
 
- Node의 수를 V(Vertex), 연결선의 수를 E(Edge)라고 할 때, DFS의 공간 복잡도는 다음과 같습니다.
+
+## &nbsp;&nbsp;DFS 공간 복잡도, 시간 복잡도
+***
+ Node의 수를 V(Vertex), 연결선의 수를 E(Edge)라고 할 때,
+ 
+ DFS의 공간 복잡도는 다음과 같습니다.
 
  * 인접 행렬인 경우: O($V^2$)
  * 인접 리스트인 경우: O(V+E)
@@ -74,3 +80,20 @@ img_path: /assets/img/post/
 
  * 인접 행렬인 경우: O($V^2$)
  * 인접 리스트인 경우: O(V+E)
+ <br><br>
+
+
+## &nbsp;&nbsp;DFS 장/단점
+***
+ DFS의 장점은 다음과 같습니다.
+
+ 1. BFS(Breath-First Search)보다 작은 저장공간이 필요합니다. 지나간 모든 node를 저장할 필요 없이 분기점의 node들만 저장합니다.
+ 2. Goal state인 node가 깊은 단계에 존재할수록 BFS보다 빠릅니다.
+
+ DFS의 단점은 다음과 같습니다.
+
+ 1. Goal state인 node가 아닌 다른 last node들의 깊이가 깊을수록 많은 시간을 소비합니다.
+ 2. 항상 optimal solution을 찾는 것은 아닙니다. DFS는 goal state인 node를 만나는 순간 종료되기 때문입니다.
+
+
+{{ "{% gist hubert-bioinformatics/fdc9ae6b5b5ec495ece3ad89d4df15ab.js " }}%}
