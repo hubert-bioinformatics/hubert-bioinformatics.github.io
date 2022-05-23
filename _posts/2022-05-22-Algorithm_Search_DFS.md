@@ -96,4 +96,4 @@ img_path: /assets/img/post/
  2. 항상 optimal solution을 찾는 것은 아닙니다. DFS는 goal state인 node를 만나는 순간 종료되기 때문입니다.
 
 
-{{ "{% gist hubert-bioinformatics/fdc9ae6b5b5ec495ece3ad89d4df15ab.js " }}%}
+<script src="https://gist.github.com/hubert-bioinformatics/fdc9ae6b5b5ec495ece3ad89d4df15ab.js"></script>
