@@ -142,7 +142,7 @@ img_path: /assets/img/post/
  * contains_state function: Node가 이미 frontier에 들어 있는지 search 합니다.
 
  * empty function: Frontier에 담긴 node count가 0인지 확인 합니다. Frontier에 더 이상 가져올 node가 없는지 확인하는 function 입니다.
- 
+
  * **remove** function (116 line): 본 class의 핵심 function 입니다. DFS는 stack structure를 사용하므로 가장 마지막 위치의 node를 가져옵니다.
  <br><br>
 
@@ -154,4 +154,4 @@ img_path: /assets/img/post/
  ![Post-Image](DFS_example.gif)
  _DFS 미로 문제 예제_
  
- 하지만 앞서 언급한 것처럼 DFS의 단점 중 하나는 항상 optimal solution을 찾는 것이 아니라는 것입니다. 위 예제 화면에서도 가까운 길을 두고 먼 길을 돌아 찾아 갔습니다. 이런 경우 optimal solution을 어떻게 찾을 수 있을까요? 바로 BFS(Breathe-First Search)를 사용하는 것입니다.
+ 하지만 앞서 언급한 것처럼 DFS의 단점 중 하나는 항상 optimal solution을 찾는 것이 아니라는 것입니다. 위 예제 화면에서도 가까운 길을 두고 먼 길을 돌아 찾아 갔습니다. 이런 경우 optimal solution을 어떻게 찾을 수 있을까요? 바로 BFS(Breath-First Search)를 사용하는 것입니다.
