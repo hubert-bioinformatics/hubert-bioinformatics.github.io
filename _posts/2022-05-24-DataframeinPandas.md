@@ -69,3 +69,67 @@ img_path: /assets/img/post/
  결측치를 확인하고 처리하는 방법입니다.
 
  <script src="https://gist.github.com/hubert-bioinformatics/72e99266a9ec3abb0adf26ab6f2247f7.js"></script>
+ <br><br>
+ 
+
+## &nbsp;&nbsp;Operations
+***
+ 본격적으로 data를 다뤄봅니다. Statistics를 구하고 사칙연산 function을 적용합니다.
+
+ <script src="https://gist.github.com/hubert-bioinformatics/c2bcc963a5ed9ef40cc82a2a111b31e0.js"></script>
+ <br><br>
+ 
+
+## &nbsp;&nbsp;Merge
+***
+ 서로 다른 구조의 data를 합치거나 나누는 방법입니다.
+
+ <script src="https://gist.github.com/hubert-bioinformatics/addf6811d21ef4f33a90459d8505c6ea.js"></script>
+ <br><br>
+ 
+
+## &nbsp;&nbsp;Grouping
+***
+ Data를 특정 기준에 따라 분류하여 처리합니다.
+
+ <script src="https://gist.github.com/hubert-bioinformatics/2f25c1fb63b61a7f0613e6275ae6acf1.js"></script>
+ <br><br>
+ 
+
+## &nbsp;&nbsp;Reshaping
+***
+ Dataframe을 다른 형태로 변환합니다.
+
+ <script src="https://gist.github.com/hubert-bioinformatics/6d4b46c02ad0f1f599a54f0f643f7ba0.js"></script>
+ <br><br>
+ 
+
+## &nbsp;&nbsp;Time series
+***
+ Time series data를 다루는 방법입니다.
+
+ <script src="https://gist.github.com/hubert-bioinformatics/5809d59e7f65030d9e614a705a6b8385.js"></script>
+ <br><br>
+ 
+
+## &nbsp;&nbsp;Categoricals
+***
+ Categorical data를 다뤄보지 않을 수 없겠죠?
+
+ <script src="https://gist.github.com/hubert-bioinformatics/91d969b4a39b6867a1041dc4544e4506.js"></script>
+ <br><br>
+ 
+
+## &nbsp;&nbsp;Plotting
+***
+ Data analysis의 정점! plotting 입니다.
+
+ <script src="https://gist.github.com/hubert-bioinformatics/1de30f3485e5cfaef96999eceb8632d2.js"></script>
+ <br><br>
+ 
+
+## &nbsp;&nbsp;Getting data in/out
+***
+ 생성/분석에 사용하는 data를 파일로 쓰거나 불러오는 방법입니다.
+
+ <script src="https://gist.github.com/hubert-bioinformatics/d0a11d76be312db9bb00c606e7e11c8c.js"></script>
