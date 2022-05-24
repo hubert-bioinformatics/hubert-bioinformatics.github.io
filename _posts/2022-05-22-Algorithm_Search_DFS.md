@@ -58,7 +58,7 @@ img_path: /assets/img/post/
 ***
  DFS (Deep-First Search)는 search algorithm 종류 중 하나입니다. Goal test를 만족할 때까지 가장 깊은 단계 node까지 확장하며 search하는 방식입니다. DFS가 작동하는 process를 살펴보면 이해가 쉽습니다.
 
- DFS는 stack structure를 사용하여 아래 process에 따라 진행합니다. Frontier와 explored set이 존재합니다. Frontier는 initial state(A)를 포함한 state입니다. Explored set는 empty state로 시작합니다. Process가 종료될 때까지 반복합니다.
+ DFS는 [stack](https://hubert-bioinformatics.github.io/posts/Stack-Queue/, "stack") structure를 사용하여 아래 process에 따라 진행합니다. Frontier와 explored set이 존재합니다. Frontier는 initial state(A)를 포함한 state입니다. Explored set는 empty state로 시작합니다. Process가 종료될 때까지 반복합니다.
 
  1.  Frontier에 search할 next node 확인: Frontier에 search할 next node가 존재하는지 확인합니다. 만약 없다면 solution이 없음을 의미하며 DFS process를 종료합니다. 참고로 여기서 언급한 node는 state, parent node, action, path cost 정보를 담고 있는 data structure입니다.
 
