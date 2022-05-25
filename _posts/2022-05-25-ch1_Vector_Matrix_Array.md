@@ -16,26 +16,26 @@ img_path: /assets/img/post/
  * Vector: 1d array로 만듭니다. (1.1)
 <br><br>
 
- * Matrix
+ * Numpy로 Matrix 다루기
 
-   * Numpy의 empty function:  Initial value 대신 크기만 지정하여 임의의 값이 채워진 array를 만듭니다. (1.2)
+   * empty:  Initial value 대신 크기만 지정하여 임의의 값이 채워진 array를 만듭니다. (1.2)
 
-   * Numpy의 zeros function: 0으로 채운 array를 만듭니다. (1.2)
+   * zeros: 0으로 채운 array를 만듭니다. (1.2)
 
-   * Numpy의 ones function: 1로 채운 array를 만듭니다. (1.2)
+   * ones: 1로 채운 array를 만듭니다. (1.2)
     
-   * Numpy의 full function: 특정 값으로 채운 array를 만듭니다. (1.2)
+   * full: 특정 값으로 채운 array를 만듭니다. (1.2)
     
-   * shape, size, ndim 속성: matrix의 크기, 원소 개수, 차원을 알고 싶을 때 사용합니다. (1.5)
+   * shape, size, ndim: matrix의 크기, 원소 개수, 차원을 알고 싶을 때 사용합니다. (1.5)
    <br><br>
 
- * Array
+ * Numpy로 Array 다루기
  
    * vectorize class: vectorized operation을 적용합니다. (1.6)
    
-   * Numpy의 broadcasing: 차원이 달라도 array 사이 연산을 수행합니다. (1.6)
+   * broadcasing: 차원이 달라도 array 사이 연산을 수행합니다. (1.6)
    
-   * Array 크기만 변경하고 싶을 때: numpy의 reshape function을 사용합니다. (1.9)
+   * reshape: Array 크기만 변경하고 싶을 때 사용합니다. (1.9)
    <br><br>
 
  * Transpose vector or matrix
@@ -43,38 +43,38 @@ img_path: /assets/img/post/
    * T or transpose method를 사용합니다.
    <br><br>
 
-* Matrix의 rank 구하기 (1.12)
+* Matrix rank 구하기 (1.12)
 
-   * Matrix의 rank는 row or column이 만든 vector 공간의 차원입니다. Linear dependent한 row or column의 개수입니다.
+   * Matrix rank는 row or column이 만든 vector 공간의 차원입니다. Linear independent row or column의 개수입니다.
    
-   * Numpy의 linear algebra method인 matrix_rank를 사용합니다.
+   * matrix_rank function을 사용합니다.
    
    * linalg module의 svd function으로 eigenvalues를 구한 다음 0이 아닌 값의 수를 헤아리는 방법으로 구할 수 있습니다.
    <br><br>
 
 * Determinant (1.13)
 
-   * Numpy의 linear algebra method인 **det**를 사용합니다.
+   * **det**를 사용합니다.
    <br><br>
 
 * Diagonal elements (1.14)
 
-   * Numpy의 linear algebra method인 **diagonal**을 사용합니다.
+   * **diagonal**을 사용합니다.
    <br><br>
 
 * Trace (1.15)
 
-   * Numpy의 linear algebra method인 **trace**를 사용합니다.
+   * **trace**를 사용합니다.
    <br><br>
 
 * Eigenvalue, Eigenvector (1.16)
 
-   * Numpy의 linear algebra method인 **eig**를 사용합니다.
+   * **eig**를 사용합니다.
    <br><br>
 
 * Inverse matrix (1.20)
 
-   * Numpy의 linear algebra method인 **inv**를 사용합니다.
+   * **inv**를 사용합니다.
    <br><br>
 
 
