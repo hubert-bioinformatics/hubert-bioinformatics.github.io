@@ -5,6 +5,8 @@ icon: fas fa-info-circle
 order: 5
 ---
 
+<a href="https://hubert-bioinformatics.github.io/posts/A6000_30.4_Battistero_di_San_Giovanni/" target="_blank"><img src="https://hubert-bioinformatics.github.io/assets/img/post/Battistero_di_San_Giovanni.jpg" width="30%"></a>
+<a href="https://hubert-bioinformatics.github.io/posts/A6000_30.4_Ponte_Vecchio/" target="_blank"><img src="https://hubert-bioinformatics.github.io/assets/img/post/Ponte_Vecchio.jpg" width="30%"></a>
 <a href="https://hubert-bioinformatics.github.io/posts/A6000_30.4_Ttukseom_Hangang_Park_5/" target="_blank"><img src="https://hubert-bioinformatics.github.io/assets/img/post/MOMENT-Ttukseom_Hangang_Park5.jpg" width="30%"></a>
 <a href="https://hubert-bioinformatics.github.io/posts/A6000_30.4_Ttukseom_Hangang_Park_4/" target="_blank"><img src="https://hubert-bioinformatics.github.io/assets/img/post/MOMENT-Ttukseom_Hangang_Park4.jpg" width="30%"></a>
 <a href="https://hubert-bioinformatics.github.io/posts/A6000_30.4_Ttukseom_Hangang_Park_3/" target="_blank"><img src="https://hubert-bioinformatics.github.io/assets/img/post/MOMENT-Ttukseom_Hangang_Park3.jpg" width="30%"></a>
