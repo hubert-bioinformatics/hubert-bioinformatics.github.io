@@ -12,9 +12,12 @@ img_path: /assets/img/post/
 ***
 
  Vector, matrix, array는 machine learning data를 다루기 위한 기본 도구입니다.
+ <br><br>
 
+ 
  * Vector: 1d array로 만듭니다. (1.1)
 <br><br>
+
 
  * Numpy로 Matrix 다루기
 
@@ -28,6 +31,7 @@ img_path: /assets/img/post/
     
    * shape, size, ndim: matrix의 크기, 원소 개수, 차원을 알고 싶을 때 사용합니다. (1.5)
    <br><br>
+
 
  * Numpy로 Array 다루기
  
@@ -43,6 +47,7 @@ img_path: /assets/img/post/
    * T or transpose method를 사용합니다.
    <br><br>
 
+
 * Matrix rank 구하기 (1.12)
 
    * Matrix rank는 row or column이 만든 vector 공간의 차원입니다. Linear independent row or column의 개수입니다.
@@ -52,25 +57,30 @@ img_path: /assets/img/post/
    * linalg module의 svd function으로 eigenvalues를 구한 다음 0이 아닌 값의 수를 헤아리는 방법으로 구할 수 있습니다.
    <br><br>
 
+
 * Determinant (1.13)
 
    * **det**를 사용합니다.
    <br><br>
+
 
 * Diagonal elements (1.14)
 
    * **diagonal**을 사용합니다.
    <br><br>
 
+
 * Trace (1.15)
 
    * **trace**를 사용합니다.
    <br><br>
 
+
 * Eigenvalue, Eigenvector (1.16)
 
    * **eig**를 사용합니다.
    <br><br>
+
 
 * Inverse matrix (1.20)
 
