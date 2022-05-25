@@ -8,7 +8,7 @@ tags: [wondersharefilmora,video]
 img_path: /assets/img/post/
 ---
 
-![Video Label](https://hubert-bioinformatics.github.io/assets/img/post/MOMENT-Babydriver_with_Bliss.png)(https://youtu.be/QVoegl7XERQ)
+[![Video Label](https://hubert-bioinformatics.github.io/assets/img/post/MOMENT-Babydriver_with_Bliss.PNG)](https://youtu.be/QVoegl7XERQ)
 
 Video clip: Baby Driver (2017, Edgar Wright)
 <br>
