@@ -5,6 +5,7 @@ icon: fas fa-info-circle
 order: 5
 ---
 
+<a href="https://hubert-bioinformatics.github.io/posts/ddddd/" target="_blank"><img src="https://hubert-bioinformatics.github.io/assets/img/post/MOMENT-Babydriver_with_Bliss.png" width="30%"></a>
 <a href="https://hubert-bioinformatics.github.io/posts/A6000_30.4_Piazzale_Michelangelo6/" target="_blank"><img src="https://hubert-bioinformatics.github.io/assets/img/post/MOMENT-Piazzale_Michelangelo6.jpg" width="30%"></a>
 <a href="https://hubert-bioinformatics.github.io/posts/A6000_30.4_Piazzale_Michelangelo5/" target="_blank"><img src="https://hubert-bioinformatics.github.io/assets/img/post/MOMENT-Piazzale_Michelangelo5.jpg" width="30%"></a>
 <a href="https://hubert-bioinformatics.github.io/posts/A6000_30.4_Piazzale_Michelangelo4/" target="_blank"><img src="https://hubert-bioinformatics.github.io/assets/img/post/MOMENT-Piazzale_Michelangelo4.jpg" width="30%"></a>
