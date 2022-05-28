@@ -11,4 +11,4 @@ img_path: /assets/img/post/
 ![Post-Image](CERTIFICATE-Introduction_to_Exonomics.png)
 <br><br>
 
-http://www.kmooc.kr/certificates/ae92017edf454f4c82433eacb89807a3
+[Certificat](http://www.kmooc.kr/certificates/ae92017edf454f4c82433eacb89807a3)
