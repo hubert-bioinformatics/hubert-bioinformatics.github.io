@@ -62,7 +62,7 @@ img_path: /assets/img/post/
 
  1.  Frontier에 search할 next node 확인: Frontier에 search할 next node가 존재하는지 확인합니다. 만약 없다면 solution이 없음을 의미하며 DFS process를 종료합니다. 참고로 여기서 언급한 node는 state, parent node, action, path cost 정보를 담고 있는 data structure입니다.
 
- 2.  Next node 가져오기: Frontier에서 last node를 추출합니다. (stack structure)
+ 2.  Next node 가져오기: Frontier에서 <span style='color: black; background-color: #fff5b1'>**last node**</span>를 추출합니다. <span style='color: black; background-color: #fff5b1'>**(stack structure)**</span>
 
  3.  Solution 확인과 return: 2번의 node가 goal test를 통과하면 search process를 종료하고 explored set을 solution으로 정의한 뒤 return합니다.
 
