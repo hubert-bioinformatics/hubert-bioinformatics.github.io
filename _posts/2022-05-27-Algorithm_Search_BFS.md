@@ -31,7 +31,7 @@ img_path: /assets/img/post/
  ![Post-Image](BFS_process.gif)
  _BFS process_
 
- DFS와 차이점을 찾으셨나요? DFS는 search 과정에서 goal node(F)를 만날 때까지 계속 child node를 찾아갑니다. 하지만 BFS는 우선 같은 depth의 모든 node(C, D)를 우선 찾아갑니다.
+ DFS와 차이점을 찾으셨나요? DFS는 search 과정에서 goal node(F)를 만날 때까지 계속 child node를 찾아갑니다. 하지만 BFS는 같은 depth의 모든 node(C, D)를 우선 찾아갑니다.
  <br><br>
 
 
