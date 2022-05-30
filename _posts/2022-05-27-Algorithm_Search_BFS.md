@@ -51,3 +51,41 @@ img_path: /assets/img/post/
 
  * 인접 리스트인 경우: O(V+E)
  <br><br>
+ 
+
+## &nbsp;&nbsp;DFS 장/단점
+***
+ BFS의 장점은 다음과 같습니다.
+
+ 1. 여러 개의 solution이 존재할 경우 optimal solution을 찾을 수 있습니다.
+ 
+ BFS의 단점은 다음과 같습니다.
+
+ 1. Search 해야 할 node가 많은 경우 필요 없는 node까지 모두 저장해야 하므로 DFS보다 큰 저장공간이 필요합니다.
+
+ 2. Node의 수가 많을 수록 search 시간이 오래 걸립니다.
+ <br><br>
+
+
+## &nbsp;&nbsp;BFS 적용
+***
+ BFS를 미로 문제에 적용해 보겠습니다.
+
+<script src="https://gist.github.com/hubert-bioinformatics/85f2550a4ce86372df10cf1bd3cfabf7.js"></script>
+
+'QueueFrontier' class는 'StackFrontier' class를 상속 받습니다. 다만 DFS와 차이점은 BFS가 [queue](https://hubert-bioinformatics.github.io/posts/Stack-Queue/, "queue") structure를 사용하기 때문에 'remove' function이 frontier에서 node를 가져올 때 가장 첫 번째 위치에 존재하는 node를 가져온다는 점입니다. 그 외 code는 DFS와 동일합니다. 
+
+```python
+node = self.frontier[0]
+```
+<br><br>
+
+
+## &nbsp;&nbsp;BFS 예제
+***
+ 미로 문제를 입력받아 solution을 찾아내는 과정입니다. 전체 code와 예제 파일은 [이 곳](https://github.com/hubert-bioinformatics/bioinformatics/tree/master/algorithm, "이 곳")에서 확인할 수 있습니다.
+
+ ![Post-Image](BFS_example.gif)
+ _BFS 미로 문제 예제_
+ 
+ DFS 방식으로 미로 문제를 풀 때 optimal solution이 아닌 멀리 돌아가는 solution을 return한 case가 있었습니다. BFS 방식을 적용하면 optimal solution을 return 합니다.
