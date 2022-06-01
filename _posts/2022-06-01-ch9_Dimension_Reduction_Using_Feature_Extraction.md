@@ -11,7 +11,7 @@ img_path: /assets/img/post/
 ## Summary
 ***
 
- Dimension reduction을 위한 feature extraction의 목적은 feature에 내제된 정보는 최대한 유지하면서 feature set $\rho_{original}$을 새로운 set $\rho_{new}$로 변환하는 것입니다. Feature extraction의 한 가지 단점은 새로운 set \rho_new를 사람이 이해하지 못한다는 것입니다. 해석 가능한 model을 유지하고 싶다면 feature selection 사용이 더 나은 방법입니다. 
+ Dimension reduction을 위한 feature extraction의 목적은 feature에 내제된 정보는 최대한 유지하면서 feature set $\rho_{original}$을 새로운 set $\rho_{new}$로 변환하는 것입니다. Feature extraction의 한 가지 단점은 새로운 set $\rho_{new}$를 사람이 이해하지 못한다는 것입니다. 해석 가능한 model을 유지하고 싶다면 feature selection 사용이 더 나은 방법입니다. 
  <br><br>
 
 
