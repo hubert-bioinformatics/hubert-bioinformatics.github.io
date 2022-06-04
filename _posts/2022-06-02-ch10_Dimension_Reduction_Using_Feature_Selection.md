@@ -3,6 +3,7 @@ layout: post
 title: ch10. Dimension Reduction Using Feature Selection
 date: 2022-06-02 22:41:09 +0900
 published: true
+math: true
 categories: [Study, B-ML_with_Python_Cookbook]
 tags: [ml,python,study,sklearn,dataframe]
 img_path: /assets/img/post/

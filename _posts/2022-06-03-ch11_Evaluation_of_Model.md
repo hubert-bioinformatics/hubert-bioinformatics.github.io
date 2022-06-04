@@ -3,6 +3,7 @@ layout: post
 title: ch11. Evaluation of Model
 date: 2022-06-03 22:12:20 +0900
 published: true
+math: true
 categories: [Study, B-ML_with_Python_Cookbook]
 tags: [ml,python,study,sklearn,dataframe]
 img_path: /assets/img/post/

@@ -3,6 +3,7 @@ layout: post
 title: Search Algorithm - BFS (Breadth-First Search)
 date: 2022-05-27 07:52:29 +0900
 published: true
+math: true
 categories: [Programming, Algorithm]
 tags: [algorithm,search,python]
 img_path: /assets/img/post/

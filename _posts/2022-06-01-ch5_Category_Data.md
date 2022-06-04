@@ -3,6 +3,7 @@ layout: post
 title: ch5. Category Data
 date: 2022-06-01 10:15:55 +0900
 published: true
+math: true
 categories: [Study, B-ML_with_Python_Cookbook]
 tags: [ml,python,study,sklearn,dataframe]
 img_path: /assets/img/post/

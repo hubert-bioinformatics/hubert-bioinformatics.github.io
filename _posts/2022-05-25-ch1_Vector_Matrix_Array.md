@@ -3,6 +3,7 @@ layout: post
 title: ch1. Vector Matrix Array
 date: 2022-05-25 19:21:10 +0900
 published: true
+math: true
 categories: [Study, B-ML_with_Python_Cookbook]
 tags: [ml,python,study,vector,matrix,array]
 img_path: /assets/img/post/

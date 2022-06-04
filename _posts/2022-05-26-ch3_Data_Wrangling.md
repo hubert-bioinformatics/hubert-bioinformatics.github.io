@@ -3,6 +3,7 @@ layout: post
 title: ch3. Data Wrangling
 date: 2022-05-26 21:47:51 +0900
 published: true
+math: true
 categories: [Study, B-ML_with_Python_Cookbook]
 tags: [ml,python,study,sklearn,dataframe]
 img_path: /assets/img/post/

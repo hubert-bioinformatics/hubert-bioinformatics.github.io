@@ -3,6 +3,7 @@ layout: post
 title: ch4. Numeric Data
 date: 2022-05-28 10:31:20 +0900
 published: true
+math: true
 categories: [Study, B-ML_with_Python_Cookbook]
 tags: [ml,python,study,sklearn,dataframe,outlier,standardization,normalization]
 img_path: /assets/img/post/

@@ -3,6 +3,7 @@ layout: post
 title: Stack vs Queue
 date: 2022-05-24 07:57:42 +0900
 published: true
+math: true
 categories: [Programming, Database]
 tags: [database,LIFO,FIFO]
 img_path: /assets/img/post/

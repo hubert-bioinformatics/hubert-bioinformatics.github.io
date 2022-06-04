@@ -3,6 +3,7 @@ layout: post
 title: Style Guide for Shell - Google
 date: 2022-04-15 12:31:12 +0900
 published: true
+math: true
 categories: [Programming, Linux]
 tags: [linux,shell]
 img_path: /assets/img/post/

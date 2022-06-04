@@ -3,6 +3,7 @@ layout: post
 title: Dataframe in Pandas
 date: 2022-05-24 21:58:27 +0900
 published: true
+math: true
 categories: [Programming, Python]
 tags: [python,pandas,dataframe]
 img_path: /assets/img/post/
