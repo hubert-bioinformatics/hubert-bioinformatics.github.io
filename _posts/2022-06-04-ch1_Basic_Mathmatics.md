@@ -3,6 +3,7 @@ layout: post
 title: ch1. Basic Mathmatics
 date: 2022-06-04 16:02:38 +0900
 published: true
+math: true
 categories: [Study, B-Guide_to_Linear_Algebra]
 tags: [linear algebra,study,math]
 img_path: /assets/img/post/
