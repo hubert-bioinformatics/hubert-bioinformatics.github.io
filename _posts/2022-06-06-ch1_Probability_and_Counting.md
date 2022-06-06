@@ -46,7 +46,7 @@ img_path: /assets/img/post/
 
  확률의 간단한 정의는 아래와 같습니다.
 
- $P(A) = \frac{\#favorable outcomes}{\#possible outcomes}$
+ $P(A) = \frac{count of favorable outcomes}{count of possible outcomes}$
 
  여기서 내포하고 있는 두 가지 가정이 있습니다. 항상 이 가정이 만족되는 것은 아니므로 적용 불가한 경우가 있습니다.<br>
    1. 모든 evenet가 발생할 probability는 같습니다.
@@ -75,8 +75,6 @@ img_path: /assets/img/post/
 
  전체 n개의 sample 중 k개의 sample을 선택할 때 고려해야 할 사항과 그 결과값에 관한 table 입니다.
 
-| (header) |order matter|order doesn't matter|
-|------|------|------|
-
-|****replace**| $n^{k}$ | $\binom{n+k-1}{k}$|
-|**doesn't replace**| n(n-1)(n-2)...(n-k+1) | $\binom{n}{k}$ |
+| (header) | **order matter**  | **order doesn't matter** |
+| **replace** | $n^{k}$ | $\binom{n+k-1}{k}$ |
+| **doesn't replace** | n(n-1)(n-2)...(n-k+1) | $\binom{n}{k}$ |
