@@ -20,6 +20,8 @@ img_path: /assets/img/post/
 ***
 
  Statistics is the logic of uncertainty.
+
+ 확률은 불확실성을 계량화하는 것을 가능하게 해줍니다.
  <br><br>
 
 
@@ -44,9 +46,13 @@ img_path: /assets/img/post/
 
  확률의 간단한 정의는 아래와 같습니다.
 
- $P(A) = \frac{#favorable outcomes}{#possible outcomes}$
+ $P(A) = \frac{\#favorable outcomes}{\#possible outcomes}$
 
- 하지만 possible outcomes를 매번 일일히 counting 하는 것은 불가능합니다. 어떻게 counting 해야할까요?
+ 여기서 내포하고 있는 두 가지 가정이 있습니다. 항상 이 가정이 만족되는 것은 아니므로 적용 불가한 경우가 있습니다.<br>
+   1. 모든 evenet가 발생할 probability는 같습니다.
+   2. Sample space는 유한합니다.
+   
+ 여기서 possible outcomes를 매번 일일히 counting 하는 것은 불가능합니다. 어떻게 counting 해야할까요?
  <br><br>
 
 
@@ -55,7 +61,7 @@ img_path: /assets/img/post/
 
  * Multiplication Rule<br>
  만약 첫 번째 experiment가 $n_{1}$개의 possible outcomes를 가지고 두 번째 experiment가 $n_{2}$개를 가지고, ..., r 번째 experiment가 $n_{r}$개를 가진다면,<br>
- overall possible outcomes = $n_{1}, n_{2}, ..., n_{r}$<br><br>
+ overall possible outcomes = $n_{1} * n_{2} *, ... *, n_{r}$<br><br>
 
  * Binomial coefficient(이항계수)<br>
  $\binom{n}{k} = \frac{n!}{(n-k)!k!}$ (if k>n)<br><br>
@@ -69,9 +75,8 @@ img_path: /assets/img/post/
 
  전체 n개의 sample 중 k개의 sample을 선택할 때 고려해야 할 사항과 그 결과값에 관한 table 입니다.
 
-| |order matter|order doesn't matter|
-
+| (header) |order matter|order doesn't matter|
 |------|------|------|
 
-|replace| $n^{k}$ | $\binom{n+k-1}{k}$|
-|doesn't replace| n(n-1)(n-2)...(n-k+1) | $\binom{n}{k}$ |
+|****replace**| $n^{k}$ | $\binom{n+k-1}{k}$|
+|**doesn't replace**| n(n-1)(n-2)...(n-k+1) | $\binom{n}{k}$ |
