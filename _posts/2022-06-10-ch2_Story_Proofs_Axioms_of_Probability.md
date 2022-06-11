@@ -44,67 +44,43 @@ img_path: /assets/img/post/
      아래 그림은, n개의 원 사이에 k-1개의 구분선을 넣는 경우의 수는 몇 가지인가?라는 물음에 대한 예시입니다. n+k-1개의 위치에 구슬과 구분선을 배열하는 것과 같습니다.<br><br>
      원의 위치를 먼저 정하면 구분선의 위치가 결정됩니다. 구분선의 위치를 먼저 정하면 원의 위치가 결정됩니다. 따라서 다음 등식이 성립합니다.<br><br>
      $\binom{n+k-1}{n-1}$ = $\binom{n+k-1}{k}$
+     <br><br>
+
+
+## Story Proof
+***
+
+ 상황 해석을 통한 증명입니다.(Proof by interpretation) 다음과 같은 예시를 생각해 볼 수 있습니다.
+
+ 1. $\binom{n}{k} = \binom{n}{n-k}$<br>
+ 앞서 증명한 내용과 같습니다. n개 중 k개를 선택하는 경우의 수는 n개 중 n-k개를 선택하는 경우의 수와 같습니다.
+
+ 2. $n\binom{n-1}{k-1} = k\binom{n}{k}$<br>
+ n명 중 동아리에 들어갈 k명을 선발하고 그 중 한 명을 대표로 선정하는 경우를 생각해 봅니다.<br>
+ 좌변은 대표를 한 명 선정합니다. 이후 n-1명 중 동아리에 들어갈 k-1명을 선발합니다.<br>
+ 우변은 n명 중 동아리에 들어갈 k명을 선발합니다. 이후 k명 중 대표 한 명을 선정합니다.<br>
+ 두 수식이 같다는 것이 증명 되었습니다.
+
+ 3. $\binom{m+n}{k} = \sum_{j=0}^{k}\binom{m}{j}\binom{n}{k-j}$<br>
+ 이 수식은 Vandermonde 항등식으로도 부릅니다. 대수를 이용해 증명하는 것은 매우 복잡합니다. 이항정리로 증명하는 것도 매우 복잡합니다. Story proof를 통해 증명해 봅니다.<br>
+ 두 개의 그룹 m, n에서 각각 사람을 뽑아 총 k명을 뽑는 경우의 수를 생각합니다. 그룹 m에서 j명을 선택한 경우 그룹 n에서는 k-j명을 선택합니다. 중복으로 counting한 경우가 없으므로 multiplication rule에 따라 두 개 그룹에서 선별한 경우를 곱하고 j는 0~k명 까지 모든 경우의 수를 더해줍니다.
  <br><br>
 
 
-
-
-
-
-
-
-
-
-## Sample Space (S, 표본공간)
+## 확률의 non-naive한 정의의 공의
 ***
 
- **A sample space** is the set of all possible outcomes of an experiment.
+ Sample space S와 function P가 있습니다. Event A는 S의 부분집합이며 P는 A를 input으로 받아서 $P(A)\in[0,1]$을 output으로 내놓습니다.
 
- 표본공간은 어떤 실험에서 가능한 모든 경우의 집합을 의미합니다.
+ 이 정의를 만족시키기 위해서는 다음 두 가지 정리가 필요합니다.
+
+ 1. $P(\emptyset)=0, p(S)=1$
+
+ 2. $P(\cup_{n=1}^{\infin}A_{n} = \sum_{n=1}^{\infin}P(A_{n})$ if $A_{1}, A_{2}$, ... are disjoint (non-overlapping)
  <br><br>
 
 
-## Event (A, 사건)
+## IMO
 ***
 
- **An event** is a subset of the sample space.
- <br><br>
-
-
-## Probability (P, 확률)
-***
-
- 확률의 간단한 정의는 아래와 같습니다.
-
- $P(A) = \frac{count of favorable outcomes}{count of possible outcomes}$
-
- 여기서 내포하고 있는 두 가지 가정이 있습니다. 항상 이 가정이 만족되는 것은 아니므로 적용 불가한 경우가 있습니다.<br>
-   1. 모든 evenet가 발생할 probability는 같습니다.
-   2. Sample space는 유한합니다.
-   
- 여기서 possible outcomes를 매번 일일히 counting 하는 것은 불가능합니다. 어떻게 counting 해야할까요?
- <br><br>
-
-
-## Counting
-***
-
- * Multiplication Rule<br>
- 만약 첫 번째 experiment가 $n_{1}$개의 possible outcomes를 가지고 두 번째 experiment가 $n_{2}$개를 가지고, ..., r 번째 experiment가 $n_{r}$개를 가진다면,<br>
- overall possible outcomes = $n_{1} * n_{2} *, ... *, n_{r}$<br><br>
-
- * Binomial coefficient(이항계수)<br>
- $\binom{n}{k} = \frac{n!}{(n-k)!k!}$ (if k>n)<br><br>
- multiplication rule을 적용할 수 있습니다. n명 중 한 명을 뽑는 경우의 수는 n, 다음 한 명을 뽑는 경우의 수는 (n-1), ..., k번째 한 명을 뽑는 경우의 수는 (n-k+1)입니다. 뽑는 순서는 상관 없으므로 k!로 나눠줍니다. 좌변의 분모와 분자를 소거하면 우변과 같습니다.<br>
- $\frac{n(n-1)(n-2)...(n-k+1)}{k!} = \frac{n!}{(n-k)!k!}$
- <br><br>
-
-
-## Sampling Table
-***
-
- 전체 n개의 sample 중 k개의 sample을 선택할 때 고려해야 할 사항과 그 결과값에 관한 table 입니다.
-
-| (header) | **order matter**  | **order doesn't matter** |
-| **replace** | $n^{k}$ | $\binom{n+k-1}{k}$ |
-| **doesn't replace** | n(n-1)(n-2)...(n-k+1) | $\binom{n}{k}$ |
+ Countable 재생만 4회입니다. 간단한 영상으로 생각했으나 재생할 때마다 새로운 내용이 들립니다. Story proof 방식이 아직 익숙하지 않지만 대수적으로 증명/해결하려는 시도보다 적극적으로 활용해야 겠다는 생각이 듭니다.
