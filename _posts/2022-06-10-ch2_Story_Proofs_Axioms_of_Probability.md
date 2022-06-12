@@ -76,11 +76,11 @@ img_path: /assets/img/post/
 
  1. $P(\emptyset)=0, p(S)=1$
 
- 2. $P(\cup_{n=1}^{\infin}A_{n} = \sum_{n=1}^{\infin}P(A_{n})$ if $A_{1}, A_{2}$, ... are disjoint (non-overlapping)
+ 2. $P(\cup_{n=1}^{\infin}A_{n}) = \sum_{n=1}^{\infin}P(A_{n})$ if $A_{1}, A_{2}$, ... are disjoint (non-overlapping)
  <br><br>
 
 
 ## IMO
 ***
 
- Countable 재생만 4회입니다. 간단한 영상으로 생각했으나 재생할 때마다 새로운 내용이 들립니다. Story proof 방식이 아직 익숙하지 않지만 대수적으로 증명/해결하려는 시도보다 적극적으로 활용해야 겠다는 생각이 듭니다.
+ 기억나는 재생만 헤아려도 4회 이상입니다. 재생할 때마다 새로운 내용이 들립니다. 간단한 내용처럼 보였지만 반복해서 들으니 놓쳤거나 이해하지 못했던 내용이 많았습니다. Story proof 방식이 아직 익숙하지 않지만 대수적으로 증명/해결하려는 시도보다 적극적으로 활용해야 겠다고 생각합니다.
