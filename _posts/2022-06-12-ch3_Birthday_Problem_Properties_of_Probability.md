@@ -76,7 +76,7 @@ img_path: /assets/img/post/
 
  $P(A_{1} \cap A_{2}, ..., \cap A_{k}) = \frac{(n-k)!}{n!}$<br>모든 카드가 순서대로 배치될 확률입니다. <br><br>
 
- 그러므로 구하고자 하는 확률은, <br>
+ 그러므로 구하고자 하는 확률은,<br>
  $P(A_{1} \cup A_{2}, ..., \cup A_{n})$<br>
  = $n\frac{1}{n} - \frac{n(n-1)}{2!}\frac{1}{n(n-1)} + \frac{n(n-1)(n-2)}{3!}\frac{1}{n(n-1)(n-2)} ...$<br>
  = $1 - \frac{1}{2!} + \frac{1}{3!} ... + (-1)^{n+1}\frac{1}{n!}$ 테일러 급수<br>
