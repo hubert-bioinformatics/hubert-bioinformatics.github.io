@@ -20,17 +20,25 @@ img_path: /assets/img/post/
 
  <script src="https://gist.github.com/hubert-bioinformatics/b437a5f57fd35652b4e49465ef389a46.js"></script>
 
- 
+ 결과값을 음수로 변환하기 때문에 x축(e)이 증가하면 y축(phred score)은 감소합니다. 그리고 y축은 log scale에 따라 변화하기 때문에 x축 값이 $10^{n}$ 단위로 증가/감소하면 y축 값은 n 단위로 증가/감소 합니다.
+
+ Phred score 20은 e가 0.01임을 의미합니다. 곧, base call error 확률이 1%이며, 100개 base call 중에서 1개의 error base를 포함하고 있음을 나타냅니다. 동시에 call accuracy가 99%임을 뜻합니다.
+
+ Phred score 10 = probability of error 10% = call accuracy 90%
+
+
+ Phred score 20 = probability of error 1% = call accuracy 99%
+
+ Phred score 30 = probability of error 0.1% = call accuracy 99.9%
  <br><br>
 
 
-## Fastq Format
+## Phred+33 encoding과 ASCII 표기법
 ***
 
- ![Post-Image](Fastq_format.png)
- _Fastq format_
- 
- Fastq는 한 개 read당 네 개 lines로 구성되어 있습니다.
+ Phred score는 왜 +33 encoding과 ASCII 표기법을 사용할까요?
+
+ Illumina sequencer 데이터는 일반적으로 phred score 0~40 범위 안에서 출력됩니다. 0~9는 1byte를 사용하지만, 10 이상부터는 2byte를 사용합니다. 수 백 만 개의 read가 포함된 fastq 파일에서 quality score를 효율적으로 저장하기 위해서는 2byte보다 1byte 정보로 quality를 표현하는 것이 현명한 선택입니다. 또한 base와 quality score는 1:1 match이므로 반드시 한 자리수로 표현해야 fastq 파일에서 정확히 사용할 수 있습니다.
 
  1. Line1 (sequence identifier): '@' 기호로 시작합니다. Sequencing run과 cluster 관련 정보를 담고 있습니다.<br>
 
