@@ -38,7 +38,28 @@ img_path: /assets/img/post/
 
  Phred score는 왜 +33 encoding과 ASCII 표기법을 사용할까요?
 
- Illumina sequencer 데이터는 일반적으로 phred score 0~40 범위 안에서 출력됩니다. 0~9는 1byte를 사용하지만, 10 이상부터는 2byte를 사용합니다. 수 백 만 개의 read가 포함된 fastq 파일에서 quality score를 효율적으로 저장하기 위해서는 2byte보다 1byte 정보로 quality를 표현하는 것이 현명한 선택입니다. 또한 base와 quality score는 1:1 match이므로 반드시 한 자리수로 표현해야 fastq 파일에서 정확히 사용할 수 있습니다.
+ Illumina sequencer 데이터는 일반적으로 phred score 0~40 범위 안에서 출력됩니다. 0~9는 1byte를 사용하지만, 10 이상부터는 2byte를 사용합니다. 수 백 만 개의 read가 포함된 fastq 파일에서 quality score를 효율적으로 저장하기 위해서는 2byte보다 1byte 정보로 quality를 표현하는 것이 현명한 선택입니다. 또한 base와 quality score는 1:1 match이므로 반드시 한 자리수로 표현해야 fastq 파일에서 정확히 사용할 수 있습니다. ASCII 표기법은 하나의 character가 1byte를 차지하므로 위 두 가지 목적에 적합합니다.
+
+ ASCII(**A**merican **S**tandard **C**ode for **I**nformation **I**nterchange, 미국 정보 교환 표준 부호) 표기법은 1963년 미국 ANSI에서 표준화한 정보교환용 7bit(8bit=1byte) 부호체계 입니다. 1byte 중 7bit만 사용하도록 만든 이유는 나머지 1bit를 통신 에러 검출 용도로 비워두었기 때문입니다. 000(0x00)부터 127(0x7F)까지 총 128개 부호가 사용됩니다.
+
+ | Dec | Hx | Oct | Char |
+ | 0 | 0 | 000 | NUL(null) |
+ | 1 | 1 | 001 | SOH(start of heading) |
+ | 2 | 2 | 002 | STX (start of text) |
+ | 3 | 3 | 003 | ETX(end of text) |
+ | 4 | 4 | 004 | EOT(end of transmission) |
+ | 5 | 5 | 005 | ENQ(enquiry) |
+ | 6 | 6 | 006 | ACK(acknowledge) |
+ | 7 | 7 | 007 | BEL(bell) |
+ | 8 | 8 | 010 | BS(backspace) |
+ | 9 | 9 | 011 | TAB(horizontal tab) |
+ | 10 | A | 012 | LF(NL line feed, new line) |
+ | 11 | B | 013 | VT(vertical tab) |
+ | 12 | C | 014 | FF(NP from feed, new page) |
+ | 13 | D | 015 | CR(carriage return) |
+ | 14 | E | 016 | SO(shift out) |
+ | 15 | F | 017 | SI(shift in) |
+ 
 
  1. Line1 (sequence identifier): '@' 기호로 시작합니다. Sequencing run과 cluster 관련 정보를 담고 있습니다.<br>
 
