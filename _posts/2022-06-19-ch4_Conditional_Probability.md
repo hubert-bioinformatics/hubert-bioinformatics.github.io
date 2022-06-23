@@ -51,72 +51,53 @@ img_path: /assets/img/post/
  3. $P(C) = 1 - \Sigma_{k=0}^{2}(\frac{18}{k})(\frac{1}{6})^k(\frac{5}{6})^{18-k} \approx 0.597$
 
  따라서 A가 발생할 확률이 가장 높습니다.
-
- 4. K > 365: 확률은 1입니다. 365개의 상자가 있고 각각 Jan1, Jan2, ..., Dec31로 labeling 합니다. K가 365보다 클 경우 모든 box에 dot이 1개 이상 들어갑니다. (Pigeon hole principle) 확률은 1입니다.
- 5. K ≤ 365: 여사건을 생각해 봅니다. $P(no match) = \frac{365*364*363*...*(365-k+1)}{365^{k}}$<br>
-
-     P(match)를 계산하면,<br>
-     50.6%, if k=23<br>
-     97%, if k=50<br>
-     99.999%, if k=100<br>
-     가 나옵니다.<br><br>
-
-
-     이 문제를 좀 더 직관적으로 살펴볼까요? 여기에서 중요한 것은 k명에서 2명을 뽑는 경우의 수 입니다. 이를 수식으로 표현하면,<br>
-
-     $\binom{k}{2}$ = $\frac{k(k-1)}{2}$<br>
-     $\binom{23}{2}$ = $\frac{23*22}{2}$ = 253<br>
-
-     253쌍의 경우의 수가 나옵니다. 충분히 같은 수를 가진 쌍이 나올 수 있습니다.
-     <br><br>
-
-
-## 확률의 특성
-***
-
- [ch2. Story Proofs Axioms of Probability](https://hubert-bioinformatics.github.io/posts/ch2_Story_Proofs_Axioms_of_Probability/, "ch2.Story Proofs Axioms of Probability")에서 확률의 non-naive 정의와 두 가지 정리를 살펴봤습니다.
-
- 1. $P(\emptyset)=0, p(S)=1$
-
- 2. $P(\cup_{n=1}^{\infty}A_{n}) = \sum_{n=1}^{\infty}P(A_{n})$ if $A_{1}, A_{2}$, ... are disjoint (non-overlapping)
- <br><br>
-
- 이 두 가지 정리로 모든 확률 특성을 설명할 수 있습니다.
-
- 1. $P(A^c) = 1 - P(A)$<br>
- 증명: $1 = P(S) = P(A\cup A^c) = P(A) + P(A^c)$ since $A \cap A^c = \varnothing$<br>
- 2. if $A \subseteq B, then P(A) \subseteq P(B)$<br>
- 증명: $B = A \cup (B \cap A^c), disjoint$<br>
- $P(B) = P(A) + P(B \cap A^c) ≥ P(A)$<br>
- 확률은 항상 0보다 크거나 같으므로 P(A)보다 크거나 같습니다.
- 3. $P(A \cup B) = P(A) + P(B) - P(A \cap B)$<br>
- 증명: $P(A \cup B) = P(A \cup (B \cap A^c)) = P(A) + P(B \cap A^c)$
  <br><br>
 
 
-## Inclusion-Exclusion Principle
+## Conditional Probability
 ***
 
- $P(A_{1} \cup A_{2} \cup ... \cup A_{n}) = \sum_{j=1}^{n} P(A_{j}) - \sum_{i<j} P(A_{i} \cap A_{j}) + \sum_{i<j<k} P(A_{i} \cap A_{j} \cap A_{k}), ..., (-1)^{n+1} P(A_{1} \cap A_{2}, ..., \cap A_{n})$<br>
+ > **Conditioning is the soul of statistics.**
 
- Inclusion-Exclusion Principle을 활용한 문제를 살펴 보겠습니다.  deMontmort's Problem(1713)은 matching problem으로도 부릅니다. 카드를 순서대로 배열한 뒤 카드 번호와 순서가 일치하면 승리하는 게임입니다. 이 확률을 수식으로 표현해 봅니다.<br><br>
+ How should you update probability/beliefs/uncertainty based on new evidence?
+ Contional probability는 새로운 정보를 얻었을 때, 기존에 가지고 있던 probability/beliefs/uncertainty를 어떻게 업데이트 하는가? 에 대한 답을 찾는 과정입니다.
 
- $P(A_{j}) = \frac{1}{n}$<br>랜덤으로 섞인 카드 1, 2, ..., n 중에서 카드 j가 j번째 순서로 놓이는 사건을 A라고 할 때 확률입니다.<br><br>
+ 정의는 아래와 같습니다.
+ $P(A \mid B) = \frac{P(A \cap B)}{P(B)}, if P(B)>0$
 
- $P(A_{1} \cap A_{2}) = \frac{(n-2)!}{n!} = \frac{1}{n(n-1)}$<br>카드1, 카드2가 1번, 2번 위치에 존재하고 나머지 카드들은 임의 배치될 확률입니다.<br><br>
+ 정의를 이해하기 위해 두 가지 다른 직관적 접근을 알아보겠습니다.
 
- $P(A_{1} \cap A_{2}, ..., \cap A_{k}) = \frac{(n-k)!}{n!}$<br>모든 카드가 순서대로 배치될 확률입니다. <br><br>
+ 직관적 접근 1) 조약돌 세계관
 
- 그러므로 구하고자 하는 확률은,<br>
- $P(A_{1} \cup A_{2}, ..., \cup A_{n})$<br>
- = $n\frac{1}{n} - \frac{n(n-1)}{2!}\frac{1}{n(n-1)} + \frac{n(n-1)(n-2)}{3!}\frac{1}{n(n-1)(n-2)} ...$<br>
- = $1 - \frac{1}{2!} + \frac{1}{3!} ... + (-1)^{n+1}\frac{1}{n!}$ 테일러 급수<br>
- $\approx 1 - \frac{1}{e}$<br>
- 에 근사합니다.
+ [Post-Image](ConditionalProb_peddle1.png)
+ _조약돌 세계관_
+
+ S 안에 q개의 조약돌이 있습니다. q개 조약돌들이 질량의 합은 1이라고 가정합니다.
+
+ [Post-Image](ConditionalProb_peddle2.png)
+ _조약돌 세계관_
+
+ $P(A \cup B) = P(A \mid B)P(B)$ 경우를 생각해 봅니다. $P(A \mid B)$의 의미는, $B^{c}$에 있는 모든 조약돌을 무시하고 B가 새로운 조약돌 세계라고 가정할 때 B 안에서 A도 발생할 확률입니다. 그런데 B에 있는 조약돌들의 질량의 합이 1이 안되기 때문에 재규격화(renormalize, 어떤 상수를 곱하여 전체 질량의 합이 다시 1이 되도록 하는 것)합니다. 따라서 $P(A \cap B)$를 P(B)로 나누어 줍니다.
+
+ $P(A \mid B) = \frac{P(A \cap B)}{P(B)}, if P(B)>0$
+
+ 직관적 접근 2) 빈도학파(Frequentist) 세계관
+
+ 같은 실험을 계속 반복하여 수 많은 시행 끝에 얻어낸 사건이 일어나는 비율을 확률로 보는 세계관 입니다. 따라서 왜 확률을 $\frac{P(A \cap B)}{P(B)}$ 식에 따라 계산하는지 알 수 있습니다. B 사건 하에서 A 사건이 발생할 확률은, A와 B가 함께 일어날 확률을 B가 일어날 확률로 나눠주는 것입니다.
+
+ 직관적 접근의 결과를 아래와 같이 정리할 수 있습니다.
+
+ 정리 1) $P(A \cap B) = P(B)P(A \mid B) = P(A)P(B \mid A)$
+
+ 정리 2) $P(A_{1}, A_{2}, ..., A_{n}) = P(A_{1})P(A_{2} \mid A_{1})P(A_{3} \mid A_{1},A_{2}) ... P(A_{n} \mid A_{1}, ..., A_{n-1})$
+
+ 정리 3) **$P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}$, Bayes' Theorem (베이즈 정리)**
+
+
  <br><br>
 
 
 ## IMO
 ***
 
- Birthday problem을 보며 사람의 직관과 실제 확률의 차이가 커서 놀랐습니다.
+ 확률론에서 중요한 이론 중 하나로 자주 등장하는 Bayes' theorem(베이지 정리)의 정의와 의미를 배웠습니다.
