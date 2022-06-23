@@ -69,12 +69,12 @@ img_path: /assets/img/post/
 
  직관적 접근 1) 조약돌 세계관
 
- [Post-Image](ConditionalProb_peddle1.png)
+ ![Post-Image](ConditionalProb_peddle1.png)
  _조약돌 세계관_
 
  S 안에 q개의 조약돌이 있습니다. q개 조약돌들이 질량의 합은 1이라고 가정합니다.
 
- [Post-Image](ConditionalProb_peddle2.png)
+ ![Post-Image](ConditionalProb_peddle2.png)
  _조약돌 세계관_
 
  $P(A \cup B) = P(A \mid B)P(B)$ 경우를 생각해 봅니다. $P(A \mid B)$의 의미는, $B^{c}$에 있는 모든 조약돌을 무시하고 B가 새로운 조약돌 세계라고 가정할 때 B 안에서 A도 발생할 확률입니다. 그런데 B에 있는 조약돌들의 질량의 합이 1이 안되기 때문에 재규격화(renormalize, 어떤 상수를 곱하여 전체 질량의 합이 다시 1이 되도록 하는 것)합니다. 따라서 $P(A \cap B)$를 P(B)로 나누어 줍니다.
