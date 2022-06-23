@@ -5,7 +5,7 @@ date: 2022-06-23 12:05:32 +0900
 published: true
 math: true
 categories: [Study, L-Statistics]
-tags: [statistics,harbard,law of total probability ,conditional probability, prior, posterior, conditional independence]
+tags: [statistics,harbard,law of total probability,conditional probability,prior,posterior,conditional independence]
 img_path: /assets/img/post/
 ---
 

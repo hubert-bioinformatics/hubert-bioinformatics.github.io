@@ -5,7 +5,7 @@ date: 2022-06-19 12:52:12 +0900
 published: true
 math: true
 categories: [Study, L-Statistics]
-tags: [statistics,harbard,probability,independence, newton-pepys problem, conditional probability, bayes' theorem]
+tags: [statistics,harbard,probability,independence,newton-pepys problem,conditional probability,bayes' theorem]
 img_path: /assets/img/post/
 ---
 
