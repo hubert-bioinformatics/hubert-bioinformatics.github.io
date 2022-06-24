@@ -44,7 +44,8 @@ img_path: /assets/img/post/
  1. It's own right!<br>
     조건부 확률은 어떤 단서가 있을 때 이 단서를 기반으로 확률을 업데이트 하는 것입니다. 이 자체가 굉장히 중요한 개념입니다.
 
- 2. Unconditional probability를 구하기 위해 이를 작은 조각들로 쪼갤 때 conditional probability가 필요함
+ 2. Unconditional probability를 구하기 위해 이를 작은 조각들로 쪼갤 때 conditional probability가 필요합니다. <br>
+
     예를 들어 Unconditional probability인 P(B)를 구하기 위해서 $P(B \mid A_{1})P(A_{1}) + P(B \mid A_{2})P(A_{2}), ..., + P(B \mid A_{n})P(A_{n})$와 같이 conditional probability인 $P(B \mid A_{n})$이 필요합니다.
     <br><br>
  
