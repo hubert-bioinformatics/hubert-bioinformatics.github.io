@@ -38,7 +38,7 @@ img_path: /assets/img/post/
  <br><br>
  
  
- ## Conditional Probability가 중요한 이유
+## Conditional Probability가 중요한 이유
 ***
 
  1. It's own right!<br>
@@ -50,7 +50,7 @@ img_path: /assets/img/post/
     <br><br>
  
  
- ## Conditional Probability 예제 문제
+## Conditional Probability 예제 문제
 ***
 
  1. 카드 뽑기: 52장의 카드 중 2장의 카드를 뽑는 경우, 다음 두 가지 case를 생각해 봅니다.
@@ -78,7 +78,7 @@ img_path: /assets/img/post/
  <br><br>
  
  
- ## Conditional Probability에서 자주 하는 실수들
+## Conditional Probability에서 자주 하는 실수들
 ***
 
  1. Prosecutor's fallacy: $P(A \mid B)$와 $P(B \mid A)$를 혼동하는 case입니다. 법정 사례를 한 가지 살펴봅니다.<br>
