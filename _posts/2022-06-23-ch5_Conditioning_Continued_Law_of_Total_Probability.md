@@ -58,10 +58,8 @@ img_path: /assets/img/post/
     $= \frac{P(both aces)}{P(have ace)}$ <br>
     $= \frac{\binom{4}{2}/\binom{52}{2}}{1 - \binom{48}{2}/\binom{52}{2}}$<br>
     $= \frac{1}{33}$
-    
 
-
-    2. P(both aces \mid have an ace of spade)$ <br>
+    2. $P(both aces \mid have an ace of spade)$ <br>
     $= \frac{3}{51}$ <br>
     $= \frac{1}{17}$ <br>
     한 장의 카드는 spade ace로 정해져 있으므로, 나머지 한 장의 카드를 남은 ace 세 장 중 하나를 뽑을 확률입니다.
