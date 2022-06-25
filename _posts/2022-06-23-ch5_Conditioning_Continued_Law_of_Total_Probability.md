@@ -50,10 +50,43 @@ img_path: /assets/img/post/
     <br><br>
  
  
- ## Conditional Probability가 중요한 이유
+ ## Conditional Probability 예제 문제
 ***
 
- 1. 
+ 1. 카드 뽑기: 52장의 카드 중 2장의 카드를 뽑는 경우, 다음 두 가지 case를 생각해 봅니다.
+    1. $P(both aces \mid have an ace)$ <br>
+    $= \frac{P(both aces)}{P(have ace)}$ <br>
+    $= \frac{\binom{4}{2}/\binom{52}{2}}{1 - \binom{48}{2}/\binom{52}{2}}$<br>
+    $= \frac{1}{33}$
+    
+
+
+    2. P(both aces \mid have an ace of spade)$ <br>
+    $= \frac{3}{51}$ <br>
+    $= \frac{1}{17}$ <br>
+    한 장의 카드는 spade ace로 정해져 있으므로, 나머지 한 장의 카드를 남은 ace 세 장 중 하나를 뽑을 확률입니다.
+
+ 2. 환자가 병에 걸렸을 확률: 인구의 1%가 걸리는 병이 있습니다. 이 병을 검사하는 방법 정확도가 95%라고 가정합니다. 검사가 양성으로 나왔을 때 환자가 병에 걸렸을 case를 생각해 봅니다.<br>
+ D: 환자가 병을 가지는 경우<br>
+ T: 환자의 검사 결과가 양성인 경우<br>
+ $P(T \mid D) = 0.95$<br>
+ $P(T^{c} \mid D^{c})$<br><br>
+ 하지만 환자가 알고자 원하는 것은 무엇일까요? 바로 $P(D \mid T)$입니다.<br>
+ $P(D \mid T) = \frac{P(T \mid D)P(D)}{P(T)}$<br>
+ $\frac{P(T \mid D)P(D)}{P(T \mid D)P(D) + P(T \mid D^{c})P(D^{c})}$<br>
+ $\approx 0.16$
+ <br><br>
+ 
+ 
+ ## Conditional Probability에서 자주 하는 실수들
+***
+
+ 1. Prosecutor's fallacy: $P(A \mid B)$와 $P(B \mid A)$를 혼동하는 case입니다. 법정 사례를 한 가지 살펴봅니다.<br>
+ Sally Clark case: 영국인 Sally Clark의 두 아이가 영아돌연사증후군(SIDS)로 돌연 사망합니다. 검찰측 전문가는 아이가 설명하기 힘든 이유로 사망할 확률은 $\frac{1}{8500}$이라 설명했고 두 명의 아이가 사망했으니 $\frac{1}{8500}\frac{1}{8500} \approx \frac{1}{73*10^6}$의 확률로 그녀가 결백하다고 주장했습니다.<br>
+ 하지만 우리가 알아야 할 값은 $P(innocence \mid evidence)$이며 위 주장에서는 $P(innocence)$ 항목을 고려치 않고 있습니다. 또한 두 아이의 죽음이 유전적 결함 등으로 연결될 수 있으나 검찰측 전문가는 독립사건으로 가정하고 있습니다. 결국 Sally Clark는 몇 년 후 무죄로 판정되어 출소했으나 얼마 지나지 않아 사망했습니다.
+
+ 2. 
+    
 
 
 
