@@ -82,26 +82,18 @@ img_path: /assets/img/post/
  1. Prosecutor's fallacy: $P(A \mid B)$와 $P(B \mid A)$를 혼동하는 case입니다. 법정 사례를 한 가지 살펴봅니다.<br>
  Sally Clark case: 영국인 Sally Clark의 두 아이가 영아돌연사증후군(SIDS)로 돌연 사망합니다. 검찰측 전문가는 아이가 설명하기 힘든 이유로 사망할 확률은 $\frac{1}{8500}$이라 설명했고 두 명의 아이가 사망했으니 $\frac{1}{8500}\frac{1}{8500} \approx \frac{1}{73*10^6}$의 확률로 그녀가 결백하다고 주장했습니다.<br>
  하지만 우리가 알아야 할 값은 $P(innocence \mid evidence)$이며 위 주장에서는 $P(innocence)$ 항목을 고려치 않고 있습니다. 또한 두 아이의 죽음이 유전적 결함 등으로 연결될 수 있으나 검찰측 전문가는 독립사건으로 가정하고 있습니다. 결국 Sally Clark는 몇 년 후 무죄로 판정되어 출소했으나 얼마 지나지 않아 사망했습니다.
-
- 2. 
-    
-
-
-
-
- 사건 A, B가 독립이라면 사건 A의 발생은 B의 발생 여부에 어떤 영향도 끼치지 않습니다.
  
- 혼동하기 쉬운 개념으로 서로소(disjoint)가 있습니다. 사건 A, B가 서로소라면 A가 발생했을 때 B는 발생할 수 없는 경우입니다. 독립과 완전히 다른 개념입니다.
- <br><br>
+ 2. 사전확률(prior)과 사후확률(posterior) 혼동: 사전확률(prior)은 $P(A)$, 사후확률(posterior)은 $P(A \mid B)$입니다.
 
-
-
-
-
+ 3. Conditional independent와 Independent 혼동: Conditional independent의 정의는 다음과 같습니다. $P(A \cap B \mid C) = P(A \mid C)P(B \mid C)$<br>
+ 그렇다면 conditional independent하면 independent 할까요? 정답은 '아니오' 입니다.<br>
+ 체스 게임을 예로 들어봅시다. 실력을 알 수 없는 만나본 적 없는 상대와 체스 게임을 합니다. 상대방이 얼마나 체스를 잘 하는지 아무런 정보가 없습니다. 이렇게 상대방의 실력을 모르는 상태에서 체스 게임을 한다고 가정할 때 체스 게임들은 conditional independent 합니다. 하지만 이것이 independent를 의미하지 않습니다. 체스 게임을 반복할 수록 상대방의 실력을 가늠할 수 있는 척도가 마련되지 때문입니다.<br>
+ 반대로 independent하면 conditional independent 할까요? 정답은 '아니오' 입니다.<br>
+ 화재경보기 예제를 생각해 봅시다. 화재경보기가 울리는 사건을 A, 화재가 난 사건을 F, 팝콘을 튀기는 사건을 C라고 합니다. A는 F 혹은 C에 의해 일어나며 F, C는 independent 하다고 가정합니다. 여기서 $P(F \mid A, C^{c}) = 1$이라고 할 수 있습니다. 화재경보기가 작동한 조건에서 팝콘을 튀기지 않았다면 화재가 났음을 알 수 있습니다. 따라서 A 조건하에서 F, C는 dependent하다고 볼 수 있습니다.
  <br><br>
 
 
 ## IMO
 ***
 
- 확률론에서 중요한 이론 중 하나로 자주 등장하는 Bayes' theorem(베이즈 정리)의 정의와 의미를 배웠습니다.
+ Conditional Probability를 확실하게 체득하지 못했으나 반복해서 강의를 듣고 다른 도서 내용도 참고해봐야 겠습니다.
