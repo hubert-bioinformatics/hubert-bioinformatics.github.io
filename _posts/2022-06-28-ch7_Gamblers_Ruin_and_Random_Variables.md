@@ -41,9 +41,9 @@ img_path: /assets/img/post/
 
  Strategy: Condition on first step<br>
 
- $P_{i} = P(A wins game \bar A starts at i dollar)$<br>
+ $P_{i} = P(A wins game \mid A starts at i dollar)$<br>
 
- $P_{i} = p*P_{i+1} + q*P_{i-1}, (1 < \leq i \leq N-1), (p_{0}=0, p_{N}=1)$<br>
+ $P_{i} = p*P_{i+1} + q*P_{i-1}$$, (1 < \leq i \leq N-1)$$, (p_{0}=0, p_{N}=1)$<br>
 
  문제를 해결하는데 가장 중요한 식입니다. Difference qeuation(계차방정식)이라고 부르며 미분방정식의 이산 형태입니다.
 
@@ -60,9 +60,9 @@ img_path: /assets/img/post/
 
  1. 두 해가 다른 경우($p \neq q$)<br>
  두 해의 선형결합 식으로 표현할 수 있습니다.<br>
- $p_{i} = A*1^{i} + B*(\frac{q}{p})^{i}, (p \neq q)$<br>
- 조건 $p_{0}=0, p_{N}=1$을 대입하면,<br>
- $p_{0} = A + B = 0, B = -A$<br>
+ $p_{i} = A1^{i} + B(\frac{q}{p})^{i}, (p \neq q)$<br>
+ 조건 $p_{0} = 0, p_{N} = 1$을 대입하면,<br>
+ $p_{0} = A + B = 0$$, B = -A$<br>
  $p_{N} = A + B(\frac{q}{p})^{N} = A(1 - (\frac{q}{p})^{N}) = 1$<br>
  $A = \frac{1}{1 - (\frac{q}{p})^{N}}$<br>
  $p_{i} = \frac{1 - (\frac{q}{p})^{i}}{1 - (\frac{q}{p})^{N-1}}, (p \neq q)$<br><br>
