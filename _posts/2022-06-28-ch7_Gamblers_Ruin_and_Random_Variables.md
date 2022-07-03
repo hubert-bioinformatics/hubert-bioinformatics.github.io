@@ -43,7 +43,7 @@ img_path: /assets/img/post/
 
  $P_{i} = P(A wins game \mid A starts at i dollar)$<br>
 
- $P_{i} = pP_{i+1} + qP_{i-1}$, $(1 < \leq i \leq N-1)$, $(p_{0}=0, p_{N}=1)$<br>
+ $P_{i} = pP_{i+1} + qP_{i-1}$, $(1 \leq i \leq N-1)$, $(p_{0}=0, p_{N}=1)$<br>
 
  문제를 해결하는데 가장 중요한 식입니다. Difference qeuation(계차방정식)이라고 부르며 미분방정식의 이산 형태입니다.
 
@@ -78,15 +78,26 @@ img_path: /assets/img/post/
  $N=100 \to 0.12$<br>
  $N=200 \to 0.02$<br>
  
-## Random Variable(확률변수)
+## Random Variables (확률변수)
 ***
 
- 마찬가지로 참가자는 어떤 문 뒤에 자동차가 있는지 알기 원합니다. S는 참가자가 자동차가 있는 문을 선택하는 경우를 의미하며 Monty의 물음에 따라 항상 선택한 문을 변경한다고 가정합니다. $D_{j}, j \in 1,2,3$는 자동차가 존재하는 문 번호입니다. $P(S)$는 아래와 같이 계산할 수 있습니다.<br>
+ 우선 확률변수의 정의를 알아봅시다. 확률변수는 function입니다. 이 function은 표본공간 S로부터 실수 체계 R로 mapping합니다.
 
- $P(S) = P(S \mid D_{1})\frac{1}{3} + P(S \mid D_{2})\frac{1}{3} + P(S \mid D_{3})\frac{1}{3}$<br>
- 
- 자동차가 1번 문에 있다고 가정하면,<br>
- $= 0 + 1\frac{1}{3} + 1\frac{1}{3} = \frac{2}{3}$
+![Post-Image](GamblesRuin-randomvariable.png)
+<br><br>
+
+ 쉽고 중요한 예제들을 살펴봅니다.
+
+ 1. Bernoulli (베르누이) 확률분포<br>
+ A random variable X is said to have Bernoulli(p) distribution, if X has only 2 possible values, 0 and 1<br>
+ P(X=1) = p<br>
+ P(X=0) = 1-P<br>
+
+ 2. Binomial (이항) 확률분포 (n,p)<br>
+ The distribution of #success X in n independent Bernoulli(p) trials is called Binomial(n,p), its distribution is given by <br>
+ $P(X=k) = \binom{n}{k} p^{k}(1-p)^{n-k}$<br>
+ 이 식은 PMF(확률질량변수)라고 합니다.<br>
+ X~Bin(n,p), Y~Bin(m,p), X와 Y가 independent일 때 X+Y~Bin(n+m, p)를 따릅니다.
  <br><br>
  
  
@@ -140,4 +151,4 @@ img_path: /assets/img/post/
 ## IMO
 ***
 
- Monty hall 문제는 볼 때마다 헷갈렸는데 수형도를 통해 푸는 방법을 잘 기억해 두어야 겠습니다. Simpson's paradox의 개념도 잘 알아 두어야 겠습니다.
+ Difference equation(계차방정식)을 다루는 곳이 거의 없는데 중요한 개념으로 보입니다. 베르누이분포, 이항분포를 시작으로 확률변수 분포가 나오는데 잘 정리해야 겠습니다.
