@@ -16,27 +16,69 @@ img_path: /assets/img/post/
  <br><br>
 
 
-## Monty Hall Problem
+## Gambler's Ruin
 ***
 
- Monty Hall 문제는 Monty가 사회를 맡은 유명한 퀴즈쇼 프로그램입니다. 1, 2, 3번 3개의 문이 있고 그 뒤에 자동차 한 대, 염소 두 마리가 있습니다. 참가자는 우선 문 1개를 선택합니다. Monty는 나머지 2개 문 중 염소가 들어있는 한 개의 문을 엽니다. 그리고 참가자에게 선택을 변경할 수 있는 기회를 줍니다. 이 때 참가자는 선택을 변경하는 것이 유리할까요, 아니면 처음 선택을 유지하는 것이 유리할까요?
+ A, B 두 명의 gambler가 내기를 합니다. 매 round에서 $1를 걸고 내기에서 이긴 사람이 가져갑니다. A는 $i, B는 $(N-i)를 가지고 시작합니다.
+
+ p = A가 이길 확률
+
+ q = B가 이길 확률 = 1-p
  <br><br>
 
 
-## Monty Hall 풀이1: 수형도
+## Random Walk
 ***
 
- 수형도를 그려서 확률을 계산해 볼 수 있습니다.
+ 위 문제는 유형을 파악하는 것이 중요합니다. 이와 같은 유형의 문제는 random walk로 정의할 수 있습니다.
 
- ![Post-Image](Monty_Hall.png)
+ ![Post-Image](GamblesRuin-gambler.png)
 <br><br>
 
 
- 참가자가 1번 문을 선택했다고 가정합시다. Monty는 염소가 들어있는 2번 문을 엽니다. 이 때 참가자가 선택을 변경하지 않으면 자동차가 있는 문을 고를 확률은 1/6(표준화하여 1/3)이 됩니다. 반대로 선택을 변경하면 확률은 1/3(표준화하여 2/3)이 됩니다. 선택을 변경하는 것이 자동차를 선택할 확률이 더 높습니다.
+ p는 오른쪽으로 이동할 확률, q는 왼쪽으로 이동할 확률입니다. 0, N은 absorbing state로 갇힌 상태입니다.
  <br><br>
+
+ Strategy: Condition on first step<br>
+
+ $P_{i} = P(A wins game \bar A starts at \$i)$<br>
+
+ $P_{i} = p*P_{i+1} + q*P_{i-1}, (1 < \leq i \leq N-1), (p_{0}=0, p_{N}=1)$<br>
+
+ 문제를 해결하는데 가장 중요한 식입니다. Difference qeuation(계차방정식)이라고 부르며 미분방정식의 이산 형태입니다.
+
+ Guessing을 통한 풀이<br>
+
+ $P_{i} = x^{i}$<br>
+
+ $x^{i} = px^{i+1} + qx^{i-1}$<br>
+
+ $px^{2} - x + q = 0$<br>
+
+ $x = \frac{1 \pm \sqrt{1 - 4pq}}{2p} \in \{1,\frac{q}{p}\}$<br><br>
+
+
+ 1. 두 해가 다른 경우($p \neq q$)<br>
+ 두 해의 선형결합 식으로 표현할 수 있습니다.<br>
+ $p_{i} = A*1^{i} + B*(\frac{q}{p})^{i}, (p \neq q)$<br>
+ 조건 $p_{0}=0, p_{N}=1$을 대입하면,<br>
+ $p_{0} = A + B = 0, B = -A$<br>
+ $p_{N} = A + B(\frac{q}{p})^{N} = A(1 - (\frac{q}{p})^{N}) = 1$<br>
+ $A = \frac{1}{1 - (\frac{q}{p})^{N}}$<br>
+ $p_{i} = \frac{1 - (\frac{q}{p})^{i}}{1 - (\frac{q}{p})^{N-1}}, (p \neq q)$<br><br>
+
+ 2. 두 해가 같은 경우($p = q$)<br>
+ $x = \frac{q}{p}$로 치환하고 $x \to 1$의 극한을 살펴봅니다.<br>
+ $\lim_{x \to 1} \frac{1-x^{i}}{1-x^{N}} = \lim_{x \to 1} \frac{i(x^{i-1})}{N(x^{N-1})} = \frac{i}{N}$<br><br>
+
+ 카지노(A)와 gambler(B)가 같은 돈을 가지고 시작했을 때 카지노에게 1%라도 유리한 게임인 경우 gambler가 이길 확률은 매우 작아집니다.
+
+ $i = N-i, p=0.49$<br>
+ $N=20 \to 0.40$<br>
+ $N=100 \to 0.12$<br>
+ $N=200 \to 0.02$<br>
  
- 
-## Monty Hall 풀이2: LOTP(Law of Total Probability)
+## Random Variable(확률변수)
 ***
 
  마찬가지로 참가자는 어떤 문 뒤에 자동차가 있는지 알기 원합니다. S는 참가자가 자동차가 있는 문을 선택하는 경우를 의미하며 Monty의 물음에 따라 항상 선택한 문을 변경한다고 가정합니다. $D_{j}, j \in 1,2,3$는 자동차가 존재하는 문 번호입니다. $P(S)$는 아래와 같이 계산할 수 있습니다.<br>
