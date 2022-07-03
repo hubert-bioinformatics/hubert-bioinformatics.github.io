@@ -19,7 +19,7 @@ img_path: /assets/img/post/
 ## Gambler's Ruin
 ***
 
- A, B 두 명의 gambler가 내기를 합니다. 매 round에서 $1를 걸고 내기에서 이긴 사람이 가져갑니다. A는 $i, B는 $(N-i)를 가지고 시작합니다.
+ A, B 두 명의 gambler가 내기를 합니다. 매 round에서 \$ 1를 걸고 내기에서 이긴 사람이 가져갑니다. A는 \$ i, B는 \$ (N-i)를 가지고 시작합니다.
 
  p = A가 이길 확률
 
@@ -41,7 +41,7 @@ img_path: /assets/img/post/
 
  Strategy: Condition on first step<br>
 
- $P_{i} = P(A wins game \bar A starts at \$i)$<br>
+ $P_{i} = P(A wins game \bar A starts at \$ i)$<br>
 
  $P_{i} = p*P_{i+1} + q*P_{i-1}, (1 < \leq i \leq N-1), (p_{0}=0, p_{N}=1)$<br>
 
