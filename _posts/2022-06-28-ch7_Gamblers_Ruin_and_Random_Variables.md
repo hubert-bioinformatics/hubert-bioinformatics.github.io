@@ -19,7 +19,7 @@ img_path: /assets/img/post/
 ## Gambler's Ruin
 ***
 
- A, B 두 명의 gambler가 내기를 합니다. 매 round에서 $\$ 1$를 걸고 내기에서 이긴 사람이 가져갑니다. A는 $\$ i$, B는 $\$ (N-i)$를 가지고 시작합니다.
+ A, B 두 명의 gambler가 내기를 합니다. 매 round에서 1 dollar를 걸고 내기에서 이긴 사람이 가져갑니다. A는 i dollar, B는 (N-i) dollar를 가지고 시작합니다.
 
  p = A가 이길 확률
 
@@ -43,7 +43,7 @@ img_path: /assets/img/post/
 
  $P_{i} = P(A wins game \mid A starts at i dollar)$<br>
 
- $P_{i} = p*P_{i+1} + q*P_{i-1}$$, (1 < \leq i \leq N-1)$$, (p_{0}=0, p_{N}=1)$<br>
+ $P_{i} = pP_{i+1} + qP_{i-1}$, $(1 < \leq i \leq N-1)$, $(p_{0}=0, p_{N}=1)$<br>
 
  문제를 해결하는데 가장 중요한 식입니다. Difference qeuation(계차방정식)이라고 부르며 미분방정식의 이산 형태입니다.
 
