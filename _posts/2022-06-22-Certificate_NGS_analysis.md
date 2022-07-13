@@ -8,7 +8,7 @@ tags: [certificate,NGS,KOBIC]
 img_path: /assets/img/post/
 ---
 
-![Post-Image](CERTIFICATE-NGS_dta_analysis.png)
+![Post-Image](CERTIFICATE-NGS_analysis.png)
 <br><br>
 
 [Lecture Info](https://www.edwith.org/ngs-seq/joinLectures/356400)
