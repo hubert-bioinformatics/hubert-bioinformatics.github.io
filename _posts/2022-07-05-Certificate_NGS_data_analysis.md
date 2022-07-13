@@ -4,7 +4,7 @@ title: (EDWITH-KOBIC) NGS 데이터 변이 분석 기초편
 date: 2022-07-05 22:04:27 +0900
 published: true
 categories: [Study, L-Certificate]
-tags: [certificate,NGS,variant]
+tags: [certificate,NGS,variant,KOBIC]
 img_path: /assets/img/post/
 ---
 

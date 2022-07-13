@@ -4,7 +4,7 @@ title: (EDWITH-KOBIC) 전사체 데이터 분석
 date: 2022-07-14 08:11:54 +0900
 published: true
 categories: [Study, L-Certificate]
-tags: [certificate,NGS,transcriptome]
+tags: [certificate,NGS,transcriptome,KOBIC]
 img_path: /assets/img/post/
 ---
 
