@@ -98,82 +98,36 @@ img_path: /assets/img/post/
     = $p^{k}q^{m+n-k} \binom{m+n}{k}$
 
 
-
-## Random Walk
+## 초기하분포(Hypergeometric)
 ***
 
- 위 문제는 유형을 파악하는 것이 중요합니다. 이와 같은 유형의 문제는 random walk로 정의할 수 있습니다.
+ 이항분포으로 착각하기 쉬운 초기하분포를 예제 문제를 통해 살펴보겠습니다.
 
- ![Post-Image](GamblesRuin-gambler.png)
-<br><br>
+ 1. 카드 문제
 
+    5장의 카드를 뽑았을 때 ACE 카드가 나올 확률
 
- p는 오른쪽으로 이동할 확률, q는 왼쪽으로 이동할 확률입니다. 0, N은 absorbing state로 갇힌 상태입니다.
- <br><br>
+    $P(X=k) k \in {0, 1, 2, 3, 4}$
 
- Strategy: Condition on first step<br>
+    = $\frac{\binom{4}{k} \binom{48}{5-k}}{\binom{52}{5}}$
 
- $P_{i} = P(A wins game \mid A starts at i dollar)$<br>
+    카드 첫 장을 뽑았을 때 ACE라면 비복원추출이므로 다음 카드를 뽑았을 때 ACE가 나올 확률은 감소합니다. 따라서 각 시행이 독립인 이항분포와 다른 분포입니다.
 
- $P_{i} = pP_{i+1} + qP_{i-1}$, $(1 \leq i \leq N-1)$, $(p_{0}=0, p_{N}=1)$<br>
+ 2. Elk 문제
 
- 문제를 해결하는데 가장 중요한 식입니다. Difference qeuation(계차방정식)이라고 부르며 미분방정식의 이산 형태입니다.
+    산 속에 20마리의 elk가 있습니다. 5마리는 tag, 15마리는 untag 되어있습니다. 4마리를 잡았을 때 2마리가 tag되어 있을 확률은?
 
- Guessing을 통한 풀이<br>
+    역시 카드 문제와 마찬가지로 초기하분포를 따릅니다.
 
- $P_{i} = x^{i}$<br>
+ 3. 구슬 문제
 
- $x^{i} = px^{i+1} + qx^{i-1}$<br>
+    b개의 검정색 구슬과 w개의 흰색 구슬 중에서, n개의 표본을 무작위로 추출할 때 표본에 있는 흰색 구슬의 수는? 마찬가지로 초기하분포를 따릅니다.
 
- $px^{2} - x + q = 0$<br>
-
- $x = \frac{1 \pm \sqrt{1 - 4pq}}{2p} \in \{1,\frac{q}{p}\}$<br><br>
-
-
- 1. 두 해가 다른 경우($p \neq q$)<br>
- 두 해의 선형결합 식으로 표현할 수 있습니다.<br>
- $p_{i} = A1^{i} + B(\frac{q}{p})^{i}, (p \neq q)$<br>
- 조건 $p_{0} = 0, p_{N} = 1$을 대입하면,<br>
- $p_{0} = A + B = 0$$, B = -A$<br>
- $p_{N} = A + B(\frac{q}{p})^{N} = A(1 - (\frac{q}{p})^{N}) = 1$<br>
- $A = \frac{1}{1 - (\frac{q}{p})^{N}}$<br>
- $p_{i} = \frac{1 - (\frac{q}{p})^{i}}{1 - (\frac{q}{p})^{N-1}}, (p \neq q)$<br><br>
-
- 2. 두 해가 같은 경우($p = q$)<br>
- $x = \frac{q}{p}$로 치환하고 $x \to 1$의 극한을 살펴봅니다.<br>
- $\lim_{x \to 1} \frac{1-x^{i}}{1-x^{N}} = \lim_{x \to 1} \frac{i(x^{i-1})}{N(x^{N-1})} = \frac{i}{N}$<br><br>
-
- 카지노(A)와 gambler(B)가 같은 돈을 가지고 시작했을 때 카지노에게 1%라도 유리한 게임인 경우 gambler가 이길 확률은 매우 작아집니다.
-
- $i = N-i, p=0.49$<br>
- $N=20 \to 0.40$<br>
- $N=100 \to 0.12$<br>
- $N=200 \to 0.02$<br>
- 
-## Random Variables (확률변수)
-***
-
- 우선 확률변수의 정의를 알아봅시다. 확률변수는 function입니다. 이 function은 표본공간 S로부터 실수 체계 R로 mapping합니다.
-
-![Post-Image](GamblesRuin-randomvariable.png)
-<br><br>
-
- 쉽고 중요한 예제들을 살펴봅니다.
-
- 1. Bernoulli (베르누이) 확률분포<br>
- A random variable X is said to have Bernoulli(p) distribution, if X has only 2 possible values, 0 and 1<br>
- P(X=1) = p<br>
- P(X=0) = 1-P<br>
-
- 2. Binomial (이항) 확률분포 (n,p)<br>
- The distribution of #success X in n independent Bernoulli(p) trials is called Binomial(n,p), its distribution is given by <br>
- $P(X=k) = \binom{n}{k} p^{k}(1-p)^{n-k}$<br>
- 이 식은 PMF(확률질량변수)라고 합니다.<br>
- X~Bin(n,p), Y~Bin(m,p), X와 Y가 independent일 때 X+Y~Bin(n+m, p)를 따릅니다.
- <br><br>
+    초기하분포라도 표본공간이 충분히 커서(예를 들어 구슬 10억개 중 10개를 뽑는 시행) 복원/비복원 여부가 큰 차이가 나지 않을 때, 초기하분포는 이항분포에 근사합니다.
+    <br><br>
 
 
 ## IMO
 ***
 
- Difference equation(계차방정식)을 다루는 곳이 거의 없는데 중요한 개념으로 보입니다. 베르누이분포, 이항분포를 시작으로 확률변수 분포가 나오는데 잘 정리해야 겠습니다.
+ 이항분포와 초기하분포를 살펴보고 그 차이점을 확인 했습니다.
