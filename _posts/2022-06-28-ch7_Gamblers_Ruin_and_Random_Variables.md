@@ -99,53 +99,6 @@ img_path: /assets/img/post/
  이 식은 PMF(확률질량변수)라고 합니다.<br>
  X~Bin(n,p), Y~Bin(m,p), X와 Y가 independent일 때 X+Y~Bin(n+m, p)를 따릅니다.
  <br><br>
- 
- 
-## Simpson's Paradox
-***
-
- 일부 부분에서 성립하는 대소관계는 전체로 보았을 때 역전될 수 있다는 역설입니다.
-
- 심슨 가족이 사는 스프링필드에 Dr.Hibbert와 Dr.Nick 두 명의 의사가 있습니다. 이들은 심장수술과 반창고 시술 두 가지 서비스를 제공합니다. 100번을 시도했을 때 성공, 실패 횟수는 아래와 같습니다.
-
- <Dr.Hibbert>
-
-| Header | Heart | Band aid |
-| Success | 70 | 10 |
-| Failure | 20 | 0 |
-
-
- <Dr.Nick>
-
-| Header | Heart | Band aid |
-| Success | 2 | 81 |
-| Failure | 8 | 9 |
-
-
- Dr.Hibbert는 성공률이 80%이고 Dr.Nick은 83%로 전체 성공률은 더 높습니다. 하지만 난이도가 높은 심장 수술의 성공률을 보면 Dr.Hibbert가 더 높습니다. 
- 
- 위 상황을 수식으로 표현해 봅니다.
-
- A: 수술 성공
-
- B: Dr.Nick이 수술한 경우
-
- C: 심장 수술
-
- $P(A \mid B, C) < P(A \mid B^{c}, C)$
-
- $P(A \mid B, C^{c}) < P(A \mid B, C^{c})$
-
- $P(A \mid B) > P(A \mid B^{c})$
-
- 수술의 종류(심장 수술($C$), 반찬고 시술($C^{c}$)를 고려했을 때, 모두 Dr.Hibbert가 시행한 경우($B^{c}$) 성공률이 더 높습니다.
-
- 하지만 수술의 종류를 고려하지 않은 경우 Dr.Nick이 시행한 경우 성공률이 더 높습니다.
-
- 여기에서 심장 수술($C$)을 confounder(교란변수)라고 합니다. 적절한 confounder에 의한 conditional probability를 확인하지 않으면 상황에 대한 그릇된 판단을 내릴 수도 있습니다.
- 
- Simpson's paradox는 모두 위 식으로 표현할 수 있습니다.
- <br><br>
 
 
 ## IMO
