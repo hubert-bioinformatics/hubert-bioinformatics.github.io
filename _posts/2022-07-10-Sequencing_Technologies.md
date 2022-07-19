@@ -5,7 +5,7 @@ date: 2022-07-10 11:02:52 +0900
 published: true
 math: true
 categories: [Bioinformatics, NGS]
-tags: [BI,bioinformatics,sanger sequencing,chip sequencing, next generation sequencing]
+tags: [BI,bioinformatics,sanger sequencing,chip sequencing,next generation sequencing]
 img_path: /assets/img/post/
 ---
 
@@ -120,10 +120,53 @@ Goodwin, S., McPherson, J. & McCombie, W. Coming of age: ten years of next-gener
 <br><br>
 
 
+## &nbsp;&nbsp;3rd Generation Sequencing: Long-read Sequencing
+***
 
+ 2nd generation sequencing의 단점인 short-read를 보완한 sequencer로 PCR amplification 없이 DNA strand의 real-time sequencing 방식을 통해 long-read를 한 번에 읽을 수 있습니다. Single base quality가 높지 않아서 한계가 있지만 점차 정확도를 높히면서 임상진단 분야로 확대하고 있습니다.
+
+ 크게 두 가지 종류로 나눌 수 있는데, SMRT(single-molecule real-time) sequencing과 synthetic 방식입니다.
+
+ 1. SMRT(Single-molecule long-read) sequencing
+
+    현재 SMRT를 널리 사용하는 회사는 Pacific Biosciences입니다. SMRT는 특별한 flow cell을 사용하는데, ZMW(zero-mode waveguides)로 불리는 transparent bottoms를 지닌 picolitre 단위의 수 천 개 well이 존재합니다. Short-read SBS technology는 polymerase가 DNA를 따라서 움직이며 elongation이 진행되는 반면, PacBio는 DNA polymerase가 well 바닥에 고정되어 있고 DNA strand가 ZMW를 통과하며 sequence를 확인하는 방식입니다. Well은 단 한 개의 DNA strand만 통과 가능하며, dNTP가 결합하면서 방출하는 빛을 laser와 camera가 계속 확인합니다. 길이가 3kb 이상인 DNA는 어렵지만 그 이하의 DNA fragment는 여러 차례 반복해서 sequencing 될 수 있으며 CCS(circular consensus seqeunce)로 알려진 consensus read of insert를 생성합니다.
+
+    2014년 Oxford Nanopore Technologies(ONT)에서 MinION을 발표했습니다. 다른 회사의 sequencer들은 빛, 색상, pH와 같은 secondary signal을 사용한 반면, nanopore는 naive ssDNA의 sequence를 직접 읽습니다.
+    <br><br>
+
+
+ 2. Synthetic long-reads
+
+    그동안 확인했던 다른 sequencing platforms와 달리 short-read seqeuncer로 생산한 read와 각 fragment에 부여된 barcode에 의존하여 synthetic long-read를 구현하는 방식입니다.
+
+    Illumina의 synthetic long-read sequencing과 10X Genomics의 emulsio-based system이 대표적인 사례입니다.
+    <br><br>
+
+
+    ![Post-Image](SEQUENCING-Longread.jpg)
+_Sequencing by synthesis: single-nucleotide addition approaches<br>
+Goodwin, S., McPherson, J. & McCombie, W. Coming of age: ten years of next-generation sequencing technologies. Nat Rev Genet 17, 333–351 (2016). https://doi.org/10.1038/nrg.2016.49_
+<br><br>
+
+
+## &nbsp;&nbsp;NGS 장비의 장단점
+***
+
+ NGS sequencer마다 원리가 다르기 때문에 서로 다른 장단점을 가지고 있습니다. Illumina, Thermo Fisher Scientific으로 대표되는 2nd generation sequencing은 read length가 짧아서 정확도가 높고 SNP 검출에 유리하지만, structural variants 검출에는 취약합니다. 
+ 
+ 반면 PacBio, Oxford Nanopore Technologies로 대표되는 3rd generation sequencing은 long-read의 이점을 살려 de-novo assembly와 structural variants 검출에 유리하지만, 정확도가 낮고 SNV 검출에 취약합니다.
+ <br><br>
+
+
+![Post-Image](SEQUENCING-sequencer.png)
+_NGS sequencer의 장단점<br>
+'Next Generation Sequencing 기반 유전자 검사의 이해(2019) -식품의약품안전처-_
+<br><br>
 
 
 ## Take Home Message
 ***
 
  DNA와 RNA의 구조는 molecular biology와 organic chemistry 수업 시간에 배운 기억이 있습니다. 당시에는 외워야하는 딱딱한 지식으로 생각했지만 DNA, RNA에서 일어나는 모든 화학반응과 NGS, bioinformatics 목적을 이해하기 위해서는 기본 구조를 잘 알아야 한다는 것을 다시 한 번 느꼈습니다. 또한 DNA replication과 protein 발현까지 진행되는 central dogma 원리를 알아야 중간에 문제가 발생해서 질병으로 이어지는 현상도 이해할 수 있습니다.
+
+ Sequencing technology는 발전속도가 굉장히 빠른 분야입니다. 머지 않아 ssDNA를 짧은 시간 안에 저렴한 비용으로 sequencing 할 수 있는 시대가 찾아오지 않을까요?
