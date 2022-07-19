@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sequencing Techinologies
+title: Sequencing Technologies
 date: 2022-07-10 11:02:52 +0900
 published: true
 math: true
@@ -62,7 +62,37 @@ _Dideoxynucleotide TriPhosphate_
 ## &nbsp;&nbsp;2nd Generation Sequencing: NGS
 ***
 
+ NGS는 cloning이 필요없고 library fragment의 amplification과 sequencing이 동시다발적으로 진행되기 때문에 비용과 소요시간을 절감할 수 있습니다. 2세대 sequencing이라고도 불리는 NGS는 short DNA 가닥을 만들어 squencing 하는 것이 특징이며, Illumina의 HiSeq, NovaSeq과 Thermo Fisher Scientific의 Ion Torrent가 대표적인 기기입니다. 2010년 이후 비약적인 발전을 이루어 왔습니다.
+ <br><br>
 
+
+![Post-Image](SequencingTechnology-sequencerdevelopment.png)
+_2010년 이후 주요 NGS 회사의 플랫폼 변화<br>
+'Next Generation Sequencing 기반 유전자 검사의 이해(2019) -식품의약품안전처-_
+<br><br>
+
+
+ NGS는 clonal template 생성 방식에 따라 SBL(sequencing by ligation)과 SBS(sequencing by synthesis)로 나눌 수 있습니다.
+
+ 1. SBL(sequencing by ligation)
+
+    Ligase와 Fluorescentyl labeled probe를 사용하여 sequence를 알아내는 방식입니다. 1~2bp 길이의 known base로 구성된 fluorescently labeled probe가 target DNA fragment에 결합한 뒤 인접한 2~10bp 길이의 oligonucleotide가 연결됩니다. 이 결합으로 인해 fluorescently labeled probe가 특정 spectrum의 빛을 방출하는데 이를 분석하여 base를 확인합니다.
+
+    Life Technologies의 SOLiD(Sequencing by Oligonucleotide Ligation and Detection)와 Complete Genomics의 cPAL(combinatorial Probe-Anchor Ligation)이 SBL 방식의 대표적인 사례입니다.
+
+ 2. SBS(sequencing by synthesis)
+
+    DNA polymerase와 Fluorescentyl labeled base를 사용하여 sequence를 알아내는 방식입니다. SBS는 다시 CRT(cyclic reversible termination)와 SNA(single-nucleotide addition)로 나눌 수 있습니다.
+
+    1. CRT(cyclic reversible termination)
+
+        Sanger sequencing과 마찬가지로 3'-OH group이 막힌 deoxyribose를 사용합니다. DNA template의 adapter region에 primer가 결합한 뒤 polymerase가 달라붙습니다. 네 가지 종류의 dNTPs(deoxynucleotides)가 투입되고 그 중 DNA template에 상보적인 한 개의 dNTP가 결합합니다. 결합하지 못한 나머지 dNTPs는 wash-out 시킵니다. 각각의 cluster에 결합한 한 개의 dNTP에 붙어있던 flurophore가 떨어지면서 빛을 방출하고 이를 분석하여 sequence를 확인합니다.
+
+        Illumina와 Qiagen이 CRT 방식의 대표적인 사례입니다.
+
+    2. SNA(single-nucleotide addition)
+
+        CRT와 달리 
  <br><br>
 
 
