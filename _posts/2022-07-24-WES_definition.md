@@ -4,7 +4,7 @@ title: WES - 개념과 유전학적 의의
 date: 2022-07-24 21:21:40 +0900
 published: true
 math: true
-categories: [Bioinformatics,NGS]
+categories: [Bioinformatics, NGS]
 tags: [bioinformatics,NGS,WES]
 img_path: /assets/img/post/
 ---
