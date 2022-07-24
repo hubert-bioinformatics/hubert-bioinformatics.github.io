@@ -9,7 +9,7 @@ tags: [BI,bioinformatics,NGS,WES]
 img_path: /assets/img/post/
 ---
 
-본 post는 국가생명연구자원정보센터(KOBIC) 주관 서울대학교 의과대학 최무림 교수님의 [WES 기초편](www.edwith.org/wes-beginner/, "WES 기초편") 강의를 정리한 내용입니다.
+본 post는 국가생명연구자원정보센터(KOBIC) 주관 서울대학교 의과대학 최무림 교수님의 [WES 기초편](https://www.edwith.org/wes-beginner/, "WES 기초편") 강의를 정리한 내용입니다.
 
 ## Intro
 ***
