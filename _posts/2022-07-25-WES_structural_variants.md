@@ -117,87 +117,33 @@ Algorithms 유형별 소프트웨어 종류는 다음과 같습니다. Bold체 �
 
 
 소프트웨어별 SV 결과의 bias 편차가 심하기 때문에 biasgnomAD는 네 개 소프트웨어를 사용하여 편차를 줄였습니다. 이처럼 multi-platform 방식으로 보완이 가능합니다.
+<br><br>
 
 
-
-
-
-
-
-## Importance of Understanding Recessive Variants
+## Manta: De novo Deletion Result
 ***
 
-![Post-Image](WES-recessive_variants_importance.png)
- _Importance of Understanding Recessive Variants<br>
+![Post-Image](WES-manta.png)
+ _Manta: De novo Deletion<br>
  www.edwith.org/wes-beginner_
 <br><br>
 
 
-Recessive variants가 유발하는 대표적인 disease로 $\beta$-thalassaemia와 Ty-Sachs disease가 있습니다. 각각 HBB, HEXA gene의 variants로 유발되는 disease이며 specific population에서 높은 발병률을 보입니다. 어떤 recessive variants가 disease를 유발하는지 이해한 뒤로 보인자인 남녀가 결혼을 하거나 자녀를 출생하기 전 자녀의 disease 발병을 예방할 수 있습니다. 그래프에서 시간이 지남에 따라 $\beta$-thalassaemia의 새로운 환자 발병률이 점점 감소하는 것으로 볼 수 있습니다.
+Manta 소프트웨어로 분석한 결과 중 de novo deletion을 IGV로 확인한 결과입니다. De novo deletion이 존재하는 region에서 soft-clipped reads가 확인됩니다.
 
-실제로 Myriad사에서는 [Foresight Carrier Screen](https://myriad.com/womens-health/patient-foresight/, "Foresight Carrier Screen") 서비스를 제공하고 있습니다. 175개 이상의 genetic diseases 대상으로 남녀의 carrier 보유 여부를 검사하고 결과를 제공합니다.
+![Post-Image](WES-manta2.png)
+ _Manta: De novo Deletion<br>
+ www.edwith.org/wes-beginner_
 <br><br>
 
 
-## Call Compound Heterozygous Variants
-***
-
-1. Check reference coverage and non-reference coverage and calculate minor allele frequency(MAF)
-
-    $MAF = \frac{non-ref coverage}{(ref coverage + non-ref coverage)}$
-
-    MAF should be **approximately 0.5**
-
-    higher coverage the better
-
-2. Check allele frequencies(AF) of genome databases like gnomAD, ExAC, 1000 genome, etc
-
-    다수의 정상인이 보유하고 있는 variants라면 disease를 유발할 가능성이 떨어집니다. 따라서 위와 같은 정상인 variants database에서 AF 0.01보다 작은 variants를 선별합니다.
-
-3. One mutation should come from paternal. Another from maternal.
-<br><br>
-
-
-## Call Rare Homozygous Variants
-***
-
-1. Check reference coverage and non-reference coverage and calculate minor allele frequency(MAF)
-
-    $MAF = \frac{non-ref coverage}{(ref coverage + non-ref coverage)}$
-
-    MAF should be **very close to 1**
-
-    higher coverage the better
-
-2. Check allele frequencies(AF) of genome databases like gnomAD, ExAC, 1000 genome, etc
-
-    다수의 정상인이 보유하고 있는 variants라면 disease를 유발할 가능성이 떨어집니다. 하지만 정상인이 보유하고 있는 variants가 recessive 형태일 수 있고 결과적으로 환자가 가진 homozygous 형태에서는 AF가 그보다 높게 나타날 수 있습니다. 따라서 AF가 낮되 다른 recessive variants와 비교해서는 너무 낮지 않도록 고려합니다.
-<br><br>
-
-
-## Call Hemizygous Variants
-***
-
-1. Check reference coverage and non-reference coverage and calculate minor allele frequency(MAF)
-
-    $MAF = \frac{non-ref coverage}{(ref coverage + non-ref coverage)}$
-
-    MAF should be **approximately 1**
-
-    higher coverage the better
-
-2. Check allele frequencies(AF) of genome databases like gnomAD, ExAC, 1000 genome, etc
-
-    다수의 정상인이 보유하고 있는 variants라면 disease를 유발할 가능성이 떨어집니다. 따라서 위와 같은 정상인 variants database에서 AF 0.01보다 작은 variants를 선별합니다.
-
-3. Should be very conserved
-
-    Check the number of different amino acid among species
+Insert size 크기로 coloring한 뒤 sorting한 결과입니다. 마찬가지로 de novo deletion이 존재하는 region에서 insert size가 큰 reads가 확인됩니다.
 <br><br>
 
 
 ## Summary
 ***
 
-* Recessive pattern을 따르는 variants는 Mendelian Disorder의 주요 병인으로 작용합니다.
-* Recessive pattern을 따라는 variants 종류로는 homozygous, compound heterozygous, hemizygous variants가 있습니다.
+* SV는 비록 많은 비율은 아니지만 대부분의 disease 유발 인자로 생각되고 있습니다.
+* SV calling은 SNV보다 어렵고 독립적인 algorithm을 사용해야 합니다.
+* SV calling 결과에 대한 후속 확인이 필수적입니다.
