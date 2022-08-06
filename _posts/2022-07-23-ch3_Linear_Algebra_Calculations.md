@@ -146,7 +146,9 @@ $A^{-1}$를 찾는 데 들이는 노력은 첨가행렬 [A|$\vec{b}$]를 RREF로
 
     방정식 $A\vec{x} = \vec{b}$를 푼다고 가정해 봅시다. 이는 nxn행렬 A를 벡터 $\vec{x}$에 곱하여 벡터 $\vec{b}$를 생성한다는 의미입니다. 벡터는 '높고 좁은' nx1 행렬로 생각할 수 있습니다.
 
-    ( tab 그림으로 대체 예정 )
+    ![Post-Image](matrix_cal1.jpg)
+ _행렬과 벡터의 곱_
+ <br><br>
 
     $A\vec{x} = \vec{b}$에서 때때로 행렬 A의 역행렬이 존재하지 않는 경우가 있습니다. 연립방정식이 부족하게 설정된 경우(A가 높이보다 더 넓은 경우), 가능한 해 $\vec{x}$의 부분공간(subspace)이 존재합니다. 이전 절에서 살펴본 해가 무수히 많은 경우에 해당합니다.
 <br><br>
@@ -157,7 +159,10 @@ $A^{-1}$를 찾는 데 들이는 노력은 첨가행렬 [A|$\vec{b}$]를 RREF로
 
 행렬의 곱셈은 행렬 A의 각 행과 행렬 B의 각 열 사이에 내적을 취하여 계산합니다.
 
-( tab 그림으로 대체 예정 )
+![Post-Image](matrix_cal2.jpg)
+ _행렬의 곱셈_
+ <br><br>
+
 
 * 행렬의 곱셈 법칙
 
@@ -206,7 +211,38 @@ $A^{-1}$를 찾는 데 들이는 노력은 첨가행렬 [A|$\vec{b}$]를 RREF로
 
 5. 이 외에도 벡터 외적과 관련 있으며, 고윳값 방정식의 정의에도 사용됩니다.
 
-( 그림 3-6 tab으로 추가 예정 )
+![Post-Image](matrix_cal3.jpg)
+ _햏렬식이 선형변환 비례인자로 작용_
+ <br><br>
 
 * 행렬식 공식
 
+2x2 행렬의 행렬식은 다음과 같습니다.
+
+![Post-Image](determinant1.jpg)
+ _2x2 행렬의 행렬식_
+<br><br>
+
+
+3x3 행렬의 행렬식은 다음과 같습니다.
+
+![Post-Image](determinant2.jpg)
+ _3x3 행렬의 행렬식, Sarrus Method_
+
+![Post-Image](determinant3.jpg)
+ _3x3 행렬의 행렬식 쉽게 구하기_
+<br><br>
+
+
+$n \times n$ 행렬의 행렬식은 더이상 쉬운 공식으로 간략히 구하기 어렵습니다. 대신 체계적으로 구할 수 있는 과정을 알아봅니다.
+
+![Post-Image](determinant4.jpg)
+ _nxn 행렬의 행렬식_
+
+![Post-Image](determinant5.jpg)
+ _nxn 행렬의 행렬식_
+<br><br>
+
+![Post-Image](determinant6.jpg)
+ _nxn 행렬의 행렬식_
+<br><br>
