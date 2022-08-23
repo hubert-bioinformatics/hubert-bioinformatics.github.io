@@ -18,27 +18,48 @@ DNA 서열에서 다양한 종류의 변이가 나타날 수 있으며, 일부 �
 ----------
 | Substitution - Missense | Coding region에서 nucleotide의 substitution으로 나타나는 variants. 그 결과 region이 coding하는 amino acid가 다른 amino acid로 바뀜 |
 | Substitution - Nonsense | Coding region에서 nucleotide의 substitution으로 나타나는 variants. 그 결과 region이 coding하는 amino acid가 stop codon으로 바뀌고 protein의 기능에 영향을 줌 |
-| Insertion | 한 개 이상의 nucleotides가 끼어들어간 variants. 그 결과 protein이 적절한 기능을 하지 못하도록 영향을 줄 수 있음 |
-| Deletion | 적어도 한 개 이상의 nucleotides가 빠진 variants. 그 결과 protein이 적절한 기능을 하지 못하도록 영향을 줄 수 있음 |
+| Insertion | 한 개 이상의 nucleotides가 추가된 variants. 그 결과 protein이 적절한 기능을 하지 못하도록 영향을 줄 수 있음 |
+| Deletion | 적어도 한 개 이상의 nucleotides가 삭제된 variants. 그 결과 protein이 적절한 기능을 하지 못하도록 영향을 줄 수 있음 |
 | Deletion-Insertion(delins), Insertion-Deletion(indel) | Deletion과 Insertion이 같은 시간 같은 region에서 일어난 variants. 그 결과 protein이 적절한 기능을 하지 못하도록 영향을 줄 수 있음 |
 | Duplication | 한 개 이상의 nucleotides가 복제되거나 반복되어 나타나는 variants. 그 결과 protein이 적절한 기능을 하지 못하도록 영향을 줄 수 있음 |
 | Inversion | the original sequence 상에서 한 개 이상의 nucelotides가 reverse 방향으로 대체된 variants. |
-| Frameshift |  |
+| Frameshift | 한 개 이상의 nucleotides가 추가되거나 삭제되어 codon 서열을 변경시키는 variants. 그 결과 protein이 적절한 기능을 하지 못하도록 영향을 줄 수 있음 |
 
- [about DNA](https://hubert-bioinformatics.github.io/posts/about_DNA/, "about DNA") post에서 DNA의 화학구조와 특성을 확인 했습니다. Sequencing의 목적은 pentose sugar의 1' carbon에 연결된 nitrogenous base의 순서를 확인하는 것임을 또한 확인 했습니다.
- <br><br>
-
-
-![Post-Image](SEQUENCING-coseperraw.jpg)
-_Sequencing cost per megabases - 2021<br>
-https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Costs-Data_
+![Post-Image](Variants-missense.jpeg)
+_Substitution - Missense<br>
+https://medlineplus.gov/genetics/understanding/mutationsanddisorders/possiblemutations/_
 <br><br>
 
 
-![Post-Image](SEQUENCING-coseperhuman.jpg)
-_Sequencing cost per Human Genome data - 2021<br>
-https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Costs-Data_
+![Post-Image](Variants-nonsense.jpeg)
+_Substitution - Nonsense<br>
+https://medlineplus.gov/genetics/understanding/mutationsanddisorders/possiblemutations/_
 <br><br>
+
+
+![Post-Image](Variants-insertion.jpeg)
+_Insertion<br>
+https://medlineplus.gov/genetics/understanding/mutationsanddisorders/possiblemutations/_
+<br><br>
+
+
+![Post-Image](Variants-deletion.jpeg)
+_Deletion<br>
+https://medlineplus.gov/genetics/understanding/mutationsanddisorders/possiblemutations/_
+<br><br>
+
+
+![Post-Image](Variants-duplication.jpeg)
+_Duplication<br>
+https://medlineplus.gov/genetics/understanding/mutationsanddisorders/possiblemutations/_
+<br><br>
+
+
+![Post-Image](Variants-frameshift.jpeg)
+_Frameshift<br>
+https://medlineplus.gov/genetics/understanding/mutationsanddisorders/possiblemutations/_
+<br><br>
+
  
  
  Technology는 단점을 보완하여 항상 발전합니다. Sequencing tech는 반도체 못지 않게 급격한 발전을 이룬 분야 중 하나입니다. 위 그림은 sequencing tech와 관련된 강의, 세미나의 첫 시간에 자주 언급되는 내용입니다. (마크로젠 PT 면접에서도 위 그림을 포함 했...) "Moore\'s Law"는 인텔의 Gordon Moore가 1965년 발표한 법칙으로, 반도체에 들어가는 transistor의 수가 24개월마다 2배 증가한다는 것입니다. 이와 비교해서 megabase당 sequencing 비용과 Human Genome seqeuncing 비용은 더 급격히 감소하고 있습니다. Y-axis가 log scale임을 감안할 때 가격의 하락폭은 훨씬 더 급격하다는 것을 알 수 있습니다. 대용량 sequencing capability를 가진 Illumina의 Novaseq이 2017년 출시하면서 비로소 1,000 dollars Human Genome era를 맞이하게 되었습니다. 1990년부터 2003년까지 진행된 The Human Genome Project가 13년의 시간, $3 bilion dollars(3조원)이 소요된 것과 비교하면 가히 놀라울 만한 발전이 아닐 수 없습니다.
