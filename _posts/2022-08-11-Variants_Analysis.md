@@ -15,7 +15,6 @@ img_path: /assets/img/post/
 DNA 서열에서 다양한 종류의 변이가 나타날 수 있으며, 일부 변이는 암, 유전성 질환과 연관되어 있습니다.
 
 | Variants Types | Description |
-----------
 | Substitution - Missense | Coding region에서 nucleotide의 substitution으로 나타나는 variants. 그 결과 region이 coding하는 amino acid가 다른 amino acid로 바뀜 |
 | Substitution - Nonsense | Coding region에서 nucleotide의 substitution으로 나타나는 variants. 그 결과 region이 coding하는 amino acid가 stop codon으로 바뀌고 protein의 기능에 영향을 줌 |
 | Insertion | 한 개 이상의 nucleotides가 추가된 variants. 그 결과 protein이 적절한 기능을 하지 못하도록 영향을 줄 수 있음 |
