@@ -60,11 +60,20 @@ _Frameshift<br>
 https://medlineplus.gov/genetics/understanding/mutationsanddisorders/possiblemutations/_
 <br><br>
 
- 
- 
- Technology는 단점을 보완하여 항상 발전합니다. Sequencing tech는 반도체 못지 않게 급격한 발전을 이룬 분야 중 하나입니다. 위 그림은 sequencing tech와 관련된 강의, 세미나의 첫 시간에 자주 언급되는 내용입니다. (마크로젠 PT 면접에서도 위 그림을 포함 했...) "Moore\'s Law"는 인텔의 Gordon Moore가 1965년 발표한 법칙으로, 반도체에 들어가는 transistor의 수가 24개월마다 2배 증가한다는 것입니다. 이와 비교해서 megabase당 sequencing 비용과 Human Genome seqeuncing 비용은 더 급격히 감소하고 있습니다. Y-axis가 log scale임을 감안할 때 가격의 하락폭은 훨씬 더 급격하다는 것을 알 수 있습니다. 대용량 sequencing capability를 가진 Illumina의 Novaseq이 2017년 출시하면서 비로소 1,000 dollars Human Genome era를 맞이하게 되었습니다. 1990년부터 2003년까지 진행된 The Human Genome Project가 13년의 시간, $3 bilion dollars(3조원)이 소요된 것과 비교하면 가히 놀라울 만한 발전이 아닐 수 없습니다.
- <br><br>
 
+## NGS Variants Error
+***
+![Post-Image](Variant-error.png)
+_NGS Variants Error<br>
+https://www.edwith.org/ngs-data-variation/lecture/1382349?isDesc=false_
+<br><br>
+
+
+Reference genome과 다른 bases로 확인된 variants의 대부분이 사실 sequencer error입니다. 여기에서 최종 driver somatic mutations로 남는 variants를 선별하는 것은 까다로운 과정입니다. 따라서 처음에 called variants에서 sequencer error를 찾고 제거하는 과정은 매우 중요합니다.
+
+Sequencer error를 제거하기 위해서 특정 region을 여러 번 반복해서 sequencing 합니다. 이를 정량화한 값을 read depth라고 부르는데, 특정 영역을 지나는 read의 수를 count한 값 입니다. 이처럼 특정 region을 반복해서 시퀀싱하면 sequencer error가 발견되더라도 이를 error로 분류할 가능성이 높아집니다.
+
+또한 basecall error를 정량화한 수치인 [phred score](https://hubert-bioinformatics.github.io/posts/Phred_Score/, "phred score")를 사용하여 sequencer error를 찾아낼 수 있습니다. 이 수치는 basecall이 틀렸을 확률 e에 대해 $-10log_{10}$을 대입한 값을 의미합니다. 10, 20, 30, 40 값이 각각 basecall 틀렸을 확률 10%, 1%, 0.1% 0.01%를 의미합니다.
 
 ## &nbsp;&nbsp;1st Generation Sequencing: Sanger Sequencing
 ***
