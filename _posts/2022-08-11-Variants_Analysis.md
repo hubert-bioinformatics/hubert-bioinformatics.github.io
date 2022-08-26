@@ -9,7 +9,7 @@ tags: [BI,bioinformatics,next generation sequencing,variant,calling]
 img_path: /assets/img/post/
 ---
 
-## 유전자 변이의 종류
+## Variants Types
 ***
 
 DNA 서열에서 다양한 종류의 변이가 나타날 수 있으며, 일부 변이는 암, 유전성 질환과 연관되어 있습니다.
@@ -61,10 +61,10 @@ https://medlineplus.gov/genetics/understanding/mutationsanddisorders/possiblemut
 <br><br>
 
 
-## NGS Variants Error
+## Variants Error
 ***
-![Post-Image](Variant-error.png)
-_NGS Variants Error<br>
+![Post-Image](Variants-error.png)
+_Variants Error<br>
 https://www.edwith.org/ngs-data-variation/lecture/1382349?isDesc=false_
 <br><br>
 
@@ -75,18 +75,41 @@ Sequencer error를 제거하기 위해서 특정 region을 여러 번 반복해�
 
 또한 basecall error를 정량화한 수치인 [phred score](https://hubert-bioinformatics.github.io/posts/Phred_Score/, "phred score")를 사용하여 sequencer error를 찾아낼 수 있습니다. 이 수치는 basecall이 틀렸을 확률 e에 대해 $-10log_{10}$을 대입한 값을 의미합니다. 10, 20, 30, 40 값이 각각 basecall 틀렸을 확률 10%, 1%, 0.1% 0.01%를 의미합니다.
 
-## &nbsp;&nbsp;1st Generation Sequencing: Sanger Sequencing
-***
-
-![Post-Image](SEQUENCING-sanger.jpg)
-_Sanger Sequencing_
+Mapping error를 정량화한 수치인 MapQ를 사용하여 mapping error를 가늠해 볼 수 있습니다. 마찬가지로 mapping이 틀렸을 확률 e에 대해 $-10log_{10}$을 대입한 값을 의미합니다. 예를 들어 하나의 read가 여러 곳에 mapping 될 수 있다면 e가 증가하는 등 여러가지 근거에 기반하여 MapQ를 계산합니다.
 <br><br>
 
 
- Sanger sequencing은 1977년 Frederick Sanger와 동료들에 의해 개발된 sequencing 입니다. ddNTP(Dideoxynucleotide TriPhosphate)의 선택적 결합에 의해 DNA 복제가 종료되는 원리를 사용하여 base sequence를 확인합니다.
+## Variants Calling
+***
 
- 우선 baseq sequence를 알고자 하는 template(single strand) DNA를 준비합니다. DNA elongation에 필요한 DNA primer도 준비합니다. DNA polymerase와 함께 dNTP, ddNTP가 담긴 tube에 준비물들을 넣으면 랜덤하게 길이가 다른 DNA fragment가 생성됩니다. dNTP가 결합하면 elongation이 계속 진행되지만, ddNTP가 결합하면 elongation을 이어갈 hydroxyl group(-OH)이 없으므로 반응은 종결됩니다. 마지막으로 gel electrophoresis(전기영동)로 DNA fragment를 내려주면 길이에 따라 band가 뜨고 base sequence를 확인할 수 있습니다.
- <br><br>
+Variants error를 확인할 수 있는 수치들을 기반으로 sequencing 결과 관찰된 variants가 true positive인지 error인지 판단합니다. 아래와 같이 reference sequence가 T인 position에서 다섯 개의 read가 mapping된 상황을 가정해 봅니다. 네 개 read는 T, 한 개 read는 G이고 각각 basecall quality와 mapping quality가 표기되어 있습니다.
+<br><br>
+
+
+![Post-Image](Variants-genotyping.png)
+_Variants Calling<br>
+https://www.edwith.org/ngs-data-variation/lecture/1382349?isDesc=false_
+<br><br>
+
+
+사람의 genome은 diplod이므로 하나의 position에서 두 개의 allele이 존재합니다. A, T, C, G 네 개의 base가 있으므로 경우의 수를 따지면 총 16가지 조합이 가능합니다. Reference sequence와 동일할 때 A, 동일하지 않을 때 B라고 지칭하면 경우의 수는 4가지 조합으로 단순화 할 수 있습니다.
+<br><br>
+
+
+![Post-Image](Variants-genotyping2.png)
+_Simplify Genotyping<br>
+https://www.edwith.org/ngs-data-variation/lecture/1382349?isDesc=false_
+<br><br>
+
+
+다시 처음에 가정한 상황으로 돌아와서 genotyping을 단순화 했습니다. 이제 B가 true positive인지, 혹은 error로 인한 false positive인지 검증하는 단계입니다.
+<br><br>
+
+
+![Post-Image](Variants-genotyping3.png)
+_Simplify Genotyping<br>
+https://www.edwith.org/ngs-data-variation/lecture/1382349?isDesc=false_
+<br><br>
 
 
 ![Post-Image](SEQUENCING-ddNTP.jpg)
