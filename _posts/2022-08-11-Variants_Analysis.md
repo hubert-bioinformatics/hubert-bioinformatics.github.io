@@ -117,10 +117,9 @@ https://www.edwith.org/ngs-data-variation/lecture/1382349?isDesc=false_
 
 
 $$ Pr(G|D) = \frac{Pr(G,D)}{Pr(D)} = \frac{Pr(D|G)Pr(G)}{Pr(D)}$$
-<br><br>
 
 
-위 식에서 Pr(D|G)를 계산해 봅시다. 즉, genotype이 주어진 상태에서 data가 확인될 확률을 구하는 것입니다.
+위 식에서 $$Pr(D|G)$$를 계산해 봅시다. 즉, genotype이 주어진 상태에서 data가 확인될 확률을 구하는 것입니다.
 
 첫 번째 자리의 base는 'A'이며 base quality는 '+'입니다.
 
