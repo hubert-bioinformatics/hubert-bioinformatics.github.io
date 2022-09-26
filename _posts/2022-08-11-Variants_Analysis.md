@@ -112,17 +112,23 @@ https://www.edwith.org/ngs-data-variation/lecture/1382349?isDesc=false_
 <br><br>
 
 
-![Post-Image](SEQUENCING-ddNTP.jpg)
-_Dideoxynucleotide TriPhosphate_
+여기부터 확률 개념이 사용됩니다. 사람의 유전체는 diploid이므로 해당 위치의 genotype은 AA or AB or BB 중 하나가 될 수 있습니다. Pr(G=AA) or Pr(G=AB) or Pr(G=BB) 중 가장 확률이 높은 genotype으로 추론하는 것이 바람직 합니다. 이 과정에 sqeuncing data를 활용할 수 있습니다. 즉, data가 주어졌을 때 각 genotype을 얻을 수 있는 확률은 Pr(G=AA|D) or Pr(G=AB|D) or Pr(G=BB|D)로 계산할 수 있습니다. 확률을 바로 계산하기 어려우므로 bayes rule을 활용합니다.
 <br><br>
 
 
- dNTP(Deoxynucleotide TriPhosphate)와 달리 ddNTP(Dideoxynucleotide TriPhosphate)는 3' -H group만 있으므로 더이상 새로운 nucleotide와 결합하지 못하고 elongation 반응이 종결됩니다.
+$$ Pr(G|D) = \frac{Pr(G,D)}{Pr(D)} \ \frac{Pr(D|G)Pr(G)}{Pr(D)}$$
+<br><br>
 
- Sanger sequencing은 확인하고자 하는 부위를 PCR 증폭해야 하고, 한 번 반응할 때 확인 가능한 base 길이에 한계가 있습니다. 이런 단점을 극복하기 위해 NGS가 개발되었으며, 그 전까지 약 25년 동안 가장 널리 사용된 DNA sequencing 기술입니다.
 
- 오늘날 업계에서는 여전히 sanger sequencing을 사용합니다. 다만 전통적인 sanger sequencing에서 좀 더 개선된 automated sanger sequencing을 사용합니다. 원리는 똑같으나 base sequence 확인 과정을 자동화하여 소요 시간을 단축시킨 방식입니다. 주로 짧은 길이의 base seqeuence를 정확하게 확인하거나 NGS 결과를 검증할 목적으로 sanger sequencing을 사용합니다.
- <br><br>
+
+
+
+
+
+
+
+
+
 
 
 ## &nbsp;&nbsp;2nd Generation Sequencing: NGS
