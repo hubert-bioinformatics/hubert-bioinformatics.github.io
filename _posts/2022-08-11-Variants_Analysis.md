@@ -116,7 +116,7 @@ https://www.edwith.org/ngs-data-variation/lecture/1382349?isDesc=false_
 <br><br>
 
 
-$$ Pr(G|D) = \frac{Pr(G,D)}{Pr(D)} \ \frac{Pr(D|G)Pr(G)}{Pr(D)}$$
+$$ Pr(G|D) = \frac{Pr(G,D)}{Pr(D)} = \frac{Pr(D|G)Pr(G)}{Pr(D)}$$
 <br><br>
 
 
