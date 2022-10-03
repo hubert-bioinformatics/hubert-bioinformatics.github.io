@@ -85,7 +85,7 @@ https://www.edwith.org/single-cell/joinLectures/361836_
 Cell membrane이 lysis된 후 bead에 붙은 약 70만 개의 oligo와 함께 cDNA 합성이 진행됩니다. 이 때 Poly-A 부분이 poly(dT)에 binding하고 이후 UMI, 10x barcode가 차례로 상보적 sequence가 합성됩니다.
 <br><br>
 
-
+(18:39)
 
 <br><br>
 
