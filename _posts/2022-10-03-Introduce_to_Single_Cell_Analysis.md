@@ -85,12 +85,18 @@ https://www.edwith.org/single-cell/joinLectures/361836_
 Cell membrane이 lysis된 후 bead에 붙은 약 70만 개의 oligo와 함께 cDNA 합성이 진행됩니다. 이 때 Poly-A 부분이 poly(dT)에 binding하고 이후 UMI, 10x barcode가 차례로 상보적 sequence가 합성됩니다.
 <br><br>
 
-(18:39)
 
+![Post-Image](SC-int7.png)
+_10x Genomics Technique<br>
+https://www.edwith.org/single-cell/joinLectures/361836_
+<br><br>
+
+
+Barcode processing부터 기본분석 완료 후 expression analysis를 진행합니다. 이 때 'seurat' 프로그램을 사용하여 QC, normalization, PCA, tSNE, clustering 분석을 차례대로 진행합니다.
 <br><br>
 
 
 ## Take Home Message
 ***
 
-Single cell analysis의 원리와 활용 가능성에 대해 알아볼 수 있었습니다. 현재 업무에서 사용중인 genomics data와 disease, treatment와 연관된 database들이 scRNAseq 결과와 결합한다면 personalized medicine에 활용될 수 있음을 엿볼 수 있었습니다.
+Single cell analysis와 연관된 다양한 기술을 알아볼 수 있었습니다.
