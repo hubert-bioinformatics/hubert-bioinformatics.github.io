@@ -66,11 +66,43 @@ https://www.edwith.org/single-cell/lecture/1417886_
 <br><br>
 
 
-아
+## Single Cell Data의 구조와 형식
+***
 
+![Post-Image](SC-pre5.png)
+_Basic Single Cell Analysis Workflow<br>
+https://www.edwith.org/single-cell/lecture/1417886_
+<br><br>
+
+
+기본적인 single cell analysis 과정은 다음과 같습니다. Droplet-based microfludics와 같은 방식으로 single cell을 분리한 다음 sequencing을 통해 amplifying 과정을 진행합니다. 마지막으로 statistical/algorithmical mining을 진행하여 각 cell이 지니는 의미를 파악합니다.
+<br><br>
+
+
+![Post-Image](SC-pre6.png)
+_10x Genomics<br>
+https://www.edwith.org/single-cell/lecture/1417886_
+<br><br>
+
+
+10x genomics사의 commercial service를 많이 사용하고 있습니다. 하나의 droplet에 single cell 한 개가 들어가도록 조정하고, 10x barcode와 UMI를 사용하여 transcript의 양을 확인하고 분석합니다.
+<br><br>
+
+
+## Single Cell Data의 전분석 과정
+***
+
+![Post-Image](SC-pre7.png)
+_Seurat R Package<br>
+https://www.edwith.org/single-cell/lecture/1417886_
+<br><br>
+
+
+10x genomics에서도 sequencing 결과 분석에 Seurat R package를 사용하도록 권고하고 있습니다. 위와 같은 과정으로 분석을 진행합니다.
+<br><br>
 
 
 ## Take Home Message
 ***
 
-Single cell analysis와 연관된 다양한 기술을 알아볼 수 있었습니다.
+Single cell analysis가 지닌 의의와 전반적인 분석 과정에 대해 알아볼 수 있었습니다.
