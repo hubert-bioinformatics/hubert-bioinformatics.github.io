@@ -91,13 +91,13 @@ https://doi.org/10.1093/bioinformatics/bts053_
 ## Somatic Mutation Analysis: MuTect
 ***
 
-![Post-Image](Variants-joingsnvmix1.png)
-_JointSNVMix<br>
+![Post-Image](Variants-mutect.png)
+_MuTect2<br>
 https://doi.org/10.1093/bioinformatics/bts053_
 <br><br>
 
 
-Un
+MuTect2는 
 
 
 
