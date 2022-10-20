@@ -97,15 +97,46 @@ https://doi.org/10.1093/bioinformatics/bts053_
 <br><br>
 
 
-MuTect2는 
+MuTect2는 Broad Institute에서 개발한 somatic variants caller입니다. Baysian classifier를 사용하며 대상 position에서 variant가 없다고 가정($M_{0}$)하고 구한 확률과 varinat가 있다고 가정($M_{f}^{m}$)하고 구한 확률을 비교하여 더 가능성이 높은 쪽을 택하는 방식입니다. 이후에 다양한 방식의 variant filters를 거쳐 FP를 제거하고, normal 사람들을 sequencing하여 얻은 변이(MAF)를 제거한 뒤 candidate somatic mutations를 추립니다.
+br><br>
 
 
+## 저빈도 변이와 모자이크 변이
+***
+
+![Post-Image](Variants-mosaic.png)
+_Mosaic Variants<br>
+https://doi.org/10.1093/bioinformatics/bts053_
+<br><br>
 
 
+Mosaic은 한 개체 또는 한 지역 내에 서로 다른 유전형이 함께 공존하는 것을 의미합니다. 비교적 이른 시기에 발생한 mutation은 많은 세포가 mutation을 공유하게되고, 비교적 늦은 시기에 발생한 mutation은 상대적으로 일부 세포만 mutation을 공유하게 됩니다.
+<br><br>
 
+
+![Post-Image](Variants-NIPT.png)
+_Liquid Biopsy<br>
+https://doi.org/10.1093/bioinformatics/bts053_
+<br><br>
+
+
+혈액 내 미세하게 떠다니는 DNA를 뽑아서 sequencing하고 mutations를 확인하는 기술입니다. 일례로 산모의 혈액에는 태아의 DNA가 떠다니는데 이를 뽑아서 genotype을 확인하여 태아의 건강을 확인합니다.
+<br><br>
+
+
+![Post-Image](Variants-UMI.png)
+_Unique Molecular Identifier<br>
+https://doi.org/10.1093/bioinformatics/bts053_
+<br><br>
+
+
+저빈도 변이를 calling할 때 발생하는 error들을 제거하기 위해 UMI를 사용합니다. 원본 DNA fragment마다 고유한 index를 붙이고, duplicate를 제거할 때 동일한 UMI를 가진 duplicate들만 모아서 PCR error로 추정되는 mutation은 제거합니다.
+
+이 밖에도 liquid biopsy는 variant 찾는 것이 매우 어려우므로 다양한 기술이 개발 중에 있습니다.
+<br><br>
 
 
 ## Take Home Message
 ***
 
-NGS DNA variants 종류와 genotyping logic을 이해할 수 있었습니다.
+Somatic variants call 과정과 저빈도, 모자이크 변이에 대해 이해할 수 있었습니다.
