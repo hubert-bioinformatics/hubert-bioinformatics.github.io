@@ -47,83 +47,83 @@ Cancer cell은 replication 중 발생하는 mismatch error를 복구하거나 �
 1. Tumor Mutation Burden (TMB)
     
     Cacner cell에 존재하는 non-synonymous somatic mutations 수를 의미합니다. Cancer type마다 서로 다른 TMB 경향을 보이는 것을 알 수 있습니다.
-<br><br>
+    <br><br>
     
 
-![Post-Image](Variants-cancer3.png)
-_Tumor Mutation Burden<br>
-https://www.edwith.org/ngs-data-variation/joinLectures/356132_
-<br><br>
+    ![Post-Image](Variants-cancer3.png)
+    _Tumor Mutation Burden<br>
+    https://www.edwith.org/ngs-data-variation/joinLectures/356132_
+    <br><br>
 
 
 2. Microsatellite Instability (MSI)
 
     Impaired DNA mismatch repair (MMR)의 결과로 발생하는 genetic hypermutability 현상을 의미합니다. 아래 그림과 같이 repeat 영역에서 replication이 진행될 때 1base 이상 차이가 날 수 있는데 이로 인하여 mutation이 발생하는 case 입니다.
-<br><br>
+    <br><br>
 
 
-![Post-Image](Variants-cancer4.png)
-_Microsatellite Instability<br>
-https://www.edwith.org/ngs-data-variation/joinLectures/356132_
-<br><br>
+    ![Post-Image](Variants-cancer4.png)
+    _Microsatellite Instability<br>
+    https://www.edwith.org/ngs-data-variation/joinLectures/356132_
+    <br><br>
 
 
 3. Mutational Signature
 
     Mutation이 발생한 pattern을 의미하며, 환자의 분류, 치료에 사용할 수 있는 지표입니다. 보통 특정 position에서 발생할 수 있는 SNP 경우의 수(6 cases: C>A, C>G, C>T, T>A, T>C, T>G)와 1bp 앞뒤로 발생할 수 있는 각각 4 cases를 종합하여 총 96 cases (=6*4*4)가 존재합니다.
-<br><br>
+    <br><br>
 
 
-![Post-Image](Variants-cancer5.png)
-_Mutational Signature<br>
-https://www.edwith.org/ngs-data-variation/joinLectures/356132_
-<br><br>
+    ![Post-Image](Variants-cancer5.png)
+    _Mutational Signature<br>
+    https://www.edwith.org/ngs-data-variation/joinLectures/356132_
+    <br><br>
 
 
     이러한 mutational signature의 상대적인 pattern을 연구하고 어떤 mutagen에 의해 발생했는지 연구하여 21가지 pattern을 발표했습니다.
-<br><br>
+    <br><br>
 
 
-![Post-Image](Variants-cancer6.png)
-_Mutational Signature<br>
-https://www.edwith.org/ngs-data-variation/joinLectures/356132_
-<br><br>
+    ![Post-Image](Variants-cancer6.png)
+    _Mutational Signature<br>
+    https://www.edwith.org/ngs-data-variation/joinLectures/356132_
+    <br><br>
 
 
 4. Mutation Landscape
 
     Mutation의 종류와 어떤 gene에서 발생했는지, 그리고 frequency 등을 한 번에 볼 수 있는 plot 입니다.
-<br><br>
+    <br><br>
 
 
-![Post-Image](Variants-cancer7.png)
-_Mutational Signature<br>
-https://www.edwith.org/ngs-data-variation/joinLectures/356132_
-<br><br>
+    ![Post-Image](Variants-cancer7.png)
+    _Mutational Signature<br>
+    https://www.edwith.org/ngs-data-variation/joinLectures/356132_
+    <br><br>
 
 
 5. Hotspot Positions (lollipop plot)
 
     Mutations가 모여있는 hotspot position을 확인할 수 있는 lollipop plot 입니다. Mutation이 gene의 어느 곳에 몰려있는지, 혹은 넓게 흝어져 있는지 한 눈에 파악할 수 있습니다.
-<br><br>
+    <br><br>
 
 
-![Post-Image](Variants-cancer8.png)
-_Mutational Signature<br>
-https://www.edwith.org/ngs-data-variation/joinLectures/356132_
-<br><br>
+    ![Post-Image](Variants-cancer8.png)
+    _Mutational Signature<br>
+    https://www.edwith.org/ngs-data-variation/joinLectures/356132_
+    <br><br>
 
 
 6. Mutation Specificity
 
     각 pathoway와 연관된 gene에서 발생하는 mutation 비율을 정리한 plot 입니다. Red box처럼 다양한 cancer type에서 발견되는 pathway가 있는가하면, blue box처럼 특정 cancer type에서 발견되는 pathway가 있음을 확인할 수 있습니다.
-<br><br>
+    <br><br>
 
 
-![Post-Image](Variants-cancer9.png)
-_Mutational Signature<br>
-https://www.edwith.org/ngs-data-variation/joinLectures/356132_
-<br><br>
+    ![Post-Image](Variants-cancer9.png)
+    _Mutational Signature<br>
+    https://www.edwith.org/ngs-data-variation/joinLectures/356132_
+    <br><br>
 
 
 ## Take Home Message

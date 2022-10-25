@@ -42,10 +42,10 @@ Variant calling 과정에 다양한 종류의 artifacts가 나타납니다. Sequ
     <br><br>
 
 
-![Post-Image](Variants-swap1.png)
-_Check Sample Swap by Calling Germline Variants<br>
-https://www.edwith.org/ngs-data-variation/joinLectures/356132_
-<br><br>
+    ![Post-Image](Variants-swap1.png)
+    _Check Sample Swap by Calling Germline Variants<br>
+    https://www.edwith.org/ngs-data-variation/joinLectures/356132_
+    <br><br>
 
 
     2. Sample Contamination
@@ -78,7 +78,7 @@ https://www.edwith.org/ngs-data-variation/joinLectures/356132_
 
     1. Ion-Torrent: homopolymer 영역에서 정확한 base calling이 어렵습니다.
     2. 해결) ion-torrent에 특화된 analysis tool을 활용하여 해결할 수 있습니다.
-<br><br>
+    <br><br>
 
 
 ## Take Home Message
