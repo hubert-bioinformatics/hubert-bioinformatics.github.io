@@ -35,26 +35,23 @@ Variant calling 과정에 다양한 종류의 artifacts가 나타납니다. Sequ
 1. Artifacts in sample handling
 
     1. Sample Swap
-    
         1. 환자 A, B의 시료가 서로 뒤바뀌는 case로 생각보다 빈번하게 일어납니다.
         2. 해결1) Tumor, matched normal을 함께 가지고 있는 경우, 두 시료로부터 germline variants를 calling한 뒤 matrix를 그려보면 sample swap을 확인할 수 있습니다.
         3. 해결2) HYSYS, NGSCheckMate, BAMixChecker 등의 이미 개발된 tool을 활용하여 sample swap을 확인할 수 있습니다.
-    <br><br>
+        <br><br>
 
 
-    ![Post-Image](Variants-swap1.png)
-    _Check Sample Swap by Calling Germline Variants<br>
-    https://www.edwith.org/ngs-data-variation/joinLectures/356132_
-    <br><br>
+        ![Post-Image](Variants-swap1.png)
+        _Check Sample Swap by Calling Germline Variants<br>
+        https://www.edwith.org/ngs-data-variation/joinLectures/356132_
+        <br><br>
 
 
     2. Sample Contamination
-
         1. Human sample이 다른 종과 뒤섞인 case입니다.
         2. 해결) CONTEST 등의 이미 개발된 tool을 활용하여 sample contamination을 확인할 수 있습니다.
 
     3. DNA damage
-
         1. DNA는 보통 paraffin block에 보관하는데, 이 때 cytosine이 deamination 과정을 거쳐 uracil로 변하는 damage를 입게 됩니다.
         2. Paraffin block으로 오래 보관한 시료일수록 C>T false positive variant가 많이 나타남을 알 수 있습니다.
         3. 해결) 이미 개발된 tool을 활용하여 DNA damage false positive variant를 제거할 수 있습니다.
@@ -62,12 +59,10 @@ Variant calling 과정에 다양한 종류의 artifacts가 나타납니다. Sequ
 2. Artifacts in library preparation
 
     1. DNA damage by OxoG
-
         1. DNA capture 과정에서 OxoG(G>T, C>A variant) false positive variant가 발생합니다.
         2. 해결) 이미 개발된 tool을 활용하여 OxoG false positive variant를 제거할 수 있습니다.
 
-    2. PCR-induced error
-        
+    2. PCR-induced error        
         1. PCR 과정에서 false positive variant가 발생합니다.
 
 3. Low frequency variants
