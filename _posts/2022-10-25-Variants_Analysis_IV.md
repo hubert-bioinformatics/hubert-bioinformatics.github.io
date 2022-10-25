@@ -39,6 +39,14 @@ Variant calling 과정에 다양한 종류의 artifacts가 나타납니다. Sequ
         1. 환자 A, B의 시료가 서로 뒤바뀌는 case로 생각보다 빈번하게 일어납니다.
         2. 해결1) Tumor, matched normal을 함께 가지고 있는 경우, 두 시료로부터 germline variants를 calling한 뒤 matrix를 그려보면 sample swap을 확인할 수 있습니다.
         3. 해결2) HYSYS, NGSCheckMate, BAMixChecker 등의 이미 개발된 tool을 활용하여 sample swap을 확인할 수 있습니다.
+        <br><br>
+
+
+![Post-Image](Variants-swap1.png)
+_Check Sample Swap by Calling Germline Variants<br>
+https://www.edwith.org/ngs-data-variation/joinLectures/356132_
+<br><br>
+
 
     2. Sample Contamination
 
@@ -61,26 +69,19 @@ Variant calling 과정에 다양한 종류의 artifacts가 나타납니다. Sequ
     2. PCR-induced error
         
         1. PCR 과정에서 false positive variant가 발생합니다.
-<br><br>
 
+3. Low frequency variants
 
-![Post-Image](Variants-swap1.png)
-_Check Sample Swap by Calling Germline Variants<br>
-https://www.edwith.org/ngs-data-variation/joinLectures/356132_
-<br><br>
+    1. Tumor와 normal이 섞여 있는 상태에서 low allele frequency variant calling은 매우 도전적인 과제입니다.
 
+4. Platform specific errors
 
-SV 검출은 어려운 과정이므로 아래와 같이 여러 가지 방법(알고리즘)을 사용하여 결과를 도출하는 것이 좋습니다.
-<br><br>
-
-
-![Post-Image](Variants-method.png)
-_Methods for SV Detection<br>
-https://www.edwith.org/ngs-data-variation/joinLectures/356132_
+    1. Ion-Torrent: homopolymer 영역에서 정확한 base calling이 어렵습니다.
+    2. 해결) ion-torrent에 특화된 analysis tool을 활용하여 해결할 수 있습니다.
 <br><br>
 
 
 ## Take Home Message
 ***
 
-NGS를 이용한 SV 검출은 read depth, split reads, assembly 등의 정보를 활용하여 가능함을 알 수 있었습니다.
+NGS variant calling은 단순한 pipeline 실행이 아닙니다. Human error, DNA damage, contamination, platform specific error 등 다양한 위험 요소가 존재합니다. 특히 환자의 genome analysis와 같은 실수가 용납되지 않는 analysis에서는 이러한 error를 고려한 pipeline 구성이 필수적입니다.
