@@ -104,15 +104,12 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
     데이터 모델의 종류와 장단점은 다음과 같습니다.<br>
 ![Post-Image](DBMS-DB6.png)
 _데이터 모델 종류<br>
-http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
-<br><br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
 
 
 ![Post-Image](DBMS-DB7.png)
 _데이터 모델 장단점<br>
-http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
-<br><br>
-
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
 
 3. 관계 모델
 
