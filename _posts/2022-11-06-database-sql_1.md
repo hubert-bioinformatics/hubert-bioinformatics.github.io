@@ -122,18 +122,28 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
    4. 한 relation을 구성하는 tuple과 attribute 사이에는 순서가 없습니다.<br><br>
 
 
-## 관계형 모델 개요
+## 관계형 모델과 SQL
 ***
-1. 데이터 모델링<br>
-![Post-Image](DBMS-DB4.png)
-_데이터의 세계<br>
-http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
-<br><br>
+1. 데이터베이스 언어<br>
+![Post-Image](DBMS-DB10.png)
+_데이터베이스 언어<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 
-
-    데
+데이터베이스 언어는 데이터베이스를 정의하고 접근하기 위한 목적으로 만들어진 언어입니다. 데이터 정의어, 데이터 조작어, 데이터 제어어로 나뉩니다.   
+   1. 데이터 정의어(Data Definition Language)
+      1. 데이터베이스를 정의하거나 그 정의를 수정할 목적으로 사용하는 언어입니다.
+      2. 데이터베이스 스키마를 컴퓨터가 이해할 수 있게끔 기술하는 데 사용합니다.
+      3. 데이터베이스 관리자나 데이터베이스 설계자가 주로 사용합니다.
+      4. DDL로 기술된 스키마는 통상 DDL 컴파일러가 컴파일하여 데이터 사전이나 시스템 카탈로그에 저장하여 놓고 필요한 경우에 시스템이 활용합니다.
+      5. 예) 테이블 생성, 변경 등
+   2. 데이터 조작어(Data Manipulation Language)
+      1. 사용자로 하여금 데이터를 처리할 수 있게 하는 도구입니다.
+      2. 사용자(응용프로그램)와 DBMS 간의 인터페이스를 제공합니다.
+      3. 예) 데이터의 검색, 삽입, 삭제, 변경 등
+   3. 데이터 제어어(Data Control Language)
+      1. 여러 사용자가 데이터베이스를 올바르게 공용하고, 정확하게 유지하기 위해 관리 및 통제 기능을 목적으로 사용하는 언어입니다.
+      2. 주로 데이터 관리 목적으로 데이터베이스 관리자가 사용합니다.   
 
 ## Take Home Message
-***
-
-Cancer genome analysis에 NGS를 적용하면 많은 정보를 알아낼 수 있습니다. Cancer related mutations type, 수, 특성, 발병 원인, subgroup, 중요한 gene의 mutation 등의 정보가 해당합니다. 
+***   
+관계형 모델에 대한 전반적인 개요 내용을 살펴볼 수 있었습니다.
