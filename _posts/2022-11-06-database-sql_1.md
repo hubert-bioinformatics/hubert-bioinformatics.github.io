@@ -84,13 +84,11 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
 1. 데이터 모델링<br>
 ![Post-Image](DBMS-DB4.png)
 _데이터의 세계<br>
-http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
-<br><br>
-
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
 
     데이터 모델링이란 정보시스템을 구축하기 위해, 어떤 데이터가 존재하는지 또는 업무가 필요로 하는 정보는 무엇인지를 분석/표현하는 방법입니다. 또한 고객으로부터 데이터에 대한 요구사항을 파악하고, 프로젝트에 참여하는 분석자, 설계자, 개발자, 사용자 간의 효율적인 의사 소통을 위해 필수적인 과정입니다. 신규 또는 개선 시스템 개발을 위한 기초가 됩니다.
-
-    데이터 모델링 단계는 아래와 같습니다.<br>
+    
+    데이터 모델링 단계는 아래와 같습니다.
 ![Post-Image](DBMS-DB5.png)
 _데이터 모델링 단계<br>
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
@@ -118,15 +116,13 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
     관계 모델에서는 데이터베이스를 relation(table)의 집합으로 정의합니다. 즉, table 형태로 데이터를 저장하는 것입니다.<br>
 ![Post-Image](DBMS-DB8.png)
 _관계 모델 구조<br>
-http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
-<br><br>
-
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
 
 ![Post-Image](DBMS-DB9.png)
 _관계 모델 용어 정의<br>
-http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
-<br><br>
-    관계 모델의 특징은 다음과 같습니다.<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
+
+관계 모델의 특징은 다음과 같습니다.
    1. Set theory(집합이론)에 기초합니다.
    2. 한 relation에 포함된 tuple들은 모두 상이합니다.
    3. 모든 attribute 값은 atomic value(원자 값)입니다.
