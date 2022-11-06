@@ -114,15 +114,34 @@ _UNIQUE 제약조건<br>
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    7. 'FOREIGN KEY' 제약조건 - 테이블 정의 시   
 ![Post-Image](DBMS-DB29.png)
-_UNIQUE 제약조건<br>
+_FOREIGN KEY' 제약조건 - 테이블 정의 시<br>
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    8. 'FOREIGN KEY' 제약조건 - 제약조건 추가   
 ![Post-Image](DBMS-DB30.png)
-_UNIQUE 제약조건<br>
+_FOREIGN KEY' 제약조건 - 제약조건 추가<br>
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 3. SQL 테이블 변경
-
+   1. 테이블 삭제 명령어   
+![Post-Image](DBMS-DB31.png)
+_테이블 삭제 명령어<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   2. 테이블 변경 명령어   
+![Post-Image](DBMS-DB32.png)
+_테이블 변경 명령어<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   3. 컬럼의 추가   
+![Post-Image](DBMS-DB33.png)
+_컬럼의 추가<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   4. 컬럼의 수정   
+![Post-Image](DBMS-DB34.png)
+_컬럼의 수정<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   5. 컬럼의 삭제
+![Post-Image](DBMS-DB35.png)
+_컬럼의 삭제<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 
 ## Take Home Message
 ***   
-관계형 모델에 대한 전반적인 개요 내용을 살펴볼 수 있었습니다.
+SQL 데이터베이스와 테이블의 생성/수정/삭제 등 다루는 법을 알 수 있었습니다.
