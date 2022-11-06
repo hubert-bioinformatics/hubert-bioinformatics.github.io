@@ -91,23 +91,18 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
     데이터 모델링 단계는 아래와 같습니다.
 ![Post-Image](DBMS-DB5.png)
 _데이터 모델링 단계<br>
-http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
-<br><br>
-
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 
 2. 데이터 모델
 
-    데이터 모델이란 현실 세계를 데이터베이스로 표현하는 과정에서 데이터베이스의 구조를 개념적/논리적으로 표현하기 위해 사용되는 도구입니다.
-
-    데이터 모델의 종류와 장단점은 다음과 같습니다.<br>
+    데이터 모델이란 현실 세계를 데이터베이스로 표현하는 과정에서 데이터베이스의 구조를 개념적/논리적으로 표현하기 위해 사용되는 도구입니다.   
+    데이터 모델의 종류와 장단점은 다음과 같습니다.   
 ![Post-Image](DBMS-DB6.png)
 _데이터 모델 종류<br>
-http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
-
-
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 ![Post-Image](DBMS-DB7.png)
 _데이터 모델 장단점<br>
-http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 
 3. 관계 모델
 
@@ -116,12 +111,10 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
     관계 모델에서는 데이터베이스를 relation(table)의 집합으로 정의합니다. 즉, table 형태로 데이터를 저장하는 것입니다.<br>
 ![Post-Image](DBMS-DB8.png)
 _관계 모델 구조<br>
-http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
-
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 ![Post-Image](DBMS-DB9.png)
 _관계 모델 용어 정의<br>
-http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
-
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 관계 모델의 특징은 다음과 같습니다.
    1. Set theory(집합이론)에 기초합니다.
    2. 한 relation에 포함된 tuple들은 모두 상이합니다.
