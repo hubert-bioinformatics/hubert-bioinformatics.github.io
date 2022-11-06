@@ -1,0 +1,128 @@
+---
+layout: post
+title: 데이터 정의
+date: 2022-11-06 21:05:13 +0900
+published: true
+math: true
+categories: [Programming, Database]
+tags: [programming,database,relational model,SQL]
+img_path: /assets/img/post/
+---
+
+본 post는 K-MOOC 고려사이버대학교(매치업) 이건길 교수님의 [SQL 정형 데이터 분석 강의](http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/, "SQL 정형 데이터 분석 강의")를 정리한 내용입니다.
+
+
+## Intro
+***   
+SQL의 개념을 이해하고 설명할 수 있습니다. 데이터베이스를 정의하여 활용할 수 있습니다. 테이블을 정의하여 활용할 수 있습니다.   
+<br>
+
+
+## SQL 개요
+***
+1. SQL 정의  
+   1. SQL(Structured Query Language)이란?
+      1. 데이터베이스에 접근할 수 있는 데이터베이스 언어입니다.
+      2. 1974년 IBM 연구소에서 발표한 SEQUEL(Strructured English QUEry Language)에서 유래했습니다.
+      3. **관계 대수와 관계 해석을 기초로 한 고급 데이터 언어**입니다.
+      4. MySQL, DB2, SQL Server, ORACLE, INFORMIX, SYBASE 등 관계형데이터베이스에서 모두 사용합니다.
+   2. SQL 발전과정   
+![Post-Image](DBMS-DB11.png)
+_SQL 발전과정<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   3. SQL 특징   
+![Post-Image](DBMS-DB12.png)
+_SQL 특징<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   4. 관계 연산과 SQL   
+![Post-Image](DBMS-DB13.png)
+_관계 연산과 SQL<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+2. SQL 명령어
+   1. SQL 명령어 종류   
+![Post-Image](DBMS-DB14.png)
+_SQL 명령어 종류<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+![Post-Image](DBMS-DB15.png)
+_SQL 명령어 예<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+
+## 데이터베이스 정의
+***
+1. 데이터 저장 구조  
+   1. 관계형 DBMS   
+![Post-Image](DBMS-DB16.png)
+_관계형 DBMS<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   2. ORACLE 데이터 저장 구조   
+      1. 무결성을 강조하는 구조로 금융권에서 많이 사용합니다.
+      2. MySQL/MariaDB 저장 구조도 이와 유사합니다.   
+![Post-Image](DBMS-DB17.png)
+_ORACLE 데이터 저장 구조<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_      
+![Post-Image](DBMS-DB18.png)
+_ORACLE 데이터 저장 구조<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+2. SQL을 이용한 데이터베이스 생성   
+   1. CREATE DATABASE 명령어 - SQL Server, MySQL/MariaDB   
+![Post-Image](DBMS-DB19.png)
+_SQL 명령어 종류<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_      
+
+## 테이블 정의
+***
+1. SQL 테이블 정의  
+   1. 테이블 구조   
+![Post-Image](DBMS-DB20.png)
+_SQL 테이블 구조<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   2. CREATE TABLE 명령어   
+![Post-Image](DBMS-DB21.png)
+_CREATE TABLE 명령어 - 형식<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_      
+![Post-Image](DBMS-DB22.png)
+_CREATE TABLE 명령어 - 컬럼 제약<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+![Post-Image](DBMS-DB23.png)
+_CREATE TABLE 명령어 - 테이블 제약<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+2. 제약조건   
+   1. 정의   
+      1. 데이터베이스 무결성을 구현하기 위한 도구입니다.
+      2. 컬럼이나 테이블에 저장되는 값이 준수해야 할 조건을 명시한 것입니다.
+      3. 'NOT NULL', 'PRIMARY KEY', 'UNIQUE', 'DEFAULT', 'CHECK', 'FOREIGN KEY'가 존재합니다.
+   2. 'PRIMARY KEY' 제약조건   
+![Post-Image](DBMS-DB24.png)
+_PRIMARY KEY 제약조건<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   3. 'NOT NULL' 제약조건   
+![Post-Image](DBMS-DB25.png)
+_NOT NULL 제약조건<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   4. 'DEFAULT' 제약조건   
+![Post-Image](DBMS-DB26.png)
+_DEFAULT 제약조건<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   5. 'CHECK' 제약조건   
+      1. 'CKECK' 제약조건을 사용하면 데이터의 무결성을 지킬 수 있지만 작업의 로드가 높아질 수 있는 단점이 있습니다.   
+![Post-Image](DBMS-DB27.png)
+_CHECK 제약조건<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   6. 'UNIQUE' 제약조건   
+![Post-Image](DBMS-DB28.png)
+_UNIQUE 제약조건<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   7. 'FOREIGN KEY' 제약조건 - 테이블 정의 시   
+![Post-Image](DBMS-DB29.png)
+_UNIQUE 제약조건<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+   8. 'FOREIGN KEY' 제약조건 - 제약조건 추가   
+![Post-Image](DBMS-DB30.png)
+_UNIQUE 제약조건<br>
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
+3. SQL 테이블 변경
+
+
+## Take Home Message
+***   
+관계형 모델에 대한 전반적인 개요 내용을 살펴볼 수 있었습니다.
