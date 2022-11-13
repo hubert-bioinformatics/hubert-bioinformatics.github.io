@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SQL 기초
+title: Basic SQL
 date: 2022-11-13 18:05:01 +0900
 published: true
 math: true

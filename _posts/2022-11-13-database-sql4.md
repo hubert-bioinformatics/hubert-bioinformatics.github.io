@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sub-query와 JOIN, UNION
+title: Sub-query and JOIN, UNION
 date: 2022-11-13 21:08:12 +0900
 published: true
 math: true
