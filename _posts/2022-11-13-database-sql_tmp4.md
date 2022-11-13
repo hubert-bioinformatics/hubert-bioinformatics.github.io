@@ -47,20 +47,20 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
    1. 연산자의 역할  
       1. SELECT문의 WHERE절은 조회하려는 데이터에 특정 조건을 부여할 목적으로 사용합니다.  
       2. 비교 연산자, SQL 연산자, 논리 연산자를 사용하여 조건식을 구성합니다.  
-      3. SELECT [DISTINCT] <컬럼리스트>
-      FROM <테이블 리스트>
-      [WHERE <조건>]
-      [GROPU BY <컬럼명>[HAVING <그룹 조건>]]
-      [ORDERED BY <컬럼명>[ASC | DESC]]  
+      3. SELECT [DISTINCT] \<컬럼리스트\>
+      FROM \<테이블 리스트\>
+      [WHERE \<조건\>]
+      [GROPU BY \<컬럼명\>[HAVING \<그룹 조건\>]]
+      [ORDERED BY \<컬럼명\>[ASC | DESC]]  
    2. 연산자의 종류  
 ![Post-Image](DBMS-DB41.png)
 _연산자의 종류<br>
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    3. 연습문제   
       1. 질의문) 연봉이 4000 이하인 사원들의 이름과 연봉, 부서번호를 검색하세요.(단순 비교 연산자)
-         1. SQL) SELECT ename, salary, dno FROM employee WHERE salary <= 4000;  
+         1. SQL) SELECT ename, salary, dno FROM employee WHERE salary \<= 4000;  
       2. 연봉이 4000 이상 5000 이하인 사원들의 이름과 연봉, 부서번호를 검색하세요.(BETWEEN a AND b)  
-         1. SQL) SELECT ename, salary, dno FROM employee WHERE salary >= 4000 AND salary <= 5000;  
+         1. SQL) SELECT ename, salary, dno FROM employee WHERE salary \>= 4000 AND salary \<= 5000;  
          2. SQL) SELECT ename, salary, dno FROM employee WHERE salary BETWEEN 4000 AND 5000;  
       3. 
 

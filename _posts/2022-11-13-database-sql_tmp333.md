@@ -29,7 +29,7 @@ _INSERT INTO 예시<br>
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    2. 데이터 삽입 확인   
       1. **SELECT 명령어**를 사용해서 테이블에 입력된 데이터를 확인합니다.
-      2. **SELECT * FROM [테이블명]**   
+      2. **SELECT * FROM \[테이블명\]**   
    
 ## 데이터 삭제/수정
 ***
@@ -87,7 +87,7 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
          2. SQL) SELECT *, mid+final '총정' FROM enrol WHERE co_num = 'IT111';   
 2. 조건검색  
    1. WHERE절
-      1. **SELECT <컬럼리스트> FROM <테이블리스트> WHERE <행검색조건>**
+      1. **SELECT \<컬럼리스트\> FROM \<테이블리스트\> WHERE \<행검색조건\>**
       2. 원하는 조건을 만족하는 행만을 검색하고자 하는 경우 **WHERE**절에 조건을 명시합니다.  
       3. WHERE절에는 조건식이 들어갑니다.  
       4. 조건식은 비교연산자와 논리연산자를 사용하여 구성합니다.  
@@ -95,7 +95,7 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
       1. 질의문) 경영학과(BZ)에 재학중인 학생의 이름과 연락처를 검색하세요.
          1. SQL) SELECT st_name '이름', st_phn_mlb '연락처' FROM student WHERE dept_id = 'BZ';  
    3. 조건식의 연결 1
-      1. **<조건식> 논리연산자 <조건식>**
+      1. **\<조건식\> 논리연산자 \<조건식\>**
       2. 논리연산자를 이용해서 두 개 이상의 컬럼에 대해 조건을 적용합니다.  
          1. NOT: 논리적 부정  
          2. AND: 논리곱. 연산 대상이 모두 참  
