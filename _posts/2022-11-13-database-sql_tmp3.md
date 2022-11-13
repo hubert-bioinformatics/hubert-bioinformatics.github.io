@@ -5,7 +5,7 @@ date: 2022-11-13 18:05:01 +0900
 published: true
 math: true
 categories: [Programming, Database]
-tags: [programming,database,SQL]
+tags: [programming,database,basicSQL]
 img_path: /assets/img/post/
 ---
 
