@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 데이터 정의
-date: 2022-11-13 10:14:52 +0900
+title: SQL 기초
+date: 2022-11-13 18:05:01 +0900
 published: true
 math: true
 categories: [Programming, Database]
