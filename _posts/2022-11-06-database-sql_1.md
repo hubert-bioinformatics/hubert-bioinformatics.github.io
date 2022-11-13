@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 관계형 모델
+title: Relational Model
 date: 2022-11-06 08:12:21 +0900
 published: true
 math: true

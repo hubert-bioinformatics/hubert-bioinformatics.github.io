@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 데이터 정의
+title: Definition of Data
 date: 2022-11-06 21:05:13 +0900
 published: true
 math: true
