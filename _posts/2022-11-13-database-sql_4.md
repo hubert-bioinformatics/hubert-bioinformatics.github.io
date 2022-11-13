@@ -65,7 +65,7 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
       2. 연봉이 4000 이상 5000 이하인 사원들의 이름과 연봉, 부서번호를 검색하세요.(BETWEEN a AND b)  
          1. SQL) SELECT ename, salary, dno FROM employee WHERE salary >= 4000 AND salary <= 5000;  
          2. SQL) SELECT ename, salary, dno FROM employee WHERE salary BETWEEN 4000 AND 5000;  
-      3.        
+      3. 
 
 ## Take Home Message
 ***   
