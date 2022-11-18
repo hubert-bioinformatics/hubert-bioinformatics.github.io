@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 데이터 정의
+title: Definition of Data
 date: 2022-11-06 21:05:13 +0900
 published: true
 math: true
 categories: [Programming, Database]
-tags: [programming,database,relational model,SQL]
+tags: [programming,database,relationalmodel,SQL]
 img_path: /assets/img/post/
 ---
 
@@ -21,7 +21,7 @@ SQL의 개념을 이해하고 설명할 수 있습니다. 데이터베이스를 
 ## SQL 개요
 ***
 1. SQL 정의  
-   1. SQL(Structured Query Language)이란?
+   1. SQL(Structured Query Language)이란? 
       1. 데이터베이스에 접근할 수 있는 데이터베이스 언어입니다.
       2. 1974년 IBM 연구소에서 발표한 SEQUEL(Strructured English QUEry Language)에서 유래했습니다.
       3. **관계 대수와 관계 해석을 기초로 한 고급 데이터 언어**입니다.
