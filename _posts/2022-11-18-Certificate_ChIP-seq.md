@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (EDWITH-KOBIC) ChIP-seq
-date: 2022-11-18 08:12:54 +0900
+date: 2022-11-18 08:12:55 +0900
 published: true
 categories: [Study, L-Certificate]
 tags: [certificate,NGS,ChIP-seq,KOBIC]
