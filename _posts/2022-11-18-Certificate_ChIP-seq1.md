@@ -11,6 +11,6 @@ img_path: /assets/img/post/
 ![Post-Image](CERTIFICATE-CHIP_seq.png)
 <br><br>
 
-[Lecture Info](www.edwith.org/ChIP-seq)
+[Lecture Info](https://www.edwith.org/ChIP-seq)
 <br><br>
 [Certificate](http://www.edwith.org/certificate/A20221118-795998?langCode=ko)
