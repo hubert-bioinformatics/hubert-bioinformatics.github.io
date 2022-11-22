@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Variants Analysis VI - Cancer Immunotherapy
+title: Transcriptome I - Introduction to Transcriptome
 date: 2022-11-10 07:58:52 +0900
 published: true
 math: true
