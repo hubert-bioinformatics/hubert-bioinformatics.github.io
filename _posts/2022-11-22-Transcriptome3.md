@@ -34,20 +34,89 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
 
 - 두 개의 data sets를 비교하는데 visualization은 중요합니다. Scatter plot을 그려보면 data integrity, outlieres 등을 파악하는데 도움이 됩니다.
 - Gene expression range는 gene별로 큰 차이가 나기때문에(매우 작은 양부터 매우 큰 양까지) log scale에서 비교하면 보기가 좋습니다.
-
-
-
-
-## Trimming
-***
-- Mapping 전 contaminated or low-quality reads를 제거하는 과정입니다.
-- 사용 가능한 프로그램으로 Sickle, FASTX-Toolkit, Cutadapt, Trimmomatic 등이 있습니다.
 <br><br>
 
 
-![Post-Image](transcriptome-fig8.png)
-_Reads Trimming<br>
+![Post-Image](transcriptome-fig26.png)
+_Visual Comparison of Two data sets - MA plot<br>
 https://www.edwith.org/transcriptome/lecture/1382678_<br>
+
+- MA plot으로도 두 개의 data set을 비교해서 볼 수 있습니다.
+- x axis는 average express 값을 의미합니다. 즉, 오른쪽으로 갈수록 많이 expression 된다고 해석할 수 있습니다.
+- y axis는 fold-change 값을 의미합니다. 즉, 위로 올라갈수록 E1이 E2에 비해 많이 expression 된다고 해석할 수 있습니다.
+<br><br>
+
+
+## Differential Expression
+***
+- Differentially Expressed Genes(DEGs)는 다양한 조건에서 gene expression이 증가 혹은 감소하는 양상을 확인하는 방법입니다.
+    - normal vs. tumor
+    - treated vs. untreated
+    - time series profiles
+<br><br>
+
+
+![Post-Image](transcriptome-fig27.png)
+_Fold change does not take variation into account<br>
+https://www.edwith.org/transcriptome/lecture/1382678_<br>
+
+- 그림에서 두 개 genes에 대해 평균은 각각 같지만 expression 분포가 세 가지 유형으로 나뉘는 것을 확인할 수 있습니다.
+    - low variability: variable이 작고 두 개 genes 사이 express에 명확한 차이가 있음을 확인할 수 있습니다.
+    - high variability: variable이 크고 두 개 genes 사이 express에 거의 차이가 없음을 확인할 수 있습니다.
+    <br><br>
+
+
+![Post-Image](transcriptome-fig28.png)
+_Hypothesis Testing and p-value<br>
+https://www.edwith.org/transcriptome/lecture/1382678_<br>
+
+- Normal과 tumor 사이 mean 값의 차이가 있는지 없는지 확인하기 위해 hypothesis testing을 진행합니다. 두 mead 값의 차이가 없다는 null hypothesis를 세우고 p-value(오른쪽 그래프의 녹색 면적)를 계산합니다. p-value가 기준(normally 0.05)보다 낮을 때 우연한 결과가 아니라고 추정할 수 있고 null hypothesis를 기각하여 두 mean 값에 차이가 있다고 결론내릴 수 있습니다.
+<br><br>
+
+
+![Post-Image](transcriptome-fig29.png)
+_t-test<br>
+https://www.edwith.org/transcriptome/lecture/1382678_<br>
+
+- t-test는 두 개 그룹의 mean 값에 차이가 없다는 hypothesis를 test하는 방식입니다. $\frac{signal}{noise}$ 두 개 그룹 mean 값의 차이(signal)를 두 개 그룹 분포의 크기의 차이(noise, standard error)로 나눠준 값으로 계산합니다.
+- 그룹이 세 개 이상일 때 t-test는 ANOVA로 변경됩니다.
+<br><br>
+
+
+![Post-Image](transcriptome-fig30.png)
+_Volcano plot<br>
+https://www.edwith.org/transcriptome/lecture/1382678_<br>
+
+- p-value와 fold-change를 동시에 표현한 plot입니다.
+- x축의 fold-change는 -1 미만과 1 이상이 두 배 이상 차이나는 gene으로 볼 수 있습니다.
+- y축의 p-value는 2 이상일 때 $10^{-2} = 0.01$이하, 곧 유의미하게 차이나는 gene으로 볼 수 있습니다.
+<br><br>
+
+
+- Multiple comparison test problem
+    - 생물학에서 비교반복실험은 흔히 있습니다.
+    - p-value 0.05 이하라는 의미는, 두 개 그룹간 차이가 존재할 확률이 95%라는 의미인 동시에 우연히 차이나는 것처럼 보일 확률이 5%라는 의미입니다.
+    - 예를 들어 10,000개의 gene 대상으로 p-value 5% 기준으로 잡으면 500개 gene이 우연하게 선정될 수 있습니다. (잘못된 결과)
+    - 10,000번의 t-test p-value 5% 기준으로 1,000개의 gene이 선택됐을 때, 결국 500/1,000 선택된 gene의 50%가 잘못된 결과로 볼 수 있습니다. (very high false discovery rate)
+    - 여러 번 비교반복실험을 진행할 때 단일 테스트의 p-value 5% 기준을 그대로 사용하면 이러한 문제가 발생할 수 있으므로, 따라서 multiple comparison을 위한 p-value의 보정이 필요합니다.
+- Boneferroni correction
+    - p-value를 p-value/test counts로 보정합니다.
+    - 예를 들어, 1,000번의 test를 진행하면 p-value 0.05는 0.05/1,000 = 0.00005로 기준으 삼는 것입니다.
+    - 그러나 이 방법은 too conservative하여 많이 사용하지는 않습니다.
+- False discovery rate(FDR)
+    - $\frac{\#false positives}{\#called significant}$
+    - Benjamini-Hochberg procedure
+        - 반복실험의 p-value들을 오름차순으로 정렬합니다.
+        - Bonferroni correction의 corrected p-value(p-value/test counts)를 2배, 3개, 4배, ... , k배로 늘려가면서 기준을 만족하는 k값을 찾습니다.
+        - FDR approach를 통해 찾은 adjusted p-value를 q-value라고 합니다.
+        - 즉, q-value 5%는 significant tests 중 false positive로 확인된 비율이 5%임을 의미합니다.
+- Statistical testing for differential expression
+    - 생물학 실험할 때 반드시 세 번 이상 반복실험 하는 것이 좋습니다.
+    - Normalization은 샘플간 expression 비교할 때 필수입니다.
+    - 분포 모델은 negative binomial distribution 사용하는 것이 바람직 합니다.
+    - multiple testion problems를 해결하기 위한 correction 과정은 필수입니다.
+
+
 
 
 ## Sample Validation
