@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Relational Model
+title: [Cheat Sheet] - Pandas
 date: 2022-11-26 10:52:42 +0900
 published: true
 math: true
