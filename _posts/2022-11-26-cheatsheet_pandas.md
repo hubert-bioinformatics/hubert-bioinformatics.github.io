@@ -22,4 +22,4 @@ https://pandas.pydata.org/_
 <br><br>
 
 
-[Cheetsheet - Pandas](Pandas_Cheat_Sheet.pdf, "Cheetsheet - Pandas")
+[Cheetsheet - Pandas](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf), "Cheetsheet - Pandas")
