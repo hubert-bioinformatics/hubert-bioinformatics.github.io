@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Cheat Sheet] - Pandas
+title: (Cheat Sheet) - Pandas
 date: 2022-11-26 10:52:42 +0900
 published: true
 math: true
@@ -22,4 +22,4 @@ https://pandas.pydata.org/_
 <br><br>
 
 
-[Cheetsheet - Pandas](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf), "Cheetsheet - Pandas")
+[Cheetsheet - Pandas](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf, "Cheetsheet - Pandas")
