@@ -72,7 +72,7 @@ https://doi.org/10.1093/bioinformatics/bts053_
 <br><br>
 
 
-![Post-Image](Variants-joingsnvmix3.jpeg)
+![Post-Image](Variants-joingsnvmix3.png)
 _JointSNVMix<br>
 https://doi.org/10.1093/bioinformatics/bts053_
 <br><br>
