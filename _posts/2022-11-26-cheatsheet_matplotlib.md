@@ -10,7 +10,7 @@ img_path: /assets/img/post/
 ---
 
 
-![Post-Image](matplotlib_cheat_sheet1)
+![Post-Image](matplotlib_cheat_sheet1.png)
 _Cheetsheet - Matplotlib (beginner)<br>
 https://matplotlib.org/cheatsheets/_
 <br>
@@ -19,7 +19,7 @@ https://matplotlib.org/cheatsheets/_
 <br><br>
 
 
-![Post-Image](matplotlib_cheat_sheet2)
+![Post-Image](matplotlib_cheat_sheet2.png)
 _Cheetsheet - Matplotlib (intermediate)<br>
 https://matplotlib.org/cheatsheets/_
 <br>
@@ -28,7 +28,7 @@ https://matplotlib.org/cheatsheets/_
 <br><br>
 
 
-![Post-Image](matplotlib_cheat_sheet3)
+![Post-Image](matplotlib_cheat_sheet3.png)
 _Cheetsheet - Matplotlib (tips)<br>
 https://matplotlib.org/cheatsheets/_
 <br>
@@ -37,12 +37,12 @@ https://matplotlib.org/cheatsheets/_
 <br><br>
 
 
-![Post-Image](matplotlib_cheat_sheet4)
+![Post-Image](matplotlib_cheat_sheet4.png)
 _Cheetsheet - Matplotlib<br>
 https://matplotlib.org/cheatsheets/_
 <br>
 
-![Post-Image](matplotlib_cheat_sheet5)
+![Post-Image](matplotlib_cheat_sheet5.png)
 _Cheetsheet - Matplotlib<br>
 https://matplotlib.org/cheatsheets/_
 <br>
