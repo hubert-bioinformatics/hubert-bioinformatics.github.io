@@ -4,7 +4,7 @@ title: (udemy) Genetics and Next Generation Sequencing for Bioinformatics
 date: 2023-05-25 07:47:54 +0900
 published: true
 categories: [Study, L-Certificate]
-tags: [certificate,bioinformatics,Udemy]
+tags: [certificate,bioinformatics,udemy]
 img_path: /assets/img/post/
 ---
 
