@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (udemy) Genetics and NGS for Bioinformatics
-date: 2023-05-25 07:47:54 +0900
+date: 2023-05-25 07:47:24 +0900
 published: true
 categories: [Study, L-Certificate]
 tags: [certificate,bioinformatics,udemy]
