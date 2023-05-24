@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (udemy) Genetics and Next Generation Sequencing for Bioinformatics
+title: (udemy) Genetics and NGS for Bioinformatics
 date: 2023-05-25 07:47:54 +0900
 published: true
 categories: [Study, L-Certificate]
