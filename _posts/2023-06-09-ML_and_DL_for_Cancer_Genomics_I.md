@@ -61,7 +61,7 @@ https://www.edwith.org/deep-learning-2023/lecture/1475083_
 <br><br>
 
 
-NGS의 시작과 함께 DNA는 big data 수준으로 축적되어 가고 있습니다. 빅데이터는 3V로 요약할 수 있는데, 데이터의 양(Volume), 데이터 생성 속도(Velocity), 형태의 다양성(Variety)을 의미합니다. 2020년 Nebula Genomics는 한 사람의 WGS DATA를 $299에 제공하고 있습니다.
+NGS의 시작과 함께 DNA는 big data 수준으로 축적되어 가고 있습니다. 빅데이터는 3V로 요약할 수 있는데, 데이터의 양(Volume), 데이터 생성 속도(Velocity), 형태의 다양성(Variety)을 의미합니다. 2020년 Nebula Genomics는 한 사람의 WGS data를 $299에 제공하고 있습니다.
 <br><br>
 
 
@@ -96,8 +96,8 @@ https://www.edwith.org/deep-learning-2023/lecture/1475083_
 
 ## Take Home Message
 ***
-생물정보학은 생물학과 관ㄹ녀된 모든 문제들을 이해하기 위한 방법론을 다루고, 학제간 분야를 아우르는 학문입니다. 생물학과 더불어 전산학, 통계학의 통합적 이해를 요구합니다.
+생물정보학은 생물학과 관련된 모든 문제들을 이해하기 위한 방법론을 다루고, 학제간 분야를 아우르는 학문입니다. 생물학과 더불어 전산학, 통계학의 통합적 이해를 요구합니다.
 
 생물정보를 담고 있는 DNA 염기서열이 주 연구대상 중 하나이고, NGS 발전에 따라 Genomics, Epigenomics, Transcriptomics, Proteomics 등 주요한 생물학 분야의 문제들을 해결하는데 필수불가결한 요소가 되고 있습니다.
 
-최근 omics bic data가 출현함에 따라 다양한 machine learning 및 deep learning을 수행하여 해결하기 힘든 각종 생물학 난제들을 풀어나가려는 시도가 이루어지고 있습니다.
+최근 omics big data가 출현함에 따라 다양한 machine learning 및 deep learning을 수행하여 해결하기 힘든 각종 생물학 난제들을 풀어나가려는 시도가 이루어지고 있습니다.
