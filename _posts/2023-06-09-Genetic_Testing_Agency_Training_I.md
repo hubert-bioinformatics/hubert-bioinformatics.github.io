@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Genetic Testing Agency Training - 유전자 검사의 이해
+title: Genetic Testing Agency Training 1 - 유전자검사의 이해
 date: 2023-06-09 07:22:36 +0900
 published: true
 math: true
@@ -9,7 +9,7 @@ tags: [bioinformatics,genetics]
 img_path: /assets/img/post/
 ---
 
-본 post는 질병관리청 유전자검사기관 종사자 교육(2023)의 '1차시 - 유전가검사의 이해'를 정리한 내용입니다.
+본 post는 질병관리청 유전자검사기관 종사자 교육(2023)의 '1차시 - 유전자검사의 이해'를 정리한 내용입니다.
 
 
 ## 유전자검사의 발전과 성장
