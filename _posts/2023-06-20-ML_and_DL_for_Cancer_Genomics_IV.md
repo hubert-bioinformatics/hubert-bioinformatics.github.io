@@ -123,12 +123,43 @@ Backpropagation neural network는 강력한 능력으로 인해 overfitting 현�
 ## Deep Learning
 ***
 
+이론상으로 parameter 수가 많으면 많을수록 model의 복잡성이 높아지고 예측 및 분류 능력이 커집니다. 이는 아무리 복잡한 학습 문제라도 parameter를 증가시키면 해결이 가능하다는 것을 의미합니다. 그러나 동시에 복잡한 model의 훈련 효과가 좋지 않고 쉽게 overfitting에 빠집니다.
+
+최근 클라우드 컴퓨터와 빅데이터 시대가 도래하면서 컴퓨터의 능력은 대대적으로 높아졌고 훈련 성능 저하 문제를 완화시켰습니다. 그리고 training data가 많아짐에 따라 overfitting 위험은 대폭 낮아졌습니다. 이에 따라 deep learning을 대표로 하는 복잡한 model들이 사람들의 관심을 받기 시작했습니다. 전형적인 deep learning model은 깊은 층을 쌓은 neural network입니다. Neural network model의 능력을 향상시킬 수 있는 가장 간단한 방법은 hidden layer 개수를 늘리는 것입니다.
+
+Hidden layer가 많으면 상응하는 neuron 연결 weight, 임계값 등의 parameter 수가 늘어납니다. Model의 복잡성도 단순히 hidden layer neuron 수를 증가시키는 것만으로 늘릴 수 있습니다. 하지만 model의 복잡성을 증가시키는 관점에서 바라보면 hidden layer의 개수를 증가시키는 것이 hidden layer neuron의 수를 증가시키는 것보다 효율적입니다. Hidden layer의 수를 증가시키면 activation function을 가진 neuron의 개수를 늘리게 될 뿐 아니라 activation function이 내장된 층 수도 증가하기 때문입니다.
+
+그러나 여러 hidden layer를 가진 neural network는 전통적인 algorithm(backpropagation)을 사용하여 훈련시키기 힘든 점이 있습니다. 오차가 hidden layer에서 backpropagation 될 때 vanishing(소실)되어 update 하기 어려운 점이 있기 때문입니다. 이러한 현상을 vanishing gradient라고 합니다.
+<br><br>
+
+
+## Global Minimum and Local Minimum
+***
+
+만약 E로 neural network의 training set에 대한 error를 나타낸다면, 이는 weight와 bias(threshold)에 관한 함수일 것입니다. 이 때 neural network의 훈련 과정은 하나의 parameter 탐색 과정이라고 볼 수 있습니다. 즉, parameter 공간에서 최적의 parameter를 찾아 E를 최소화 하는 것입니다. 여기에는 두 가지 종류의 '최적'이 있습니다. 바로 local minimum과 global minimum입니다.
+
+Local minimum은 parameter 공간의 어떤 점이 되고 주변 점들의 cost function(loss function, error 함수값)이 해당 점의 함수값보다 작으면 안됩니다. 이와 비슷하게 global minimum의 해는 parameter 공간 내의 모든 점들이 error 함수값보다 작지 않다는 것을 의미합니다.
+
+Gradient descent 방법은 임의의 시작점에서 출발해 반복적으로 최적의 parameter 값을 찾아 나갑니다. 매번 반복할 때마다 우리는 먼저 cost function이 해당 점에서 갖는 기울기를 계산하고 그 기울기에 따라 탐색 방향을 정합니다. 만약 해당 점에서 cost function의 기울기가 0이라면 이미 local minimum에 도달한 것입니다. 이는 parameter 반복 갱신이 그 점에서 멈출 것이라는 의미입니다. 또한 cost function이 하나의 local minimum만을 갖는다면 해당 값이 바로 global minimum이 됩니다.
+<br><br>
+
+
+![Post-Image](MLDL4CancerGenome22.png)
+_Local Minimum 함정 탈출 전략<br>
+https://www.edwith.org/deep-learning-2023/lecture/1475086_
+<br><br>
 
 
 ## Take Home Message
 ***
 
 ![Post-Image](MLDL4CancerGenome21.png)
-_Summary<br>
+_Summary 1<br>
+https://www.edwith.org/deep-learning-2023/lecture/1475086_
+<br><br>
+
+
+![Post-Image](MLDL4CancerGenome23.png)
+_Summary 2<br>
 https://www.edwith.org/deep-learning-2023/lecture/1475086_
 <br><br>
