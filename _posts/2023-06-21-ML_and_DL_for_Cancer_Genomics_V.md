@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ML and DL for Cancer Genomics IV - DL Algorithm II
-date: 2023-06-20 12:29:30 +0900
+title: ML and DL for Cancer Genomics V - DeepDEP 논문 소개
+date: 2023-06-21 07:10:05 +0900
 published: true
 math: true
 categories: [Bioinformatics, ML]
@@ -9,7 +9,7 @@ tags: [BI,bioinformatics,cancer,ML,DL]
 img_path: /assets/img/post/
 ---
 
-본 post는 국가생명연구자원정보센터(KOBIC) 주관 경희대학교 이과대학 김권일 교수님의 [딥러닝 알고리즘 2](https://www.edwith.org/deep-learning-2023/lecture/1475086, "딥러닝 알고리즘 2")를 정리한 내용입니다.
+본 post는 국가생명연구자원정보센터(KOBIC) 주관 경희대학교 이과대학 김권일 교수님의 [DeepDEP 논문 소개](https://www.edwith.org/deep-learning-2023/lecture/1475086, "DeepDEP 논문 소개")를 정리한 내용입니다.
 
 
 ## Intro
@@ -19,32 +19,23 @@ Machine learning 관련 기초 개념을 확인하고, 공개된 논문내용 �
 <br><br>
 
 
-## 오차 역전파 알고리즘
+## DeepDEP 논문
 ***
 
-최적의 학습 결과를 갖는 neural network를 설계하려면 근본적으로 입력이나 특정 neuron의 weight를 약간 변경시키면 출력에 작은 변화가 일어난다는 점에 근거하고 있습니다. 여기서 activation function으로 쓰이는 sigmoid function은 0에서 1까지 연속적으로 변하는 출력을 갖기 때문에 weight나 bias를 조금 변화시켰을 때 출력이 조금씩 변하도록 만들 수 있습니다.
+['Prediction and characterizing a cancer dependency map of tumors with deep learning'](https://pubmed.ncbi.nlm.nih.gov/34417181/, 'Prediction and characterizing a cancer dependency map of tumors with deep learning')
 
-Neural network는 backpropagation(역전파)를 통해 "역방향으로 error를 전파"시키면서 최적의 학습 결과를 찾아가는 것이 가능합니다. Backpropagation을 수행하기 위해 사용되는 cost function(loss function)은 다음과 같이 정의됩니다.
+각종 오믹스 데이터를 input으로 사용하고 deep learning algorithm을 사용하여 cancer dependency를 예측하는 내용의 논문입니다.
 
-$$
-C(w, b) \equiv  \frac{1}{2n} \sum_{x}^{} ||y(x) - a||^2
-$$
+Cancer dependencies는 genome-wide loss-of-function screens를 통해서 cancer cell proliferation에 필수적인 gene을 의미합니다. Cancer dependencies와 molecular compositions of cancer cells를 연결 짓는 것은 문제의 복잡도 때문에 굉장히 어려운 문제입니다. DeepDEP은 deep learning model을 사용하여 integrative genomic profiles를 통해 cancer dependencies를 예측하는 tool입니다. 독보적인 unsupervised pretraining을 사용하는 것이 특징인데, 이는 cancer dependencies 학습을 위한 unlabeled tumor genomic representations를 파악할 수 있습니다.
+<br><br>
 
-n은 training에 사용되는 input node의 수
 
-y(x)는 입력 x를 넣었을 때 기대 출력
+## Cancer Dependency Map (DepMap)
+***
 
-a는 실제 출력
+많은 연구자들이 RNA interference(RNAi)와 CRISPR-Cas9 knockout screens를 사용한 loss-of-function screens를 통해 방대한 양의 cancer cell lines(CCLs) data를 확보했습니다. 하지만 cancer genome과 cancer dependency 간 상관관계는 비선형이므로 단순하게 이해하기 어려움이 있습니다.
 
-을 의미합니다. 이를 mean square error (MSE; 평균제곱 오차)라고 부르며, 학습의 최종 목표는 MSE를 최소화하는 것입니다. Cost function에서 예측 값과 label의 오차를 절대값이 아닌 제곱으로 처리하는 이유는 다음과 같습니다.
-
-* 오차가 큰 경우에 더 큰 가중치를 주어 학습을 빠르게 처리합니다.
-
-* MSE를 볼록함수(convex function)로 만들어 최적의 weight를 효과적으로 찾기 위함입니다.
-
-* 절대값은 미분불가능 수식이기 때문입니다.
-
-Gradient descent(경사 하강법)을 기반으로 backpropagation을 진행하며 학습을 수행합니다.
+과거에도 CCLs genomics를 사용하여 drug sensitivity를 예측하는데 전형적인 machine learning(ML)이나 deep learning(DL) 방법이 사용되어 왔습니다. 하지만 CCLs의 sample size가 DL model의 성능을 끌어올리는데 분명한 한계가 존재합니다. 예를 들어 tumor heterogeneity나 microenvironment의 복잡성을 학습하기 어렵습니다.
 <br><br>
 
 
@@ -96,7 +87,7 @@ https://www.edwith.org/deep-learning-2023/lecture/1475086_
 Chain rule을 이용하면 backpropagation 식을 좀 더 쉽게 풀어낼 수 있습니다. 여기서 chain rule이란, 합성함수 y=f(g(x))가 t=g(x), y=f(t)로 분해될 때 다음이 성립함을 나타내는 법칙입니다.
 
 $$
-\frac{dy}{dx} = \frac{dy}{dt} \frac{dt}{dx}
+\frac{dy}{dx}} = \frac{dy}{dt} \frac{dt}{dx}
 $$
 <br><br>
 
