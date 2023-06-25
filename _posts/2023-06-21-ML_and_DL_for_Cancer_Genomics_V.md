@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ML and DL for Cancer Genomics V - DeepDEP 논문 소개
-date: 2023-06-21 07:10:05 +0900
+title: ML and DL for Cancer Genomics VI - 딥러닝 구동 환경 구축 1
+date: 2023-06-22 07:42:50 +0900
 published: true
 math: true
 categories: [Bioinformatics, ML]
@@ -9,7 +9,7 @@ tags: [BI,bioinformatics,cancer,ML,DL]
 img_path: /assets/img/post/
 ---
 
-본 post는 국가생명연구자원정보센터(KOBIC) 주관 경희대학교 이과대학 김권일 교수님의 [DeepDEP 논문 소개](https://www.edwith.org/deep-learning-2023/lecture/1475086, "DeepDEP 논문 소개")를 정리한 내용입니다.
+본 post는 국가생명연구자원정보센터(KOBIC) 주관 경희대학교 이과대학 김권일 교수님의 [딥러닝 구동 환경 구축 1](https://www.edwith.org/deep-learning-2023/lecture/1475088, "딥러닝 구동 환경 구축 1")를 정리한 내용입니다.
 
 
 ## Intro
@@ -19,23 +19,35 @@ Machine learning 관련 기초 개념을 확인하고, 공개된 논문내용 �
 <br><br>
 
 
-## DeepDEP 논문
+## 데이터를 표현하는 방식: 텐서
 ***
 
-['Prediction and characterizing a cancer dependency map of tumors with deep learning'](https://pubmed.ncbi.nlm.nih.gov/34417181/, 'Prediction and characterizing a cancer dependency map of tumors with deep learning')
+텐서는 핵심 속성 세 가지를 지니고 있습니다.
 
-각종 오믹스 데이터를 input으로 사용하고 deep learning algorithm을 사용하여 cancer dependency를 예측하는 내용의 논문입니다.
+1. rank: 축의 개수. rank-3 텐서에는 3개의 축이 있습니다. 행렬에는 2개의 축이 있습니다. numpy, tensorflow 같은 python library에서 ndim 속성에 저장되어 있습니다.
 
-Cancer dependencies는 genome-wide loss-of-function screens를 통해서 cancer cell proliferation에 필수적인 gene을 의미합니다. Cancer dependencies와 molecular compositions of cancer cells를 연결 짓는 것은 문제의 복잡도 때문에 굉장히 어려운 문제입니다. DeepDEP은 deep learning model을 사용하여 integrative genomic profiles를 통해 cancer dependencies를 예측하는 tool입니다. 독보적인 unsupervised pretraining을 사용하는 것이 특징인데, 이는 cancer dependencies 학습을 위한 unlabeled tumor genomic representations를 파악할 수 있습니다.
+2. shape: 텐서의 각 축을 따라 얼마나 많은 차원이 있는지 나타내는 정보입니다. 
+
+3. dtype: 텐서에 포함된 데이터 타입입니다.
 <br><br>
 
 
-## Cancer Dependency Map (DepMap)
+## 텐서플로와 케라스
 ***
 
-많은 연구자들이 RNA interference(RNAi)와 CRISPR-Cas9 knockout screens를 사용한 loss-of-function screens를 통해 방대한 양의 cancer cell lines(CCLs) data를 확보했습니다. 하지만 cancer genome과 cancer dependency 간 상관관계는 비선형이므로 단순하게 이해하기 어려움이 있습니다.
+* 텐서플로(TensorFlow)
+    * 구글에서 만든 python 기반의 무료 오픈 소스 machine learning 플랫폼입니다.
+    * NumPy와 매우 비슷하며 간단한 텐서 연산 뿐만 아니라 학습 과정에 필요한 연산들을 제공합니다.
 
-과거에도 CCLs genomics를 사용하여 drug sensitivity를 예측하는데 전형적인 machine learning(ML)이나 deep learning(DL) 방법이 사용되어 왔습니다. 하지만 CCLs의 sample size가 DL model의 성능을 끌어올리는데 분명한 한계가 존재합니다. 예를 들어 tumor heterogeneity나 microenvironment의 복잡성을 학습하기 어렵습니다.
+* 케라스(Keras)
+    * TensorFlow 위에 구축된 python용 deep learning API로 deep learning model을 쉽게 만들고 훈련할 수 있는 방법을 제공합니다.
+    * NumPy와 매우 비슷하며, 간단한 텐서 연산 뿐만 아니라 학습 과정에 필요한 연산들을 제공합니다.
+<br><br>
+
+
+![Post-Image](MLDL4CancerGenome25.png)
+_<br>
+https://www.edwith.org/deep-learning-2023/lecture/1475088_
 <br><br>
 
 
@@ -68,7 +80,5 @@ Autoencoder란 단순히 입력을 출력으로 복사하는 신경망입니다.
 ## Take Home Message
 ***
 
-![Post-Image](MLDL4CancerGenome24.png)
-_Summary<br>
-https://www.edwith.org/deep-learning-2023/lecture/1475086_
+Google colab에서 딥러닝 구동 환경을 구축하고 분석을 실습해 보았습니다.
 <br><br>
