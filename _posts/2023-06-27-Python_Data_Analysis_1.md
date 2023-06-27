@@ -35,7 +35,7 @@ One sample t-test는 하나의 모집단의 평균이 기존보다 커졌는지,
 * 대립가설 (Alternative Hypothesis, H<sub>1</sub> or H<sub>A</sub>)
     * 연구자가 지지하는 가설입니다. (채택되길 바라는 가설)
     * 모집단의 평균은 $$ \mu $$<sub>0</sub>보다 큽니다. ($$ \mu > \mu $$<sub>0</sub>)
-    * 모집단의 평균은 $$ \mu $$<sub>0</sub>보다 작습니다. ($$ \mu < \mu $$<sub>0</sub>>)
+    * 모집단의 평균은 $$ \mu $$<sub>0</sub>보다 작습니다. ($$ \mu < \mu $$<sub>0</sub>)
     * 모집단의 평균은 $$ \mu $$<sub>0</sub>와 같지 않습니다. ($$ \mu \neq \mu $$<sub>0</sub>)
 <br><br>
 
@@ -65,7 +65,7 @@ One sample t-test는 하나의 모집단의 평균이 기존보다 커졌는지,
 ## 검정통계량 (Test Statistics)
 ***
 
-* $$ t = \frac{\bar y - \mu<sub>0</sub>}{s/\sqrt n} $$
+* $$ t = \frac{\bar y - \mu $$<sub>0</sub>$$ }{s/\sqrt n} $$
 * t(n-1) 분포를 따릅니다.
 * (n-1)은 자유도(df, degree of freedom) 입니다.
 <br><br>
@@ -80,10 +80,9 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475043_
 ## 실습
 ***
 
-1. 가설1
-    1. 가설 설정
-        1. 귀무가설: 환자들의 평균 키는 15인치 입니다.
-        2. 대립가설: 환자들의 평균 키는 15인치와 같지 않습니다.
+1. 가설 설정
+    1. 귀무가설: 환자들의 평균 키는 15인치 입니다.
+    2. 대립가설: 환자들의 평균 키는 15인치와 같지 않습니다.
 <br><br>
 
 
@@ -93,13 +92,13 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475043_
 <br><br>
 
 
-    2. 분석 1단계: 정규성 검정(Normality Test)
-        1. 귀무가설: 정규분포를 따릅니다. (정규분포를 따라야만 One sample t-test를 수행할 수 있습니다.)
-        2. 대립가설: 정규분포를 따르지 않습니다.
-        * n < 5,000 : Shapito-Wilk Normality Test (shapiro(data.variable))
-        * n >= 5,000 : Anderson-Darling Normality Test (anderson(data.variable))
-        * shapiro normality test의 유의확률(p-value)가 0.79로 귀무가설(정규분포 따름)을 만족합니다.
-        <br><br>
+2. 분석 1단계: 정규성 검정(Normality Test)
+    1. 귀무가설: 정규분포를 따릅니다. (정규분포를 따라야만 One sample t-test를 수행할 수 있습니다.)
+    2. 대립가설: 정규분포를 따르지 않습니다.
+    * n < 5,000 : Shapito-Wilk Normality Test (shapiro(data.variable))
+    * n >= 5,000 : Anderson-Darling Normality Test (anderson(data.variable))
+    * shapiro normality test의 유의확률(p-value)가 0.79로 귀무가설(정규분포 따름)을 만족합니다.
+<br><br>
 
 
 ![Post-Image](Python_Data_Analysis3.png)
@@ -108,7 +107,7 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475043_
 <br><br>
 
 
-    3. 분석 2단계: One sample t-test
+3. 분석 2단계: One sample t-test
 <br><br>
 
 
@@ -118,10 +117,10 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475043_
 <br><br>
 
 
-        * patient.height: 검정변수
-        * popmean: 귀무가설이 참일 때 모평균
-        * alternative: 대립가설 -> 'greater' or 'less' or 'two-sided'
-        * One sample t-test의 유의확률(p-value)가 0.120으로 유의수준인 0.05보다 큽니다. 즉, 환자들의 평균 키는 15인치라는 귀무가설을 지지합니다.
+    * patient.height: 검정변수
+    * popmean: 귀무가설이 참일 때 모평균
+    * alternative: 대립가설 -> 'greater' or 'less' or 'two-sided'
+    * One sample t-test의 유의확률(p-value)가 0.120으로 유의수준인 0.05보다 큽니다. 즉, 환자들의 평균 키는 15인치라는 귀무가설을 지지합니다.
 <br><br>
 
 
@@ -157,5 +156,5 @@ stats.ttest_1samp(
 ## Take Home Message
 ***
 
-Google colab에서 딥러닝 구동 환경을 구축하고 분석을 실습해 보았습니다.
+One sample t-Test 이론을 학습하고 Google colab에서 실습해 보았습니다.
 <br><br>
