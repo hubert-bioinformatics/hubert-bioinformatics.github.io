@@ -65,7 +65,7 @@ One sample t-test는 하나의 모집단의 평균이 기존보다 커졌는지,
 ## 검정통계량 (Test Statistics)
 ***
 
-* $$ t = \frac{\bar y - \mu $$<sub>0</sub>$$ }{s/\sqrt n} $$
+* $$ t = \frac{\bar y - \mu_{0}}{s/\sqrt n} $$
 * t(n-1) 분포를 따릅니다.
 * (n-1)은 자유도(df, degree of freedom) 입니다.
 <br><br>
