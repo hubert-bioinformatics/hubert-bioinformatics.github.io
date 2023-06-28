@@ -80,9 +80,9 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475043_
 ## 실습
 ***
 
-1. 가설 설정
-    1. 귀무가설: 환자들의 평균 키는 15인치 입니다.
-    2. 대립가설: 환자들의 평균 키는 15인치와 같지 않습니다.
+* 가설 설정
+    * 귀무가설: 환자들의 평균 키는 15인치 입니다.
+    * 대립가설: 환자들의 평균 키는 15인치와 같지 않습니다.
 <br><br>
 
 
@@ -92,9 +92,9 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475043_
 <br><br>
 
 
-2. 분석 1단계: 정규성 검정(Normality Test)
-    1. 귀무가설: 정규분포를 따릅니다. (정규분포를 따라야만 One sample t-test를 수행할 수 있습니다.)
-    2. 대립가설: 정규분포를 따르지 않습니다.
+* 분석 1단계: 정규성 검정(Normality Test)
+    * 귀무가설: 정규분포를 따릅니다. (정규분포를 따라야만 One sample t-test를 수행할 수 있습니다.)
+    * 대립가설: 정규분포를 따르지 않습니다.
     * n < 5,000 : Shapito-Wilk Normality Test (shapiro(data.variable))
     * n >= 5,000 : Anderson-Darling Normality Test (anderson(data.variable))
     * shapiro normality test의 유의확률(p-value)가 0.79로 귀무가설(정규분포 따름)을 만족합니다.
@@ -107,7 +107,7 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475043_
 <br><br>
 
 
-3. 분석 2단계: One sample t-test
+* 분석 2단계: One sample t-test
 <br><br>
 
 
@@ -126,6 +126,7 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475043_
 
 ## 코드
 ***
+
 ```python
 import pandas as pd
 import scipy.stats as stats
