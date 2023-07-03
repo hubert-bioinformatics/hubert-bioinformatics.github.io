@@ -47,7 +47,7 @@ Paired t-test with python은 동일한 모집단의 사전자료(수치형 자�
     * n >= 5,000: Anderson-Darling Normality Test
 
 * 2단계: Paired t-test
-    * 
+    * Paired t-test를 수행합니다.
 <br><br>
 
 
