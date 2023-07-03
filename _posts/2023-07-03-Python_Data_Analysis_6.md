@@ -91,7 +91,7 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475048_
 <br><br>
 
 
-![Post-Image](Python_Data_Analysis121.png)
+![Post-Image](Python_Data_Analysis21.png)
 _Paired t-test<br>
 https://www.edwith.org/python-data-analysis-2023/lecture/1475048_
 <br><br>
