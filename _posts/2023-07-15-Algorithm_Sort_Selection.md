@@ -9,7 +9,7 @@ tags: [algorithm,sort,python]
 img_path: /assets/img/post/
 ---
 
-## 선택 정렬 (Selection Sort)
+## 선택 정렬
 ***
 
 선택 정렬은 원리가 간단한 정렬 알고리즘 중 하나입니다.
@@ -59,6 +59,7 @@ img_path: /assets/img/post/
 ***
 
 ```python
+
 # 정렬 대상 배열
 array = [5, 3, 15, 34, 22, 45]
 array_len = len(array)
@@ -83,6 +84,6 @@ print(array)
 ## 시간 복잡도
 ***
 
-선택 정렬의 수행 시간은 모든 경우에 $$ \theta(n^{2}) $$입니다.
+선택 정렬의 수행 시간은 모든 경우에 $$ \theta(n^{2}) $$ 입니다.
 
-우선 첫 번째 for loop에서 모든 index에 접근해야 하므로 (n)번 수행합니다. 이제 min_idx를 제외한 나머지 (n-1)개 index를 탐색하므로 (n-1)번 수행합니다. 따라서 min_idx를 비교하는 총 횟수는 $$ (n-1)+(n-2)+...+2+1 = \frac{n(n-1)}{2} $$ 입니다. 시간 복잡도는 $$ \theta(n^{2}) $$입니다.
+우선 첫 번째 for loop에서 모든 index에 접근해야 하므로 (n)번 수행합니다. 이제 min_idx를 제외한 나머지 (n-1)개 index를 탐색하므로 (n-1)번 수행합니다. 따라서 min_idx를 비교하는 총 횟수는 $$ (n-1)+(n-2)+...+2+1 = \frac{n(n-1)}{2} $$ 입니다. 시간 복잡도는 $$ \theta(n^{2}) $$ 입니다.
