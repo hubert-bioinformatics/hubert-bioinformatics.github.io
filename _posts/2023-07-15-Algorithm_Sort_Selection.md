@@ -26,6 +26,7 @@ img_path: /assets/img/post/
 [5, 3, 15, 34, 22, 45]
     m
 
+# min_idx[i] = 5 > min_idx[j] = 3
 # 따라서 두 개 값 위치를 변경함
 
 [3, 5, 15, 34, 22, 45]
