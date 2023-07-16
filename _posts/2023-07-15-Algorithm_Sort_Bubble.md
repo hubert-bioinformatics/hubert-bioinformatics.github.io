@@ -55,9 +55,14 @@ array_len = len(array)
 
 for i in range(array_len-1, 0, -1):
     for j in range(i):
+        # 배열의 sorting 여부 확인 변수
+        check_sorted = True
         if (array[j] > array[j+1]):
             # j, j+1 값 서로 변경
             array[j], array[j+1] = array[j+1], array[j]
+            check_sorted = False
+    if check_sorted == True:
+        break
     
 print(array)
 ```
