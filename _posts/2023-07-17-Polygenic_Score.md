@@ -234,14 +234,5 @@ http://polygenicscores.org/explained/_
 
 Polygenic score는 개인이 가지고 태어난 유전정보만을 바탕으로 계산된 지표입니다.
 
-아무리 열심히 노력해도 polygenic score를 바꿀 수 없으나, 건강한 식습관과 생활습관
+아무리 열심히 노력해도 polygenic score를 바꿀 수 없지만, 건강한 식습관과 생활습관, 금연 등의 노력으로 발병 위험도를 줄일 수는 있습니다.
 <br><br>
-
-
-
-## Take Home Message
-***
-
-* Contig length 기반으로 assembly quality를 비교할 수 있습니다.
-
-* BUSCO를 활용할 수 있습니다.
