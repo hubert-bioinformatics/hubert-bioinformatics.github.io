@@ -56,12 +56,27 @@ https://doi.org/10.1016%2Fj.jmoldx.2016.10.002_
 ## Databases
 ***
 
-TCGA Pilot 프로젝트는 GBM(Glioblastoma multiforme)과 OV(Srous ovarian cacners)에 대해 진행됐습니다.
+## &nbsp;&nbsp;Genomic Databases
+***
 
-The first project에서는 GBM과 연관된 gene과 핵심 pathways를 확인했습니다. Gene sequencing, DNA copy number, DNA methylation, Transcrpitome, MicroRNA 등 다섯 가지 목적에 각각 알맞은 플랫폼을 사용하여 분석을 진행했습니다. 당시에는 NGS 기술이 출시되기 이전이므로 microarray, sanger sequencing 기반 플랫폼이 사용되었습니다.
+다양한 tumor 종류 대상 large-scale genome sequencing project가 점점 증가하고 논문으로 발표됨에 따라 풍부한 genomic information을 바탕으로 많은 public database가 생성되고 있습니다. 예를 들어, TCGA(The Cancer Genome Atlas), COSMIC(the Catalog of Somatic Mutations in Cancer)와 같은 somatic 변이 database가 있습니다. Reference sequence information, population databases, germline variant databases 등이 분석에 자주 사용되고 있습니다. 이런 database는 somatic 변이의 정확한 annotation과 prioritization에 필수적인 정보를 제공합니다. 임상실험실은 public database 사용에 대한 아래 주의사항들을 반드시 준주해야 합니다.
 
-The second project에서는 OV와 연관된 분석이 진행됐습니다.
+    1. Database content와 어떻게 만들어졌는지 이해해야 합니다. 관련 논문을 리뷰하고 database의 source, type, 목적을 이해해야 합니다.
+    2. Database의 한계를 이해하고 annotation 결과에 대한 과해석을 방지해야 합니다.
+    3. Human genome assembly 버전과 mRNA transcript reference를 확인해야 합니다. 모든 정보는 HGVS(Human Genome Variation Society) annotation 규칙을 따라야 합니다.
+    4. Database에 대한 불분명한 query 요청을 막기 위해서 가능하다면 HGVS nomenclature 대신 genomic coordinates를 사용합니다.
+    5. Database가 제공하는 genomic data의 quality를 확인합니다. the number of a specific entry, single or multiple, the depth of the study, the use of appropriate controls, confirmation of a variant's somatic origin, functional and potential drug studies 등을 확인합니다.
+    6. Pathological diagnosis에 대한 data quality를 확인합니다. (eg, site, diagnosis, and subtype)
 <br><br>
+
+
+| Utility/function | Database | Location (web address) |
+| --- | --- | --- |
+| Population database to exclude polymorphisms | 1000 Genome Project | http://browser.1000genomes.org |
+|     | Exome Variant Server | http://evs.gs.washington.edu/EVS |
+|     | dbSNP | http://www.ncbi.nlm.nih.gov/snp |
+|     | dbVar | http://www.ncbi.nlm.nih.gov/dbvar |
+|     | ExAC | http://exac.broadinstitute.org |
 
 
 ## TCGA Sample Annotation
