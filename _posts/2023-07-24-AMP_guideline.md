@@ -118,15 +118,30 @@ Reference sequence database는 human genome assembly에 대한 version과 genomi
 ## &nbsp;&nbsp;Cancer-Specific Databases
 ***
 
-
+여러 가지 cancer 종류와 subtypes에 걸쳐 sequence variants의 발병률과 유병률에 대한 정보를 제공하는 database입니다.
 <br><br>
 
 
-## Levels of TCGA Data
+## &nbsp;&nbsp;Internal(Laboratory-Generated) Databases
 ***
 
-TCGA data는 네 개 단계의 level로 구성되어 있는데, level 구분은 data processing 정도를 의미합니다. Level 1은 CEL 파일과 같은 rawdata이며 level 4는 annotation 정보까지 붙은 분석결과 data입니다. 보통 TCGA data를 활용할 때는 level 3의 data를 받아서 사용합니다.
+임상검사실은 검사실 내 변이를 추적하고 일관적으로 변이 annotation 정보를 제공하기 위해 well-annotated in-house database를 구축하는 것이 중요합니다. Cancer type별로 변이의 빈도를 확인하면, sequencing alignment artifacts나 false-positive 의심 변이를 확인할 수 있습니다.
 <br><br>
+
+
+## &nbsp;&nbsp;In Silico(Computational) Prediction Algorithms
+***
+
+In silico 예측 알고리즘은 유전자에서 발생한 nucleotide change가 단백질의 구조와 기능에 변화를 일으킬 수 있는지 예측하는데 주로 사용합니다. 분석 tool은 크게 두 가지 종류로 나뉘는데, 단백질 기능에 있어서 missense 변이가 미치는 영향력 예측, 그리고 splicing site에서 sequence variant가 미치는 영향력 예측 입니다.
+<br><br>
+
+
+| Utility/function | Algorithm/software | Location (web address) |
+| --- | --- | --- |
+| Missense SNV | PolyPhen2 | http://genetics.bwh.harvard.edu/pph2 |
+|     | SIFT | http://sift.jcvi.org |
+|     | MutationAssessor | http://mutationassessor.org |
+
 
 
 ![Post-Image](TCGA2.png)
