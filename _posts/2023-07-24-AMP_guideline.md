@@ -38,16 +38,22 @@ Cancer genomics는 급격하게 발전하는 분야이므로, 치료, 진단, �
 NGS 기술 발전으로 변이 분석에 들어가는 비용과 시간은 대폭 감소했습니다. 분석 가능한 변이도 SNVs(single-nucleotide variants) 뿐만 아니라 indels, CNVs(copy number variants), fusions까지 범위가 넓어졌습니다.
 
 Tumor DNA, RNA에서 얻은 분자생물학적 profile은 암환자의 임상적 관리에 대한 가이드가 될 수 있습니다. 진단이나 예측에 필요한 정보를 제공할 수 있고, 가능한 치료방법이나 타겟 치료를 찾을 수 있도록 도움이 될 수 있습니다.
+
+Tumor tissue 대상 실시하는 NGS 검사에 대한 광범위한 접근을 위해서 4주 동안 NGS technical 설문 조사와 NGS reporting 설문 조사를 실시했습니다. 결과는 아래와 같습니다.
 <br><br>
 
 
-![Post-Image](TCGA1.png)
-_before and after TCGA<br>
-ttps://www.laidd.org/local/ubonline/view.php?id=141&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPUJJRyZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
+![Post-Image](AMP1.png)
+_NGS technical & reporting survey<br>
+https://doi.org/10.1016%2Fj.jmoldx.2016.10.002_
 <br><br>
 
 
-## TCGA Pilot Phase(2008~2012)
+본 가이드라인의 목적은 cancer 대상 NGS 검사결과로 검출된 변이의 classification, annotation, interpretation, reporting의 표준방식을 수립하기 위함입니다.
+<br><br>
+
+
+## Databases
 ***
 
 TCGA Pilot 프로젝트는 GBM(Glioblastoma multiforme)과 OV(Srous ovarian cacners)에 대해 진행됐습니다.
