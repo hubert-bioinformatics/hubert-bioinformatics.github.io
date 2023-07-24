@@ -77,16 +77,48 @@ https://doi.org/10.1016%2Fj.jmoldx.2016.10.002_
 |     | dbSNP | http://www.ncbi.nlm.nih.gov/snp |
 |     | dbVar | http://www.ncbi.nlm.nih.gov/dbvar |
 |     | ExAC | http://exac.broadinstitute.org |
+| Cancer-specific variant databases | Catalog of Somatic Mutations in Cancer | http://cancer.sanger.ac.uk/cosmic |
+|     | My Cancer Genome | http://www.mycancergenome.org |
+|     | Personalized cancer therapy, MD Anderson Cancer Center | https://pct.mdanderson.org |
+|     | cBioPortal, Memorial Sloan Kettering Cancer Center | http://www.cbioportal.org |
+|     | Intogen | https://www.intogen.org/search | 
+|     | ClinicalTrials.gov | https://clinicaltrials.gov |
+|     | IARC(WHO) TP53 mutation database | http://p53.iarc.fr |
+|     | Pediatri Cancer Genome Project(St. Jude Children's Research Hospital-Washington University) | http://explorepcgp.org |
+|     | International Cancer Genome Consortium | https://dcc.icgc.org |
+| Sequence repositores and data hosts | NCBI Genome | http://www.ncbi.nlm.nih.gov/genome |
+|     | RefSeqGene | http://www.ncbi.nlm.nih.gov/refseq/rsg |
+|     | Locus Reference Genomic | http://www.lrg-sequence.org |
+|     | UCSC table browser | https://genome.ucsc.edu/cgi-bin/hgTables |
+|     | Ensemble BioMart | http://useast.ensembl.org/biomart/martview |
+| Other disease/mutation databases useful in the context of variant interpretation for cancer genomics | ClinVar | http://www.ncbi.nlm.nih.gov/clinvar |
+|     | Human Gene Mutation Database | http://www.hgmd.org |
+|     | Leiden Open Variation Database | http://www.lovd.nl |
+|     | dbNSFP(compiled database of precomputed in silico prediction scores for nonsynonymous SNVs) | https://sites.google.com/site/jpopgen/dbNSFP |
+|     | Ensemble Variant Effect Predictor | http://www.ensembl.org/info/docs/tools/vep/index.html | 
+<br><br>
 
 
-## TCGA Sample Annotation
+## &nbsp;&nbsp;Reference Sequence Databases
 ***
 
-TCGA 샘플은 아래와 같은 annotation 체계를 따릅니다.
+Reference sequence database는 human genome assembly에 대한 version과 genomic coordinates와 같은 관련 정보를 제공합니다. 유전자에 대한 variant location mapping(coding, noncoding, untranslated region, and splice site)과 strand representation(positive versus negative)도 database로부터 계산할 수 있습니다. [RefSeq](https://www.ncbi.nlm.nih.gov/refseq, "RefSeq"), [Ensembl](http://www.ensembl.org/index.html, "Ensembl"), [Locus Reference Genomic](https://www.lrg-sequence.org, "Locus Reference Genomic") database를 사용할 수 있습니다.
+<br><br>
 
-처음 열 두 자리는 환자의 unique id입니다.
 
-이 때 마지막 두 자리는 tumor(01)인지, matched normal(10 or 11)인지 나타내는 id입니다.
+## &nbsp;&nbsp;Population Databases
+***
+
+지리학적으로 분리된 population을 대표하는 개인들의 유전자 분석결과에서 특정 locus의 alternative(minor) alleles의 빈도를 제공하는 database입니다. 주로 유전자 분석결과 polymorphic/benign으로 보이는 변이를 filter out 할 때 사용합니다. 이 때 기준점을 MAF(minor allele frequency)로 사용하는데, 수치는 1%(0.01)로 잡는 것을 권장하며 규정된 값은 아닙니다. 해당 database를 사용할 때 주의해야 할 사항 중 하나는 study 참여 당시 대상자는 모두 건강하고 질병이 없는 상태로 간주했다는 점입니다. 게다가 몇몇 전통적으로 cancer-associated로 알려진 targetable somatic 변이가 일부 population database 에서는 germline 변이로 포함되어 있습니다.
+
+예를 들어, NM_004972.3(JAK2):c.1849G>T(c.V617F)는 myeloproliferative neoplasms에서 somatic 변이로 잘 알려져 있으며, FDA 승인 약물인 JAK(Janus kinase) inhibitor의 target으로 알려져 있습니다. 이처럼 hematological malignancies에서 검출된 변이를 평가할 때는 특별히 많은 주의를 기울어야 하는데, leukemia와 myeloodysplastic syndromes에서 발견되는 일반적인 유전자 변이가 blood 내에서 somatically mutated 되었을 가능성이 있기 때문입니다.
+<br><br>
+
+
+## &nbsp;&nbsp;Cancer-Specific Databases
+***
+
+
 <br><br>
 
 
