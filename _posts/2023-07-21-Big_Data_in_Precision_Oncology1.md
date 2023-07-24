@@ -28,7 +28,7 @@ img_path: /assets/img/post/
 
 ![Post-Image](TCGA1.png)
 _before and after TCGA<br>
-ttps://www.laidd.org/local/ubonline/view.php?id=141&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPUJJRyZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
+https://www.laidd.org/local/ubonline/view.php?id=141&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPUJJRyZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
 <br><br>
 
 
@@ -48,82 +48,87 @@ The second project에서는 OV와 연관된 분석이 진행됐습니다.
 
 TCGA 샘플은 아래와 같은 annotation 체계를 따릅니다.
 
-처음 열 두 자리는 환자의 unique id입니다.
-
-이 때 마지막 두 자리는 tumor(01)인지, matched normal(10 or 11)인지 나타내는 id입니다.
+처음 열 두 자리는 환자의 unique id입니다. 마지막 두 자리는 tumor(01)인지, matched normal(10 or 11)인지 나타내는 id입니다.
 <br><br>
 
 
 ![Post-Image](TCGA2.png)
 _TCGA Sample Annotation<br>
-ttps://www.laidd.org/local/ubonline/view.php?id=141&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPUJJRyZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
+https://www.laidd.org/local/ubonline/view.php?id=141&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPUJJRyZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
 <br><br>
 
 
-
-
-Standard quality metric을 제시한 논문 중 하나로, [Earth BioGenome Project](https://www.pnas.org/doi/10.1073/pnas.2115639118, "Earth BioGenome Project")의 Supplementary Figure S1에 자세히 기술되어 있습니다.
-
-* x score: $$ 10^{x} $$ = N50 contig length in kb. 만약 x가 3이라면 contig의 N50이 1,000kb임을 의미합니다.
-
-* y score: $$ 10^{y} $$ = N50 scaffold length in kb. 만약 y가 1이라면 scaffold의 N50이 10kb임을 의미합니다.
-
-* z score: contig, scaffold 제작 과정에 문제가 없었는지 얼마나 자세히 확인했는가 나타내는 지표입니다. 3단계(0, 1, 2)로 표현합니다.
-
-
-해당 논문에서 high-quality reference assembly standard를 '2.3.2.QV40'으로 제시하고 있습니다. 이는,
-
-* contig N50 100kb 이상
-
-* scaffold N50 1,000kb 이상
-
-* 길이로 따졌을 때 90% 이상의 contig가 scaffold에 포함되고 fusion/fission/translocation 등이 다른 실험 방법으로 확인됐는지 검증한 것
-
-을 의미합니다.
+TCGA data는 다음과 같이 네 개 단계의 level로 구분되어 있습니다. 원하는 data를 다운로드 받아 연구에 사용할 수 있습니다.
 <br><br>
 
 
-## Contig Length
+![Post-Image](TCGA3.png)
+_Levels of TCGA Data<br>
+https://www.laidd.org/local/ubonline/view.php?id=141&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPUJJRyZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
+<br><br>
+
+
+TCGA project가 종료된 후 2018년 4월 Cell에 논문으로 publish 되었습니다.
+<br><br>
+
+
+![Post-Image](TCGA4.png)
+_Pan-Cancer Atlas<br>
+https://www.laidd.org/local/ubonline/view.php?id=141&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPUJJRyZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
+<br><br>
+
+
+## TCGA 사용
 ***
 
-[N50](https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics, "N50")은 quality metric 중 하나로 read/contig/scaffold에 모두 적용됩니다.
-
-우선 read/contig/scaffold를 길이가 긴 것부터 정렬합니다. 그 길이를 순차적으로 하나씩 더했을 때, 전체 길이의 절반이 넘는 순간 그에 해당하는 read/contig/scaffold의 길이를 N50으로 정의합니다. 그림에서 전체 길이는 135bp이며 50%는 약 68bp입니다. 길이가 긴 것부터 정렬한 뒤 68bp를 넘는 시점의 read/contig/scaffold는 30bp입니다. 즉, N50은 30bp입니다.
+TCGA 데이터는 [NCI GDC](https://portal.gdc.cancer.gov, "NCI GDC")에서 다운로드 받을 수 있습니다. TCGA 사이트에서 BRCA mutation 정보를 찾는 예시입니다.
 <br><br>
 
 
-![Post-Image](longread15.png)
-_N50<br>
-https://www.edwith.org/longread-seq-2023/lecture/1475113_
+![Post-Image](TCGA5.png)
+_BRCA in TCGA<br>
+https://www.laidd.org/local/ubonline/view.php?id=141&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPUJJRyZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
 <br><br>
 
 
-NGx plot은 각 contig의 길이(=y축: contig나 scaffold length)와 누적 합을 전체 genome length로 나눈 비율(=x측: cumulative coverage)로 표현한 plot입니다.)
+실제 data는 'open'과 'controlled'로 구분되는데, 개인정보가 담긴 data이므로 'controlled'는 TCGA에서 승인된 연구자만 다운로드 받을 수 있습니다.
 <br><br>
 
 
-![Post-Image](longread16.png)
-_NGx Plot<br>
-https://www.edwith.org/longread-seq-2023/lecture/1475113_
+![Post-Image](TCGA6.png)
+_TCGA Data<br>
+https://www.laidd.org/local/ubonline/view.php?id=141&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPUJJRyZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
 <br><br>
 
 
-## BUSCO
+TCGA data는 그 외에도 'Brooad Firehose', 'cBioPorta', 'UCSC Xena browser', 연구논문의 supplementary 등에서 다운로드 받을 수 있습니다.
+<br><br>
+
+
+## ICGC-PCAWG Project
 ***
 
-BUSCO(Benchmarking Universal Single-Copy Orthologs)는 기존에 알려진 lineage-specific single-copy ortholog 유전자들이 제대로 assembly 됐는지 확인하는 tool입니다. 
+TCGA에 이어서 진행된 대규모 project 입니다. ICGC는 처음에 WES와 WGS 두 가지 플랫폼을 모두 모으는 25k Initiative project를 진행 했습니다. 이후 WGS 중 high quality 샘플만 모아서 PCAWG(Pan-Cancer Analysis of Whole Genome)이 진행되었습니다.
+
+ICGC data는 [ICGC Data Portal](https://dcc.icgc.org, "ICGC Data Portal")에서 확인 및 다운로드 받을 수 있습니다.
 <br><br>
 
 
-![Post-Image](longread17.png)
-_BUSCO Plot<br>
-https://www.edwith.org/longread-seq-2023/lecture/1475113_
+## Summaries & Other Public Resources
+***
+
+| Database | Size | Drugs | Genome Data | Open |
+| ----- | ----- | ----- | ----- | ----- |
+| GDSC ver1 | 987 cell lines | 320 | SNV(exome), CNV(exome), methylation, gene expression | open(EGA, GEO, ArrayExpress 경유) |
+| GDSV ver2 | 809 cell lines | 185 | SNV(exome), CNV(exome), methylation, gene expression | open(EGA, GEO, ArrayExpress 경유) |
+| CCLE | 1,500 cell lines | 24 (for 500 cell lines) | SNV(exome), CNV(exome), methylation, gene expression, RPPA | open |
+| TCGA | 10,000 cancer patient | 기본 임상 정보 | SNV, CNV, methylation, mRNA/miRNA expression | open |
+| ICGC(1st) | 3,000 cancer patient | 기본 임상 정보 | WGS | processed data만 open |
+| ICGC(2nd) | over 100,000 cancer patient (예정) | 약물정보 포함한 표준화된 임상정보 | WGS | 예정 |
 <br><br>
 
 
 ## Take Home Message
 ***
 
-* Contig length 기반으로 assembly quality를 비교할 수 있습니다.
-
-* BUSCO를 활용할 수 있습니다.
+* TCGA 및 ICGC 등의 데이터베이스 개요 및 구조에 대해 알아보았습니다.
