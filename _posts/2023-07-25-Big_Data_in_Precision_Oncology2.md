@@ -26,7 +26,7 @@ img_path: /assets/img/post/
 ## TCGA data 분석: mRNA/miRNA Expression
 ***
 
-[TCGA publication data](https//gdc.cancer.gov/about-data/publications/pancanatlas, "TCGA publication data")에서 논문 출판에 사용된 RNA, RPPA, methylation 등 분석 data를 다운로드 받을 수 있습니다.
+[TCGA publication data](https://gdc.cancer.gov/about-data/publications/pancanatlas, "TCGA publication data")에서 논문 출판에 사용된 RNA, RPPA, methylation 등 분석 data를 다운로드 받을 수 있습니다.
 
 mRNA/miRNA expression data는 보통 아래와 같은 형태로 표현합니다. N개의 샘플별로 M개의 genes에 대한 각각 발현율을 숫자로 표시합니다. 이 때 발현율은 normalized intensity(microarray)나 RPKM/RSEM(RNA-seq)으로 표현합니다.
 <br><br>
