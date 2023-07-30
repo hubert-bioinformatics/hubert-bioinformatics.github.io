@@ -184,6 +184,6 @@ https://www.laidd.org/local/ubonline/view.php?id=195&group=1&returnurl=aHR0cHM6L
 ## Take Home Message
 ***
 
- cBioPortal, USCS XenaBrowser, GDC Data Portal과 사용법을 알아보았습니다.
+* cBioPortal, USCS XenaBrowser, GDC Data Portal과 사용법을 알아보았습니다.
 
 * 암 유전체 데이터의 특징과 데이터베이스를 학습했습니다.
