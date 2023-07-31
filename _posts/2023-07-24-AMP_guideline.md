@@ -95,13 +95,15 @@ https://doi.org/10.1016%2Fj.jmoldx.2016.10.002_
 |  -  | Human Gene Mutation Database | http://www.hgmd.org |
 |  -  | Leiden Open Variation Database | http://www.lovd.nl |
 |  -  | dbNSFP(compiled database of precomputed in silico prediction scores for nonsynonymous SNVs) | https://sites.google.com/site/jpopgen/dbNSFP |
-|  -  | Ensemble Variant Effect Predictor | http://www.ensembl.org/info/docs/tools/vep/index.html | 
+|  -  | Ensemble Variant Effect Predictor | http://www.ensembl.org/info/docs/tools/vep/index.html |
+
 <br><br>
 
 
 | Utilityfunction | Database | Location (web address) |
 | --- | --- | --- |
 | Population database to exclude polymorphisms | 1000 Genome Project | http:browser.1000genomes.org |
+
 <br><br>
 
 
