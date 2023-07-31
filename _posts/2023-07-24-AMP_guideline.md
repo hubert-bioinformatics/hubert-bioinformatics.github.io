@@ -99,6 +99,12 @@ https://doi.org/10.1016%2Fj.jmoldx.2016.10.002_
 <br><br>
 
 
+| Utilityfunction | Database | Location (web address) |
+| --- | --- | --- |
+| Population database to exclude polymorphisms | 1000 Genome Project | http:browser.1000genomes.org |
+<br><br>
+
+
 ## &nbsp;&nbsp;Reference Sequence Databases
 ***
 
