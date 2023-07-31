@@ -76,6 +76,7 @@ R의 기본 데이터형은 다음과 같습니다.
 | 범주형 | factor: 레벨에 따라 분류된 형태 |
 | 논리형 | TRUE(T), FALSE(F) |
 | 특수 상수 | NULL: 정의되지 않은 값, NA: 결측값, -Inf: 음의 무한대, Inf: 양의 무한대, NaN: 0/0, Inf/Inf 등과 같이 연산 불가능한 값 표시 |
+
 <br><br>
 
 
@@ -118,6 +119,7 @@ xinf/yinf
 | is.complex(x) | x가 복소수형이면 TRUE, 아니면 FALSE |
 | is.character(x) | x가 문자형이면 TRUE, 아니면 FALSE |
 | is.na(x) | x가 NA이면 TRUE, 아니면 FALSE |
+
 <br><br>
 
 
@@ -131,6 +133,7 @@ xinf/yinf
 | as.character(x) | x를 문자형으로 변환 |
 | as.matrix(x) | x를 행렬로 변환 |
 | as.array(x) | x를 배열로 변환 |
+
 <br><br>
 
 
@@ -145,6 +148,7 @@ xinf/yinf
 | ^ 또는 ** | 지수승 | 5 ^ 2 |
 | x %% y | x를 y로 나눈 나머지 (정수 나눗셈 나머지) | 5 %% 2 |
 | x %/% y | x를 y로 나눈 몫 (정수 나눗셈 몫) | 5 %/% 2 |
+
 <br><br>
 
 
@@ -162,6 +166,7 @@ xinf/yinf
 | x \| y, x \| \| y | x or y(또는, 합집합) | TRUE \| FALSE |
 | x & y, x & & y | x and y(그리고, 교집합) | TRUE & FALSE |
 | isTRUE(x) | x의 TRUE 여부 판단 | isTRUE(TRUE) |
+
 <br><br>
 
 
