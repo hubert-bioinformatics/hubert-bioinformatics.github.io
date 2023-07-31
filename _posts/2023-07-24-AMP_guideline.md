@@ -72,12 +72,12 @@ https://doi.org/10.1016%2Fj.jmoldx.2016.10.002_
 
 | Utility/function | Database | Location (web address) |
 | --- | --- | --- |
-| Population database to exclude polymorphisms | 1000 Genome Project | http://browser.1000genomes.org |
+| Population database to </br>exclude polymorphisms | 1000 Genome Project | http://browser.1000genomes.org |
 |  -  | Exome Variant Server | http://evs.gs.washington.edu/EVS |
 |  -  | dbSNP | http://www.ncbi.nlm.nih.gov/snp |
 |  -  | dbVar | http://www.ncbi.nlm.nih.gov/dbvar |
 |  -  | ExAC | http://exac.broadinstitute.org |
-| Cancer-specific variant databases | Catalog of Somatic Mutations in Cancer | http://cancer.sanger.ac.uk/cosmic |
+| Cancer-specific </br>variant databases | Catalog of Somatic Mutations in Cancer | http://cancer.sanger.ac.uk/cosmic |
 |  -  | My Cancer Genome | http://www.mycancergenome.org |
 |  -  | Personalized cancer therapy, MD Anderson Cancer Center | https://pct.mdanderson.org |
 |  -  | cBioPortal, Memorial Sloan Kettering Cancer Center | http://www.cbioportal.org |
@@ -86,23 +86,16 @@ https://doi.org/10.1016%2Fj.jmoldx.2016.10.002_
 |  -  | IARC(WHO) TP53 mutation database | http://p53.iarc.fr |
 |  -  | Pediatri Cancer Genome Project(St. Jude Children's Research Hospital-Washington University) | http://explorepcgp.org |
 |  -  | International Cancer Genome Consortium | https://dcc.icgc.org |
-| Sequence repositores and data hosts | NCBI Genome | http://www.ncbi.nlm.nih.gov/genome |
+| Sequence repositores </br>and data hosts | NCBI Genome | http://www.ncbi.nlm.nih.gov/genome |
 |  -  | RefSeqGene | http://www.ncbi.nlm.nih.gov/refseq/rsg |
 |  -  | Locus Reference Genomic | http://www.lrg-sequence.org |
 |  -  | UCSC table browser | https://genome.ucsc.edu/cgi-bin/hgTables |
 |  -  | Ensemble BioMart | http://useast.ensembl.org/biomart/martview |
-| Other disease/mutation databases useful in the context of variant interpretation for cancer genomics | ClinVar | http://www.ncbi.nlm.nih.gov/clinvar |
+| Other disease/mutation databases </br>useful in the context of variant interpretation </br>for cancer genomics | ClinVar | http://www.ncbi.nlm.nih.gov/clinvar |
 |  -  | Human Gene Mutation Database | http://www.hgmd.org |
 |  -  | Leiden Open Variation Database | http://www.lovd.nl |
 |  -  | dbNSFP(compiled database of precomputed in silico prediction scores for nonsynonymous SNVs) | https://sites.google.com/site/jpopgen/dbNSFP |
 |  -  | Ensemble Variant Effect Predictor | http://www.ensembl.org/info/docs/tools/vep/index.html |
-
-<br><br>
-
-
-| Utilityfunction | Database | Location (web address) |
-| --- | --- | --- |
-| Population database to exclude polymorphisms | 1000 Genome Project | http:browser.1000genomes.org |
 
 <br><br>
 
@@ -150,6 +143,7 @@ In silico 예측 알고리즘은 유전자에서 발생한 nucleotide change가 
 |     | SIFT | http://sift.jcvi.org |
 |     | MutationAssessor | http://mutationassessor.org |
 
+<br><br>
 
 
 ![Post-Image](TCGA2.png)
