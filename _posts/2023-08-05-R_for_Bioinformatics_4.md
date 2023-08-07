@@ -45,452 +45,342 @@ write.table 함수는 일반 텍스트 파일로 저장할 때 사용합니다.
 write.csv 함수는 CSV 파일로 저장할 때 사용합니다.
 
 save()와 load() 함수는 변수를 저장하고 불러올 때 사용합니다.
+<br><br>
 
 
-![Post-Image](Rprogramming10.png)
-_벡터와 배열의 구성 형태<br>
+![Post-Image](Rprogramming11.png)
+_파일 읽고 쓰기<br>
 https://www.laidd.org/local/ubonline/view.php?id=181&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPSZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
 <br><br>
 
 
-```R
-x = array(1:5, c(2,4))
+## 데이터 정제를 위한 조건문
+***
 
-#      [,1] [,2] [,3] [,4]
-# [1,]   1    3    5    2
-# [2,]   2    4    1    3
-```
+데이터 정제를 위해 특정 조건에 맞는 값을 찾아내거나 일부 구간의 값을 추출하여 연산하는 등 다양한 목적에 맞게 작업할 수 있습니다. 조건문 형식은 다음과 같습니다.
 <br><br>
 
 
-matrix 함수는 2차원 배열을 생성합니다. nrow는 행의 수를 결정합니다. byrow는 데이터를 행 단위로 배치할지 여부를 결정합니다.
-<br><br>
-
-
-```R
-x = 1:12
-
-[1] 1 2 3 4 5 6 7 8 9 10 11 12
-
-
-matrix(x, nrow=3)
-#      [,1] [,2] [,3] [,4]
-# [1,]   1    4    7   10
-# [2,]   2    5    8   11
-# [3,]   3    6    9   12
-
-
-matrix(x, nrow=3, byrow=T)
-#      [,1] [,2] [,3] [,4]
-# [1,]   1    2    3    4
-# [2,]   5    6    7    8
-# [3,]   9   10   11   12
-```
-<br><br>
-
-
-cbind, rbind 함수는 열, 행 단위로 묶어 배열을 생성합니다.
-<br><br>
-
-
-```R
-v1 = c(1, 2, 3, 4)
-v2 = c(5, 6, 7, 8)
-v3 = c(9, 10, 11, 12)
-
-cbind(v1, v2, v3)
-
-#     v1 v2 v3
-#[1,]  1  5  9
-#[2,]  2  6 10
-#[3,]  3  7 11
-#[4,]  4  8 12
-
-
-rbind(v1, v2, v3)
-
-#   [,1] [,2] [,3] [,4]
-#v1    1    2    3    4
-#v2    5    6    7    8
-#v3    9   10   11   12
-```
-<br><br>
-
-
-배열(행렬) 연산자는 다음과 같습니다.
-
-| 연산자 | 설명 |
+| 조건에 맞는 요소를 추출하는 방법 | 형식 |
 | --- | --- |
-| +, - | 행렬의 덧셈과 뺄셈 |
-| * | R에서의 행렬 곱셈</br>(각 열별 곱셈) |
-| %*% | 수학적인 행렬 곱셈 |
-| t(), apem() | 전치 행렬 |
-| solve() | 역행렬 |
-| det() | 행렬식 |
+| []에 행/열 조건 명시 | 변수명[행 조건식, 열 조건식] |
+| if문 활용 (if / else if / else) | if(조건식) 표현식 |
+| ifelse문 활용 | ifelse(조건식, 참인 경우 반환값, 거짓인 경우 반환값) |
 
 <br><br>
 
 
 ```R
-x = array(1:4, dim=c(2,2))
-y = array(5:8, dim=c(2,2))
+### []에 행/열 조건 명시
+## 벡터의 경우
 
-x
-#     [,1] [,2]
-#[1,]    1    3
-#[2,]    2    4
+test = c(15, 20, 30, NA, 45) # 벡터 생성
 
-y
-#    [,1] [,2]
-#[1,]    5    7
-#[2,]    6    8
+test[test<40] # 값이 40 미만인 요소 추출
+#[1] 15 20 30 NA
 
-x*y
-#     [,1] [,2]
-#[1,]    5   21
-#[2,]   12   32
+test[test%%3!=0] # 값이 3으로 나누어 떨어지지 않는 요소 추출
+#[1] 20 NA
 
-x%*%y
-#     [,1] [,2]
-#[1,]   23   31
-#[2,]   34   46
+test[is.na(test)] # NA인 요소 추출
+#[1] NA
 
-t(x)
-#     [,1] [,2]
-#[1,]    1    2
-#[2,]    3    4
+test[!is.na(test)] # NA가 아닌 요소 추출
+#[1] 15 20 30 45
 
-solve(x)
-#     [,1] [,2]
-#[1,]   -2  1.5
-#[2,]    1 -0.5
+test[test%%2==0&!is.na(test)] # 2의 배수면서 NA가 아닌 요소 추출
+#[1] 20 30
 
-det(x)
-#[1] -2
+
+## 데이터프레임인 경우
+
+characters = data.frame(name=c("길동", "춘향", "철수"), age=c(30, 16, 21), gender=factor(c("M", "F", "M"))) # 데이터프레임 생성
+
+characters
+#  name age gender
+#1 길동  30      M
+#2 춘향  16      F
+#3 철수  21      M
+
+characters[characters$gender=="F",] # 성별이 여성인 행 추출
+#  name age gender
+#2 춘향  16      F
+
+characters[characters$age<30&characters$gender=="M", ] # 30살 미만의 남성 행 추출
+#  name age gender
+#3 철수  21      M
+
+
+### if문 사용 (if, else if, else)
+## 두 가지 조건 분기가 필요한 경우
+
+x = 5
+if(x %% 2==0) {
+  print('x는 짝수') # 조건식이 참일 때 수행
+} else {
+  print('x는 홀수') # 조건식이 거짓일 때 수행
+}
+#[1] "x는 홀수"
+
+
+## 세 가지 조건 분시가 필요한 경우
+
+x = -1
+if(x>0) {
+  print('x is a positive value.') # x가 0보다 크면 출력
+} else if(x<0) {
+  print('x is a negative value.') # 위 조건을 만족하지 않고 x가 0보다 작으면 출력
+} else {
+  print('x is zero.') # 위 조건을 모두 만족하지 않으면 출력
+}
+#[1] "x is a negative value."
+
+
+## ifelse문 사용
+
+x = c(-5:5)
+options(digits=3) # 숫자 표현 시 유효자릿수를 3자리로 설정
+sqrt(x)
+# [1]  NaN  NaN  NaN  NaN  NaN 0.00 1.00 1.41 1.73 2.00 2.24
+#Warning message:
+#In sqrt(x) : NaNs produced
+sqrt(ifelse(x>=0, x, NA)) # NaN이 발생하지 않게 음수면 NA로 표시
+# [1]   NA   NA   NA   NA   NA 0.00 1.00 1.41 1.73 2.00 2.24
 ```
 <br><br>
 
 
-배열에서 사용 가능한 유용한 함수가 있습니다.
-
-apply 함수는 배열의 행 또는 열별로 함수를 적용합니다.
-
-dim 함수는 배열의 크기(차원의 수)를 출력합니다.
-
-sample 함수는 벡터나 배열에서 샘플 데이터를 추출합니다.
-<br><br>
-
-
-```R
-x = array(1:12, c(3,4))
-x
-#     [,1] [,2] [,3] [,4]
-#[1,]    1    4    7   10
-#[2,]    2    5    8   11
-#[3,]    3    6    9   12
-
-
-apply(x, 1, mean)
-#[1] 5.5 6.5 7.5
-
-apply(x, 2, mean)
-#[1]  2  5  8 11
-
-apply(x, 1, mean) # 가운데 값이 1이면 함수를 행별로 적용
-#[1] 5.5 6.5 7.5
-
-apply(x, 2, mean) # 가운데 값이 2이면 함수를 열별로 적용
-#[1]  2  5  8 11
-
-dim(x)
-#[1] 3 4
-
-sample(x) # 배열 요소를 임의로 섞어 추출
-#[1]  7  5  3 11  9  1  6 10  2 12  4  8
-
-sample(x, 10) # 배열 요소 중 10개를 골라 추출
-#[1] 10  2  8  7  6  1  4  3 11 12
-
-sample(x, 10, prob=c(1:12)/24) # 각 요소별 추출 확률을 달리할 수 있음
-#[1]  7 11  4  8  2 10  9  6 12  5
-
-sample(10) # 단순히 숫자만 사용하여 샘플을 만들 수 있음
-#[1]  4 10  1  9  8  3  6  5  7  2
-```
-<br><br>
-
-
-## 데이터프레임
+## 데이터 정제를 위한 반복문
 ***
 
-데이터프레임은 가장 흔히 쓰이는 표 형태의 데이터 구조를 가집니다. 행렬과 달리 여러 데이터형을 혼합하여 저장할 수 있습니다. 리스트와 달리 행의 수를 일치시켜서 저장해야 합니다.
+데이터 검토 시 반복적으로 값을 변경하면서 사용해야 하는 경우에 사용합니다. R에서 제공하는 반복문은 repeat, while, for 문이 있습니다.
+<br><br>
 
-데이터프레임을 생성할 때 data.frame 함수를 이용합니다.
+
+| 반복문 | 의미 |
+| --- | --- |
+| repeat {</br>    반복 수행할 문장</br>} | 블록 안의 문장을 반복해서 수행합니다. |
+| while(조건식) {</br>    조건식이 참일 때 수행할 문장</br>} | 조건식이 참일 때 블록 안의 문장을 수행합니다. |
+| for(변수 in 데이터) {</br>    반복 수행할 문장<br>} | 데이터의 각 요소를 변수에 할당하면서 각각에 대해 블록 안의 문장을 수행합니다. |
+
 <br><br>
 
 
 ```R
-name = c("철수", "춘향", "길동")
-age = c(22, 20, 25)
-gender = factor(c("M", "F", "M"))
-blood.type = factor(c("A", "O", "B"))
-patients = data.frame(name, age, gender, blood.type)
+## 1부터 10까지 수를 1씩 증가시키기
+for(i in 1:10) {
+  print(i)
+}
+#[1] 1
+#[1] 2
+#[1] 3
+# ...
+
+
+## 구구단 2~9단 만들기
+for(i in 2:9) {
+  for(j in 1:9) {
+    print(paste(i, "X", j, "=", i*j))
+  }
+}
+#[1] "2 X 1 = 2"
+#[1] "2 X 2 = 4"
+#[1] "2 X 3 = 6"
+# ...
+
+
+## 1에서 10까지의 수 중 짝수만 출력하기
+for(i in 1:10) {
+  if(i%%2==0) {
+    print(i)
+  }
+}
+#[1] 2
+#[1] 4
+#[1] 6
+#[1] 8
+#[1] 10
+
+
+## 1에서 10까지의 수 중 소수 출력하기
+for(i in 1:10) {
+  check=0
+  for(j in 1:i) {
+    if(i%%j==0) {
+      check=check+1
+    }
+  }
+  if(check==2) {
+    print(i)
+  }
+}
+#[1] 2
+#[1] 3
+#[1] 5
+#[1] 7
+```
+<br><br>
+
+
+## 사용자 정의 함수: 원하는 기능 묶기
+***
+
+함수는 입력과 출력간의 관계식을 의미합니다. 사용자의 목적에 맞는 다양한 함수를 만들 수 있습니다.
+
+사용자 정의 함수의 구조는 아래와 같습니다.
+<br><br>
+
+
+```R
+#함수명 = function (전달인자1, 전달인자2, ...) {
+#    함수 동작 시 수행할 코드
+#    return(반환값)
+#}
+
+
+## 계승을 구하는 함수
+
+fact = function(x) { # 함수의 이름은 fact, 입력은 x
+  fa = 1 # 계승값을 저장할 변수
+  while(x>1) { # x가 1보가 큰 동안 반복
+    fa=fa*x # x 값을 fa에 곱한 후 fa에 다시 저장
+    x=x-1 # x 값을 1 감소
+  }
+  return(fa) # 최종 계산된 fa 반환
+}
+
+fact(5) # 5 factorial을 계산한 결과 출력
+#[1] 120
+```
+<br><br>
+
+
+## 결측값 처리
+***
+
+데이터에는 결측값(missing value)이 존재할 수 있는데, 데이터 중 고의 또는 실수로 누락된 값을 의미합니다. 결측값을 그대로 놔둔 채 데이터 가공을 하면 결과값에 오류가 뜨거나 잘못된 연산이 수행될 수 있으므로 정제과정에서 적절한 처리가 필요합니다.
+
+결측값 처리에는 다음과 같은 방법이 있습니다.
+<br><br>
+
+
+| 방법 | 설명 |
+| --- | --- |
+| is.na 함수 이용 | NA인 데이터가 있으면 T,</br>없으면 F로 나타냅니다. |
+| na.omit 함수 이용 | NA인 데이터를 제거합니다.</br>즉, NA가 포함된 행을 지웁니다. |
+| 함수의 속성 이용 | na.rm=T로 하여 함수 수행 시 NA를 제외합니다. |
+
+<br><br>
+
+
+```R
+## na.omit 함수 이용
+
+air_narm = na.omit(airquality)
+mean(air_narm$Ozone)
+#[1] 42.1
+
+
+## 함수 속성인 na.rm=T 설정
+
+mean(airquality$Ozone, na.rm=T)
+#[1] 42.1
+```
+<br><br>
+
+
+## 이상값 처리
+***
+
+결측값과 더불어 데이터에는 논리적 혹은 통계학적으로 이상한 데이터가 입력되어 있을 수 있습니다. 이러한 데이터를 이상값(outlier)이라 합니다. 통계학에서 이상값이란 다른 관측값과 멀리 떨어진 관측값입니다.
+<br><br>
+
+
+```R
+patients = data.frame(
+  name=c("환자1", "환자2", "환자3", "환자4", "환자5"),
+  age=c(22, 20, 25, 30, 27),
+  gender=factor(c("M", "F", "M", "K", "F")),
+  blood.type=factor(c("A", "O", "B", "AB", "C")))
+
 patients
-#  name age gender blood.type
-#1 철수  22      M          A
-#2 춘향  20      F          O
-#3 길동  25      M          B
+#   name age gender blood.type
+#1 환자1  22      M          A
+#2 환자2  20      F          O
+#3 환자3  25      M          B
+#4 환자4  30      K         AB
+#5 환자5  27      F          C
+
+
+# 성별에 K, 혈액형에 c 값은 명백한 이상값입니다.
+# 성별에서 이상값 제거
+
+patients_outrm = patients[patients$gender=="M"|patients$gender=="F", ]
+patients_outrm
+#   name age gender blood.type
+#1 환자1  22      M          A
+#2 환자2  20      F          O
+#3 환자3  25      M          B
+#5 환자5  27      F          C
+
+
+# 성별과 혈액형에서 이상값 제거
+patirents_outrm1 = patients[
+  (patients$gender=="M"|patients$gender=="F") &
+  (patients$blood.type=="A"|patients$blood.type=="B"|patients$blood.type=="O"|patients$blood.type=="AB"), ]
+patirents_outrm1
+#   name age gender blood.type
+#1 환자1  22      M          A
+#2 환자2  20      F          O
+#3 환자3  25      M          B
 ```
 <br><br>
 
 
-데이터프레임 요소에 접근할 때는 $, [, ], 조건식 등을 이용합니다.
+좀 더 실질적인 데이터를 활용하여 이상값을 처리해 봅니다. 실제 데이터에서는 이상값을 정의하기 모호한 경우가 많습니다. 이 때 boxplot을 활용하여 정상값과 이상값을 구분할 수 있습니다.
 <br><br>
 
 
 ```R
-patients$name # name 속성 값 출력
-#[1] "철수" "춘향" "길동"
+boxplot(airquality[, c(1:4)]) # Ozone, Solar.R, Wind, Temp에 대한 boxplot
 
-patients[1, ] # 1행 값 출력
-#  name age gender blood.type
-#1 철수  22      M          A
+boxplot(airquality[, 1])$stats
+#      [,1]
+#[1,]   1.0 -> 이 값 미만은 이상값으로 분류할 수 있음
+#[2,]  18.0
+#[3,]  31.5
+#[4,]  63.5
+#[5,] 122.0 -> 이 값 초과는 이상값으로 부류할 수 있음
 
-patients[, 2] # 2열 값 출력
-#[1] 22 20 25
+air = airquality # 임시 저장 변수로 airquality 데이터 복사
 
-patients[3, 1] # 3행 1열 값 출력
-#[1] "길동"
+table(is.na(air$Ozone)) # Ozone의 현재 NA 개수 확인
+#FALSE  TRUE 
+#  116    37 
 
-patients[patients$name=="철수", ] # 환자 중 철수에 대한 정보 추출
-#  name age gender blood.type
-#1 철수  22      M          A
 
-patients[patients$name=="철수", c("name", "age")] # 철수 이름과 나이 정보만 추출
-#  name age
-#1 철수  22
+## 이상값을 NA로 처리한 후 NA를 제거함
+
+air$Ozone = ifelse(air$Ozone<1|air$Ozone>122, NA, air$Ozone)
+table(is.na(air$Ozone))
+#FALSE  TRUE 
+#  114    39 
+
+# NA 제거
+air_narm = air[!is.na(air$Ozone), ]
+mean(air_narm$Ozone)
+#[1] 40.2
 ```
 <br><br>
 
 
-데이터프레임에 사용할 수 있는 유용한 함수가 있습니다.
-
-attach/detach 함수는 데이터프레임의 속성명을 변수명으로 변경합니다.
+![Post-Image](Rprogramming12.png)
+_boxplot<br>
+https://www.laidd.org/local/ubonline/view.php?id=181&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPSZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
 <br><br>
-
-
-```R
-head(cars) # cars 데이터셋 확인. head 함수의 기본 기능은 앞 6개 데이터를 추출함
-#  speed dist
-#1     4    2
-#2     4   10
-#3     7    4
-#4     7   22
-#5     8   16
-#6     9   10
-
-speed # speed 변수가 독립적으로 존재하지 않기 때문에 에러 발생
-#Error: object 'speed' not found
-
-attach(cars) # attach 함수를 통해 cars의 각 속성을 변수로 이용하게 함
-
-speed # speed라는 변수명을 직접 이용할 수 있음
-# [1]  4  4  7  7  8  9 10 10 10 11 11 12 12 12 12 13 13 13 13 14 14 14 14 15 15 15 16 16 17 17 17 18 18 18 18 19 19 19 20 20 20 20 20 22 23 24 24 24 24 25
-
-detach(cars) # detach 함수를 통해 cars의 각 속성을 변수로 사용하는 것을 해제함
-
-speed # detach 실행 후 더이상 cars 속성인 speed를 사용하지 못함
-#Error: object 'speed' not found
-```
-<br><br>
-
-
-with 함수는 데이터프레임에 다양한 함수를 적용할 수 있습니다.
-<br><br>
-
-
-```R
-mean(cars$speed) # 데이터 속성을 이용해 함수 적용
-#[1] 15.4
-
-max(cars$speed) # 데이터 속성을 이용해 함수 적용
-#[1] 25
-
-with(cars, mean(speed)) # with 함수를 이용해 함수 적용
-#[1] 15.4
-
-with(cars, max(speed)) # with 함수를 이용해 함수 적용
-#[1] 25
-```
-<br><br>
-
-
-subset 함수는 데이터프레임에서 일부 데이터만 추출할 수 있습니다.
-<br><br>
-
-
-```R
-subset(cars, speed>20) # 속도가 20 초과인 데이터만 추출
-#   speed dist
-#44    22   66
-#45    23   54
-#46    24   70
-#47    24   92
-#48    24   93
-#49    24  120
-#50    25   85
-
-subset(cars, speed>20, select= -c(dist)) # 속도가 20 초과인 데이터 중 dist를 제외한 데이터만 추출
-#   speed
-#44    22
-#45    23
-#46    24
-#47    24
-#48    24
-#49    24
-#50    25
-
-subset(cars, speed>20, select=c(dist)) # 속도가 20 초과인 dist 데이터만 추출, 여러 열 선택은 c() 안을 ,로 구분
-#   dist
-#44   66
-#45   54
-#46   70
-#47   92
-#48   93
-#49  120
-#50   85
-```
-<br><br>
-
-
-## 리스트
-***
-
-리스트는 서로 다른 데이터형을 갖는 자료 구조를 포함할 수 있습니다. 데이터프레임보다 넓은 의미의 데이터 모임입니다. 데이터프레임과 달리 모든 속성의 크기가 같을 필요는 없습니다.
-
-리스트를 생성할 때 list 함수를 이용할 수 있습니다.
-<br><br>
-
-
-```R
-patients = data.frame(name=c("철수", "춘향", "길동"), age=c(22, 20, 25), gender=factor(c("M", "F", "M")), blood.type=factor(c("A", "O", "B")))
-no.patients = data.frame(day=c(1:6), no=c(50, 60, 55, 52, 65, 58))
-listPatients = list(patients, no.patients) # 데이터를 단순히 추가
-listPatients
-#[[1]]
-#  name age gender blood.type
-#1 철수  22      M          A
-#2 춘향  20      F          O
-#3 길동  25      M          B
-
-#[[2]]
-#  day no
-#1   1 50
-#2   2 60
-#3   3 55
-#4   4 52
-#5   5 65
-#6   6 58
-
-listPatients = list(patients=patients, no.patients=no.patients) # 각 데이터에 이름을 부여하면서 추가
-listPatients
-#$patients
-#  name age gender blood.type
-#1 철수  22      M          A
-#2 춘향  20      F          O
-#3 길동  25      M          B
-
-#$no.patients
-#  day no
-#1   1 50
-#2   2 60
-#3   3 55
-#4   4 52
-#5   5 65
-#6   6 58
-```
-<br><br>
-
-
-리스트 요소에 접근할 때 $, [[ ]]를 이용합니다.
-<br><br>
-
-
-```R
-listPatients$patients # 요소명 입력
-#  name age gender blood.type
-#1 철수  22      M          A
-#2 춘향  20      F          O
-#3 길동  25      M          B
-
-listPatients[[1]] # 인덱스 입력
-#  name age gender blood.type
-#1 철수  22      M          A
-#2 춘향  20      F          O
-#3 길동  25      M          B
-
-listPatients[["patients"]] # 요소명을 ""에 입력
-#  name age gender blood.type
-#1 철수  22      M          A
-#2 춘향  20      F          O
-#3 길동  25      M          B
-```
-<br><br>
-
-
-리스트에 사용할 수 있는 유용한 함수가 있습니다.
-
-lapply/sapply 함수는 리스트 요소에 다양한 함수를 적용합니다.
-<br><br>
-
-
-```R
-lapply(listPatients$no.patients, mean) # no.patients 요소의 평균을 구함
-#$day
-#[1] 3.5
-
-#$no
-#[1] 56.66667
-
-lapply(listPatients$patients, mean) # patients 요소의 평균을 구함. 숫자 형태가 아닌 것은 평균이 구해지지 않음
-#$name
-#[1] NA
-
-#$age
-#[1] 22.33333
-
-#$gender
-#[1] NA
-
-#$blood.type
-#[1] NA
-
-#Warning messages:
-#1: In mean.default(X[[i]], ...) :
-#  인자가 수치형 또는 논리형이 아니므로 NA를 반환합니다
-#2: In mean.default(X[[i]], ...) :
-#  인자가 수치형 또는 논리형이 아니므로 NA를 반환합니다
-#3: In mean.default(X[[i]], ...) :
-#  인자가 수치형 또는 논리형이 아니므로 NA를 반환합니다
-
-sapply(listPatients$no.patients, mean)
-#     day       no 
-# 3.50000 56.66667 
-
-sapply(listPatients$no.patients, mean, simplify=F) # sapply()의 simplify 옵션을 F로 하면 lapply()와 동일한 결과 반환함
-#$day
-#[1] 3.5
-
-#$no
-#[1] 56.66667
-```
-<br><br>
-
-
-
 
 
 ## Take Home Message
 ***
 
-* R에서 사용하는 데이터형과 연산에 대해 알아보았습니다.
+* R 프로그래밍의 데이터 취득과 정제에 대해 알아보고 실습을 통해 학습했습니다.
