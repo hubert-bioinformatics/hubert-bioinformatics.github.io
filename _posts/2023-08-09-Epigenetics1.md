@@ -50,7 +50,16 @@ https://www.edwith.org/epigenome-2023/lecture/1473433_
 <br><br>
 
 
+후성유전학은 1942년 Conrad Waddington이 처음 사용한 개념입니다. DNA 정보는 변하지 않으면서 DNA 자체 또는 DNA와 결합하고 있는 단백질(히스톤)의 변형에 의하여 유전자의 발현이 조절되는 현상입니다. 세포별, 개체별, 질환별 유전자 발현 차이의 새로운 원인으로 대두되고 있습니다. 동일한 단백질이라 하더라도 어떤 세포, 조직, 개체냐에 따라 단백질의 양은 크게 달라질 수 있습니다. 후성 유전 인자는 환경에 영향을 받으며 다음 세대로 유전되는 특징이 있습니다.
 
+
+후성유전학은 마치 골짜기 상단에 놓인 공의 운명과 같은데, 어디로 흘러가느냐에 따라 공의 운명이 달라지기 때문입니다. 이를 세포 분화상태와 비교하면 아래 그림과 같습니다.
+<br><br>
+
+![Post-Image](epigenetics3.png)
+_Cellular Potential and Epigenetic Landscape<br>
+https://www.edwith.org/epigenome-2023/lecture/1473433_
+<br><br>
 
 
 
