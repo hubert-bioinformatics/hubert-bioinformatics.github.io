@@ -130,10 +130,10 @@ Reference sequence database는 human genome assembly에 대한 version과 genomi
 <br><br>
 
 
-## &nbsp;&nbsp;In Silico(Computational) Prediction Algorithms
+## In Silico(Computational) Prediction Algorithms
 ***
 
-In silico 예측 알고리즘은 유전자에서 발생한 nucleotide change가 단백질의 구조와 기능에 변화를 일으킬 수 있는지 예측하는데 주로 사용합니다. 분석 tool은 크게 두 가지 종류로 나뉘는데, 단백질 기능에 있어서 missense 변이가 미치는 영향력 예측, 그리고 splicing site에서 sequence variant가 미치는 영향력 예측 입니다.
+In silico 예측 알고리즘은 유전자에서 발생한 nucleotide change가 단백질의 구조와 기능에 변화를 일으킬 수 있는지 예측하는데 주로 사용합니다. 분석 tool은 크게 두 가지 종류로 나뉘는데, 단백질 기능에 있어서 missense 변이가 미치는 영향력 예측, 그리고 splicing site에서 sequence variant가 미치는 영향력 예측입니다.
 <br><br>
 
 
@@ -142,8 +142,38 @@ In silico 예측 알고리즘은 유전자에서 발생한 nucleotide change가 
 | Missense SNV | PolyPhen2 | http://genetics.bwh.harvard.edu/pph2 |
 |     | SIFT | http://sift.jcvi.org |
 |     | MutationAssessor | http://mutationassessor.org |
+|     | MutationTaster | http://www.mutationtaster.org |
+|     | PROVEAN | http://provean.jcvi.org/index.php |
+|     | Condel | http://bg.upf.edu/blog/2012/12/condel-for-prioritization-of-variants-<br>involved-in-hereditary-diseases-and-transfic-for-cancer |
+|     | CoVEC | https://sourceforge.net/projects/covec/files |
+|     | CADD | http://cadd.gs.washington.edu |
+|     | GERP++ | http://mendel.stanford.edu/sidowlab/downloads/gerp/index.html |
+|     | PhyloP and PhastCons | http://compgen.bscb.cornell.edu/phast |
+| Splice site prediction | Human Splicing Finder | http://www.umd.be/HSF3 |
+|     | MaxEntScan | http://genes.mit.edu/burgelab/maxent/Xmaxentscan_scoreseq.html |
+|     | NetGene2 | http://www.cbs.dtu.dk/services/NetGene2 |
+|     | NNSplice | http://www.fruitfly.org/seq_tools/splice.html |
+|     | GeneSplicer | http://www.cbcb.umd.edu/software/GeneSplicer/gene_spl.shtml |
 
 <br><br>
+
+
+## Variant Identification and Annotation
+***
+
+변이 확인은 변이 해석 과정에 있어서 중요한 시작점입니다. Variant calling 결과는 전형적인 결과 포맷 중 하나로 표현합니다; VCF(variant call format), gVCF(genomic VCF), GFF(generic feature format)
+
+Variant annotation 또한 somatic sequence 변이를 정확하게 해석하기 위해 필요한 중요한 과정입니다. 난제 중 하나는 변이의 genomic coordinates(chromosome and position)를 이에 상응하는 cDNA/amino acid coordinate system(c. and p. syntax, respectively)로 변환하는 것입니다. 특히 alignment에 있어서 난해함이 있는 indel 변이에서 문제가 되는데, HGVS system에서는 right-aligned(더 이상 옮기지 못할 때까지 변이의 시작점을 오른쪽으로 이동시키는 것) 표현을 권장하지만 VCF는 left-aligned 표기를 필요로 합니다.
+
+
+
+
+
+
+
+
+
+
 
 
 ![Post-Image](TCGA2.png)
