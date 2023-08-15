@@ -62,9 +62,34 @@ https://www.edwith.org/epigenome-2023/lecture/1473433_
 <br><br>
 
 
+DNA 구조는 아래 그림과 같은데, 후성유전학을 결정하는 인자들이 모두 DNA 구조에 포함되어 있습니다.
+<br><br>
 
 
+[Post-Image](epigenetics4.png)
+_Epigenetics Structure<br>
+https://www.edwith.org/epigenome-2023/lecture/1473433_
+<br><br>
 
+
+유전자가 발현하도록 역할을 하는 HATs, HDemethylases와 발현을 억제하는 HDACs, DMTases가 있습니다.
+<br><br>
+
+
+[Post-Image](epigenetics5.png)
+_Epigenetics Factors<br>
+https://www.edwith.org/epigenome-2023/lecture/1473433_
+<br><br>
+
+
+히스톤 단백질 변형의 종류와 그에 상응하는 구조, 영향을 나타낸 그림입니다.
+<br><br>
+
+
+[Post-Image](epigenetics6.png)
+_히스톤 단백질 변형<br>
+https://www.edwith.org/epigenome-2023/lecture/1473433_
+<br><br>
 
 
 
