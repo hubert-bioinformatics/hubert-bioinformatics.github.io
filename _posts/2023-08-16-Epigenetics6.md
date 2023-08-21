@@ -69,65 +69,6 @@ https://www.edwith.org/epigenome-2023/lecture/1473438_
 
 
 
-
-
-
-환경의 영향 및 다양한 요인에 의해 세포의 운명과 질병 발병이 결정됩니다.
-<br><br>
-
-
-![Post-Image](epigenetics41.png)
-_후성유전적 변형과 세포의 운명 결정<br>
-https://www.edwith.org/epigenome-2023/lecture/1473437_
-<br><br>
-
-
-분화 단계에서 stem cells의 경우 open chromatin 구조를 보이지만 differentiated cells에서는 dense chromatin 구조를 보입니다. 확연한 차이를 보이는 것을 알 수 있습니다.
-<br><br>
-
-
-![Post-Image](epigenetics42.png)
-_분화 단계에서 크로마틴 구조의 변화<br>
-https://www.edwith.org/epigenome-2023/lecture/1473437_
-<br><br>
-
-
-후성유전적 변형과 암의 관계를 나타내는 그림입니다. 이와 같은 관계를 연구하면서 암 치료제 개발을 위한 연구가 진행되고 있습니다.
-<br><br>
-
-
-![Post-Image](epigenetics43.png)
-_후성유전적 변형과 암의 관계<br>
-https://www.edwith.org/epigenome-2023/lecture/1473437_
-<br><br>
-
-
-암에서 흔히 발견되는 methylation, histone modification은 다음과 같습니다. 이러한 양상을 파악하여 암 바이오마커로서 사용하고 있습니다.
-<br><br>
-
-
-![Post-Image](epigenetics44.png)
-_암에서 발견되는 후성유전적 변형<br>
-https://www.edwith.org/epigenome-2023/lecture/1473437_
-<br><br>
-
-
-![Post-Image](epigenetics45.png)
-_암에서 발견되는 후성유전적 변형<br>
-https://www.edwith.org/epigenome-2023/lecture/1473437_
-<br><br>
-
-
-동일한 염기서열을 가지고 있더라도 서로 다른 세포로 분화되고 기능할 수 있는 이유는 후성유전학이 있기 때문입니다. 같은 가사라도 어떤 음정을 붙이느냐에 따라 다른 노래가 되는 이치와 같습니다.
-<br><br>
-
-
-![Post-Image](epigenetics46.png)
-_후성유전학의 역할<br>
-https://www.edwith.org/epigenome-2023/lecture/1473437_
-<br><br>
-
-
 ## Take Home Message
 ***
 
