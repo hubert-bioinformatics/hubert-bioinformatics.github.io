@@ -67,7 +67,7 @@ DNA 구조는 아래 그림과 같은데, 후성유전학을 결정하는 인자
 <br><br>
 
 
-[Post-Image](epigenetics4.png)
+![Post-Image](epigenetics4.png)
 _Epigenetics Structure<br>
 https://www.edwith.org/epigenome-2023/lecture/1473433_
 <br><br>
@@ -77,7 +77,7 @@ https://www.edwith.org/epigenome-2023/lecture/1473433_
 <br><br>
 
 
-[Post-Image](epigenetics5.png)
+![Post-Image](epigenetics5.png)
 _Epigenetics Factors<br>
 https://www.edwith.org/epigenome-2023/lecture/1473433_
 <br><br>
@@ -87,7 +87,7 @@ https://www.edwith.org/epigenome-2023/lecture/1473433_
 <br><br>
 
 
-[Post-Image](epigenetics6.png)
+![Post-Image](epigenetics6.png)
 _히스톤 단백질 변형<br>
 https://www.edwith.org/epigenome-2023/lecture/1473433_
 <br><br>
@@ -97,7 +97,7 @@ https://www.edwith.org/epigenome-2023/lecture/1473433_
 <br><br>
 
 
-[Post-Image](epigenetics7.png)
+![Post-Image](epigenetics7.png)
 _히스톤 단백질의 methylation, acetylation<br>
 https://www.edwith.org/epigenome-2023/lecture/1473433_
 <br><br>
