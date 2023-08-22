@@ -5,7 +5,7 @@ date: 2023-08-09 07:33:05 +0900
 published: true
 math: true
 categories: [Bioinformatics, NGS]
-tags: [BI,bioinformatics,epigenetics]
+tags: []
 img_path: /assets/img/post/
 ---
 
