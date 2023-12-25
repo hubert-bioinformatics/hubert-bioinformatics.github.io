@@ -1,0 +1,16 @@
+---
+layout: post
+title: (LAIDD) 기계학습 및 네트워크 구조를 활용한 정밀의학
+date: 2023-12-25 11:04:05 +0900
+published: true
+categories: [Study, L-Certificate]
+tags: [certificate,ML,precision,medicine,LAIDD]
+img_path: /assets/img/post/
+---
+
+![Post-Image](CERTIFICATE-ML_and_Precision_Medicine.png)
+<br><br>
+
+[Lecture Info](https://www.laidd.org/local/ubonline/view.php?id=161&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZncm91cD0xJmtleXdvcmQ9JUVBJUI4JUIwJUVBJUIzJTg0JUVEJTk1JTk5JUVDJThBJUI1KyVFQiVCMCU4RislRUIlODQlQTQlRUQlOEElQjglRUMlOUIlOEMlRUQlODElQUMrJUVBJUI1JUFDJUVDJUExJUIwJUVCJUE1JUJDKyVFRCU5OSU5QyVFQyU5QSVBOSVFRCU5NSU5QyslRUMlQTAlOTUlRUIlQjAlODAlRUMlOUQlOTglRUQlOTUlOTkmZW5yb2xfc3RhcnQ9JmVucm9sX2VuZD0mc3R1ZHlfc3RhcnQ9JnN0dWR5X2VuZD0mcmVjb21tZW5kLW9ub2ZmPTA=)
+<br><br>
+[Certificate](https://www.laidd.org/local/ubonline/view.php?id=161&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZncm91cD0xJmtleXdvcmQ9JUVBJUI4JUIwJUVBJUIzJTg0JUVEJTk1JTk5JUVDJThBJUI1KyVFQiVCMCU4RislRUIlODQlQTQlRUQlOEElQjglRUMlOUIlOEMlRUQlODElQUMrJUVBJUI1JUFDJUVDJUExJUIwJUVCJUE1JUJDKyVFRCU5OSU5QyVFQyU5QSVBOSVFRCU5NSU5QyslRUMlQTAlOTUlRUIlQjAlODAlRUMlOUQlOTglRUQlOTUlOTkmZW5yb2xfc3RhcnQ9JmVucm9sX2VuZD0mc3R1ZHlfc3RhcnQ9JnN0dWR5X2VuZD0mcmVjb21tZW5kLW9ub2ZmPTA=)

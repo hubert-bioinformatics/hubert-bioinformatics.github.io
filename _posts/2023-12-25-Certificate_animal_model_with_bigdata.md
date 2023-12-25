@@ -1,0 +1,16 @@
+---
+layout: post
+title: (LAIDD) 빅데이터를 활용한 비임상시험 동물모델 개발
+date: 2023-12-25 14:42:55 +0900
+published: true
+categories: [Study, L-Certificate]
+tags: [certificate,bigdata,animal,model,LAIDD]
+img_path: /assets/img/post/
+---
+
+![Post-Image](CERTIFICATE-animal_model_with_bigdata.png)
+<br><br>
+
+[Lecture Info](https://www.laidd.org/local/ubonline/view.php?id=177&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZncm91cD0xJmtleXdvcmQ9JUVCJUI5JTg1JUVCJThEJUIwJUVDJTlEJUI0JUVEJTg0JUIwJUVCJUE1JUJDKyVFRCU5OSU5QyVFQyU5QSVBOSVFRCU5NSU5QyslRUIlQjklODQlRUMlOUUlODQlRUMlODMlODElRUMlOEIlOUMlRUQlOTclOTgrJUVCJThGJTk5JUVCJUFDJUJDJUVCJUFBJUE4JUVCJThEJUI4KyVFQSVCMCU5QyVFQiVCMCU5QyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPSZyZWNvbW1lbmQtb25vZmY9MA==)
+<br><br>
+[Certificate](https://www.laidd.org/local/ubonline/view.php?id=177&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZncm91cD0xJmtleXdvcmQ9JUVCJUI5JTg1JUVCJThEJUIwJUVDJTlEJUI0JUVEJTg0JUIwJUVCJUE1JUJDKyVFRCU5OSU5QyVFQyU5QSVBOSVFRCU5NSU5QyslRUIlQjklODQlRUMlOUUlODQlRUMlODMlODElRUMlOEIlOUMlRUQlOTclOTgrJUVCJThGJTk5JUVCJUFDJUJDJUVCJUFBJUE4JUVCJThEJUI4KyVFQSVCMCU5QyVFQiVCMCU5QyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPSZyZWNvbW1lbmQtb25vZmY9MA==)
