@@ -1,0 +1,16 @@
+---
+layout: post
+title: (LAIDD) 시스템 생물학을 활용한 신호전달 경로 모델링
+date: 2023-12-28 20:05:22 +0900
+published: true
+categories: [Study, L-Certificate]
+tags: [certificate,system,biology,model,LAIDD]
+img_path: /assets/img/post/
+---
+
+![Post-Image](CERTIFICATE-pathway_modeling_with_system_biology.png)
+<br><br>
+
+[Lecture Info](https://www.laidd.org/local/ubonline/view.php?id=279&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZncm91cD0xJmtleXdvcmQ9JUVDJThCJTlDJUVDJThBJUE0JUVEJTg1JTlDKyVFQyU4MyU5RCVFQiVBQyVCQyVFRCU5NSU5OSVFQyU5RCU4NCslRUQlOTklOUMlRUMlOUElQTklRUQlOTUlOUMrJUVDJThCJUEwJUVEJTk4JUI4JUVDJUEwJTg0JUVCJThCJUFDKyVFQSVCMiVCRCVFQiVBMSU5QyslRUIlQUElQTglRUIlOEQlQjglRUIlQTclODEmZW5yb2xfc3RhcnQ9JmVucm9sX2VuZD0mc3R1ZHlfc3RhcnQ9JnN0dWR5X2VuZD0mcmVjb21tZW5kLW9ub2ZmPTA=)
+<br><br>
+[Certificate](https://www.laidd.org/local/ubonline/view.php?id=279&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZncm91cD0xJmtleXdvcmQ9JUVDJThCJTlDJUVDJThBJUE0JUVEJTg1JTlDKyVFQyU4MyU5RCVFQiVBQyVCQyVFRCU5NSU5OSVFQyU5RCU4NCslRUQlOTklOUMlRUMlOUElQTklRUQlOTUlOUMrJUVDJThCJUEwJUVEJTk4JUI4JUVDJUEwJTg0JUVCJThCJUFDKyVFQSVCMiVCRCVFQiVBMSU5QyslRUIlQUElQTglRUIlOEQlQjglRUIlQTclODEmZW5yb2xfc3RhcnQ9JmVucm9sX2VuZD0mc3R1ZHlfc3RhcnQ9JnN0dWR5X2VuZD0mcmVjb21tZW5kLW9ub2ZmPTA=)
