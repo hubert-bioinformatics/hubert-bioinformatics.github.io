@@ -1,0 +1,16 @@
+---
+layout: post
+title: (LAIDD) 인공지능을 활용한 멀티오믹스 기반 바이오마커 발굴
+date: 2023-12-29 21:05:52 +0900
+published: true
+categories: [Study, L-Certificate]
+tags: [certificate,multiomics,ai,biomarker,LAIDD]
+img_path: /assets/img/post/
+---
+
+![Post-Image](CERTIFICATE-biomarker_prediction_with_ai.png)
+<br><br>
+
+[Lecture Info](https://www.laidd.org/local/ubonline/view.php?id=209&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZncm91cD0xJmtleXdvcmQ9JUVDJTlEJUI4JUVBJUIzJUI1JUVDJUE3JTgwJUVCJThBJUE1JUVDJTlEJTg0KyVFRCU5OSU5QyVFQyU5QSVBOSVFRCU5NSU5QyslRUIlQTklODAlRUQlOEIlQjAlRUMlOTglQTQlRUIlQUYlQjklRUMlOEElQTQrJUVBJUI4JUIwJUVCJUIwJTk4KyVFQiVCMCU5NCVFQyU5RCVCNCVFQyU5OCVBNCVFQiVBNyU4OCVFQyVCQiVBNCslRUIlQjAlOUMlRUElQjUlQjQmZW5yb2xfc3RhcnQ9JmVucm9sX2VuZD0mc3R1ZHlfc3RhcnQ9JnN0dWR5X2VuZD0mcmVjb21tZW5kLW9ub2ZmPTA=)
+<br><br>
+[Certificate](https://www.laidd.org/local/ubonline/view.php?id=209&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZncm91cD0xJmtleXdvcmQ9JUVDJTlEJUI4JUVBJUIzJUI1JUVDJUE3JTgwJUVCJThBJUE1JUVDJTlEJTg0KyVFRCU5OSU5QyVFQyU5QSVBOSVFRCU5NSU5QyslRUIlQTklODAlRUQlOEIlQjAlRUMlOTglQTQlRUIlQUYlQjklRUMlOEElQTQrJUVBJUI4JUIwJUVCJUIwJTk4KyVFQiVCMCU5NCVFQyU5RCVCNCVFQyU5OCVBNCVFQiVBNyU4OCVFQyVCQiVBNCslRUIlQjAlOUMlRUElQjUlQjQmZW5yb2xfc3RhcnQ9JmVucm9sX2VuZD0mc3R1ZHlfc3RhcnQ9JnN0dWR5X2VuZD0mcmVjb21tZW5kLW9ub2ZmPTA=)
