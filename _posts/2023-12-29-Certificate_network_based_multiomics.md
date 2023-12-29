@@ -1,0 +1,16 @@
+---
+layout: post
+title: (LAIDD) 네트워크 기반 멀티오믹스 데이터 통합 실습
+date: 2023-12-29 19:49:50 +0900
+published: true
+categories: [Study, L-Certificate]
+tags: [certificate,multiomics,LAIDD]
+img_path: /assets/img/post/
+---
+
+![Post-Image](CERTIFICATE-multipmics_based_network.png)
+<br><br>
+
+[Lecture Info](https://www.laidd.org/local/ubonline/view.php?id=276&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZncm91cD0xJmtleXdvcmQ9JUVCJTg0JUE0JUVEJThBJUI4JUVDJTlCJThDJUVEJTgxJUFDKyVFQSVCOCVCMCVFQiVCMCU5OCslRUIlQTklODAlRUQlOEIlQjAlRUMlOTglQTQlRUIlQUYlQjklRUMlOEElQTQrJUVCJThEJUIwJUVDJTlEJUI0JUVEJTg0JUIwKyVFRCU4NiVCNSVFRCU5NSVBOSslRUMlOEIlQTQlRUMlOEElQjUmZW5yb2xfc3RhcnQ9JmVucm9sX2VuZD0mc3R1ZHlfc3RhcnQ9JnN0dWR5X2VuZD0mcmVjb21tZW5kLW9ub2ZmPTA=)
+<br><br>
+[Certificate](https://www.laidd.org/local/ubonline/view.php?id=276&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZncm91cD0xJmtleXdvcmQ9JUVCJTg0JUE0JUVEJThBJUI4JUVDJTlCJThDJUVEJTgxJUFDKyVFQSVCOCVCMCVFQiVCMCU5OCslRUIlQTklODAlRUQlOEIlQjAlRUMlOTglQTQlRUIlQUYlQjklRUMlOEElQTQrJUVCJThEJUIwJUVDJTlEJUI0JUVEJTg0JUIwKyVFRCU4NiVCNSVFRCU5NSVBOSslRUMlOEIlQTQlRUMlOEElQjUmZW5yb2xfc3RhcnQ9JmVucm9sX2VuZD0mc3R1ZHlfc3RhcnQ9JnN0dWR5X2VuZD0mcmVjb21tZW5kLW9ub2ZmPTA=)
