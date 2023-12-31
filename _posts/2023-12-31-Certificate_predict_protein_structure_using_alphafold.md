@@ -8,7 +8,7 @@ tags: [certificate,ai,alphafold,protein,LAIDD]
 img_path: /assets/img/post/
 ---
 
-![Post-Image](CERTIFICATE-predict_protein_structure_with_alphafold.pngg)
+![Post-Image](CERTIFICATE-predict_protein_structure_with_alphafold.png)
 <br><br>
 
 [Lecture Info](https://www.laidd.org/local/ubonline/view.php?id=194&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZncm91cD0xJmtleXdvcmQ9JUVDJTk1JThDJUVEJThDJThDJUVEJThGJUI0JUVCJTkzJTlDJUVCJUE1JUJDKyVFQyU5RCVCNCVFQyU5QSVBOSVFRCU5NSU5QyslRUIlOEIlQTglRUIlQjAlQjElRUMlQTclODgrJUVBJUI1JUFDJUVDJUExJUIwKyVFQyU5OCU4OCVFQyVCOCVBMSslRUIlQjAlOEYrJUVEJThGJTg5JUVBJUIwJTgwJmVucm9sX3N0YXJ0PSZlbnJvbF9lbmQ9JnN0dWR5X3N0YXJ0PSZzdHVkeV9lbmQ9JnJlY29tbWVuZC1vbm9mZj0w)
