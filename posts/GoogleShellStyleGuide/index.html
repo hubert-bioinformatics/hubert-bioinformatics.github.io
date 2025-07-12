@@ -1,0 +1,917 @@
+<!DOCTYPE html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="Style Guide for Shell - Google" /><meta property="og:locale" content="en" /><meta name="description" content="What is the Shell and Shell Script? the hard outer covering of some creatures" /><meta property="og:description" content="What is the Shell and Shell Script? the hard outer covering of some creatures" /><link rel="canonical" href="/posts/GoogleShellStyleGuide/" /><meta property="og:url" content="/posts/GoogleShellStyleGuide/" /><meta property="og:site_name" content="Hubert Effect" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-04-15T12:31:12+09:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Style Guide for Shell - Google" /><meta name="twitter:site" content="@twitter_username" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-06-04T19:47:09+09:00","datePublished":"2022-04-15T12:31:12+09:00","description":"What is the Shell and Shell Script? the hard outer covering of some creatures","headline":"Style Guide for Shell - Google","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/GoogleShellStyleGuide/"},"url":"/posts/GoogleShellStyleGuide/"}</script><title>Style Guide for Shell - Google | Hubert Effect</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Hubert Effect"><meta name="application-name" content="Hubert Effect"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get MODE_ATTR() { return "data-mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> </a></div><div class="site-title mt-3"> <a href="/">Hubert Effect</a></div><div class="site-subtitle font-italic">Bioinformatics</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a><li class="nav-item"> <a href="/moment/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>MOMENT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/hubert-bioinformatics" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/twitter_username" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['kjhyug93','gmail.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper" class="row justify-content-center"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>Style Guide for Shell - Google</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>Style Guide for Shell - Google</h1><div class="post-meta text-muted"><div> By <em> <a href="https://twitter.com/username">Jonghyuk Kim</a> </em></div><div class="d-flex"><div> <span> Posted <em class="timeago" data-ts="1649993472" data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll" > 2022-04-15 </em> </span> <span> Updated <em class="timeago" data-ts="1654339629" data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll" > 2022-06-04 </em> </span> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="5422 words"> <em>30 min</em> read</span></div></div></div><div class="post-content"><h2 id="what-is-the-shell-and-shell-script"><span class="mr-2">What is the Shell and Shell Script?</span><a href="#what-is-the-shell-and-shell-script" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><blockquote><p><br />the hard outer covering of some creatures<br /><br /></p></blockquote><p>Shell의 사전적 의미 입니다. 컴퓨터에서의 shell도 비슷한 역할을 하는데 OS의 kernel(OS의 일부로서 컴퓨터의 메모리에 상주하는 프로그램)을 감싸고 있습니다. 더 나아가 사용자와 kernel을 연결하는 다리 역할까지 합니다. Shell은 대화창 형태의 interface를 제공하며 사용자가 command를 내리면 OS로 전달하고 OS는 hardware가 이해할 수 있는 언어로 번역합니다. Shell script의 기본 컨셉은 사용자의 command를 실행 순서대로 나열해 놓은 list 입니다. <br /><br /></p><h2 id="shell-types"><span class="mr-2">Shell Types?</span><a href="#shell-types" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Linux에는 다음과 같은 여러 가지 shell이 존재합니다. <br /><br /></p><div class="table-wrapper"><table><thead><tr><th>Shell<th>Complete<br />path-name<th>Prompt for<br />root user<th>Prompt for<br />non-root user<tbody><tr><td>Bourne shell<br />(sh)<td>/bin/sh<br />/sbin/sh<td>#<td>$<tr><td>GNU Bourne-Again shell<br />(bash)<td>/bin/bash<td>bash-VersionNumber#<td>bash-VersionNumber$<tr><td>C shell<br />(csh)<td>/bin/csh<td>#<td>%<tr><td>Korn shell<br />(ksh)<td>/bin/ksh<td>#<td>$<tr><td>Z shell<br />(zsh)<td>/bin/zsh<td>&lt;hostname&gt;#<td>&lt;hostname&gt;%</table></div><p><br /></p><ul><li><p>Bourne shell (sh): 1977년 AT&amp;T사의 Bell 연구소에서 Stephen Bourne이 개발 했습니다. 최초의 bourne shell 입니다.</p><li><p>Bourne Again shell (bash): 1989년 Brian Fox가 GNU project를 위해 개발 했습니다. 현재 linux standard shell로 사용합니다. <br /><br /></p></ul><h2 id="google-shell-style-guide-revision-202"><span class="mr-2">Google Shell Style Guide (Revision 2.02)</span><a href="#google-shell-style-guide-revision-202" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>많은 Googler에 의해 <a href="https://google.github.io/styleguide/shellguide.html," title="Google Shell Style Guide">Google Shell Style Guide</a>가 작성, 수정, 유지되고 있습니다. <br /><br /></p><h2 id="background"><span class="mr-2">Background</span><a href="#background" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><h2 id="which-shell-to-use"><span class="mr-2">  Which Shell to Use</span><a href="#which-shell-to-use" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Bash는 실행파일에 사용이 허용된 유일한 shell scripting language 입니다. 실행파일은 반드시 “<strong>#!/bin/bash</strong>“로 시작하고 최소한의 flag를 사용합니다. “<strong>set</strong>“으로 shell 옵션을 설정하여 “<strong>bash script name</strong>“으로 script를 실행할 수 있도록 합니다. 모든 실행가능한 shell scripts는 일관성을 위해 “<em>bash</em>“로 한정합니다. <br /><br /></p><h2 id="when-to-use-shell"><span class="mr-2">  When to use Shell</span><a href="#when-to-use-shell" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Shell은 small utilities나 간단한 wrapper scripts의 목적으로만 사용합니다. Shell script는 개발언어가 아니므로 Google에서는 다양한 utility script 작성 목적으로 사용됩니다.</p><ul><li><p>만약 대부분 다른 utilities를 부르거나 적은 data를 다룬다면, shell이 적합합니다.</p><li><p>작업의 퍼포먼스가 중요하다면 shell이 아닌 다른 language를 사용하세요.</p><li><p>만약 100 lines 이상 긴 script나 직관적이지 않은 로직을 사용한다면, 지금 당장 정형화된 구조로 다시 작성하세요.</p><li><p>Code의 복잡성을 평가할 때 (예를 들어 다른 language로 변경을 결정할 때), code 작성자가 아닌 다른 사람들에 의해 손쉽게 유지될 수 있는지 고려하세요. <br /><br /></p></ul><h2 id="shell-files-and-interpreter-invocation"><span class="mr-2">Shell Files and Interpreter Invocation</span><a href="#shell-files-and-interpreter-invocation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><h2 id="file-extensions"><span class="mr-2">  File Extensions</span><a href="#file-extensions" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>실행파일은 (강력하게 권장하는 바) 확장자를 사용하지 않거나, “<strong>.sh</strong>” 확장자를 사용합니다. Libraries는 반드시 “.sh” 확장자를 사용하며 실행가능한 상태가 아니어야 합니다. 프로그램이 실행될 때 어떤 language가 사용되었는지 알아야 할 필요가 없으므로 확장자도 사용할 필요가 없습니다. 하지만 libraries는 비슷한 기능을 하는 다른 language로 작성된 library가 필요한 경우가 종종 있으므로 어떤 language로 작성되었는지 아는 것이 중요하며 확장자를 사용합니다. <br /><br /></p><h2 id="suidsgid"><span class="mr-2">  SUID/SGID</span><a href="#suidsgid" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>SUID와 SGID는 shell scripts에서 사용을 금지합니다. Shell은 보안 관련 issue가 너무 많으며 SUID/SGID를 허용할만큼 보안이 지켜질 수 없습니다. <br /><br /></p><h2 id="environment"><span class="mr-2">Environment</span><a href="#environment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><h2 id="stdout-vs-stderr"><span class="mr-2">  STDOUT vs STDERR</span><a href="#stdout-vs-stderr" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>모든 error messages는 “<strong>STDERR</strong>“로 보내야 합니다. 그렇게해야 일반적인 상태와 실제 issue를 구분하기 쉽습니다. 다른 상태 정보와 함께 error messages를 출력하는 기능이 권장됩니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>err<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> <span class="s2">"[</span><span class="si">$(</span><span class="nb">date</span> + <span class="s1">'%Y-%m-%dT%H:%M:%S%z'</span><span class="si">)</span><span class="s2">]: </span><span class="nv">$*</span><span class="s2">"</span> <span class="o">&gt;</span>&amp;2
+<span class="o">}</span>
+
+<span class="k">if</span> <span class="o">!</span> do_something<span class="p">;</span> <span class="k">then
+  </span>err <span class="s2">"Unable to do_something"</span>
+  <span class="nb">exit </span>1
+<span class="k">fi</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="comments"><span class="mr-2">Comments</span><a href="#comments" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><h2 id="file-header"><span class="mr-2">  File Header</span><a href="#file-header" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Script는 내용에 대한 설명으로 시작하세요. 모든 script는 반드시 전반적인 내용에 대한 간략한 요약을 top-level comment 형태로 가져야 합니다. Copyright와 작성자 정보 작성은 옵션입니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="c">#!/bin/bash</span>
+<span class="c">#</span>
+<span class="c">#Perform hot backups of Oracle databases.</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="function-comments"><span class="mr-2">  Function Comments</span><a href="#function-comments" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>명확하지 않고 간략하지도 않은 function은 반드시 comment를 가져야 합니다. Library 내 모든 function은 길이나 복잡도와 상관없이 반드시 comment를 가져야 합니다. 누군가가 code를 읽지 않고 comment를 읽는 것 만으로도 program을 어떻게 사용하는지, library 내 function을 어떻게 사용하는지 알 수 있어야 합니다.</p><ul><li><p>Function에 대한 설명</p><li><p>Globals: List of global variables used and modified</p><li><p>Arguments: Arguments taken</p><li><p>Outputs: Output to STDOUT or STDERR</p><li><p>Returns: Returned values other than the default exit status of the last command run</p></ul><p>예를 들어,</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre><td class="rouge-code"><pre><span class="c">#######################################</span>
+<span class="c"># Cleanup files from the backup directory.</span>
+<span class="c"># Globals:</span>
+<span class="c">#   BACKUP_DIR</span>
+<span class="c">#   ORACLE_SID</span>
+<span class="c"># Arguments:</span>
+<span class="c">#   None</span>
+<span class="c">#######################################</span>
+<span class="k">function </span>cleanup<span class="o">()</span> <span class="o">{</span>
+  …
+<span class="o">}</span>
+
+<span class="c">#######################################</span>
+<span class="c"># Get configuration directory.</span>
+<span class="c"># Globals:</span>
+<span class="c">#   SOMEDIR</span>
+<span class="c"># Arguments:</span>
+<span class="c">#   None</span>
+<span class="c"># Outputs:</span>
+<span class="c">#   Writes location to stdout</span>
+<span class="c">#######################################</span>
+<span class="k">function </span>get_dir<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">SOMEDIR</span><span class="k">}</span><span class="s2">"</span>
+<span class="o">}</span>
+
+<span class="c">#######################################</span>
+<span class="c"># Delete a file in a sophisticated manner.</span>
+<span class="c"># Arguments:</span>
+<span class="c">#   File to delete, a path.</span>
+<span class="c"># Returns:</span>
+<span class="c">#   0 if thing was deleted, non-zero on error.</span>
+<span class="c">#######################################</span>
+<span class="k">function </span>del_thing<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">rm</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+<span class="o">}</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="implementation-comments"><span class="mr-2">  Implementation Comments</span><a href="#implementation-comments" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Code에서 까다롭거나 명확하지 않은 부분, 혹은 흥미롭거나 중요한 부분에 comment를 사용하세요. 모든 내용을 comment에 담지 말고 간단히 적으세요. <br /><br /></p><h2 id="todo-comments"><span class="mr-2">  TODO Comments</span><a href="#todo-comments" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Code의 임시내용, 단기적인 해결책, 충분하지만 완벽하지 않은 부분에 TODO comment를 사용합니다. <a href="https://google.github.io/styleguide/cppguide.html#TODO_Comments," title="C++ 가이드">C++ 가이드</a>를 준수합니다. ‘TODO’ 단어 자체는 모두 대문자를 표기하며, 문제에 대한 설명 내용과 함께 이름, e-mail 주소, 혹은 작성자를 대표하는 다른 표식자를 사용합니다. 이러한 형태의 주요 목적은 일관성 있는 ‘TODO’를 작성함으로써 추후 요청에 대한 자세한 내용을 검색할 수 있도록 하는데 있습니다. ‘TODO’에서 언급한 작성자가 꼭 미래에 해당 문제를 해결해야 하는 것은 아니므로 항상 작성자 정보를 함께 기재합니다.</p><p>예를 들어,</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="c"># TODO(mrmonkey): Handle the unlikely edge cases (bug ####)</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="formatting"><span class="mr-2">Formatting</span><a href="#formatting" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><h2 id="indentation"><span class="mr-2">  Indentation</span><a href="#indentation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Indent는 2-spaces를 사용합니다. Tab은 사용하지 않습니다. 가독성을 높이기 위해 block 사이에는 blank lines를 사용합니다. <br /><br /></p><h2 id="line-length-and-long-strings"><span class="mr-2">  Line Length and Long Strings</span><a href="#line-length-and-long-strings" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Line의 최대 글자수는 80자 입니다. 그 이상의 문자가 들어간다면 “here document”나 “개행문자”를 사용합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="c"># DO use 'here document's</span>
+<span class="nb">cat</span> <span class="o">&lt;&lt;</span><span class="no">END</span><span class="sh">
+I am an exceptionally long
+string.
+</span><span class="no">END
+
+</span><span class="c"># Embedded newlines are ok too</span>
+<span class="nv">long_string</span><span class="o">=</span><span class="s2">"I am an exceptionally
+long string."</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="pipelines"><span class="mr-2">  Pipelines</span><a href="#pipelines" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Pipeline은 하나의 line에 모두 들어가지 않으면 line당 하나로 분리해서 사용합니다. 이 때 새로운 line에 들어가는 pipeline은 2-spaces indent를 사용합니다. 이 규칙은 command 결합에 사용하는 ‘|’, logical 결합에 사용하는 ‘||’와 ‘&amp;&amp;’에 적용됩니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="c"># All fits on one line</span>
+command1 | command2
+
+<span class="c"># Long commands</span>
+command1 <span class="se">\</span>
+  | command2 <span class="se">\</span>
+  | command3 <span class="se">\</span>
+  | command4
+</pre></table></code></div></div><p><br /><br /></p><h2 id="loops"><span class="mr-2">  Loops</span><a href="#loops" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>‘<strong>; do</strong>‘와 ‘<strong>; then</strong>‘은 ‘while’, ‘for’, ‘if’와 동일한 line에 사용하세요.</p><p>예를 들어,</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="c"># If inside a function, consider declaring the Loop variable as</span>
+<span class="c"># a Local to avoid it Leaking into the global environment:</span>
+<span class="c"># Local dir</span>
+<span class="k">for </span><span class="nb">dir </span><span class="k">in</span> <span class="s2">"#{dirs_to_cleanup[@]}"</span><span class="p">;</span> <span class="k">do
+  if</span> <span class="o">[[</span> <span class="nt">-d</span> <span class="s2">"</span><span class="k">${</span><span class="nv">dir</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">ORACLE_SID</span><span class="k">}</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+    </span>log_date <span class="s2">"Cleaning up old files in </span><span class="k">${</span><span class="nv">dir</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">ORACLE_SID</span><span class="k">}</span><span class="s2">"</span>
+    <span class="nb">rm</span> <span class="s2">"</span><span class="k">${</span><span class="nv">dir</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">ORACLE_SID</span><span class="k">}</span><span class="s2">/"</span><span class="k">*</span>
+    <span class="k">if</span> <span class="o">((</span> <span class="nv">$?</span> <span class="o">!=</span> 0 <span class="o">))</span><span class="p">;</span> <span class="k">then
+      </span>error_message
+    <span class="k">fi
+  else
+    </span><span class="nb">mkdir</span> <span class="nt">-p</span> <span class="s2">"</span><span class="k">${</span><span class="nv">dir</span><span class="k">}</span><span class="s2">/</span><span class="k">${</span><span class="nv">ORACLE_SID</span><span class="k">}</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="o">((</span> <span class="nv">$?</span> <span class="o">!=</span> 0 <span class="o">))</span><span class="p">;</span> <span class="k">then
+      </span>error_message
+    <span class="k">fi
+  fi
+done</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="case-statement"><span class="mr-2">  Case statement</span><a href="#case-statement" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><ul><li><p>2-spaces indent를 사용합니다.</p><li><p>One-line alternative는 닫는 부호 이후 “;;” 부호 이전에 space 한 개가 필요합니다.</p><li><p>Long or multi-command alternatives는 pattern, actions, 그리고 “;;” 기호와 함께 복수 개의 lines로 나뉘어져야 합니다.</p></ul><p>Matching expressions는 “case”와 “esac”로부터 한 단계 indent를 사용합니다. Multiline actions는 이로부터 한 단계 더 indent를 사용합니다. “;&amp;”와 “;;&amp;” notations는 사용하지 않습니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="k">case</span> <span class="s2">"</span><span class="k">${</span><span class="nv">expression</span><span class="k">}</span><span class="s2">"</span> <span class="k">in
+  </span>a<span class="p">)</span> 
+    <span class="nv">variable</span><span class="o">=</span><span class="s2">"..."</span> 
+    some_command <span class="s2">"</span><span class="k">${</span><span class="nv">variable</span><span class="k">}</span><span class="s2">"</span> <span class="s2">"</span><span class="k">${</span><span class="nv">other_expr</span><span class="k">}</span><span class="s2">"</span> ... 
+    <span class="p">;;</span> 
+  absolute<span class="p">)</span>
+    <span class="nv">actions</span><span class="o">=</span><span class="s2">"relative"</span> 
+    another_command <span class="s2">"</span><span class="k">${</span><span class="nv">ations</span><span class="k">}</span><span class="s2">"</span> <span class="s2">"</span><span class="k">${</span><span class="nv">other_expr</span><span class="k">}</span><span class="s2">"</span> ... 
+    <span class="p">;;</span> 
+  <span class="k">*</span><span class="p">)</span> 
+    error <span class="s2">"Inexpected expression '</span><span class="k">${</span><span class="nv">expression</span><span class="k">}</span><span class="s2">'"</span> 
+    <span class="p">;;</span> 
+<span class="k">esac</span>
+</pre></table></code></div></div><p><br /><br /></p><p>간단한 commands는 가독성이 떨어지지 않는한 pattern, “;;” 기호와 동일한 line에 놓습니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="nv">vervose</span><span class="o">=</span><span class="s1">'false'</span>
+<span class="nv">aflag</span><span class="o">=</span><span class="s1">''</span>
+<span class="nv">bflag</span><span class="o">=</span><span class="s1">''</span>
+<span class="nv">files</span><span class="o">=</span><span class="s1">''</span>
+<span class="k">while </span><span class="nb">getopts</span> <span class="s1">'abf:v'</span> flag<span class="p">;</span> <span class="k">do
+  case</span> <span class="s2">"</span><span class="k">${</span><span class="nv">flag</span><span class="k">}</span><span class="s2">"</span> <span class="k">in
+    </span>a<span class="p">)</span> <span class="nv">aflag</span><span class="o">=</span><span class="s1">'true'</span> <span class="p">;;</span>
+    b<span class="p">)</span> <span class="nv">bflag</span><span class="o">=</span><span class="s1">'true'</span> <span class="p">;;</span>
+    f<span class="p">)</span> <span class="nv">files</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">OPTARG</span><span class="k">}</span><span class="s2">"</span> <span class="p">;;</span>
+    v<span class="p">)</span> <span class="nv">verbose</span><span class="o">=</span><span class="s1">'true'</span> <span class="p">;;</span>
+    <span class="k">*</span><span class="p">)</span> error <span class="s2">"Unexpected option </span><span class="k">${</span><span class="nv">flag</span><span class="k">}</span><span class="s2">"</span> <span class="p">;;</span>
+  <span class="k">esac</span>
+<span class="k">done</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="variable-expansion"><span class="mr-2">  Variable expansion</span><a href="#variable-expansion" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Variable quote에서 선호되는 방식은 “$var”보다는 “<strong>${var}</strong>” 입니다. 하지만 script에서 원래 사용하던 방식을 준수하세요.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre><span class="c"># Section of *recommended* cases.</span>
+
+<span class="c"># Preferred style for 'special' variables:</span>
+<span class="nb">echo</span> <span class="s2">"Positional: </span><span class="nv">$1</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$5</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$3</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="s2">"Specials: !=</span><span class="nv">$1</span><span class="s2">, -=</span><span class="nv">$-</span><span class="s2">, _=</span><span class="nv">$+</span><span class="s2">. ?=</span><span class="nv">$?</span><span class="s2">, #=</span><span class="nv">$# </span><span class="s2">*=</span><span class="nv">$*</span><span class="s2"> @=</span><span class="nv">$@</span><span class="s2"> </span><span class="se">\$</span><span class="s2">=</span><span class="nv">$$</span><span class="s2"> ..."</span>
+
+<span class="c"># Braces necessary:</span>
+<span class="nb">echo</span> <span class="s2">"many parameters: </span><span class="k">${</span><span class="nv">10</span><span class="k">}</span><span class="s2">"</span>
+
+<span class="c"># Braces avoiding confusion:</span>
+<span class="c"># Output is "a0b0c0"</span>
+<span class="nb">set</span> <span class="nt">--</span> a b c
+<span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">1</span><span class="k">}</span><span class="s2">0</span><span class="k">${</span><span class="nv">2</span><span class="k">}</span><span class="s2">0</span><span class="k">${</span><span class="nv">3</span><span class="k">}</span><span class="s2">0"</span>
+
+<span class="c"># Preferred style for other variables:</span>
+<span class="nb">echo</span> <span class="s2">"PATH=</span><span class="k">${</span><span class="nv">PATH</span><span class="k">}</span><span class="s2">, PWD=</span><span class="k">${</span><span class="nv">PWD</span><span class="k">}</span><span class="s2">, mine=</span><span class="k">${</span><span class="nv">some_var</span><span class="k">}</span><span class="s2">"</span>
+<span class="k">while </span><span class="nb">read</span> <span class="nt">-r</span> f<span class="p">;</span> <span class="k">do
+  </span><span class="nb">echo</span> <span class="s2">"file=</span><span class="k">${</span><span class="nv">f</span><span class="k">}</span><span class="s2">"</span>
+<span class="k">done</span> &lt; &lt; <span class="o">(</span>find /tmp<span class="o">)</span>
+</pre></table></code></div></div><p><br /><br /></p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="c"># Section of *discouraged* cases</span>
+
+<span class="c"># Unquoted vars, unbraced vars, brace-delimited single letter</span>
+<span class="c"># shell specials.</span>
+<span class="nb">echo </span><span class="nv">a</span><span class="o">=</span><span class="nv">$avar</span> <span class="s2">"b=</span><span class="nv">$bvar</span><span class="s2">"</span> <span class="s2">"PID=</span><span class="k">${</span><span class="nv">$}</span><span class="s2">" "</span><span class="k">${</span><span class="nv">1</span><span class="k">}</span><span class="s2">"
+
+# Confusing use: this is expanded as "</span><span class="k">${</span><span class="nv">1</span><span class="k">}</span><span class="nv">0</span><span class="k">${</span><span class="nv">2</span><span class="k">}</span><span class="nv">0</span><span class="k">${</span><span class="nv">3</span><span class="k">}</span><span class="nv">0</span><span class="s2">",
+# not "</span><span class="k">${</span><span class="nv">10</span><span class="k">}${</span><span class="nv">20</span><span class="k">}${</span><span class="nv">30</span><span class="k">}</span><span class="p">
+set -- a b c
+echo </span><span class="s2">"</span><span class="nv">$10$20$30</span><span class="s2">"</span><span class="p">
+</span></pre></table></code></div></div><p><br /><br /></p><h2 id="quoting"><span class="mr-2">  Quoting</span><a href="#quoting" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><ul><li><p>Variables, command substitutions, spaces, 혹은 shell meta characters를 포함하는 문자열은 항상 quote를 사용합니다.</p><li><p>Lists of elements의 안전한 quote를 위해서 array를 사용합니다.</p><li><p>정수로 정의된 shell-internal, readonly special variables는 선택적으로 quote를 사용합니다: “$?”, “$#”, “$$”, “$!”</p><li><p>Command options이나 path name이 아닌 “words”는 quote를 사용합니다.</p><li><p>Literal 정수는 quote를 사용하지 않습니다.</p><li><p>”$*“를 사용해야하는 특별한 이유가 있지 않다면 “<strong>$@</strong>“를 사용하세요.</p></ul><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+</pre><td class="rouge-code"><pre><span class="c"># 'Single' quotes indicate that no substitution is desired.</span>
+<span class="c"># "Double" quotes indicate that substitution is required/tolerated.</span>
+
+<span class="c"># Simple examples</span>
+
+<span class="c"># "quote command substitutions"</span>
+<span class="c"># Note that quotes nested inside "$()" don't need escaping.</span>
+<span class="nv">flag</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>some_command and its args <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span> <span class="s1">'quoted separately'</span><span class="si">)</span><span class="s2">"</span>
+
+<span class="c"># "quote variables"</span>
+<span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">flag</span><span class="k">}</span><span class="s2">"</span>
+
+<span class="c"># Use arrays with quoted expansion for lists.</span>
+<span class="nb">declare</span> <span class="nt">-a</span> FLAGS
+<span class="nv">FLAGS</span><span class="o">=(</span> <span class="nt">--foo</span> <span class="nt">--bar</span><span class="o">=</span><span class="s1">'baz'</span> <span class="o">)</span>
+<span class="nb">readonly </span>FLAGS
+mybinary <span class="s2">"</span><span class="k">${</span><span class="nv">FLAGS</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
+
+<span class="c"># It's ok to not quote internal integer variables.</span>
+<span class="k">if</span> <span class="o">((</span> <span class="nv">$# </span><span class="o">&gt;</span> 3 <span class="o">))</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"ppid=</span><span class="k">${</span><span class="nv">PPID</span><span class="k">}</span><span class="s2">"</span>
+<span class="k">fi</span>
+
+<span class="c"># "never quote literal integers"</span>
+<span class="nv">value</span><span class="o">=</span>32
+<span class="c"># "quote command substitutions", even when you expect integers</span>
+<span class="nv">number</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>generate_number<span class="si">)</span><span class="s2">"</span>
+
+<span class="c"># "prefer quoting words", not compulsory</span>
+<span class="nb">readonly </span><span class="nv">USE_INTEGER</span><span class="o">=</span><span class="s1">'true'</span>
+
+<span class="c"># "quote shell meta characters"</span>
+<span class="nb">echo</span> <span class="s1">'Hello stranger, and well met. Earn lots of $$$'</span>
+<span class="nb">echo</span> <span class="s2">"Process </span><span class="nv">$$</span><span class="s2">: Done making </span><span class="se">\$\$\$</span><span class="s2">."</span>
+
+<span class="c"># "command options or path names"</span>
+<span class="c"># ($1 is assumed to contain a value here)</span>
+<span class="nb">grep</span> <span class="nt">-li</span> Hugo /dev/null <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+
+<span class="c"># Less simple examples</span>
+<span class="c"># "quote variables, unless proven false": ccs might be empty</span>
+git send-email <span class="nt">--to</span> <span class="s2">"</span><span class="k">${</span><span class="nv">reviewers</span><span class="k">}</span><span class="s2">"</span> <span class="k">${</span><span class="nv">ccs</span>:+<span class="s2">"--cc"</span><span class="p"> </span><span class="s2">"</span><span class="k">${</span><span class="nv">ccs</span><span class="k">}</span><span class="s2">"</span><span class="k">}</span>
+
+<span class="c"># For passing on arguments,</span>
+<span class="c"># "$@" is right almost every time, and</span>
+<span class="c"># $* is wrong almost every time:</span>
+
+<span class="c"># * $* and $@ will split on spaces, clobbering up arguments</span>
+<span class="c">#   that contain spaces and dropping empty strings;</span>
+<span class="c"># * "$@" will retain arguments as-is, so no args</span>
+<span class="c">#   provided will result in no args being passed on;</span>
+<span class="c">#   This is in most cases what you want to use for passing</span>
+<span class="c">#   on arguments.</span>
+<span class="c"># * "$*" expands to one argument, with all args joined</span>
+<span class="c">#   by (usually) spaces,</span>
+<span class="c">#   so no args provided will result in one empty string</span>
+<span class="c">#   being passed on.</span>
+<span class="c"># (Consult `man bash` for the nit-grits ;-)</span>
+
+<span class="o">(</span><span class="nb">set</span> <span class="nt">--</span> 1 <span class="s2">"2 two"</span> <span class="s2">"3 three tres"</span><span class="p">;</span> <span class="nb">echo</span> <span class="nv">$#;</span> <span class="nb">set</span> <span class="nt">--</span> <span class="s2">"</span><span class="nv">$*</span><span class="s2">"</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$#,</span><span class="s2"> </span><span class="nv">$@</span><span class="s2">"</span><span class="o">)</span>
+<span class="o">(</span><span class="nb">set</span> <span class="nt">--</span> 1 <span class="s2">"2 two"</span> <span class="s2">"3 three tres"</span><span class="p">;</span> <span class="nb">echo</span> <span class="nv">$#;</span> <span class="nb">set</span> <span class="nt">--</span> <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$#,</span><span class="s2"> </span><span class="nv">$@</span><span class="s2">"</span><span class="o">)</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="features-and-bugs"><span class="mr-2">Features and Bugs</span><a href="#features-and-bugs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><h2 id="shellcheck"><span class="mr-2">  ShellCheck</span><a href="#shellcheck" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p><a href="https://www.shellcheck.net/," title="ShellCheck Project">ShellCheck Project</a>는 입력한 shell scripts의 일반적인 bugs와 warnings를 확인해 주는 사이트 입니다. <br /><br /></p><h2 id="command-substitution"><span class="mr-2">  Command Substitution</span><a href="#command-substitution" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Backticks 대신 “<strong>$(command)</strong>“를 사용합니다. Nested backticks는 내부에 escaping 문자로 “"를 사용해야 합니다. 이에 반해 “<strong>#(command)</strong>” 형식은 읽기 쉽고 escaping도 필요하지 않습니다.</p><p>예를 들어,</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="c"># This is preferred:</span>
+<span class="nv">var</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">command</span> <span class="s2">"</span><span class="si">$(</span>commdna1<span class="si">)</span><span class="s2">"</span><span class="si">)</span><span class="s2">"</span>
+
+<span class="c"># This is not:</span>
+<span class="nv">var</span><span class="o">=</span><span class="s2">"</span><span class="sb">`</span><span class="nb">command</span> <span class="se">\`</span>command1<span class="se">\`</span><span class="sb">`</span><span class="s2">"</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="test----and---"><span class="mr-2">  Test, [ … ], and [[ … ]]</span><a href="#test----and---" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>”[ … ]”, “test”, “/usr/bin/[” 보다 “<strong>[[ … ]]</strong>“가 선호되는 방식입니다. 후자 방식이 errors를 줄이고 정규표현식 사용이 가능하기 때문입니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="c"># This ensures the string on the left is made up of characters in</span>
+<span class="c"># the alnum character class followed by the string name.</span>
+<span class="c"># Note that the RHS should not be quoted here.</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">"filename"</span> <span class="o">=</span>~ &amp;[[:alnum:]]+name <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Match"</span>
+<span class="k">fi</span>
+
+<span class="c"># This matches the exact pattern "f*" (Does not match in this case)</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">"filename"</span> <span class="o">==</span> <span class="s2">"f*"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Match"</span>
+<span class="k">fi</span>
+</pre></table></code></div></div><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="c"># This gives a "too many arguments" error as f* is expanded to the</span>
+<span class="c"># contents of the current directory</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"filename"</span> <span class="o">==</span> f<span class="k">*</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Match"</span>
+<span class="k">fi</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="testing-strings"><span class="mr-2">  Testing Strings</span><a href="#testing-strings" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>가능하면 filter characters 방식보다 quote를 사용하세요.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="c"># Do this:</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="k">${</span><span class="nv">mu_var</span><span class="k">}</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"some_string"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span>do_something
+<span class="k">fi</span>
+
+<span class="c"># -z (string length is zero) and -n (string length is not zero) are</span>
+<span class="c"># preffered over testing for an empty string</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="k">${</span><span class="nv">my_var</span><span class="k">}</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span>do_something
+<span class="k">fi</span>
+
+<span class="c"># This is OK (ensure quotes on the empty side), but not preferred:</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="k">${</span><span class="nv">my_var</span><span class="k">}</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">""</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span>do_something
+<span class="k">fi</span>
+</pre></table></code></div></div><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="c"># Not this:</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="k">${</span><span class="nv">my_var</span><span class="k">}</span><span class="s2">X"</span> <span class="o">==</span> <span class="s2">"some_stringX"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span>do_something
+<span class="k">fi</span>
+</pre></table></code></div></div><p>혼란을 피하기 위해서 “-z”나 “-n” 옵션을 사용합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="c"># Use this</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="nt">-n</span> <span class="s2">"</span><span class="k">${</span><span class="nv">my_var</span><span class="k">}</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span>do_something
+<span class="k">fi</span>
+
+<span class="c"># Instead of this</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="k">${</span><span class="nv">my_var</span><span class="k">}</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span>do_something
+<span class="k">fi</span>
+</pre></table></code></div></div><p>Equality 표현은 “=” 대신 “<strong>==</strong>“을 사용합니다. 숫자를 비교할 때는 “<strong>(( … ))</strong>” 혹은 “<strong>-lt</strong>”, “<strong>-gt</strong>” 방식을 사용합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre><span class="c"># Use this</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="k">${</span><span class="nv">my_var</span><span class="k">}</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"val"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span>do_something
+<span class="k">fi
+
+if</span> <span class="o">((</span> my_var <span class="o">&gt;</span> 3 <span class="o">))</span><span class="p">;</span> <span class="k">then
+  </span>do_something
+<span class="k">fi
+
+if</span> <span class="o">[[</span> <span class="s2">"</span><span class="k">${</span><span class="nv">my_var</span><span class="k">}</span><span class="s2">"</span> <span class="nt">-gt</span> 3 <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span>do_something
+<span class="k">fi</span>
+</pre></table></code></div></div><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="c"># Instead of this</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="k">${</span><span class="nv">my_var</span><span class="k">}</span><span class="s2">"</span> <span class="o">=</span> <span class="s2">"val"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span>do_something
+<span class="k">fi</span>
+
+<span class="c"># Probably unintended lexicographical comparison.</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">"</span><span class="k">${</span><span class="nv">my_var</span><span class="k">}</span><span class="s2">"</span> <span class="o">&gt;</span> 3 <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="c"># True for 4, false for 22.</span>
+  do_something
+<span class="k">fi</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="wildcard-expansion-of-filenames"><span class="mr-2">  Wildcard Expansion of Filenames</span><a href="#wildcard-expansion-of-filenames" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Wildcard를 사용한 파일명을 확장할 때는 명시적인 경로명을 사용합니다. 파일명이 “-“로 시작할 수도 있고, “*” 대신 “<strong>./*</strong>“가 훨씬 안전합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="c"># Here's the contents of the directory:</span>
+<span class="c"># -f -r somedir somefile</span>
+
+<span class="c"># Incorrectly deletes almost everything in the directory by force</span>
+psa@bilby<span class="nv">$ </span><span class="nb">rm</span> <span class="nt">-v</span> <span class="k">*</span>
+removed directory: <span class="sb">`</span>somedir<span class="s1">'
+removed `somefile'</span>
+</pre></table></code></div></div><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="c"># As opposed to:</span>
+psa@bilby<span class="nv">$ </span><span class="nb">rm</span> <span class="nt">-v</span> ./<span class="k">*</span>
+removed <span class="sb">`</span>./-f<span class="s1">'
+removed `./-r'</span>
+<span class="nb">rm</span>: cannot remove <span class="sb">`</span>./somedir<span class="s1">': Is a directory
+removed `./somefile'</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="eval"><span class="mr-2">  Eval</span><a href="#eval" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>“<strong>eval</strong>“은 사용하지 않아야 합니다. Eval은 variable을 할당할 때 input을 삭제하고, 해당 변수들이 과거에 무엇이었는지 확인하지 않고도 할당할 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="c"># What does this set?</span>
+<span class="c"># Did it succeed? In part or whole?</span>
+<span class="nb">eval</span> <span class="si">$(</span>set_my_variables<span class="si">)</span>
+
+<span class="c"># What happens if one of the returned values has a space in it?</span>
+<span class="nv">variable</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">eval </span>some_function<span class="si">)</span><span class="s2">"</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="arrays"><span class="mr-2">  Arrays</span><a href="#arrays" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Bash array는 lists of elements를 저장하고 quoting complications를 피하기 위해 사용합니다. 특히 argument lists에 적용됩니다. Array는 정렬된 strings collection을 저장하고 command나 loop문의 각각 elements로 안전하게 확장할 수 있습니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="c"># An array is assigned using parentheses, and can be appended to</span>
+<span class="c"># with +=( ... ).</span>
+<span class="nb">declare</span> <span class="nt">-a</span> flags
+<span class="nv">flags</span><span class="o">=(</span><span class="nt">--foo</span> <span class="nt">--bar</span><span class="o">=</span><span class="s1">'baz'</span><span class="o">)</span>
+flags+<span class="o">=(</span><span class="nt">--greeting</span><span class="o">=</span><span class="s2">"Hello </span><span class="k">${</span><span class="nv">name</span><span class="k">}</span><span class="s2">"</span><span class="o">)</span>
+mybinary <span class="s2">"</span><span class="k">${</span><span class="nv">flags</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
+</pre></table></code></div></div><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="c"># Don't use strings for sequences.</span>
+<span class="nv">flags</span><span class="o">=</span><span class="s1">'--foo --bar=baz'</span>
+flags+<span class="o">=</span><span class="s1">' --greeting="Hello world"'</span> <span class="c"># This won't work as intended.</span>
+mybinary <span class="k">${</span><span class="nv">flags</span><span class="k">}</span>
+</pre></table></code></div></div><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="c"># Command expansions return single strings, not arrays. Avoid</span>
+<span class="c"># unquoted expansion in array assignments because it won't</span>
+<span class="c"># work correctly if the command output contains special</span>
+<span class="c"># characters or whitespace.</span>
+
+<span class="c"># This expands the listing output into a string, then does special keyword</span>
+<span class="c"># expansion, and then whitespace splitting. Only then is it turned into a</span>
+<span class="c"># list of words. The ls command may also change behavior based on the user's</span>
+<span class="c"># active environment!</span>
+<span class="nb">declare</span> <span class="nt">-a</span> <span class="nv">files</span><span class="o">=(</span><span class="si">$(</span><span class="nb">ls</span> /directory<span class="si">)</span><span class="o">)</span>
+
+<span class="c"># The get_arguments writes everything to STDOUT, but then goes through the</span>
+<span class="c"># some expansion process above before turning into a list of arguments.</span>
+mybinary <span class="si">$(</span>get_arguments<span class="si">)</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="pipes-to-while"><span class="mr-2">  Pipes to While</span><a href="#pipes-to-while" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Pipe로 while을 연결하는 대신 process substitution이나 bash4+ builtin readarray를 사용하세요. Pipe는 subshell을 생성하는데 이 곳에서 수정되는 모든 variables는 parent shell에 공유되지 않기 때문입니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="nv">last_line</span><span class="o">=</span><span class="s1">'NULL'</span>
+your_command | <span class="k">while </span><span class="nb">read</span> <span class="nt">-r</span> line<span class="p">;</span> <span class="k">do
+  if</span> <span class="o">[[</span> <span class="nt">-n</span> <span class="s2">"{line}"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nv">last_line</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">line</span><span class="k">}</span><span class="s2">"</span>
+  <span class="k">fi
+done</span>
+
+<span class="c"># This will always output 'NULL'!</span>
+<span class="nb">echo</span> <span class="s2">"{last_line}"</span>
+</pre></table></code></div></div><p>Process substitution도 마찬가지로 subshell을 생성하지만, subshell 내에서 while이나 다른 command 없이 while로 reditecting을 허용합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="nv">last_line</span><span class="o">=</span><span class="s1">'NULL'</span>
+<span class="k">while </span><span class="nb">read </span>line<span class="p">;</span> <span class="k">do
+  if</span> <span class="o">[[</span> <span class="nt">-n</span> <span class="s2">"</span><span class="k">${</span><span class="nv">line</span><span class="k">}</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nv">last_line</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">line</span><span class="k">}</span><span class="s2">"</span>
+  <span class="k">fi
+done</span> &lt; &lt;<span class="o">(</span>your_command<span class="o">)</span>
+
+<span class="c"># This will output the last non-empth line from your_command</span>
+<span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">last_line</span><span class="k">}</span><span class="s2">"</span>
+</pre></table></code></div></div><p>또는 내장된 readarray를 사용하세요. 위와 같은 이유로 pipe 대신 readarray와 함께 process substitution 방식을 사용합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="nv">last_line</span><span class="o">=</span><span class="s1">'NULL'</span>
+readarray <span class="nt">-t</span> lines &lt; &lt;<span class="o">(</span>your_command<span class="o">)</span>
+<span class="k">for </span>line <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">lines</span><span class="p">[#]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do
+  if</span> <span class="o">[[</span> <span class="nt">-n</span> <span class="s2">"</span><span class="k">${</span><span class="nv">line</span><span class="k">}</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nv">last_line</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">line</span><span class="k">}</span><span class="s2">"</span>
+  <span class="k">fi
+done
+</span><span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">last_line</span><span class="k">}</span><span class="s2">"</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="arithmetic"><span class="mr-2">  Arithmetic</span><a href="#arithmetic" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>“let”, “$[ … ]”, “expr” 대신 “<strong>(( … ))</strong>”, “<strong>$(( … ))</strong>“를 사용하세요.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="c"># Simple calculation used as text - note the use of $(( ... )) within</span>
+<span class="c"># a string.</span>
+<span class="nb">echo</span> <span class="s2">"</span><span class="k">$((</span> <span class="m">2</span> <span class="o">+</span> <span class="m">2</span> <span class="k">))</span><span class="s2"> is 4"</span>
+
+<span class="c"># When performing arithmetic comparisons for testing</span>
+<span class="k">if</span> <span class="o">((</span> a &lt; b <span class="o">))</span><span class="p">;</span> <span class="k">then</span>
+  ...
+<span class="k">fi</span>
+
+<span class="c"># Some calculation assigned to a variable.</span>
+<span class="o">((</span> i <span class="o">=</span> 10 <span class="k">*</span> j + 400 <span class="o">))</span>
+</pre></table></code></div></div><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="c"># This form is non-portable and deprecated</span>
+<span class="nv">i</span><span class="o">=</span><span class="nv">$[</span>2 <span class="k">*</span> 10]
+
+<span class="c"># Despite appearances, 'let' isn't one of the declarative keywords,</span>
+<span class="c"># so unquoted assignments are subject to globbing wordsplitting.</span>
+<span class="c"># For the sake of simplicity, avoid 'let' and use (( ... ))</span>
+<span class="nb">let </span><span class="nv">i</span><span class="o">=</span><span class="s2">"2 + 2"</span>
+
+<span class="c"># The expr utility is an externak program and not a shell builtin.</span>
+<span class="nv">i</span><span class="o">=</span><span class="si">$(</span> <span class="nb">expr </span>4 + 4 <span class="si">)</span>
+
+<span class="c"># Quoting can be error prone when using expr too.</span>
+<span class="nv">i</span><span class="o">=</span><span class="si">$(</span> <span class="nb">expr </span>4 <span class="s1">'*'</span> 4 <span class="si">)</span>
+</pre></table></code></div></div><p>또한 “expr”보다 shell의 built-in arithmetic이 몇 배 더 빠릅니다. Variables를 사용할 때 “$(( … ))” 안에서 “<strong>${var}</strong>” (그리고 “<strong>$var</strong>”)) 형태가 필요하지 않습니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre><td class="rouge-code"><pre><span class="c"># N. B.: Remember to declare your variables as integers when</span>
+<span class="c"># possible, and to prefer local variables over glovals.</span>
+<span class="nb">local</span> <span class="nt">-i</span> <span class="nv">hundred</span><span class="o">=</span><span class="k">$((</span> <span class="m">10</span> <span class="o">*</span> <span class="m">10</span> <span class="k">))</span>
+<span class="nb">declare</span> <span class="nt">-i</span> <span class="nv">five</span><span class="o">=</span><span class="k">$((</span> <span class="m">10</span> <span class="o">/</span> <span class="m">2</span> <span class="k">))</span>
+
+<span class="c"># Increment the variable "i" by three.</span>
+<span class="c"># Note that:</span>
+<span class="c">#  - We do not write ${i} or $i.</span>
+<span class="c">#  - We put a aspace after the (( and before the )).</span>
+<span class="o">((</span> i +<span class="o">=</span> 3 <span class="o">))</span>
+
+<span class="c"># To decrement the variable "i" by five:</span>
+<span class="o">((</span> i -<span class="o">=</span> 5 <span class="o">))</span>
+
+<span class="c"># Do some complicated computations.</span>
+<span class="c"># Note that normal ariithmetic operator precedence is observed.</span>
+<span class="nv">hr</span><span class="o">=</span>2
+<span class="nv">min</span><span class="o">=</span>5
+<span class="nv">sec</span><span class="o">=</span>30
+<span class="nb">echo</span> <span class="k">$((</span> hr <span class="o">*</span> <span class="m">3600</span> <span class="o">+</span> min <span class="o">*</span> <span class="m">60</span> <span class="o">+</span> sec <span class="k">))</span> <span class="c"># prints 7530 as expected</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="naming-conventions"><span class="mr-2">Naming Conventions</span><a href="#naming-conventions" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><h2 id="function-names"><span class="mr-2">  Function Names</span><a href="#function-names" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>소문자를 사용하고 두 개 이상 단어를 분리할 때 underscore를 사용합니다. 복수 개의 library는 “::” 기호로 분리합니다. Function name 다음에는 parentheses를 사용합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="c"># Single function</span>
+my_func<span class="o">()</span> <span class="o">{</span>
+  ...
+<span class="o">}</span>
+
+<span class="c"># Part of a package</span>
+mypackage::my_func<span class="o">()</span> <span class="o">{</span>
+  ...
+<span class="o">}</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="variable-names"><span class="mr-2">  Variable Names</span><a href="#variable-names" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Functiona names와 동일한 규칙을 따릅니다. 반복문 내 looping variable name은 서로 유사한 name을 사용합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="k">for </span>zone <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">zones</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span><span class="p">;</span> <span class="k">do
+  </span>something_with <span class="s2">"</span><span class="k">${</span><span class="nv">zone</span><span class="k">}</span><span class="s2">"</span>
+<span class="k">done</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="constants-and-environment-variable-names"><span class="mr-2">  Constants and Environment Variable Names</span><a href="#constants-and-environment-variable-names" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>모두 대문자를 사용하고 두 개 이상 단어를 분리할 때 underscore를 사용합니다. 파일의 최상단에 선언합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="c"># Constant</span>
+<span class="nb">readonly </span><span class="nv">PATH_TO_FILES</span><span class="o">=</span><span class="s1">'/some/path'</span>
+
+<span class="c"># Both constant and environment</span>
+<span class="nb">declare</span> <span class="nt">-xr</span> <span class="nv">ORACLE_SID</span><span class="o">=</span><span class="s1">'PROD'</span>
+</pre></table></code></div></div><p>명확성을 위해 “declare”보다 “<strong>readonly</strong>“나 “<strong>export</strong>” 사용을 권장합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="nv">VERBOSE</span><span class="o">=</span><span class="s1">'false'</span>
+<span class="k">while </span><span class="nb">getopts</span> <span class="s1">'v'</span> flag<span class="p">;</span> <span class="k">do
+  case</span> <span class="s2">"</span><span class="k">${</span><span class="nv">flag</span><span class="k">}</span><span class="s2">"</span> <span class="k">in
+    </span>v<span class="p">)</span> <span class="nv">VERBOSE</span><span class="o">=</span><span class="s1">'true'</span> <span class="p">;;</span>
+  <span class="k">esac</span>
+<span class="k">done
+</span><span class="nb">readonly </span>VERBOSE
+</pre></table></code></div></div><p><br /><br /></p><h2 id="source-filenames"><span class="mr-2">  Source Filenames</span><a href="#source-filenames" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>소문자를 사용하고 두 개 이상 단어를 분리할 때 underscore를 사용합니다. <br /><br /></p><h2 id="read-only-variables"><span class="mr-2">  Read-only Variables</span><a href="#read-only-variables" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Read-only임을 확실히 하기 위해 “<strong>reaonly</strong>“나 “<strong>declare -r</strong>“을 사용합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nv">zip_version</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>dpkg <span class="nt">--status</span> zip | <span class="nb">grep </span>Version: | <span class="nb">cut</span> <span class="nt">-d</span> <span class="s1">' '</span> <span class="nt">-f</span> 2<span class="si">)</span><span class="s2">"</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="k">${</span><span class="nv">zip_version</span><span class="k">}</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span>eooro_message
+<span class="k">else
+  </span><span class="nb">readonly </span>zip_version
+<span class="k">fi</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="use-local-variables"><span class="mr-2">  Use Local Variables</span><a href="#use-local-variables" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Function-specific variables는 “<strong>local</strong>“과 함께 선언합니다. 선언과 assignment는 서로 다른 lines로 구분해야 합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre>my_func2<span class="o">()</span> <span class="o">{</span>
+  <span class="nb">local </span><span class="nv">name</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+
+  <span class="c"># Separate lines for declaration and assignment:</span>
+  <span class="nb">local </span>my_var
+  <span class="nv">my_var</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>my_func<span class="si">)</span><span class="s2">"</span>
+  <span class="o">((</span> <span class="nv">$?</span> <span class="o">==</span> 0 <span class="o">))</span> <span class="o">||</span> <span class="k">return</span>
+
+  ...
+<span class="o">}</span>
+</pre></table></code></div></div><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>my_func2<span class="o">()</span> <span class="o">{</span>
+  <span class="c"># DO NOT do this:</span>
+  <span class="c"># $? will always be zero, as it contains the exit code of 'local', not my_func</span>
+  <span class="nb">local </span><span class="nv">my_var</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span>my_func<span class="si">)</span><span class="s2">"</span>
+  <span class="o">((</span> <span class="nv">$?</span> <span class="o">==</span> 0 <span class="o">))</span> <span class="o">||</span> <span class="k">return</span>
+
+  ...
+<span class="o">}</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="function-location"><span class="mr-2">  Function Location</span><a href="#function-location" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>모든 function은 파일의 constants 바로 아래 함께 놓아두세요. Functions 사이에 executable code를 숨겨 놓지 않습니다. <br /><br /></p><h2 id="main"><span class="mr-2">  main</span><a href="#main" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>“<strong>main</strong>” function은 적어도 한 개 이상의 다른 function을 포함하며 파일의 제일 아래에 위치합니다. 가장 마지막 non-comment line은 “<strong>main</strong>” function calling을 합니다. <br /><br /></p><h2 id="calling-commands"><span class="mr-2">Calling Commands</span><a href="#calling-commands" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><h2 id="checking-return-values"><span class="mr-2">  Checking Return Values</span><a href="#checking-return-values" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>항상 return values를 체크하고 관련 정보를 제공합니다. Unpiped commands에서는 “$?”를 사용하거나 “if”문을 통해서 확인합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="k">if</span> <span class="o">!</span> mb <span class="s2">"</span><span class="k">${</span><span class="nv">file_list</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span> <span class="s2">"</span><span class="k">${</span><span class="nv">dest_dir</span><span class="k">}</span><span class="s2">/"</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Unable to move </span><span class="k">${</span><span class="nv">file_list</span><span class="p">[*]</span><span class="k">}</span><span class="s2"> to </span><span class="k">${</span><span class="nv">dest_dir</span><span class="k">}</span><span class="s2">"</span> <span class="o">&gt;</span>&amp;2
+  <span class="nb">exit </span>1
+<span class="k">fi</span>
+
+<span class="c"># Or</span>
+<span class="nb">mv</span> <span class="s2">"</span><span class="k">${</span><span class="nv">file_list</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span> <span class="s2">"</span><span class="k">${</span><span class="nv">dest_dir</span><span class="k">}</span><span class="s2">/"</span>
+  <span class="nb">echo</span> <span class="s2">"Unable to move </span><span class="k">${</span><span class="nv">file_list</span><span class="p">[*]</span><span class="k">}</span><span class="s2"> to </span><span class="k">${</span><span class="nv">dest_dir</span><span class="k">}</span><span class="s2">"</span> <span class="o">&gt;</span>&amp;2
+  <span class="nb">exit </span>1
+<span class="k">fi</span>
+</pre></table></code></div></div><p>Bash는 또한 “<strong>PIPESTATUS</strong>” 변수를 가지고 있는데 모든 pipe의 return values를 체크하도록 허용합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-cf</span> - ./<span class="k">*</span> | <span class="o">(</span> <span class="nb">cd</span> <span class="s2">"</span><span class="k">${</span><span class="nv">dir</span><span class="k">}</span><span class="s2">"</span> <span class="o">&amp;&amp;</span> <span class="nb">tar</span> <span class="nt">-xf</span> - <span class="o">)</span>
+<span class="k">if</span> <span class="o">((</span> PIPESTATUS[0] <span class="o">!=</span> 0 <span class="o">||</span> PIPESTATUS[1] <span class="o">!=</span> 0 <span class="o">))</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Unable to rat files to </span><span class="k">${</span><span class="nv">dir</span><span class="k">}</span><span class="s2">"</span> <span class="o">&gt;</span>&amp;2
+<span class="k">fi</span>
+</pre></table></code></div></div><p>하지만 “<strong>PIPESTATUS</strong>“는 다른 command를 사용하면 이를 덮어쓰기 때문에, pipe마다 발생하는 errors에 대해 서로 다른 대처가 필요한 경우 command를 실행한 이후 “<strong>PIPESTATUS</strong>“를 다른 변수에 할당해야 합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="nb">tar</span> <span class="nt">-cf</span> - ./<span class="k">*</span> | <span class="o">(</span> <span class="nb">cd</span> <span class="s2">"</span><span class="k">${</span><span class="nv">DIR</span><span class="k">}</span><span class="s2">"</span> <span class="o">&amp;&amp;</span> <span class="nb">tar</span> <span class="nt">-xf</span> - <span class="o">)</span>
+<span class="nv">return_codes</span><span class="o">=(</span> <span class="s2">"</span><span class="k">${</span><span class="nv">PIPESTATUS</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span> <span class="o">)</span>
+<span class="k">if</span> <span class="o">((</span> return_codes[0] <span class="o">!=</span> 0 <span class="o">))</span><span class="p">;</span> <span class="k">then
+  </span>do_something
+<span class="k">fi
+if</span> <span class="o">((</span> return_codes[1] <span class="o">!=</span> 0 <span class="o">))</span><span class="p">;</span> <span class="k">then
+  </span>do_something_else
+<span class="k">fi</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="builtin-commands-vs-external-commands"><span class="mr-2">  Builtin Commands vs. External Commands</span><a href="#builtin-commands-vs-external-commands" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Shell builtin commands와 분리된 프로세스 commands를 사용 가능하다면 shell builtin commands를 사용합니다.</p><div class="language-bash highlighter-rouge"><div class="code-header"> <span data-label-text="Shell"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="c"># Prefer this:</span>
+<span class="nv">addition</span><span class="o">=</span><span class="k">$((</span> X <span class="o">+</span> Y <span class="k">))</span>
+<span class="nv">substitution</span><span class="o">=</span><span class="s2">"</span><span class="k">${</span><span class="nv">string</span><span class="p">/#foo/bar</span><span class="k">}</span><span class="s2">"</span>
+
+<span class="c"># Instead of this:</span>
+<span class="nv">addition</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">expr</span> <span class="s2">"</span><span class="k">${</span><span class="nv">X</span><span class="k">}</span><span class="s2">"</span> + <span class="s2">"</span><span class="k">${</span><span class="nv">Y</span><span class="k">}</span><span class="s2">"</span><span class="si">)</span><span class="s2">"</span>
+<span class="nv">substitution</span><span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="k">${</span><span class="nv">string</span><span class="k">}</span><span class="s2">"</span> | <span class="nb">sed</span> <span class="nt">-e</span> <span class="s1">'s/^foo/bar/'</span><span class="si">)</span><span class="s2">"</span>
+</pre></table></code></div></div><p><br /><br /></p><h2 id="conclusion"><span class="mr-2">Conclusion</span><a href="#conclusion" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2></h2><hr /><p>Use common sense and BE CONSISTENT.</p><p>Revision 2.02</p></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/programming/'>Programming</a>, <a href='/categories/linux/'>Linux</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/linux/" class="post-tag no-text-decoration" >linux</a> <a href="/tags/shell/" class="post-tag no-text-decoration" >shell</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Style Guide for Shell - Google - Hubert Effect&amp;url=/posts/GoogleShellStyleGuide/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Style Guide for Shell - Google - Hubert Effect&amp;u=/posts/GoogleShellStyleGuide/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=/posts/GoogleShellStyleGuide/&amp;text=Style Guide for Shell - Google - Hubert Effect" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" data-title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/Certificate_predict_protein_structure_using_alphafold/">(LAIDD) 알파폴드를 이용한 단백질 구조 예측 및 평가</a><li><a href="/posts/Epigenetics1/">Epigenetics I - 후성유전학의 개요</a><li><a href="/posts/Epigenetics6/">Epigenetics VI - 후성유전체 데이터 생산과 분석1</a><li><a href="/posts/AMP_guideline/">AMP Guideline</a><li><a href="/posts/R_for_Bioinformatics_4/">생물정보학을 위한 R프로그래밍 IV - 데이터 취득과 정제</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/certificate/">certificate</a> <a class="post-tag" href="/tags/bioinformatics/">bioinformatics</a> <a class="post-tag" href="/tags/bi/">BI</a> <a class="post-tag" href="/tags/python/">python</a> <a class="post-tag" href="/tags/laidd/">LAIDD</a> <a class="post-tag" href="/tags/ngs/">NGS</a> <a class="post-tag" href="/tags/statistics/">statistics</a> <a class="post-tag" href="/tags/kobic/">KOBIC</a> <a class="post-tag" href="/tags/biology/">biology</a> <a class="post-tag" href="/tags/study/">study</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="tail-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/Certificate_Linux_inter/"><div class="card-body"> <em class="timeago small" data-ts="1653830191" > 2022-05-29 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>(EDWITH-KOBIC) Linux 기초편</h3><div class="text-muted small"><p> Lecture Info Certificate</p></div></div></a></div><div class="card"> <a href="/posts/conda_error_CommandNotFoundError/"><div class="card-body"> <em class="timeago small" data-ts="1688511915" > 2023-07-05 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>(Error) CommandNotFoundError - Your shell has not been properly configured to use 'conda activate'</h3><div class="text-muted small"><p> Error 내용 conda environment를 생성한 뒤 activate 시도했을 때 아래와 같은 error message를 출력합니다. CommandNotFoundError https://hubert-bioinformatics.github.io/ 내용에 따라 conda init &amp;lt;SHELL_NAME&amp;gt; 실행한 뒤 shell을...</p></div></div></a></div><div class="card"> <a href="/posts/Algorithm_Sort_Selection/"><div class="card-body"> <em class="timeago small" data-ts="1689385202" > 2023-07-15 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Sort Algorithm - Selection Sort</h3><div class="text-muted small"><p> 선택 정렬 선택 정렬은 원리가 간단한 정렬 알고리즘 중 하나입니다. 배열 A[1, …, n]에서 가장 작은(or 큰) 원소를 찾아 배열의 첫(or 끝)자리에 있는 \(A[1](or A[n])\)과 자리를 바꿉니다. \(A[1](or A[n])\) 원소에 대한 배열은 끝났으므로 나머지 원소를 대상으로 같은 작업을 반복합니다. 1 2 3 4 5 6...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/PEP8/" class="btn btn-outline-primary" prompt="Older"><p>Style Guide for Python Code - PEP8</p></a> <a href="/posts/Algorithm_Search_DFS/" class="btn btn-outline-primary" prompt="Newer"><p>Search Algorithm - DFS (Depth-First Search)</p></a></div></div></div></div><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center text-muted"><div class="footer-left"><p class="mb-0"> © 2025 <a href="https://twitter.com/username">Jonghyuk Kim</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/certificate/">certificate</a> <a class="post-tag" href="/tags/bioinformatics/">bioinformatics</a> <a class="post-tag" href="/tags/bi/">BI</a> <a class="post-tag" href="/tags/python/">python</a> <a class="post-tag" href="/tags/laidd/">LAIDD</a> <a class="post-tag" href="/tags/ngs/">NGS</a> <a class="post-tag" href="/tags/statistics/">statistics</a> <a class="post-tag" href="/tags/kobic/">KOBIC</a> <a class="post-tag" href="/tags/biology/">biology</a> <a class="post-tag" href="/tags/study/">study</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/en.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script> /* see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> */ MathJax = { tex: { inlineMath: [ /* start/end delimiter pairs for in-line math */ ['$','$'], ['\\(','\\)'] ], displayMath: [ /* start/end delimiter pairs for display math */ ['$$', '$$'], ['\\[', '\\]'] ] } }; </script> <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"> </script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script>
