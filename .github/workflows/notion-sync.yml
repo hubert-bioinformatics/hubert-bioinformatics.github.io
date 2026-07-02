@@ -14,14 +14,25 @@ jobs:
         uses: actions/checkout@v3
 
       # 노션의 글과 이미지를 가져와서 마크다운으로 변환해주는 Action
-      - name: Notion To Jekyll
-        uses: younho9/notion-to-jekyll@v1
+      - name: notion-jam
+        # You may pin to the exact commit or the version.
+        # uses: victornpb/notion-jam@ef5134190977bdaffd87e396d5d27860a710c8db
+        uses: victornpb/notion-jam@v0.0.13
         with:
-          notion_token: ${{ secrets.NOTION_TOKEN }}
-          notion_database_id: ${{ secrets.NOTION_DATABASE_ID }}
-          # 노션 데이터베이스에서 '상태' 속성이 'Ready'인 글만 필터링해서 가져옴
-          filter_prop: '상태'
-          filter_value: 'Ready'
+          # 깃허브에서 자동 제공하는 토큰 사용 (추가 세팅 불필요)
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+          # 우리가 아까 금고에 넣어둔 노션 열쇠들
+          NOTION_SECRET: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE: ${{ secrets.NOTION_DATABASE_ID }}
+          
+          # 가져올 글 필터링 기준
+          FILTER_PROP: '상태'
+          FILTER_VALUES: 'Ready'
+          
+          # Jekyll 블로그 구조에 맞춘 파일 저장 경로 설정
+          ARTICLE_PATH: '_posts/{date}-{title}.md'
+          ASSETS_PATH: 'assets/img/post/'
 
       # 변환된 마크다운 파일(_posts/)과 다운로드된 이미지(assets/)를 GitHub에 커밋 및 푸시
       - name: Commit and Push Changes
