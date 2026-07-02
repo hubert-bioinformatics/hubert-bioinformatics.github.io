@@ -1,0 +1,39 @@
+name: Notion to GitHub Pages
+
+on:
+  schedule:
+    # 매일 UTC 15:00 (한국 시간 자정 00:00)에 자동 실행
+    - cron: '0 15 * * *'
+  workflow_dispatch: # Actions 탭에서 수동으로 'Run workflow' 버튼을 눌러 실행할 수 있도록 허용
+
+jobs:
+  notion-to-blog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 노션의 글과 이미지를 가져와서 마크다운으로 변환해주는 Action
+      - name: Notion To Jekyll
+        uses: younho9/notion-to-jekyll@v1
+        with:
+          notion_token: ${{ secrets.NOTION_TOKEN }}
+          notion_database_id: ${{ secrets.NOTION_DATABASE_ID }}
+          # 노션 데이터베이스에서 '상태' 속성이 'Ready'인 글만 필터링해서 가져옴
+          filter_prop: '상태'
+          filter_value: 'Ready'
+
+      # 변환된 마크다운 파일(_posts/)과 다운로드된 이미지(assets/)를 GitHub에 커밋 및 푸시
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 변경된 파일들을 스테이징
+          git add _posts/ assets/ 2>/dev/null || true
+          
+          # 커밋할 내용이 있으면 커밋하고, 없으면 에러 없이 넘기기
+          git commit -m "Auto-sync Notion posts to Blog" || echo "No changes to commit"
+          
+          # 저장소에 푸시하여 실제 반영
+          git push
