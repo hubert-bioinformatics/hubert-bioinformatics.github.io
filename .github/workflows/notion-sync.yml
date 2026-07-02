@@ -37,6 +37,27 @@ jobs:
           ASSETS_PATH: 'assets/img/post/'
 
       # 변환된 마크다운 파일(_posts/)과 다운로드된 이미지(assets/)를 GitHub에 커밋 및 푸시
+      - name: Clean up Filename for Jekyll format
+        run: |
+          if [ -d "_posts" ]; then
+            cd _posts
+            for file in *.md; do
+              # 파일이 없으면 건너뜀
+              [ -e "$file" ] || continue
+              
+              # 정규식을 이용해 파일명에서 YYYY-MM-DD 형태와 제목 부분만 추출
+              if [[ "$file" =~ ^([0-9]{4}-[0-9]{2}-[0-9]{2})(T[0-9:Z.+-]+)?-(.*\.md)$ ]]; then
+                # 시간 부분(그룹2)을 제외하고, 날짜(그룹1)와 제목(그룹3)만 이어붙여 새 이름 생성
+                new_name="${BASH_REMATCH[1]}-${BASH_REMATCH[3]}"
+                
+                # 파일명이 다를 경우에만 이름 변경 실행
+                if [ "$file" != "$new_name" ]; then
+                  mv "$file" "$new_name"
+                fi
+              fi
+            done
+          fi
+      
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
