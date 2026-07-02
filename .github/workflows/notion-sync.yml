@@ -29,6 +29,8 @@ jobs:
           # 가져올 글 필터링 기준
           FILTER_PROP: '상태'
           FILTER_VALUES: 'Ready'
+          PARALLEL_PAGES: '1'
+          PARALLEL_DOWNLOADS_PER_PAGE: '1'
           
           # Jekyll 블로그 구조에 맞춘 파일 저장 경로 설정
           ARTICLE_PATH: '_posts/{date}-{title}.md'
