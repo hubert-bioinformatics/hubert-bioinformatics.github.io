@@ -36,6 +36,33 @@ jobs:
           ARTICLE_PATH: '_posts/{date}-{title}.md'
           ASSETS_PATH: 'assets/img/post/'
 
+      - name: Clean up Filename and Frontmatter
+        run: |
+          if [ -d "_posts" ]; then
+            cd _posts
+            for file in *.md; do
+              # 파일이 없으면 건너뜀
+              [ -e "$file" ] || continue
+              
+              # 1. 파일 내부의 Front Matter 날짜 형식 깔끔하게 정리 (시간 부분 절삭)
+              # date: 2026-07-03T00:00:00.000Z 같은 형태를 date: 2026-07-03 으로 덮어씀
+              sed -i -E 's/^(date: [0-9]{4}-[0-9]{2}-[0-9]{2}).*/\1/' "$file"
+              
+              # 2. 이미 yyyy-mm-dd- 형식으로 되어 있는 파일(기존 글)은 건너뜀
+              if [[ "$file" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2} ]]; then
+                continue
+              fi
+              
+              # 3. 파일 내부에서 깔끔해진 yyyy-mm-dd 날짜를 다시 추출
+              post_date=$(grep -m 1 "^date:" "$file" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')
+              
+              # 4. 날짜를 성공적으로 찾았다면, 파일명 앞에 날짜를 붙여서 최종 이름 변경
+              if [ -n "$post_date" ]; then
+                mv "$file" "${post_date}-${file}"
+              fi
+            done
+          fi
+
       # 변환된 마크다운 파일(_posts/)과 다운로드된 이미지(assets/)를 GitHub에 커밋 및 푸시
       - name: Commit and Push Changes
         run: |
