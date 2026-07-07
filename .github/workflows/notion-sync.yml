@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
 
       # 노션의 글과 이미지를 가져와서 마크다운으로 변환해주는 Action
       - name: notion-jam
