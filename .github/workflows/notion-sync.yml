@@ -39,17 +39,23 @@ jobs:
       - name: Clean up Filename and Frontmatter (Python)
         run: |
           python3 -c '
-          import os, re
+          import os, re, subprocess
           
-          post_dir = "_posts"
-          if not os.path.exists(post_dir):
+          # 1. Git 명령어를 통해 새로 추가(untracked)되거나 수정(modified)된 파일 목록만 가져옵니다.
+          result = subprocess.run(["git", "ls-files", "-m", "-o", "--exclude-standard", "_posts/"], capture_output=True, text=True)
+          changed_files = result.stdout.splitlines()
+          
+          if not changed_files:
+              print("새로 추가되거나 변경된 파일이 없습니다.")
               exit()
               
-          for filename in os.listdir(post_dir):
-              if not filename.endswith(".md"):
+          for filepath in changed_files:
+              if not filepath.endswith(".md"):
                   continue
                   
-              filepath = os.path.join(post_dir, filename)
+              filename = os.path.basename(filepath)
+              post_dir = os.path.dirname(filepath)
+                  
               with open(filepath, "r", encoding="utf-8") as f:
                   content = f.read()
               
@@ -69,10 +75,11 @@ jobs:
                   # 파일 내부 date 값을 yyyy-mm-dd 형식으로 덮어쓰기 (+0900 한국시간 기준 추가)
                   new_content = re.sub(r"^date:\s*.*$", f"date: {date_str} +0900", content, flags=re.MULTILINE)
                   
+                  # 새 내용으로 덮어쓰기 (방금 변경된 파일에만 적용됨)
                   with open(filepath, "w", encoding="utf-8") as f:
                       f.write(new_content)
                   
-                  # 파일명이 다를 경우 예쁜 이름으로 변경하고, 기존의 긴 이름 파일은 삭제 기록
+                  # 파일명이 다를 경우 예쁜 이름으로 변경하고, 기존 파일은 삭제 기록
                   if filename != new_filename:
                       os.rename(filepath, new_filepath)
                       os.system(f"git rm --cached \"{filepath}\" 2>/dev/null || true")
