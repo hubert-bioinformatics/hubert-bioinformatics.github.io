@@ -3,6 +3,9 @@ import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import { site } from '../lib/site';
 import { NAV, url } from '../lib/nav';
+import { getCurrentRole } from '../lib/content';
+
+const role = await getCurrentRole();
 
 interface Props {
   title?: string;
@@ -92,9 +95,13 @@ const isActive = (href: string) => path.endsWith(href);
         class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-10 text-sm sm:flex-row sm:items-center"
         style="color:var(--muted)"
       >
-        <div>© {new Date().getFullYear()} {site.name} · {site.role} @ {site.org}</div>
+        <div>
+          © {new Date().getFullYear()} {site.name}
+          {role && <> · {role.data.title} @ {role.data.org}</>}
+        </div>
         <div class="flex gap-4 sm:ml-auto">
           <a href={site.github} class="hover:underline">GitHub</a>
+          <a href={site.linkedin} class="hover:underline">LinkedIn</a>
           <a href={`mailto:${site.email}`} class="hover:underline">Email</a>
           <a href={url('/rss.xml')} class="hover:underline">RSS</a>
         </div>

@@ -5,7 +5,9 @@ import type { CollectionEntry } from 'astro:content';
  * 컬렉션이 비어 있어도(=아직 항목이 하나도 없어도) 페이지가 깨지지 않도록 감싼다.
  * radar / projects 는 앞으로 채워질 섹션이라 초기에는 비어 있다.
  */
-async function safe<T extends 'notes' | 'moment' | 'credentials' | 'radar' | 'projects'>(
+async function safe<
+  T extends 'notes' | 'moment' | 'credentials' | 'radar' | 'projects' | 'career',
+>(
   name: T,
   filter?: (e: CollectionEntry<T>) => boolean,
 ): Promise<CollectionEntry<T>[]> {
@@ -40,6 +42,18 @@ export async function getMoments() {
     (a, b) =>
       (b.data.shotAt ?? b.data.date).valueOf() - (a.data.shotAt ?? a.data.date).valueOf(),
   );
+}
+
+/** 경력 (최신순) */
+export async function getCareer() {
+  const c = await safe('career');
+  return c.sort((a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf());
+}
+
+/** 현재 직책 — 없으면 가장 최근 것 */
+export async function getCurrentRole() {
+  const c = await getCareer();
+  return c.find((e) => e.data.current) ?? c[0];
 }
 
 export async function getCredentials() {

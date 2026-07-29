@@ -5,12 +5,12 @@ import NoteCard from '../components/NoteCard.astro';
 import { site, NOTE_CATEGORY_LABEL } from '../lib/site';
 import { url, catColor } from '../lib/nav';
 import {
-  getNotes, getMoments, getCredentials, getRadar, getProjects,
+  getNotes, getMoments, getCredentials, getRadar, getProjects, getCurrentRole,
   countBy, groupSeries,
 } from '../lib/content';
 
-const [notes, moments, creds, radar, projects] = await Promise.all([
-  getNotes(), getMoments(), getCredentials(), getRadar(), getProjects(),
+const [notes, moments, creds, radar, projects, role] = await Promise.all([
+  getNotes(), getMoments(), getCredentials(), getRadar(), getProjects(), getCurrentRole(),
 ]);
 
 const cats = countBy(notes, (n) => n.data.category);
@@ -35,7 +35,16 @@ const stats = [
       </h1>
       <p class="mt-6 max-w-xl text-lg text-white/90">{site.intro}</p>
       <p class="mt-8 text-sm text-white/70">
-        {site.name} · {site.role} @ {site.org} · {site.teamRole}, {site.team}
+        {site.name}
+        {
+          role && (
+            <>
+              {' · '}
+              {role.data.title} @ {role.data.org}
+              {role.data.team && <> · {role.data.teamRole || 'Member'}, {role.data.team}</>}
+            </>
+          )
+        }
       </p>
 
       <div class="mt-12 flex flex-wrap gap-3">

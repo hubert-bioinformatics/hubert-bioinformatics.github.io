@@ -132,5 +132,22 @@ const projects = defineCollection({
     }),
 });
 
-export const collections = { notes, radar, moment, credentials, projects };
+/** 경력 — 승진·이직 시 career.json 한 곳만 고치면 사이트 전체에 반영된다 */
+const career = defineCollection({
+  loader: file('./src/data/career.json'),
+  schema: z.object({
+    id: z.string(),
+    title: z.string(),
+    org: z.string(),
+    team: z.string().default(''),
+    teamRole: z.string().default(''),
+    startDate: z.coerce.date(),
+    endDate: z.coerce.date().optional(), // 없으면 재직 중
+    location: z.string().default(''),
+    current: z.boolean().default(false),
+    highlights: z.array(z.string()).default([]),
+  }),
+});
+
+export const collections = { notes, radar, moment, credentials, projects, career };
 export { NOTE_CATEGORIES };
