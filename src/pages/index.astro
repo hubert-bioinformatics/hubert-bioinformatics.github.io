@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+// 5개 컬렉션이 전부 스키마 검증을 통과하는지 빌드 시점에 확인된다.
+const [notes, radar, moment, credentials, projects] = await Promise.all([
+  getCollection('notes'),
+  getCollection('radar'),
+  getCollection('moment'),
+  getCollection('credentials'),
+  getCollection('projects'),
+]);
+
+const stats = [
+  { label: 'Notes', count: notes.length },
+  { label: 'Radar', count: radar.length },
+  { label: 'Moment', count: moment.length },
+  { label: 'Credentials', count: credentials.length },
+  { label: 'Projects', count: projects.length },
+];
+---
+
+<Base title="Hubert Effect" description="Bioinformatics">
+  <h1 class="text-3xl font-bold tracking-tight">뼈대 검증</h1>
+  <p class="mt-2 text-slate-600 dark:text-slate-400">
+    Content Collections 5개가 정상 동작하는지 확인하는 임시 페이지입니다.
+  </p>
+
+  <ul class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-5">
+    {
+      stats.map((s) => (
+        <li class="rounded-lg border border-slate-200 p-4 dark:border-slate-800">
+          <div class="text-2xl font-bold tabular-nums">{s.count}</div>
+          <div class="text-sm text-slate-500 dark:text-slate-400">{s.label}</div>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

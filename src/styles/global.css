@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@import 'katex/dist/katex.min.css';
+
+@theme {
+  --font-sans:
+    'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+    'Noto Sans KR', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'D2Coding', ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 코드블록: 라이트/다크 테마 자동 전환 (shikiConfig의 dual theme와 짝) */
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+}
+
+/* 넓은 콘텐츠(표·코드·수식)는 자기 영역 안에서만 가로 스크롤 */
+.prose :is(table, pre, .katex-display) {
+  overflow-x: auto;
+  max-width: 100%;
+}

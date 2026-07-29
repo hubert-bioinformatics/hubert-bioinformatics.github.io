@@ -1,0 +1,157 @@
+---
+import { Image } from 'astro:assets';
+import { ClientRouter } from 'astro:transitions';
+import '../../styles/global.css';
+import { site, NOTE_CATEGORY_LABEL } from '../../lib/site';
+import {
+  getNotes, getMoments, getCredentials, countBy, groupSeries, fmtDate,
+} from '../../lib/content';
+import VariantBar from '../../components/VariantBar.astro';
+
+const notes = await getNotes();
+const moments = await getMoments();
+const creds = await getCredentials();
+const cats = countBy(notes, (n) => n.data.category);
+const series = groupSeries(notes).slice(0, 5);
+const providers = countBy(creds, (c) => c.data.provider);
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A · Editorial — {site.title}</title>
+    <ClientRouter />
+    <style>
+      .ed { --ink:#1a1a1a; --muted:#6b6b6b; --line:#e2e0dc; --paper:#faf9f7; --accent:#8b3a2f; }
+      @media (prefers-color-scheme: dark) {
+        .ed { --ink:#eceae6; --muted:#9a968f; --line:#2e2c29; --paper:#141312; --accent:#d98b7a; }
+      }
+      .ed { background: var(--paper); color: var(--ink); }
+      .serif { font-family: 'Noto Serif KR', Georgia, serif; }
+      .rule { border-color: var(--line); }
+      .lead { letter-spacing: -0.02em; }
+      .hover-move { transition: transform .25s ease; }
+      .hover-move:hover { transform: translateX(6px); }
+    </style>
+  </head>
+  <body class="ed">
+    <VariantBar current="a" />
+
+    <div class="mx-auto max-w-3xl px-6">
+      <!-- 헤더 -->
+      <header class="border-b rule py-16">
+        <p class="text-xs uppercase tracking-[0.25em]" style="color:var(--muted)">
+          {site.tagline}
+        </p>
+        <h1 class="serif lead mt-4 text-5xl font-bold sm:text-6xl">{site.title}</h1>
+        <p class="mt-6 text-lg leading-relaxed" style="color:var(--muted)">
+          {site.intro}
+        </p>
+        <p class="mt-4 text-sm" style="color:var(--muted)">
+          {site.name} · {site.role} @ {site.org}
+        </p>
+      </header>
+
+      <!-- 숫자 -->
+      <section class="grid grid-cols-3 border-b rule">
+        {[['Notes', notes.length], ['Courses', creds.length], ['Moments', moments.length]].map(
+          ([label, n]) => (
+            <div class="border-r rule py-8 text-center last:border-r-0">
+              <div class="serif text-4xl font-bold tabular-nums">{n}</div>
+              <div class="mt-1 text-xs uppercase tracking-widest" style="color:var(--muted)">
+                {label}
+              </div>
+            </div>
+          ),
+        )}
+      </section>
+
+      <!-- 최근 글 -->
+      <section class="py-14">
+        <h2 class="serif text-2xl font-bold">Recent Notes</h2>
+        <ul class="mt-8 space-y-7">
+          {notes.slice(0, 6).map((n) => (
+            <li class="hover-move">
+              <a href="#" class="block">
+                <div class="flex items-baseline gap-4">
+                  <span class="text-xs tabular-nums" style="color:var(--muted)">
+                    {fmtDate(n.data.date)}
+                  </span>
+                  <span class="text-xs uppercase tracking-wider" style="color:var(--accent)">
+                    {NOTE_CATEGORY_LABEL[n.data.category]}
+                  </span>
+                </div>
+                <h3 class="serif mt-1.5 text-xl leading-snug">{n.data.title}</h3>
+                {n.data.series && (
+                  <p class="mt-1 text-xs" style="color:var(--muted)">
+                    {n.data.series} · {n.data.seriesOrder}편
+                  </p>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- 시리즈 -->
+      <section class="border-t rule py-14">
+        <h2 class="serif text-2xl font-bold">Series</h2>
+        <ul class="mt-8 space-y-4">
+          {series.map((s) => (
+            <li class="flex items-baseline justify-between gap-6 border-b rule pb-3">
+              <span class="serif text-lg">{s.name}</span>
+              <span class="shrink-0 text-sm tabular-nums" style="color:var(--muted)">
+                {s.items.length}편
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- 사진 -->
+      <section class="border-t rule py-14">
+        <h2 class="serif text-2xl font-bold">Moment</h2>
+        <div class="mt-8 space-y-12">
+          {moments.filter((m) => m.data.image).slice(0, 2).map((m) => (
+            <figure>
+              <Image
+                src={m.data.image!}
+                alt={m.data.title}
+                widths={[640, 960]}
+                sizes="(max-width:768px) 100vw, 768px"
+                class="w-full"
+              />
+              <figcaption class="mt-3 text-sm" style="color:var(--muted)">
+                <span class="serif italic">{m.data.title}</span>
+                {m.data.location && <> — {m.data.location}</>}
+                <br />
+                {m.data.camera} {m.data.lens && `+ ${m.data.lens}`}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <!-- 이수 -->
+      <section class="border-t rule py-14">
+        <h2 class="serif text-2xl font-bold">Coursework</h2>
+        <p class="mt-2 text-sm" style="color:var(--muted)">
+          {providers.length}개 기관 · {creds.length}개 과정
+        </p>
+        <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+          {providers.map(([p, n]) => (
+            <span class="text-sm">
+              {p} <span class="tabular-nums" style="color:var(--muted)">{n}</span>
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <footer class="border-t rule py-10 text-xs" style="color:var(--muted)">
+        © {new Date().getFullYear()} {site.name}
+      </footer>
+    </div>
+  </body>
+</html>

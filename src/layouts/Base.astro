@@ -1,0 +1,60 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = '' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const nav = [
+  { href: 'portfolio', label: 'Portfolio' },
+  { href: 'notes', label: 'Notes' },
+  { href: 'radar', label: 'Radar' },
+  { href: 'moment', label: 'Moment' },
+];
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    <ClientRouter />
+  </head>
+  <body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <header class="border-b border-slate-200 dark:border-slate-800">
+      <nav class="mx-auto flex max-w-5xl items-center gap-6 px-4 py-4">
+        <a href={base} class="font-bold tracking-tight">Hubert Effect</a>
+        <div class="ml-auto flex gap-4 text-sm">
+          {
+            nav.map((item) => (
+              <a
+                href={`${base}/${item.href}`}
+                class="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </div>
+      </nav>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-4 py-10">
+      <slot />
+    </main>
+
+    <footer
+      class="mx-auto max-w-5xl px-4 py-10 text-sm text-slate-500 dark:text-slate-400"
+    >
+      © {new Date().getFullYear()} Jonghyuk Kim
+    </footer>
+  </body>
+</html>

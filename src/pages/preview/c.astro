@@ -1,0 +1,183 @@
+---
+import { Image } from 'astro:assets';
+import { ClientRouter } from 'astro:transitions';
+import '../../styles/global.css';
+import { site, NOTE_CATEGORY_LABEL } from '../../lib/site';
+import {
+  getNotes, getMoments, getCredentials, countBy, groupSeries, fmtDate,
+} from '../../lib/content';
+import VariantBar from '../../components/VariantBar.astro';
+
+const notes = await getNotes();
+const moments = await getMoments();
+const creds = await getCredentials();
+const cats = countBy(notes, (n) => n.data.category);
+const series = groupSeries(notes);
+const providers = countBy(creds, (c) => c.data.provider);
+const maxCat = Math.max(...cats.map(([, n]) => n));
+const years = countBy(notes, (n) => String(n.data.date.getFullYear())).sort(
+  (a, b) => Number(a[0]) - Number(b[0]),
+);
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C · Terminal — {site.title}</title>
+    <ClientRouter />
+    <style>
+      .tm { --bg:#0a0e14; --panel:#0f141c; --ink:#c9d4e3; --dim:#5c6b7f; --line:#1b232e; --gr:#3fb950; --cy:#39c5cf; --or:#d29922; }
+      @media (prefers-color-scheme: light) {
+        .tm { --bg:#fbfcfd; --panel:#ffffff; --ink:#1c2430; --dim:#6b7a8d; --line:#e3e8ee; --gr:#1a7f37; --cy:#0d7d8a; --or:#9a6700; }
+      }
+      .tm { background:var(--bg); color:var(--ink); font-family:'JetBrains Mono',ui-monospace,monospace; }
+      .panel { background:var(--panel); border:1px solid var(--line); }
+      .dim { color:var(--dim); }
+      .row:hover { background:var(--line); }
+      .row { transition: background .15s; }
+      .bar { background:var(--cy); height:6px; transition: width .6s cubic-bezier(.2,.7,.3,1); }
+      .cursor::after { content:'▋'; color:var(--gr); animation:blink 1.1s step-end infinite; }
+      @keyframes blink { 50%{opacity:0} }
+      @media (prefers-reduced-motion: reduce) { .cursor::after{animation:none} }
+    </style>
+  </head>
+  <body class="tm">
+    <VariantBar current="c" />
+
+    <div class="mx-auto max-w-5xl px-5 py-10">
+      <!-- 프롬프트 헤더 -->
+      <header class="panel p-6">
+        <div class="text-xs dim">
+          <span style="color:var(--gr)">hubert@macrogen</span>:<span style="color:var(--cy)">~</span>$ whoami
+        </div>
+        <h1 class="mt-4 text-3xl font-bold sm:text-4xl">
+          {site.title}<span class="cursor"></span>
+        </h1>
+        <div class="mt-4 grid gap-1 text-sm dim">
+          <div><span style="color:var(--or)">name</span>&nbsp;&nbsp;&nbsp;{site.name}</div>
+          <div><span style="color:var(--or)">role</span>&nbsp;&nbsp;&nbsp;{site.role} @ {site.org}</div>
+          <div><span style="color:var(--or)">team</span>&nbsp;&nbsp;&nbsp;{site.teamRole}, {site.team}</div>
+          <div><span style="color:var(--or)">focus</span>&nbsp;&nbsp;{site.tagline}</div>
+        </div>
+        <p class="mt-5 text-sm leading-relaxed">{site.intro}</p>
+      </header>
+
+      <!-- 통계 패널 -->
+      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+        <section class="panel p-5">
+          <div class="text-xs dim">$ ls notes/ | wc -l</div>
+          <div class="mt-3 space-y-2">
+            {cats.map(([c, n]) => (
+              <div>
+                <div class="flex justify-between text-xs">
+                  <span>{NOTE_CATEGORY_LABEL[c]}</span>
+                  <span class="dim tabular-nums">{n}</span>
+                </div>
+                <div class="mt-1 h-1.5 w-full" style="background:var(--line)">
+                  <div class="bar" style={`width:${(n / maxCat) * 100}%`} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="panel p-5">
+          <div class="text-xs dim">$ git log --format=%y | uniq -c</div>
+          <div class="mt-3 flex h-32 items-end gap-2">
+            {years.map(([y, n]) => (
+              <div class="flex flex-1 flex-col items-center gap-1">
+                <span class="text-xs tabular-nums dim">{n}</span>
+                <div
+                  class="w-full"
+                  style={`height:${(n / Math.max(...years.map((v) => v[1]))) * 100}%;background:var(--gr);min-height:3px`}
+                />
+                <span class="text-xs dim">{y}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <!-- 최근 글: 테이블 -->
+      <section class="panel mt-4">
+        <div class="border-b p-4 text-xs dim" style="border-color:var(--line)">
+          $ head -8 notes/recent
+        </div>
+        <table class="w-full text-sm">
+          <tbody>
+            {notes.slice(0, 8).map((n) => (
+              <tr class="row border-b" style="border-color:var(--line)">
+                <td class="whitespace-nowrap p-3 text-xs tabular-nums dim">
+                  {fmtDate(n.data.date)}
+                </td>
+                <td class="whitespace-nowrap p-3 text-xs" style="color:var(--cy)">
+                  {n.data.category}
+                </td>
+                <td class="p-3">
+                  <a href="#">{n.data.title}</a>
+                  {n.data.series && (
+                    <span class="dim"> · {n.data.series}#{n.data.seriesOrder}</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 시리즈 트리 -->
+      <section class="panel mt-4 p-5">
+        <div class="text-xs dim">$ tree series/ -L 1</div>
+        <ul class="mt-3 space-y-1 text-sm">
+          {series.slice(0, 8).map((s, i) => (
+            <li>
+              <span class="dim">{i === series.slice(0, 8).length - 1 ? '└──' : '├──'}</span>
+              {' '}{s.name}
+              <span class="dim"> ({s.items.length})</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- 사진 -->
+      <section class="panel mt-4 p-5">
+        <div class="text-xs dim">$ ls moment/</div>
+        <div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          {moments.filter((m) => m.data.image).slice(0, 8).map((m) => (
+            <figure>
+              <Image
+                src={m.data.image!}
+                alt={m.data.title}
+                widths={[300, 600]}
+                sizes="(max-width:640px) 50vw, 25vw"
+                class="aspect-square w-full object-cover"
+              />
+              <figcaption class="mt-1 truncate text-xs dim">{m.data.title}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <!-- 이수 -->
+      <section class="panel mt-4 p-5">
+        <div class="text-xs dim">$ cat coursework.tsv</div>
+        <div class="mt-3 space-y-1 text-sm">
+          {providers.map(([p, n]) => (
+            <div class="row flex items-center gap-3 px-1 py-0.5">
+              <span class="w-28 shrink-0">{p}</span>
+              <span class="tabular-nums dim">{String(n).padStart(2, '0')}</span>
+              <span style="color:var(--gr)">{'█'.repeat(Math.max(1, Math.round(n / 2)))}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <footer class="mt-6 text-xs dim">
+        <span style="color:var(--gr)">hubert@macrogen</span>:<span style="color:var(--cy)">~</span>$
+        echo "© {new Date().getFullYear()} {site.name}"
+      </footer>
+    </div>
+  </body>
+</html>

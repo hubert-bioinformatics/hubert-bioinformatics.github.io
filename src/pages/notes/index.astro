@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const base = import.meta.env.BASE_URL;
+
+const notes = (await getCollection('notes', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
+---
+
+<Base title="Notes — Hubert Effect">
+  <h1 class="text-3xl font-bold tracking-tight">Notes</h1>
+  <p class="mt-2 text-slate-600 dark:text-slate-400">{notes.length}개의 글</p>
+
+  <ul class="mt-8 divide-y divide-slate-200 dark:divide-slate-800">
+    {
+      notes.map((note) => (
+        <li class="py-4">
+          <a href={`${base}/notes/${note.id}`} class="group block">
+            <div class="flex items-baseline gap-3">
+              <h2 class="font-medium group-hover:underline">
+                {note.data.title}
+              </h2>
+              <span class="ml-auto shrink-0 text-sm tabular-nums text-slate-500">
+                {fmt(note.data.date)}
+              </span>
+            </div>
+            {note.data.summary && (
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">
+                {note.data.summary}
+              </p>
+            )}
+            <div class="mt-2 flex gap-2 text-xs text-slate-500">
+              <span class="rounded bg-slate-100 px-2 py-0.5 dark:bg-slate-800">
+                {note.data.category}
+              </span>
+              {note.data.series && (
+                <span class="rounded bg-slate-100 px-2 py-0.5 dark:bg-slate-800">
+                  {note.data.series} #{note.data.seriesOrder}
+                </span>
+              )}
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
