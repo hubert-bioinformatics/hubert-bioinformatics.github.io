@@ -1,0 +1,30 @@
+---
+/**
+ * 컬렉션이 비었을 때 화면이 깨지지 않게 안내를 보여준다.
+ * radar / projects 처럼 앞으로 채워질 섹션에 쓴다.
+ */
+interface Props {
+  title: string;
+  desc?: string;
+  hint?: string;
+}
+const { title, desc, hint } = Astro.props;
+---
+
+<div
+  class="card mx-auto max-w-xl px-6 py-14 text-center"
+  style="border-style:dashed"
+>
+  <p class="text-lg font-bold">{title}</p>
+  {desc && <p class="mt-2 text-sm" style="color:var(--muted)">{desc}</p>}
+  {
+    hint && (
+      <p
+        class="mt-5 inline-block rounded-lg px-3 py-1.5 font-mono text-xs"
+        style="background:var(--line);color:var(--muted)"
+      >
+        {hint}
+      </p>
+    )
+  }
+</div>

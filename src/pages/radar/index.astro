@@ -1,0 +1,87 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { url } from '../../lib/nav';
+import { getRadar, countBy, fmtDate } from '../../lib/content';
+
+const items = await getRadar();
+const kinds = countBy(items, (r) => r.data.kind);
+const sources = countBy(items, (r) => r.data.sourceName);
+---
+
+<Base title="Radar" description="임상 유전체 분야에서 주시하고 있는 논문과 뉴스">
+  <PageHeader
+    eyebrow="Radar"
+    title="Radar"
+    desc="임상 유전체·NGS 분야에서 주시하고 있는 논문과 뉴스"
+    count={items.length}
+  />
+
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    {
+      items.length === 0 ? (
+        <EmptyState
+          title="수집된 항목이 없습니다"
+          desc="Agent가 논문·뉴스를 수집해 초안으로 올리면, 검토 후 이곳에 게시됩니다."
+          hint="src/content/radar/2026-07-29-example.md"
+        />
+      ) : (
+        <>
+          <div class="flex flex-wrap gap-2">
+            {kinds.map(([k, n]) => (
+              <span class="chip" style="background:var(--line);color:var(--muted)">
+                {k === 'paper' ? 'Paper' : 'News'} {n}
+              </span>
+            ))}
+            {sources.slice(0, 6).map(([s, n]) => (
+              <span class="chip" style="background:var(--line);color:var(--muted)">
+                {s} {n}
+              </span>
+            ))}
+          </div>
+
+          <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {items.map((r) => (
+              <article class="card card-hover flex flex-col p-6">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="chip"
+                    style="background:color-mix(in srgb, var(--brand) 12%, transparent);color:var(--brand)"
+                  >
+                    {r.data.kind === 'paper' ? 'Paper' : 'News'}
+                  </span>
+                  {r.data.aiGenerated && (
+                    <span
+                      class="chip"
+                      title="AI가 요약한 내용입니다"
+                      style="background:var(--line);color:var(--muted)"
+                    >
+                      AI 요약
+                    </span>
+                  )}
+                </div>
+
+                <h3 class="mt-4 font-bold leading-snug">
+                  <a href={url(`/radar/${r.id}`)} class="hover:underline">
+                    {r.data.title}
+                  </a>
+                </h3>
+
+                <p class="mt-2 line-clamp-4 flex-1 text-sm" style="color:var(--muted)">
+                  {r.data.summary}
+                </p>
+
+                <div class="mt-4 flex flex-wrap items-center gap-2 text-xs" style="color:var(--muted)">
+                  <time datetime={r.data.date.toISOString()}>{fmtDate(r.data.date)}</time>
+                  <span>·</span>
+                  <span>{r.data.journal ?? r.data.sourceName}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        </>
+      )
+    }
+  </div>
+</Base>

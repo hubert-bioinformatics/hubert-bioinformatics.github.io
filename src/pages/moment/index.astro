@@ -1,0 +1,147 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { getMoments, fmtDate } from '../../lib/content';
+
+const moments = await getMoments();
+const photos = moments.filter((m) => m.data.image);
+---
+
+<Base title="Moment" description="사진과 영상">
+  <PageHeader
+    eyebrow="Moment"
+    title="Moment"
+    desc="렌즈로 남긴 순간들"
+    count={moments.length}
+  />
+
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    {
+      moments.length === 0 ? (
+        <EmptyState
+          title="아직 사진이 없습니다"
+          desc="사진과 마크다운을 추가하면 갤러리에 자동으로 나타납니다."
+          hint="src/content/moment/my-photo.md"
+        />
+      ) : (
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {photos.map((m, i) => (
+            <figure
+              class="card card-hover group cursor-zoom-in overflow-hidden"
+              data-lightbox={i}
+            >
+              <div class="overflow-hidden">
+                <Image
+                  src={m.data.image!}
+                  alt={m.data.title}
+                  widths={[400, 800, 1600]}
+                  sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+                  class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <figcaption class="p-4">
+                <div class="font-semibold">{m.data.title}</div>
+                {m.data.location && (
+                  <div class="mt-1 text-xs" style="color:var(--muted)">
+                    {m.data.location}
+                  </div>
+                )}
+                <div class="mt-2 flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs" style="color:var(--muted)">
+                  {m.data.camera && <span>{m.data.camera}</span>}
+                  {m.data.lens && <span>{m.data.lens}</span>}
+                  {m.data.aperture && <span>{m.data.aperture}</span>}
+                  {m.data.shutter && <span>{m.data.shutter}</span>}
+                  {m.data.iso && <span>ISO {m.data.iso}</span>}
+                  {m.data.shotAt && <span>{fmtDate(m.data.shotAt)}</span>}
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      )
+    }
+
+    {
+      moments.some((m) => m.data.kind === 'video' && m.data.videoUrl) && (
+        <section class="mt-16">
+          <h2 class="text-2xl font-black tracking-tight">Video</h2>
+          <div class="mt-6 grid gap-5 sm:grid-cols-2">
+            {moments
+              .filter((m) => m.data.kind === 'video' && m.data.videoUrl)
+              .map((m) => (
+                <a href={m.data.videoUrl} class="card card-hover block p-6">
+                  <div class="font-bold">{m.data.title}</div>
+                  <div class="mt-1 text-sm" style="color:var(--muted)">
+                    {m.data.location}
+                  </div>
+                </a>
+              ))}
+          </div>
+        </section>
+      )
+    }
+  </div>
+
+  <!-- 라이트박스 -->
+  <div
+    id="lb"
+    class="fixed inset-0 z-50 hidden place-items-center bg-black/90 p-4"
+    role="dialog"
+    aria-modal="true"
+  >
+    <button
+      id="lb-close"
+      class="absolute top-4 right-4 rounded-lg bg-white/15 px-3 py-1.5 text-sm text-white backdrop-blur"
+      aria-label="닫기"
+    >
+      닫기 ✕
+    </button>
+    <img id="lb-img" class="max-h-[88vh] max-w-full object-contain" alt="" />
+    <p id="lb-cap" class="absolute bottom-5 left-0 right-0 text-center text-sm text-white/80"></p>
+  </div>
+</Base>
+
+<script>
+  function initLightbox() {
+    const lb = document.getElementById('lb');
+    const img = document.getElementById('lb-img');
+    const cap = document.getElementById('lb-cap');
+    const closeBtn = document.getElementById('lb-close');
+    if (!lb || !img) return;
+
+    const open = (src, caption) => {
+      img.src = src;
+      if (cap) cap.textContent = caption;
+      lb.classList.remove('hidden');
+      lb.style.display = 'grid';
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      lb.classList.add('hidden');
+      lb.style.display = 'none';
+      document.body.style.overflow = '';
+      img.src = '';
+    };
+
+    document.querySelectorAll('[data-lightbox]').forEach((fig) => {
+      fig.addEventListener('click', () => {
+        const el = fig.querySelector('img');
+        if (!el) return;
+        const title = fig.querySelector('figcaption div')?.textContent ?? '';
+        open(el.currentSrc || el.src, title);
+      });
+    });
+
+    closeBtn?.addEventListener('click', close);
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
+    });
+  }
+  initLightbox();
+  document.addEventListener('astro:page-load', initLightbox);
+</script>

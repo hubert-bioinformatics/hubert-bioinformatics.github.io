@@ -1,0 +1,79 @@
+---
+import { render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import Reading from '../../layouts/Reading.astro';
+import { fmtDate, getRadar } from '../../lib/content';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const items = await getRadar();
+  return items.map((item) => ({ params: { slug: item.id }, props: { item } }));
+};
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+---
+
+<Reading
+  title={item.data.title}
+  description={item.data.summary}
+  backHref="/radar"
+  backLabel="Radar"
+>
+  <header slot="header" class="mt-6">
+    <div class="flex flex-wrap items-center gap-2">
+      <span
+        class="chip"
+        style="background:color-mix(in srgb, var(--brand) 12%, transparent);color:var(--brand)"
+      >
+        {item.data.kind === 'paper' ? 'Paper' : 'News'}
+      </span>
+      {
+        item.data.aiGenerated && (
+          <span class="chip" style="background:var(--line);color:var(--muted)">
+            AI 요약{item.data.reviewed ? ' · 검토됨' : ''}
+          </span>
+        )
+      }
+    </div>
+
+    <h1 class="mt-4 text-3xl font-black leading-tight tracking-tight">
+      {item.data.title}
+    </h1>
+
+    <div class="mt-4 space-y-1 text-sm" style="color:var(--muted)">
+      <div>
+        <time datetime={item.data.date.toISOString()}>{fmtDate(item.data.date)}</time>
+        {item.data.journal && <> · {item.data.journal}</>}
+      </div>
+      {item.data.authors.length > 0 && <div>{item.data.authors.join(', ')}</div>}
+      {item.data.doi && <div>DOI: {item.data.doi}</div>}
+    </div>
+
+    <div class="card mt-6 p-4">
+      <div class="text-xs font-bold uppercase tracking-widest" style="color:var(--muted)">
+        요약
+      </div>
+      <p class="mt-2">{item.data.summary}</p>
+    </div>
+
+    <a
+      href={item.data.sourceUrl}
+      class="mt-4 inline-block text-sm font-semibold hover:underline"
+      style="color:var(--brand)"
+    >
+      원문 보기 ({item.data.sourceName}) →
+    </a>
+  </header>
+
+  <Content />
+
+  <footer slot="footer" class="mt-12">
+    {
+      item.data.aiGenerated && (
+        <p class="card p-4 text-xs" style="color:var(--muted)">
+          이 항목의 요약은 AI가 생성했습니다. 정확한 내용은 반드시 원문을 확인해 주세요.
+        </p>
+      )
+    }
+  </footer>
+</Reading>

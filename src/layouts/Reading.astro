@@ -1,0 +1,37 @@
+---
+/**
+ * 글 본문 전용 레이아웃.
+ * 홈·목록은 카드와 컬러로 화려하게 가지만, 본문은 읽기에만 집중한다.
+ * (수식·코드·이미지가 빽빽한 강의 노트가 많아 화려하면 금방 피로해진다)
+ */
+import Base from './Base.astro';
+import { url } from '../lib/nav';
+
+interface Props {
+  title: string;
+  description?: string;
+  backHref: string;
+  backLabel: string;
+}
+const { title, description, backHref, backLabel } = Astro.props;
+---
+
+<Base title={title} description={description}>
+  <article class="reading mx-auto max-w-3xl px-5 py-10">
+    <a
+      href={url(backHref)}
+      class="inline-flex items-center gap-1.5 text-sm font-semibold"
+      style="color:var(--muted)"
+    >
+      ← {backLabel}
+    </a>
+
+    <slot name="header" />
+
+    <div class="prose prose-slate mt-10 dark:prose-invert">
+      <slot />
+    </div>
+
+    <slot name="footer" />
+  </article>
+</Base>

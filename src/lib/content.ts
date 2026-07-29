@@ -1,25 +1,53 @@
 import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+/**
+ * 컬렉션이 비어 있어도(=아직 항목이 하나도 없어도) 페이지가 깨지지 않도록 감싼다.
+ * radar / projects 는 앞으로 채워질 섹션이라 초기에는 비어 있다.
+ */
+async function safe<T extends 'notes' | 'moment' | 'credentials' | 'radar' | 'projects'>(
+  name: T,
+  filter?: (e: CollectionEntry<T>) => boolean,
+): Promise<CollectionEntry<T>[]> {
+  try {
+    const all = (await getCollection(name as any)) as CollectionEntry<T>[];
+    return filter ? all.filter(filter) : all;
+  } catch {
+    return [];
+  }
+}
+
+const notDraft = (e: any) => !e.data?.draft;
 
 export async function getNotes() {
-  const notes = await getCollection('notes', ({ data }) => !data.draft);
+  const notes = await safe('notes', notDraft);
   return notes.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }
 
+export async function getRadar() {
+  const r = await safe('radar', notDraft);
+  return r.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+}
+
+export async function getProjects() {
+  const p = await safe('projects', notDraft);
+  return p.sort((a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf());
+}
+
 export async function getMoments() {
-  const m = await getCollection('moment', ({ data }) => !data.draft);
+  const m = await safe('moment', notDraft);
   return m.sort(
     (a, b) =>
-      (b.data.shotAt ?? b.data.date).valueOf() -
-      (a.data.shotAt ?? a.data.date).valueOf(),
+      (b.data.shotAt ?? b.data.date).valueOf() - (a.data.shotAt ?? a.data.date).valueOf(),
   );
 }
 
 export async function getCredentials() {
-  const c = await getCollection('credentials');
+  const c = await safe('credentials');
   return c.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }
 
-/** 카테고리별 개수 */
+/** 값별 개수 (많은 순) */
 export function countBy<T>(items: T[], key: (t: T) => string) {
   const out = new Map<string, number>();
   for (const it of items) {
@@ -29,23 +57,36 @@ export function countBy<T>(items: T[], key: (t: T) => string) {
   return [...out.entries()].sort((a, b) => b[1] - a[1]);
 }
 
-/** 시리즈별 묶음 */
-export function groupSeries(notes: Awaited<ReturnType<typeof getNotes>>) {
-  const map = new Map<string, typeof notes>();
+/** 시리즈별 묶음 (편수 많은 순, 각 시리즈 내부는 seriesOrder 오름차순) */
+export function groupSeries(notes: CollectionEntry<'notes'>[]) {
+  const map = new Map<string, CollectionEntry<'notes'>[]>();
   for (const n of notes) {
     const s = n.data.series;
     if (!s) continue;
-    if (!map.has(s)) map.set(s, [] as unknown as typeof notes);
+    if (!map.has(s)) map.set(s, []);
     map.get(s)!.push(n);
   }
   return [...map.entries()]
     .map(([name, items]) => ({
       name,
-      items: items.sort(
-        (a, b) => (a.data.seriesOrder ?? 0) - (b.data.seriesOrder ?? 0),
-      ),
+      items: items.sort((a, b) => (a.data.seriesOrder ?? 0) - (b.data.seriesOrder ?? 0)),
     }))
     .sort((a, b) => b.items.length - a.items.length);
+}
+
+/** 같은 시리즈 내 앞/뒤 글 */
+export function seriesNeighbors(
+  note: CollectionEntry<'notes'>,
+  all: CollectionEntry<'notes'>[],
+) {
+  if (!note.data.series) {
+    return { siblings: [] as CollectionEntry<'notes'>[], prev: undefined, next: undefined };
+  }
+  const siblings = all
+    .filter((n) => n.data.series === note.data.series)
+    .sort((a, b) => (a.data.seriesOrder ?? 0) - (b.data.seriesOrder ?? 0));
+  const i = siblings.findIndex((n) => n.id === note.id);
+  return { siblings, prev: siblings[i - 1], next: siblings[i + 1] };
 }
 
 export const fmtDate = (d: Date) =>

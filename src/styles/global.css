@@ -9,8 +9,41 @@
   --font-mono: 'JetBrains Mono', 'D2Coding', ui-monospace, monospace;
 }
 
+/* ─────────────────────────────────────────────────────────
+   디자인 토큰 (시안 B)
+   홈·목록은 이 토큰으로 카드/컬러를 쓰고,
+   글 본문은 .reading 안에서 절제된 읽기 모드로 전환한다.
+   ───────────────────────────────────────────────────────── */
 :root {
   color-scheme: light dark;
+
+  --bg: #ffffff;
+  --card: #ffffff;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --brand: #0ea5e9;
+
+  /* 카테고리 색 — 새 카테고리가 생기면 여기에 한 줄 추가 */
+  --c-bioinformatics: #0ea5e9;
+  --c-programming: #8b5cf6;
+  --c-biology: #10b981;
+  --c-statistics: #f59e0b;
+  --c-ml-data: #ef4444;
+  --c-default: #64748b;
+
+  --radius: 1rem;
+  --shadow-card: 0 18px 40px -18px rgb(2 8 23 / 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1120;
+    --card: #131c31;
+    --ink: #f1f5f9;
+    --muted: #94a3b8;
+    --line: #1e293b;
+  }
 }
 
 html {
@@ -18,7 +51,75 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* 코드블록: 라이트/다크 테마 자동 전환 (shikiConfig의 dual theme와 짝) */
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* ── 공통 컴포넌트 ─────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition:
+    transform 0.28s cubic-bezier(0.2, 0.7, 0.3, 1),
+    box-shadow 0.28s;
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
+
+.chip {
+  border-radius: 999px;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.hero-grad {
+  background: radial-gradient(120% 120% at 0% 0%, #6366f1 0%, #0ea5e9 45%, #06b6d4 100%);
+}
+
+.link-underline {
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-underline-offset: 3px;
+}
+
+/* ── 글 본문: 절제된 읽기 모드 ─────────────────────────── */
+.reading {
+  --reading-measure: 68ch;
+}
+.reading .prose {
+  max-width: var(--reading-measure);
+  line-height: 1.85;
+  font-size: 1.0625rem;
+}
+.reading .prose :is(h2, h3) {
+  letter-spacing: -0.01em;
+}
+.reading .prose h2 {
+  margin-top: 2.75em;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--line);
+}
+.reading .prose img {
+  border-radius: 0.6rem;
+  border: 1px solid var(--line);
+}
+.reading .prose blockquote {
+  border-left-color: var(--brand);
+  font-style: normal;
+}
+/* 원본이 <br>을 4,500개 넘게 쓴다 — 연속 <br>로 생기는 과도한 여백을 줄인다 */
+.reading .prose br + br {
+  content: '';
+  display: block;
+  height: 0.35em;
+}
+
+/* 코드블록: 라이트/다크 자동 전환 (shikiConfig의 dual theme와 짝) */
 @media (prefers-color-scheme: dark) {
   .astro-code,
   .astro-code span {
@@ -34,4 +135,15 @@ html {
 .prose :is(table, pre, .katex-display) {
   overflow-x: auto;
   max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card-hover:hover {
+    transition: none;
+    transform: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

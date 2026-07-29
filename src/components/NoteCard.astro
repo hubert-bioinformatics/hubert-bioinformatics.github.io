@@ -1,0 +1,46 @@
+---
+import { url, catColor } from '../lib/nav';
+import { NOTE_CATEGORY_LABEL } from '../lib/site';
+import { fmtDate } from '../lib/content';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  note: CollectionEntry<'notes'>;
+}
+const { note } = Astro.props;
+const c = catColor(note.data.category);
+---
+
+<a href={url(`/notes/${note.id}`)} class="card card-hover block p-6">
+  <span
+    class="chip"
+    style={`background:color-mix(in srgb, ${c} 12%, transparent);color:${c}`}
+  >
+    {NOTE_CATEGORY_LABEL[note.data.category] ?? note.data.category}
+  </span>
+
+  <h3 class="mt-4 text-lg font-bold leading-snug">{note.data.title}</h3>
+
+  {
+    note.data.summary && (
+      <p class="mt-2 line-clamp-2 text-sm" style="color:var(--muted)">
+        {note.data.summary}
+      </p>
+    )
+  }
+
+  <div class="mt-4 flex flex-wrap items-center gap-2 text-xs" style="color:var(--muted)">
+    <time datetime={note.data.date.toISOString()}>{fmtDate(note.data.date)}</time>
+    {
+      note.data.series && (
+        <>
+          <span>·</span>
+          <span>
+            {note.data.series}
+            {note.data.seriesOrder ? ` #${note.data.seriesOrder}` : ''}
+          </span>
+        </>
+      )
+    }
+  </div>
+</a>

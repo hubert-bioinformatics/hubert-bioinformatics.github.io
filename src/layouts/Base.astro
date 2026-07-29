@@ -1,21 +1,25 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
+import { site } from '../lib/site';
+import { NAV, url } from '../lib/nav';
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
+  /** 히어로를 페이지가 직접 그릴 때 헤더를 투명하게 겹친다 */
+  transparentHeader?: boolean;
 }
 
-const { title, description = '' } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const {
+  title,
+  description = site.intro,
+  transparentHeader = false,
+} = Astro.props;
 
-const nav = [
-  { href: 'portfolio', label: 'Portfolio' },
-  { href: 'notes', label: 'Notes' },
-  { href: 'radar', label: 'Radar' },
-  { href: 'moment', label: 'Moment' },
-];
+const pageTitle = title ? `${title} — ${site.title}` : `${site.title} · ${site.tagline}`;
+const path = Astro.url.pathname.replace(/\/$/, '');
+const isActive = (href: string) => path.endsWith(href);
 ---
 
 <!doctype html>
@@ -23,21 +27,53 @@ const nav = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    {description && <meta name="description" content={description} />}
-    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={site.title}
+      href={url('/rss.xml')}
+    />
     <ClientRouter />
   </head>
-  <body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
-    <header class="border-b border-slate-200 dark:border-slate-800">
-      <nav class="mx-auto flex max-w-5xl items-center gap-6 px-4 py-4">
-        <a href={base} class="font-bold tracking-tight">Hubert Effect</a>
-        <div class="ml-auto flex gap-4 text-sm">
+
+  <body class="min-h-screen">
+    <header
+      class:list={['sticky top-0 z-40 backdrop-blur', transparentHeader ? '' : 'border-b']}
+      style={
+        transparentHeader
+          ? 'background:transparent'
+          : 'border-color:var(--line);background:color-mix(in srgb, var(--bg) 85%, transparent)'
+      }
+    >
+      <nav class="mx-auto flex max-w-6xl items-center gap-6 px-5 py-3.5">
+        <a
+          href={url('/')}
+          class="text-lg font-black tracking-tight"
+          style={transparentHeader ? 'color:#fff' : ''}
+        >
+          {site.title}
+        </a>
+
+        <div class="ml-auto hidden gap-1 sm:flex">
           {
-            nav.map((item) => (
+            NAV.map((item) => (
               <a
-                href={`${base}/${item.href}`}
-                class="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
+                href={url(item.href)}
+                class="rounded-lg px-3 py-1.5 text-sm font-semibold transition-colors"
+                style={
+                  transparentHeader
+                    ? 'color:rgba(255,255,255,.85)'
+                    : isActive(item.href)
+                      ? 'color:var(--ink);background:var(--line)'
+                      : 'color:var(--muted)'
+                }
               >
                 {item.label}
               </a>
@@ -47,14 +83,42 @@ const nav = [
       </nav>
     </header>
 
-    <main class="mx-auto max-w-5xl px-4 py-10">
+    <main class="pb-24 sm:pb-10">
       <slot />
     </main>
 
-    <footer
-      class="mx-auto max-w-5xl px-4 py-10 text-sm text-slate-500 dark:text-slate-400"
-    >
-      © {new Date().getFullYear()} Jonghyuk Kim
+    <footer class="border-t" style="border-color:var(--line)">
+      <div
+        class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-10 text-sm sm:flex-row sm:items-center"
+        style="color:var(--muted)"
+      >
+        <div>© {new Date().getFullYear()} {site.name} · {site.role} @ {site.org}</div>
+        <div class="flex gap-4 sm:ml-auto">
+          <a href={site.github} class="hover:underline">GitHub</a>
+          <a href={`mailto:${site.email}`} class="hover:underline">Email</a>
+          <a href={url('/rss.xml')} class="hover:underline">RSS</a>
+        </div>
+      </div>
     </footer>
+
+    <!-- 모바일 하단 탭 -->
+    <nav
+      class="fixed inset-x-0 bottom-0 z-40 border-t backdrop-blur sm:hidden"
+      style="border-color:var(--line);background:color-mix(in srgb, var(--bg) 92%, transparent)"
+    >
+      <div class="grid grid-cols-4">
+        {
+          NAV.map((item) => (
+            <a
+              href={url(item.href)}
+              class="py-3 text-center text-xs font-semibold"
+              style={isActive(item.href) ? 'color:var(--brand)' : 'color:var(--muted)'}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+    </nav>
   </body>
 </html>

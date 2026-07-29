@@ -1,0 +1,192 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import EmptyState from '../../components/EmptyState.astro';
+import { site } from '../../lib/site';
+import { getCredentials, getProjects, countBy, fmtDate } from '../../lib/content';
+
+const creds = await getCredentials();
+const projects = await getProjects();
+const providers = countBy(creds, (c) => c.data.provider);
+---
+
+<Base title="Portfolio" description={`${site.name} · ${site.role} @ ${site.org}`}>
+  <PageHeader eyebrow="Portfolio" title={site.name} desc={site.intro} />
+
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <!-- 현재 소속 -->
+    <section class="card p-6">
+      <div class="text-xs font-bold uppercase tracking-widest" style="color:var(--brand)">
+        Current
+      </div>
+      <div class="mt-3 text-xl font-bold">{site.role} @ {site.org}</div>
+      <div class="mt-1" style="color:var(--muted)">{site.teamRole}, {site.team}</div>
+    </section>
+
+    <!-- 프로젝트 -->
+    <section class="mt-14">
+      <h2 class="text-2xl font-black tracking-tight">Projects</h2>
+      <div class="mt-6">
+        {
+          projects.length === 0 ? (
+            <EmptyState
+              title="프로젝트를 추가해 주세요"
+              desc="마크다운 파일을 추가하면 이 목록에 자동으로 나타납니다."
+              hint="src/content/projects/my-project.md"
+            />
+          ) : (
+            <div class="grid gap-5 sm:grid-cols-2">
+              {projects.map((p) => (
+                <article class="card card-hover p-6">
+                  <div class="flex items-baseline gap-2 text-xs" style="color:var(--muted)">
+                    <span>{fmtDate(p.data.startDate)}</span>
+                    {p.data.endDate && <span>— {fmtDate(p.data.endDate)}</span>}
+                    {p.data.org && <span>· {p.data.org}</span>}
+                  </div>
+                  <h3 class="mt-2 text-lg font-bold">{p.data.title}</h3>
+                  {p.data.summary && (
+                    <p class="mt-2 text-sm" style="color:var(--muted)">
+                      {p.data.summary}
+                    </p>
+                  )}
+                  {p.data.stack.length > 0 && (
+                    <div class="mt-4 flex flex-wrap gap-1.5">
+                      {p.data.stack.map((s) => (
+                        <span
+                          class="rounded px-1.5 py-0.5 text-xs"
+                          style="background:var(--line);color:var(--muted)"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {p.data.links.length > 0 && (
+                    <div class="mt-4 flex flex-wrap gap-3 text-sm">
+                      {p.data.links.map((l) => (
+                        <a href={l.url} class="font-semibold hover:underline" style="color:var(--brand)">
+                          {l.label} →
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </article>
+              ))}
+            </div>
+          )
+        }
+      </div>
+    </section>
+
+    <!-- 이수 과정 -->
+    <section class="mt-16">
+      <div class="flex flex-wrap items-baseline gap-3">
+        <h2 class="text-2xl font-black tracking-tight">Coursework</h2>
+        <span style="color:var(--muted)">
+          {providers.length}개 기관 · {creds.length}개 과정
+        </span>
+      </div>
+
+      {
+        creds.length === 0 ? (
+          <div class="mt-6">
+            <EmptyState
+              title="이수 과정이 없습니다"
+              hint="src/data/credentials.json"
+            />
+          </div>
+        ) : (
+          <>
+            <div class="mt-6 flex flex-wrap gap-2" id="prov-filters">
+              <button
+                class="chip prov-btn"
+                data-prov="all"
+                aria-pressed="true"
+                style="background:var(--ink);color:var(--bg)"
+              >
+                전체 {creds.length}
+              </button>
+              {providers.map(([p, n]) => (
+                <button
+                  class="chip prov-btn"
+                  data-prov={p}
+                  aria-pressed="false"
+                  style="background:var(--line);color:var(--muted)"
+                >
+                  {p} {n}
+                </button>
+              ))}
+            </div>
+
+            <div id="cred-grid" class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {creds.map((c) => (
+                <article class="cred-item card overflow-hidden" data-prov={c.data.provider}>
+                  {c.data.image && (
+                    <Image
+                      src={c.data.image}
+                      alt={c.data.title}
+                      widths={[400, 800]}
+                      sizes="(max-width:640px) 100vw, 33vw"
+                      class="aspect-[16/11] w-full border-b object-cover"
+                      style="border-color:var(--line)"
+                    />
+                  )}
+                  <div class="p-4">
+                    <div class="flex items-center gap-2 text-xs" style="color:var(--muted)">
+                      <span class="font-bold" style="color:var(--brand)">
+                        {c.data.provider}
+                      </span>
+                      {c.data.providerDetail && <span>· {c.data.providerDetail}</span>}
+                    </div>
+                    <h3 class="mt-1.5 text-sm font-bold leading-snug">{c.data.title}</h3>
+                    <div class="mt-2 text-xs" style="color:var(--muted)">
+                      {fmtDate(c.data.date)}
+                    </div>
+                    <div class="mt-3 flex gap-3 text-xs font-semibold">
+                      {c.data.courseUrl && (
+                        <a href={c.data.courseUrl} class="hover:underline" style="color:var(--brand)">
+                          강의
+                        </a>
+                      )}
+                      {c.data.certificateUrl && (
+                        <a href={c.data.certificateUrl} class="hover:underline" style="color:var(--brand)">
+                          인증서
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </>
+        )
+      }
+    </section>
+  </div>
+</Base>
+
+<script>
+  function initProv() {
+    const grid = document.getElementById('cred-grid');
+    if (!grid) return;
+    const buttons = document.querySelectorAll('.prov-btn');
+    const items = document.querySelectorAll('.cred-item');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const p = btn.dataset.prov;
+        buttons.forEach((b) => {
+          b.setAttribute('aria-pressed', String(b === btn));
+          b.style.background = b === btn ? 'var(--ink)' : 'var(--line)';
+          b.style.color = b === btn ? 'var(--bg)' : 'var(--muted)';
+        });
+        items.forEach((el) => {
+          el.hidden = p !== 'all' && el.dataset.prov !== p;
+        });
+      });
+    });
+  }
+  initProv();
+  document.addEventListener('astro:page-load', initProv);
+</script>
