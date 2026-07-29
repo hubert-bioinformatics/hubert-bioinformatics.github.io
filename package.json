@@ -11,8 +11,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "dev:admin": "ADMIN=1 KEYSTATIC_STORAGE=local astro dev",
-    "build:admin": "ADMIN=1 astro build",
-    "publish": "git add -A && git commit -m \"content: update\" && git push"
+    "build:admin": "ADMIN=1 astro build && node scripts/patch-wrangler.mjs",
+    "publish": "git add -A && git commit -m \"content: update\" && git push",
+    "deploy:admin": "npm run build:admin && wrangler deploy -c dist/server/wrangler.json"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.1.6",
