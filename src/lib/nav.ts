@@ -1,8 +1,8 @@
 /** 사이트 네비게이션 — 섹션을 추가하려면 여기 한 줄만 늘리면 된다. */
 export const NAV = [
+  { href: '/portfolio', label: 'Portfolio' },
   { href: '/notes', label: 'Notes' },
   { href: '/radar', label: 'Radar' },
-  { href: '/portfolio', label: 'Portfolio' },
   { href: '/moment', label: 'Moment' },
 ] as const;
 
