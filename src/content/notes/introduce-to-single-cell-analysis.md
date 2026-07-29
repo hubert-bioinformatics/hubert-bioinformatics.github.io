@@ -3,7 +3,6 @@ title: "Introduce to Single Cell Analysis"
 date: 2022-10-03
 category: bioinformatics
 tags: ["BI", "bioinformatics", "single cell analysis"]
-legacyPath: "/posts/Introduce-to-Single-Cell-Analysis/"
 source: manual
 ---
 

@@ -5,7 +5,6 @@ category: ml-data
 tags: ["ml", "python", "study", "tree", "randomforest", "sklearn", "model"]
 series: "ML with Python Cookbook"
 seriesOrder: 14
-legacyPath: "/posts/ch14-Tree-and-Random-Forest/"
 source: manual
 ---
 

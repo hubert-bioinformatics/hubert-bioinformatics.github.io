@@ -5,7 +5,6 @@ category: ml-data
 tags: ["ml", "python", "study", "sklearn", "dataframe", "outlier", "standardization", "normalization"]
 series: "ML with Python Cookbook"
 seriesOrder: 4
-legacyPath: "/posts/ch4-Numeric-Data/"
 source: manual
 ---
 

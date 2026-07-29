@@ -3,7 +3,6 @@ title: "Relational Model"
 date: 2022-11-06
 category: programming
 tags: ["programming", "database", "relationalmodel"]
-legacyPath: "/posts/Relational-Model/"
 source: manual
 ---
 

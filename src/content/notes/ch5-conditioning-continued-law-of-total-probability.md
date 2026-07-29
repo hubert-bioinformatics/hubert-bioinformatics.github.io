@@ -5,7 +5,6 @@ category: statistics
 tags: ["statistics", "harbard", "law of total probability", "conditional probability", "prior", "posterior", "conditional independence"]
 series: "Statistics (Harvard Stat110)"
 seriesOrder: 5
-legacyPath: "/posts/ch5-Conditioning-Continued-Law-of-Total-Probability/"
 source: manual
 ---
 

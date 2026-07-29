@@ -3,7 +3,6 @@ title: "Phred Score (Base Call Quality Score)"
 date: 2022-06-18
 category: bioinformatics
 tags: ["BI", "bioinformatics", "fastq", "phred score", "NGS"]
-legacyPath: "/posts/Phred-Score-Base-Call-Quality-Score/"
 source: manual
 ---
 

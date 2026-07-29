@@ -3,7 +3,6 @@ title: "WES Dominant Variants"
 date: 2022-07-25
 category: bioinformatics
 tags: ["BI", "bioinformatics", "NGS", "WES", "dominant"]
-legacyPath: "/posts/WES-Dominant-Variants/"
 source: manual
 ---
 

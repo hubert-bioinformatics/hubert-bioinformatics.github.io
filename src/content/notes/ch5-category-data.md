@@ -5,7 +5,6 @@ category: ml-data
 tags: ["ml", "python", "study", "sklearn", "dataframe"]
 series: "ML with Python Cookbook"
 seriesOrder: 5
-legacyPath: "/posts/ch5-Category-Data/"
 source: manual
 ---
 

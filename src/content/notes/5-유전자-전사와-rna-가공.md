@@ -5,7 +5,6 @@ category: biology
 tags: ["molecular", "biology"]
 series: "분자생물학"
 seriesOrder: 5
-legacyPath: "/posts/5-유전자-전사와-RNA-가공/"
 source: manual
 ---
 

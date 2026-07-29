@@ -4,7 +4,6 @@ date: 2022-05-27
 category: programming
 tags: ["algorithm", "search", "python"]
 series: "Search Algorithm"
-legacyPath: "/posts/Search-Algorithm---BFS-Breadth-First-Search/"
 source: manual
 ---
 

@@ -3,7 +3,6 @@ title: "Sub-query and JOIN, UNION"
 date: 2022-11-13
 category: programming
 tags: ["programming", "database", "SQL", "query"]
-legacyPath: "/posts/Sub-query-and-JOIN-UNION/"
 source: manual
 ---
 

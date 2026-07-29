@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "epigenetics"]
 series: "Epigenetics"
 seriesOrder: 2
-legacyPath: "/posts/Epigenetics-II---크로마틴-구조/"
 source: manual
 ---
 

@@ -3,7 +3,6 @@ title: "Sequencing Technologies"
 date: 2022-07-10
 category: bioinformatics
 tags: ["BI", "bioinformatics", "sanger sequencing", "chip sequencing", "next generation sequencing"]
-legacyPath: "/posts/Sequencing-Technologies/"
 source: manual
 ---
 

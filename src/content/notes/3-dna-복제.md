@@ -5,7 +5,6 @@ category: biology
 tags: ["molecular", "biology"]
 series: "분자생물학"
 seriesOrder: 3
-legacyPath: "/posts/3-DNA-복제/"
 source: manual
 ---
 

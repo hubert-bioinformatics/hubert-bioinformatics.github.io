@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "cancer", "ML", "DL"]
 series: "ML and DL for Cancer Genomics"
 seriesOrder: 1
-legacyPath: "/posts/ML-and-DL-for-Cancer-Genomics-I---Bioinformatics-Trend/"
 source: manual
 ---
 

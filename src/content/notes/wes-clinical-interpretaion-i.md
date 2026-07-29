@@ -3,7 +3,6 @@ title: "WES Clinical Interpretaion I"
 date: 2022-07-26
 category: bioinformatics
 tags: ["BI", "bioinformatics", "NGS", "WES", "interpretation"]
-legacyPath: "/posts/WES-Clinical-Interpretaion-I/"
 source: manual
 ---
 

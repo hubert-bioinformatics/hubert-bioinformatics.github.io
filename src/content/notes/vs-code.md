@@ -3,7 +3,6 @@ title: "VS code"
 date: 2022-03-27
 category: programming
 tags: ["tool", "python"]
-legacyPath: "/posts/VS-code/"
 source: manual
 ---
 

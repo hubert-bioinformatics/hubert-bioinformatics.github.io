@@ -5,7 +5,6 @@ category: statistics
 tags: ["linear algebra", "study", "vector", "linearity"]
 series: "Guide to Linear Algebra"
 seriesOrder: 2
-legacyPath: "/posts/ch2-Introduce-Linear-Algebra/"
 source: manual
 ---
 

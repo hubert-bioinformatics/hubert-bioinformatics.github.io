@@ -3,7 +3,6 @@ title: "(Cheat Sheet) - Seaborn"
 date: 2022-11-26
 category: programming
 tags: ["programming", "python", "seaborn", "cheatsheet"]
-legacyPath: "/posts/Cheat-Sheet---Seaborn/"
 source: manual
 ---
 

@@ -5,7 +5,6 @@ category: ml-data
 tags: ["ml", "python", "study", "KNN", "sklearn", "model"]
 series: "ML with Python Cookbook"
 seriesOrder: 15
-legacyPath: "/posts/ch15-K-Nearest-Neighbor/"
 source: manual
 ---
 

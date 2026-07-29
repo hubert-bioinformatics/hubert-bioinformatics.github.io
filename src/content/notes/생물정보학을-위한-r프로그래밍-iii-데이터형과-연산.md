@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "R"]
 series: "생물정보학을 위한 R프로그래밍"
 seriesOrder: 3
-legacyPath: "/posts/생물정보학을-위한-R프로그래밍-III---데이터형과-연산/"
 source: manual
 ---
 

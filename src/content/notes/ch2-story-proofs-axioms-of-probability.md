@@ -5,7 +5,6 @@ category: statistics
 tags: ["statistics", "harbard", "probability", "story proofs"]
 series: "Statistics (Harvard Stat110)"
 seriesOrder: 2
-legacyPath: "/posts/ch2-Story-Proofs-Axioms-of-Probability/"
 source: manual
 ---
 

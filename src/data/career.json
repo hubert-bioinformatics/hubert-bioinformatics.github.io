@@ -1,58 +1,64 @@
-[
-  {
-    "id": "macrogen-principal-researcher",
-    "title": "Principal Researcher",
-    "org": "Macrogen",
-    "team": "Transcriptome Data Analysis Team",
-    "teamRole": "Team Leader",
-    "startDate": "2024-05-01",
-    "location": "서울, 대한민국",
-    "current": true,
-    "highlights": [
-      "팀 운영",
-      "전사체(Transcriptome) NGS 데이터 분석",
-      "단일세포 분석 — 10x Chromium, Spatial"
-    ]
-  },
-  {
-    "id": "macrogen-senior-researcher",
-    "title": "Senior Researcher",
-    "org": "Macrogen",
-    "team": "Clinical Data Analysis Team",
-    "teamRole": "Team Leader",
-    "startDate": "2021-01-01",
-    "endDate": "2024-05-01",
-    "location": "서울, 대한민국",
-    "highlights": ["팀 운영", "NGS 데이터 분석", "임상 인증 대응"]
-  },
-  {
-    "id": "macrogen-assistant-researcher",
-    "title": "Assistant Researcher",
-    "org": "Macrogen",
-    "team": "Clinical Cancer Genomics Team",
-    "startDate": "2017-03-01",
-    "endDate": "2021-01-01",
-    "location": "서울, 대한민국",
-    "highlights": [
-      "NGS 데이터 전처리 — Illumina, PacBio",
-      "NGS 분석 파이프라인 구축·운영·유지보수",
-      "WGS / WES / 암 타깃 패널 데이터 분석",
-      "CAP · KIGTE · 식약처 NGS 임상검사실 인증 취득 참여",
-      "인증 정기 숙련도 평가 수행",
-      "BRCA 분석 소프트웨어 개발 및 CE-IVDR(2017/746) 획득"
-    ]
-  },
-  {
-    "id": "macrogen-researcher",
-    "title": "Researcher",
-    "org": "Macrogen",
-    "team": "General NGS Data Analysis Team",
-    "startDate": "2014-04-01",
-    "endDate": "2017-03-01",
-    "location": "서울, 대한민국",
-    "highlights": [
-      "NGS 데이터 전처리 — Illumina, PacBio",
-      "비인간(non-Human) 재분석 데이터 분석"
-    ]
-  }
-]
+{
+  "entries": [
+    {
+      "id": "macrogen-principal-researcher",
+      "title": "Principal Researcher",
+      "org": "Macrogen",
+      "team": "Transcriptome Data Analysis Team",
+      "teamRole": "Team Leader",
+      "startDate": "2024-05-01",
+      "location": "서울, 대한민국",
+      "current": true,
+      "highlights": [
+        "팀 운영",
+        "전사체(Transcriptome) NGS 데이터 분석",
+        "단일세포 분석 — 10x Chromium, Spatial"
+      ]
+    },
+    {
+      "id": "macrogen-senior-researcher",
+      "title": "Senior Researcher",
+      "org": "Macrogen",
+      "team": "Clinical Data Analysis Team",
+      "teamRole": "Team Leader",
+      "startDate": "2021-01-01",
+      "endDate": "2024-05-01",
+      "location": "서울, 대한민국",
+      "highlights": [
+        "팀 운영",
+        "NGS 데이터 분석",
+        "임상 인증 대응"
+      ]
+    },
+    {
+      "id": "macrogen-assistant-researcher",
+      "title": "Assistant Researcher",
+      "org": "Macrogen",
+      "team": "Clinical Cancer Genomics Team",
+      "startDate": "2017-03-01",
+      "endDate": "2021-01-01",
+      "location": "서울, 대한민국",
+      "highlights": [
+        "NGS 데이터 전처리 — Illumina, PacBio",
+        "NGS 분석 파이프라인 구축·운영·유지보수",
+        "WGS / WES / 암 타깃 패널 데이터 분석",
+        "CAP · KIGTE · 식약처 NGS 임상검사실 인증 취득 참여",
+        "인증 정기 숙련도 평가 수행",
+        "BRCA 분석 소프트웨어 개발 및 CE-IVDR(2017/746) 획득"
+      ]
+    },
+    {
+      "id": "macrogen-researcher",
+      "title": "Researcher",
+      "org": "Macrogen",
+      "team": "General NGS Data Analysis Team",
+      "startDate": "2014-04-01",
+      "endDate": "2017-03-01",
+      "location": "서울, 대한민국",
+      "highlights": [
+        "NGS 데이터 전처리 — Illumina, PacBio",
+        "비인간(non-Human) 재분석 데이터 분석"
+      ]
+    }
+  ]
+}

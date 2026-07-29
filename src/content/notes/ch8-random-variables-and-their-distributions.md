@@ -5,7 +5,6 @@ category: statistics
 tags: ["statistics", "harbard", "PMF", "CDF"]
 series: "Statistics (Harvard Stat110)"
 seriesOrder: 8
-legacyPath: "/posts/ch8-Random-Variables-and-Their-Distributions/"
 source: manual
 ---
 

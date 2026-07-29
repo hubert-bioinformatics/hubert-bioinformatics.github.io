@@ -3,7 +3,6 @@ title: "Preprocessing of Single Cell Analysis II"
 date: 2022-10-16
 category: bioinformatics
 tags: ["BI", "bioinformatics", "single cell analysis"]
-legacyPath: "/posts/Preprocessing-of-Single-Cell-Analysis-II/"
 source: manual
 ---
 

@@ -3,7 +3,6 @@ title: "Solid Tumors - Hereditary"
 date: 2023-07-31
 category: bioinformatics
 tags: ["BI", "bioinformatics", "biology"]
-legacyPath: "/posts/Solid-Tumors---Hereditary/"
 source: manual
 ---
 

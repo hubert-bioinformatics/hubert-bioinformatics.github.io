@@ -3,7 +3,6 @@ title: "Big Data in Precision Oncology - TCGA 및 암유전체 빅데이터 개�
 date: 2023-07-21
 category: bioinformatics
 tags: ["BI", "bioinformatics", "bigdata", "TCGA", "cancer"]
-legacyPath: "/posts/Big-Data-in-Precision-Oncology---TCGA-및-암유전체-빅데이터-개요/"
 source: manual
 ---
 

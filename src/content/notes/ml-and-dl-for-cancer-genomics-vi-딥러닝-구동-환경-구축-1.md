@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "cancer", "ML", "DL"]
 series: "ML and DL for Cancer Genomics"
 seriesOrder: 6
-legacyPath: "/posts/ML-and-DL-for-Cancer-Genomics-VI---딥러닝-구동-환경-구축-1/"
 source: manual
 ---
 

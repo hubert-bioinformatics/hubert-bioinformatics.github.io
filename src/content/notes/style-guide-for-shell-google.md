@@ -3,7 +3,6 @@ title: "Style Guide for Shell - Google"
 date: 2022-04-15
 category: programming
 tags: ["linux", "shell"]
-legacyPath: "/posts/Style-Guide-for-Shell---Google/"
 source: manual
 ---
 

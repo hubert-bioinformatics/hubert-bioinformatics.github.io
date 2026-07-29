@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "epigenetics"]
 series: "Epigenetics"
 seriesOrder: 6
-legacyPath: "/posts/Epigenetics-VI---후성유전체-데이터-생산과-분석1/"
 source: manual
 ---
 

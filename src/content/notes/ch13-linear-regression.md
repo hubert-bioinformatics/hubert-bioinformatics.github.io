@@ -5,7 +5,6 @@ category: ml-data
 tags: ["ml", "python", "study", "linear", "regression", "sklearn", "model"]
 series: "ML with Python Cookbook"
 seriesOrder: 13
-legacyPath: "/posts/ch13-Linear-Regression/"
 source: manual
 ---
 

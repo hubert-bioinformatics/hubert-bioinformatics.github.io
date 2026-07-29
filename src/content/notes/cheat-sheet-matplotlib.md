@@ -3,7 +3,6 @@ title: "(Cheat Sheet) - Matplotlib"
 date: 2022-11-26
 category: programming
 tags: ["programming", "python", "matplotlib", "cheatsheet"]
-legacyPath: "/posts/Cheat-Sheet---Matplotlib/"
 source: manual
 ---
 

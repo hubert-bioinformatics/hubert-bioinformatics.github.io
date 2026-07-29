@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "pacbio", "longread"]
 series: "Long Read Sequencing"
 seriesOrder: 2
-legacyPath: "/posts/Long-Read-Sequencing-II---유전체-지도-작성-개괄/"
 source: manual
 ---
 

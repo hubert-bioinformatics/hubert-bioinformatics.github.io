@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "variant", "cancer", "immune", "immunotherapy"]
 series: "Variants Analysis"
 seriesOrder: 6
-legacyPath: "/posts/Variants-Analysis-VI---Cancer-Immunotherapy/"
 source: manual
 ---
 

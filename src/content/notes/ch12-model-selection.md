@@ -5,7 +5,6 @@ category: ml-data
 tags: ["ml", "python", "study", "sklearn", "model"]
 series: "ML with Python Cookbook"
 seriesOrder: 12
-legacyPath: "/posts/ch12-Model-Selection/"
 source: manual
 ---
 

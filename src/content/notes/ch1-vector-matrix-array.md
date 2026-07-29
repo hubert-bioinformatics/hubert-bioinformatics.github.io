@@ -5,7 +5,6 @@ category: ml-data
 tags: ["ml", "python", "study", "vector", "matrix", "array"]
 series: "ML with Python Cookbook"
 seriesOrder: 1
-legacyPath: "/posts/ch1-Vector-Matrix-Array/"
 source: manual
 ---
 

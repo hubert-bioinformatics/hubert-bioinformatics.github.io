@@ -365,7 +365,6 @@ if (!DRY) {
       n.tags.length ? `tags: [${n.tags.map(q).join(', ')}]` : 'tags: []',
       n.series ? `series: ${q(n.series)}` : null,
       n.seriesOrder ? `seriesOrder: ${n.seriesOrder}` : null,
-      `legacyPath: ${q(n.legacyPath)}`,
       'source: manual',
       '---',
     ].filter(Boolean);

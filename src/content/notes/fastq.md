@@ -3,7 +3,6 @@ title: "Fastq"
 date: 2022-06-16
 category: bioinformatics
 tags: ["BI", "bioinformatics", "fastq", "NGS"]
-legacyPath: "/posts/Fastq/"
 source: manual
 ---
 

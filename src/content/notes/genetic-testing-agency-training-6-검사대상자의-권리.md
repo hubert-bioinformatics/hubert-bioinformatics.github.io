@@ -4,7 +4,6 @@ date: 2023-06-20
 category: biology
 tags: ["bioinformatics", "genetics"]
 series: "유전자검사기관 교육"
-legacyPath: "/posts/Genetic-Testing-Agency-Training-6---검사대상자의-권리/"
 source: manual
 ---
 

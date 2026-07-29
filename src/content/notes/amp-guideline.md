@@ -3,7 +3,6 @@ title: "AMP Guideline"
 date: 2023-07-24
 category: bioinformatics
 tags: ["BI", "bioinformatics", "AMP", "cancer"]
-legacyPath: "/posts/AMP-Guideline/"
 source: manual
 ---
 

@@ -5,7 +5,6 @@ category: statistics
 tags: ["statistics", "harbard", "probability", "birthday problem", "Inclusion-Exclusion Principle"]
 series: "Statistics (Harvard Stat110)"
 seriesOrder: 3
-legacyPath: "/posts/ch3-Birthday-Problem-Properties-of-Probability/"
 source: manual
 ---
 

@@ -5,7 +5,6 @@ category: statistics
 tags: ["linear algebra", "study", "math"]
 series: "Guide to Linear Algebra"
 seriesOrder: 1
-legacyPath: "/posts/ch1-Basic-Mathmatics/"
 source: manual
 ---
 

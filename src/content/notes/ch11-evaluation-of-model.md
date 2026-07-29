@@ -5,7 +5,6 @@ category: ml-data
 tags: ["ml", "python", "study", "sklearn", "dataframe"]
 series: "ML with Python Cookbook"
 seriesOrder: 11
-legacyPath: "/posts/ch11-Evaluation-of-Model/"
 source: manual
 ---
 

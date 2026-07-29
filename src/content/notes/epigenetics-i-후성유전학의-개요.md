@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "epigenetics"]
 series: "Epigenetics"
 seriesOrder: 1
-legacyPath: "/posts/Epigenetics-I---후성유전학의-개요/"
 source: manual
 ---
 

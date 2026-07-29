@@ -4,7 +4,6 @@ date: 2023-06-19
 category: biology
 tags: ["bioinformatics", "genetics"]
 series: "유전자검사기관 교육"
-legacyPath: "/posts/Genetic-Testing-Agency-Training-4---유전자검사기관의-의무-및-책임/"
 source: manual
 ---
 

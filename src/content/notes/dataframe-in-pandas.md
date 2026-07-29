@@ -3,7 +3,6 @@ title: "Dataframe in Pandas"
 date: 2022-05-24
 category: programming
 tags: ["python", "pandas", "dataframe"]
-legacyPath: "/posts/Dataframe-in-Pandas/"
 source: manual
 ---
 

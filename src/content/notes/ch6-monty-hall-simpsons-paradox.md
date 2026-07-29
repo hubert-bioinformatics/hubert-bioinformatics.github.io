@@ -5,7 +5,6 @@ category: statistics
 tags: ["statistics", "harbard", "monty hall", "law of total probability", "simpson's paradox"]
 series: "Statistics (Harvard Stat110)"
 seriesOrder: 6
-legacyPath: "/posts/ch6-Monty-Hall-Simpsons-Paradox/"
 source: manual
 ---
 

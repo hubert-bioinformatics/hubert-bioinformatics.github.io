@@ -3,7 +3,6 @@ title: "(Cheat Sheet) - Pandas"
 date: 2022-11-26
 category: programming
 tags: ["programming", "python", "pandas", "cheatsheet"]
-legacyPath: "/posts/Cheat-Sheet---Pandas/"
 source: manual
 ---
 

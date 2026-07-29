@@ -3,7 +3,6 @@ title: "WES 데이터 처리와 해석법"
 date: 2022-07-25
 category: bioinformatics
 tags: ["BI", "bioinformatics", "NGS", "WES"]
-legacyPath: "/posts/WES-데이터-처리와-해석법/"
 source: manual
 ---
 

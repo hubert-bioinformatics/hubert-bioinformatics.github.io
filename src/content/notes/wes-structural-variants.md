@@ -3,7 +3,6 @@ title: "WES Structural Variants"
 date: 2022-07-25
 category: bioinformatics
 tags: ["BI", "bioinformatics", "NGS", "WES", "structural variant", "CNV"]
-legacyPath: "/posts/WES-Structural-Variants/"
 source: manual
 ---
 

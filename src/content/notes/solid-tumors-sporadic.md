@@ -3,7 +3,6 @@ title: "Solid Tumors - Sporadic"
 date: 2023-07-31
 category: bioinformatics
 tags: ["BI", "bioinformatics", "biology"]
-legacyPath: "/posts/Solid-Tumors---Sporadic/"
 source: manual
 ---
 

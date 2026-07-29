@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "transcriptome"]
 series: "Transcriptome"
 seriesOrder: 1
-legacyPath: "/posts/Transcriptome-I---Introduction-to-Transcriptome/"
 source: manual
 ---
 

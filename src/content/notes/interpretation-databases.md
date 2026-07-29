@@ -3,7 +3,6 @@ title: "Interpretation Databases"
 date: 2023-07-31
 category: bioinformatics
 tags: ["BI", "bioinformatics", "databases"]
-legacyPath: "/posts/Interpretation-Databases/"
 source: manual
 ---
 

@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "pacbio", "longread"]
 series: "Long Read Sequencing"
 seriesOrder: 5
-legacyPath: "/posts/Long-Read-Sequencing-V---Assembly-Quality-확인/"
 source: manual
 ---
 

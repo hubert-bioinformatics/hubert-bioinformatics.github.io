@@ -3,7 +3,6 @@ title: "(Error) CommandNotFoundError - Your shell has not been properly configur
 date: 2023-07-05
 category: programming
 tags: ["python", "anaconda", "conda", "activate"]
-legacyPath: "/posts/Error-CommandNotFoundError---Your-shell-has-not-been-properly-configured-to-use-conda-activate/"
 source: manual
 ---
 

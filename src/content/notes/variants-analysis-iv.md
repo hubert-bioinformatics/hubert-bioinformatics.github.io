@@ -3,7 +3,6 @@ title: "Variants Analysis IV"
 date: 2022-10-25
 category: bioinformatics
 tags: ["BI", "bioinformatics", "variant", "calling"]
-legacyPath: "/posts/Variants-Analysis-IV/"
 source: manual
 ---
 

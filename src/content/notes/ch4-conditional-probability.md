@@ -5,7 +5,6 @@ category: statistics
 tags: ["statistics", "harbard", "probability", "independence", "newton-pepys problem", "conditional probability", "bayes' theorem"]
 series: "Statistics (Harvard Stat110)"
 seriesOrder: 4
-legacyPath: "/posts/ch4-Conditional-Probability/"
 source: manual
 ---
 

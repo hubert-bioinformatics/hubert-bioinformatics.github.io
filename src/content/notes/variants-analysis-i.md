@@ -3,7 +3,6 @@ title: "Variants Analysis I"
 date: 2022-08-11
 category: bioinformatics
 tags: ["BI", "bioinformatics", "next generation sequencing", "variant", "calling"]
-legacyPath: "/posts/Variants-Analysis-I/"
 source: manual
 ---
 

@@ -5,7 +5,6 @@ category: statistics
 tags: ["statistics", "harbard", "sample space", "event", "probability", "counting", "binomial coefficient"]
 series: "Statistics (Harvard Stat110)"
 seriesOrder: 1
-legacyPath: "/posts/ch1-Probability-and-Counting/"
 source: manual
 ---
 

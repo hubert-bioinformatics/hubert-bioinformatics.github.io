@@ -3,7 +3,6 @@ title: "Stack vs Queue"
 date: 2022-05-24
 category: programming
 tags: ["database", "LIFO", "FIFO"]
-legacyPath: "/posts/Stack-vs-Queue/"
 source: manual
 ---
 

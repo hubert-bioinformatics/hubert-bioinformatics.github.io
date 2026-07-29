@@ -5,7 +5,6 @@ category: biology
 tags: ["molecular", "biology"]
 series: "분자생물학"
 seriesOrder: 4
-legacyPath: "/posts/4-돌연변이와-DNA-수선/"
 source: manual
 ---
 

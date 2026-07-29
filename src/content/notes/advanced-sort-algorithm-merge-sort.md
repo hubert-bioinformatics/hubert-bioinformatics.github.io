@@ -4,7 +4,6 @@ date: 2023-07-16
 category: programming
 tags: ["algorithm", "sort", "python"]
 series: "Sort Algorithm"
-legacyPath: "/posts/Advanced-Sort-Algorithm---Merge-Sort/"
 source: manual
 ---
 

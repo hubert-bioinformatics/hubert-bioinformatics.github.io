@@ -4,7 +4,6 @@ date: 2023-06-19
 category: biology
 tags: ["bioinformatics", "genetics"]
 series: "유전자검사기관 교육"
-legacyPath: "/posts/Genetic-Testing-Agency-Training-5---유전자검사기관의-숙련도-평가/"
 source: manual
 ---
 

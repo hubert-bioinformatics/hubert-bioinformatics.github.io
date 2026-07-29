@@ -5,7 +5,6 @@ category: statistics
 tags: ["statistics", "harbard", "CDF", "expectation", "linearity"]
 series: "Statistics (Harvard Stat110)"
 seriesOrder: 9
-legacyPath: "/posts/ch9-Expectation-Indicator-Random-Variables-Linearity/"
 source: manual
 ---
 

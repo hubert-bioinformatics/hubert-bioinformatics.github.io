@@ -3,7 +3,6 @@ title: "WES Recessive Variants"
 date: 2022-07-25
 category: bioinformatics
 tags: ["BI", "bioinformatics", "NGS", "WES", "recessive"]
-legacyPath: "/posts/WES-Recessive-Variants/"
 source: manual
 ---
 

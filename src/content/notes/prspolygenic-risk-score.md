@@ -3,7 +3,6 @@ title: "PRS(Polygenic Risk Score)"
 date: 2023-07-17
 category: bioinformatics
 tags: ["BI", "bioinformatics", "PRS"]
-legacyPath: "/posts/PRSPolygenic-Risk-Score/"
 source: manual
 ---
 

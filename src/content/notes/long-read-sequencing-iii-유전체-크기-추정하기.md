@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "pacbio", "longread"]
 series: "Long Read Sequencing"
 seriesOrder: 3
-legacyPath: "/posts/Long-Read-Sequencing-III---유전체-크기-추정하기/"
 source: manual
 ---
 

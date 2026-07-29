@@ -3,7 +3,6 @@ title: "Style Guide for Python Code - PEP8"
 date: 2022-03-27
 category: programming
 tags: ["python"]
-legacyPath: "/posts/Style-Guide-for-Python-Code---PEP8/"
 source: manual
 ---
 

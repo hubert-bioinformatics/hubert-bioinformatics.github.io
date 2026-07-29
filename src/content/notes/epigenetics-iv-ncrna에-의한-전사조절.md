@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "epigenetics"]
 series: "Epigenetics"
 seriesOrder: 4
-legacyPath: "/posts/Epigenetics-IV--ncRNA에-의한-전사조절/"
 source: manual
 ---
 

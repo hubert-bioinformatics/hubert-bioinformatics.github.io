@@ -5,7 +5,6 @@ category: statistics
 tags: ["linear algebra", "study", "vector", "Gauss-Jordan elimination", "determinant", "matrix inverse"]
 series: "Guide to Linear Algebra"
 seriesOrder: 3
-legacyPath: "/posts/ch3-Linear-Algebra-Calculations/"
 source: manual
 ---
 

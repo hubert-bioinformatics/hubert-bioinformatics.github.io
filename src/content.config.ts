@@ -2,6 +2,12 @@ import { defineCollection, z } from 'astro:content';
 import { glob, file } from 'astro/loaders';
 
 /**
+ * Keystatic 싱글톤은 JSON을 { entries: [...] } 형태로 저장한다.
+ * 최상위 배열을 기대하는 file() 로더에 맞춰 entries만 꺼내 준다.
+ */
+const entriesOf = { parser: (text: string) => JSON.parse(text).entries };
+
+/**
  * 콘텐츠 아키텍처
  *
  *   notes       기술 글 (기존 129개 + 신규)        → /notes
@@ -38,8 +44,7 @@ const notes = defineCollection({
       seriesOrder: z.number().int().positive().optional(),
 
       // 유입 경로 추적 (3-트랙 파이프라인)
-      source: z.enum(['manual', 'notion', 'keystatic']).default('manual'),
-      legacyPath: z.string().optional(), // 이전 Jekyll URL 기록용
+      source: z.enum(['manual', 'keystatic', 'agent']).default('manual'),
     }),
 });
 
@@ -96,7 +101,7 @@ const moment = defineCollection({
 
 /** 이수 과정·자격증 — 글이 아니라 데이터 */
 const credentials = defineCollection({
-  loader: file('./src/data/credentials.json'),
+  loader: file('./src/data/credentials.json', entriesOf),
   schema: ({ image }) =>
     z.object({
       id: z.string(),
@@ -134,7 +139,7 @@ const projects = defineCollection({
 
 /** 경력 — 승진·이직 시 career.json 한 곳만 고치면 사이트 전체에 반영된다 */
 const career = defineCollection({
-  loader: file('./src/data/career.json'),
+  loader: file('./src/data/career.json', entriesOf),
   schema: z.object({
     id: z.string(),
     title: z.string(),
@@ -151,7 +156,7 @@ const career = defineCollection({
 
 /** 학력 */
 const education = defineCollection({
-  loader: file('./src/data/education.json'),
+  loader: file('./src/data/education.json', entriesOf),
   schema: z.object({
     id: z.string(),
     school: z.string(),
@@ -166,7 +171,7 @@ const education = defineCollection({
 
 /** 보유 기술 — 주제별 묶음 */
 const skills = defineCollection({
-  loader: file('./src/data/skills.json'),
+  loader: file('./src/data/skills.json', entriesOf),
   schema: z.object({
     id: z.string(),
     seq: z.number().int().default(0), // 표시 순서 (file 로더는 id 알파벳순으로 주므로 필요)

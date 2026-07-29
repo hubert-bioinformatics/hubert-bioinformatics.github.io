@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "epigenetics"]
 series: "Epigenetics"
 seriesOrder: 5
-legacyPath: "/posts/Epigenetics-V--세포운명-결정의-후성유전학/"
 source: manual
 ---
 

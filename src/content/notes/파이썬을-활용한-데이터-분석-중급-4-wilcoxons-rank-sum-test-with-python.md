@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "python", "statistics"]
 series: "파이썬을 활용한 데이터 분석 (중급)"
 seriesOrder: 4
-legacyPath: "/posts/파이썬을-활용한-데이터-분석-중급---4-Wilcoxons-Rank-Sum-Test-with-python/"
 source: manual
 ---
 

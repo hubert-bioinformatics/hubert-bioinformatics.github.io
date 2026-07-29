@@ -3,7 +3,6 @@ title: "WES 개념과 유전학적 의의"
 date: 2022-07-24
 category: bioinformatics
 tags: ["BI", "bioinformatics", "NGS", "WES"]
-legacyPath: "/posts/WES-개념과-유전학적-의의/"
 source: manual
 ---
 

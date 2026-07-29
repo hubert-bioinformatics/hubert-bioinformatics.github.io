@@ -3,7 +3,6 @@ title: "about DNA"
 date: 2022-07-09
 category: bioinformatics
 tags: ["BI", "bioinformatics", "DNA", "RNA", "nucleoside", "nucleotide", "pentose sugar", "nitrogenous base", "phosphate", "replication", "weight"]
-legacyPath: "/posts/about-DNA/"
 source: manual
 ---
 

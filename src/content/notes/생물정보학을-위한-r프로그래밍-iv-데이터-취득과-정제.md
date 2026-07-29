@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "R"]
 series: "생물정보학을 위한 R프로그래밍"
 seriesOrder: 4
-legacyPath: "/posts/생물정보학을-위한-R프로그래밍-IV---데이터-취득과-정제/"
 source: manual
 ---
 

@@ -4,7 +4,6 @@ date: 2023-06-14
 category: biology
 tags: ["bioinformatics", "genetics"]
 series: "유전자검사기관 교육"
-legacyPath: "/posts/Genetic-Testing-Agency-Training-3---유전자검사항목의-신고/"
 source: manual
 ---
 

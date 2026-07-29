@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "epigenetics"]
 series: "Epigenetics"
 seriesOrder: 3
-legacyPath: "/posts/Epigenetics-III---히스톤-변형과-DNA-메틸화/"
 source: manual
 ---
 

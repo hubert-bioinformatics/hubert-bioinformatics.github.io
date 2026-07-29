@@ -5,7 +5,6 @@ category: statistics
 tags: ["statistics", "harbard", "gambler's ruin", "differece equation", "random variable", "bernoulli", "binomial"]
 series: "Statistics (Harvard Stat110)"
 seriesOrder: 7
-legacyPath: "/posts/ch7-Gamblers-Ruin-and-Random-Variables/"
 source: manual
 ---
 

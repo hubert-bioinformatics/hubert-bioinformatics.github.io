@@ -5,7 +5,6 @@ category: ml-data
 tags: ["ml", "python", "study", "sklearn", "dataframe"]
 series: "ML with Python Cookbook"
 seriesOrder: 10
-legacyPath: "/posts/ch10-Dimension-Reduction-Using-Feature-Selection/"
 source: manual
 ---
 

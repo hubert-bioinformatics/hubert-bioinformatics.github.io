@@ -3,7 +3,6 @@ title: "Definition of Data"
 date: 2022-11-06
 category: programming
 tags: ["programming", "database", "relationalmodel", "SQL"]
-legacyPath: "/posts/Definition-of-Data/"
 source: manual
 ---
 

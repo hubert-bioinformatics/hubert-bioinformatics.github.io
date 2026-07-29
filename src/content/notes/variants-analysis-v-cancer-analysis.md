@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "variant", "cancer", "calling"]
 series: "Variants Analysis"
 seriesOrder: 5
-legacyPath: "/posts/Variants-Analysis-V---Cancer-Analysis/"
 source: manual
 ---
 

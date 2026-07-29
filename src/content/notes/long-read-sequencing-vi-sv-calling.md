@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "pacbio", "longread"]
 series: "Long Read Sequencing"
 seriesOrder: 6
-legacyPath: "/posts/Long-Read-Sequencing-VI---SV-Calling/"
 source: manual
 ---
 

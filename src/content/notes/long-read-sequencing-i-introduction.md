@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "pacbio", "longread"]
 series: "Long Read Sequencing"
 seriesOrder: 1
-legacyPath: "/posts/Long-Read-Sequencing-I---Introduction/"
 source: manual
 ---
 

@@ -5,7 +5,6 @@ category: ml-data
 tags: ["ml", "python", "study", "sklearn", "dataframe"]
 series: "ML with Python Cookbook"
 seriesOrder: 3
-legacyPath: "/posts/ch3-Data-Wrangling/"
 source: manual
 ---
 

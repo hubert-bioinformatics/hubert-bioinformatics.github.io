@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "R"]
 series: "생물정보학을 위한 R프로그래밍"
 seriesOrder: 5
-legacyPath: "/posts/생물정보학을-위한-R프로그래밍-V---데이터-시각화/"
 source: manual
 ---
 

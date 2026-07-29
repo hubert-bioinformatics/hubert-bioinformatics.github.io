@@ -3,7 +3,6 @@ title: "Big Data in Precision Oncology - TCGA 데이터베이스의 이해 및 �
 date: 2023-07-25
 category: bioinformatics
 tags: ["BI", "bioinformatics", "bigdata", "TCGA", "cancer"]
-legacyPath: "/posts/Big-Data-in-Precision-Oncology---TCGA-데이터베이스의-이해-및-활용/"
 source: manual
 ---
 

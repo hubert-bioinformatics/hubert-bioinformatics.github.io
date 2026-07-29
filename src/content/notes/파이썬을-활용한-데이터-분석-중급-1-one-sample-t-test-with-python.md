@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "python", "statistics"]
 series: "파이썬을 활용한 데이터 분석 (중급)"
 seriesOrder: 1
-legacyPath: "/posts/파이썬을-활용한-데이터-분석-중급---1-One-Sample-t-Test-with-python/"
 source: manual
 ---
 

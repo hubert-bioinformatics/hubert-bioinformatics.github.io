@@ -4,7 +4,6 @@ date: 2023-09-23
 category: programming
 tags: ["algorithm", "sort", "python"]
 series: "Sort Algorithm"
-legacyPath: "/posts/Advanced-Sort-Algorithm---Heap-Sort/"
 source: manual
 ---
 

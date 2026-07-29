@@ -3,7 +3,6 @@ title: "SQL 기초"
 date: 2022-11-13
 category: programming
 tags: ["programming", "database", "basicSQL"]
-legacyPath: "/posts/SQL-기초/"
 source: manual
 ---
 

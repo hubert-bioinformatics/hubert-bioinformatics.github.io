@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "transcriptome"]
 series: "Transcriptome"
 seriesOrder: 2
-legacyPath: "/posts/Transcriptome-II---Data-Preprocessing/"
 source: manual
 ---
 

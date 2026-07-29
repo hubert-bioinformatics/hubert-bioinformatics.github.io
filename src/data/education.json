@@ -1,12 +1,16 @@
-[
-  {
-    "id": "handong-bs",
-    "school": "한동대학교",
-    "schoolEn": "Handong Global University",
-    "degree": "Bachelor of Science (BS)",
-    "field": "Biomedical Sciences, General",
-    "startYear": 2006,
-    "endYear": 2013,
-    "activities": ["SOUL"]
-  }
-]
+{
+  "entries": [
+    {
+      "id": "handong-bs",
+      "school": "한동대학교",
+      "schoolEn": "Handong Global University",
+      "degree": "Bachelor of Science (BS)",
+      "field": "Biomedical Sciences, General",
+      "startYear": 2006,
+      "endYear": 2013,
+      "activities": [
+        "SOUL"
+      ]
+    }
+  ]
+}

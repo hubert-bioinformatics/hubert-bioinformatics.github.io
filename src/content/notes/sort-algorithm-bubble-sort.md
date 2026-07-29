@@ -4,7 +4,6 @@ date: 2023-07-15
 category: programming
 tags: ["algorithm", "sort", "python"]
 series: "Sort Algorithm"
-legacyPath: "/posts/Sort-Algorithm---Bubble-Sort/"
 source: manual
 ---
 

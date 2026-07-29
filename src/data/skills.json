@@ -1,49 +1,57 @@
-[
-  {
-    "id": "genomics",
-    "seq": 1,
-    "group": "Genomics & Bioinformatics",
-    "items": [
-      "Bioinformatics",
-      "Genomics",
-      "Transcriptomics",
-      "Single-cell Analysis",
-      "Multi-omics",
-      "Systems Biology",
-      "Precision Medicine",
-      "Oncology",
-      "Biomarker Discovery"
-    ]
-  },
-  {
-    "id": "drug-protein",
-    "seq": 2,
-    "group": "Drug Discovery & Protein",
-    "items": [
-      "Drug Discovery",
-      "Protein Structure",
-      "AlphaFold",
-      "ADMET",
-      "Medicinal Chemistry"
-    ]
-  },
-  {
-    "id": "ml-data",
-    "seq": 3,
-    "group": "Machine Learning & Data",
-    "items": [
-      "Machine Learning",
-      "Deep Learning",
-      "Artificial Intelligence",
-      "Big Data",
-      "Data Analysis",
-      "Statistics"
-    ]
-  },
-  {
-    "id": "tools",
-    "seq": 4,
-    "group": "Tools & Foundations",
-    "items": ["Python", "R", "SQL & Databases", "Algorithms", "Medical Informatics"]
-  }
-]
+{
+  "entries": [
+    {
+      "id": "genomics",
+      "seq": 1,
+      "group": "Genomics & Bioinformatics",
+      "items": [
+        "Bioinformatics",
+        "Genomics",
+        "Transcriptomics",
+        "Single-cell Analysis",
+        "Multi-omics",
+        "Systems Biology",
+        "Precision Medicine",
+        "Oncology",
+        "Biomarker Discovery"
+      ]
+    },
+    {
+      "id": "drug-protein",
+      "seq": 2,
+      "group": "Drug Discovery & Protein",
+      "items": [
+        "Drug Discovery",
+        "Protein Structure",
+        "AlphaFold",
+        "ADMET",
+        "Medicinal Chemistry"
+      ]
+    },
+    {
+      "id": "ml-data",
+      "seq": 3,
+      "group": "Machine Learning & Data",
+      "items": [
+        "Machine Learning",
+        "Deep Learning",
+        "Artificial Intelligence",
+        "Big Data",
+        "Data Analysis",
+        "Statistics"
+      ]
+    },
+    {
+      "id": "tools",
+      "seq": 4,
+      "group": "Tools & Foundations",
+      "items": [
+        "Python",
+        "R",
+        "SQL & Databases",
+        "Algorithms",
+        "Medical Informatics"
+      ]
+    }
+  ]
+}

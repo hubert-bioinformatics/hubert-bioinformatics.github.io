@@ -5,7 +5,6 @@ category: ml-data
 tags: ["ml", "python", "study", "sklearn"]
 series: "ML with Python Cookbook"
 seriesOrder: 2
-legacyPath: "/posts/ch2-Data-Load/"
 source: manual
 ---
 

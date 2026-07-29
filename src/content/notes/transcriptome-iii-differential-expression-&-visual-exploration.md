@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "transcriptome"]
 series: "Transcriptome"
 seriesOrder: 3
-legacyPath: "/posts/Transcriptome-III---Differential-Expression--Visual-Exploration/"
 source: manual
 ---
 

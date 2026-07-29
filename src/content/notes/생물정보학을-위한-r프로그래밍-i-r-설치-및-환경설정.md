@@ -5,7 +5,6 @@ category: bioinformatics
 tags: ["BI", "bioinformatics", "R"]
 series: "생물정보학을 위한 R프로그래밍"
 seriesOrder: 1
-legacyPath: "/posts/생물정보학을-위한-R프로그래밍-I---R-설치-및-환경설정/"
 source: manual
 ---
 

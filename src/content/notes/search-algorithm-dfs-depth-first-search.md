@@ -4,7 +4,6 @@ date: 2022-05-22
 category: programming
 tags: ["algorithm", "search", "python"]
 series: "Search Algorithm"
-legacyPath: "/posts/Search-Algorithm---DFS-Depth-First-Search/"
 source: manual
 ---
 

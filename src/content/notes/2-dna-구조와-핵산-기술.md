@@ -5,7 +5,6 @@ category: biology
 tags: ["molecular", "biology"]
 series: "분자생물학"
 seriesOrder: 2
-legacyPath: "/posts/2-DNA-구조와-핵산-기술/"
 source: manual
 ---
 

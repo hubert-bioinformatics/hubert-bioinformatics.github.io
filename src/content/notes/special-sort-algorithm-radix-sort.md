@@ -4,7 +4,6 @@ date: 2023-09-27
 category: programming
 tags: ["algorithm", "sort", "python"]
 series: "Sort Algorithm"
-legacyPath: "/posts/Special-Sort-Algorithm---Radix-Sort/"
 source: manual
 ---
 
