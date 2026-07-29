@@ -169,6 +169,7 @@ const skills = defineCollection({
   loader: file('./src/data/skills.json'),
   schema: z.object({
     id: z.string(),
+    seq: z.number().int().default(0), // 표시 순서 (file 로더는 id 알파벳순으로 주므로 필요)
     group: z.string(),
     items: z.array(z.string()).default([]),
   }),

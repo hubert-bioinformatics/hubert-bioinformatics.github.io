@@ -70,9 +70,10 @@ export async function getEducation() {
   return e.sort((a, b) => (b.data.endYear ?? 0) - (a.data.endYear ?? 0));
 }
 
-/** 보유 기술 (skills.json 순서 유지) */
+/** 보유 기술 (seq 순서대로 — file 로더는 id 알파벳순으로 반환한다) */
 export async function getSkills() {
-  return safe('skills');
+  const s = await safe('skills');
+  return s.sort((a, b) => a.data.seq - b.data.seq);
 }
 
 export async function getCredentials() {

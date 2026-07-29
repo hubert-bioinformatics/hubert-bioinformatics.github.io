@@ -1,42 +1,49 @@
 [
   {
     "id": "genomics",
+    "seq": 1,
     "group": "Genomics & Bioinformatics",
     "items": [
-      "생물정보학",
-      "생명정보학",
-      "GENOME",
-      "전사체",
-      "MULTIOMICS",
-      "oncology",
-      "biomarker",
-      "precision medicine",
-      "시스템생물학",
-      "biology"
+      "Bioinformatics",
+      "Genomics",
+      "Transcriptomics",
+      "Single-cell Analysis",
+      "Multi-omics",
+      "Systems Biology",
+      "Precision Medicine",
+      "Oncology",
+      "Biomarker Discovery"
     ]
   },
   {
     "id": "drug-protein",
+    "seq": 2,
     "group": "Drug Discovery & Protein",
-    "items": ["신약개발", "단백질구조", "protein", "alphafold", "ADMET", "의약화학"]
+    "items": [
+      "Drug Discovery",
+      "Protein Structure",
+      "AlphaFold",
+      "ADMET",
+      "Medicinal Chemistry"
+    ]
   },
   {
     "id": "ml-data",
-    "group": "ML & Data",
+    "seq": 3,
+    "group": "Machine Learning & Data",
     "items": [
-      "machine learning",
-      "머신러닝",
-      "deeplearning",
-      "AI",
-      "bigdata",
-      "데이터 분석",
-      "통계 데이터 분석",
-      "통계"
+      "Machine Learning",
+      "Deep Learning",
+      "Artificial Intelligence",
+      "Big Data",
+      "Data Analysis",
+      "Statistics"
     ]
   },
   {
     "id": "tools",
+    "seq": 4,
     "group": "Tools & Foundations",
-    "items": ["python", "파이썬", "R", "데이터베이스", "알고리즘", "정보의학"]
+    "items": ["Python", "R", "SQL & Databases", "Algorithms", "Medical Informatics"]
   }
 ]
