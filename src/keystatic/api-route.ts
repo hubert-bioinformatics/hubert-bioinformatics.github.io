@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { makeGenericAPIRouteHandler } from '@keystatic/core/api/generic';
 import { parseString } from 'set-cookie-parser';
-import keystaticConfig from '../../../../keystatic.config';
+import keystaticConfig from '../../keystatic.config';
 
 /**
  * Keystatic API 라우트 — @keystatic/astro 의 것을 대체한다.
