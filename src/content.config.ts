@@ -149,5 +149,39 @@ const career = defineCollection({
   }),
 });
 
-export const collections = { notes, radar, moment, credentials, projects, career };
+/** 학력 */
+const education = defineCollection({
+  loader: file('./src/data/education.json'),
+  schema: z.object({
+    id: z.string(),
+    school: z.string(),
+    schoolEn: z.string().default(''),
+    degree: z.string().default(''),
+    field: z.string().default(''),
+    startYear: z.number().int().optional(),
+    endYear: z.number().int().optional(),
+    activities: z.array(z.string()).default([]),
+  }),
+});
+
+/** 보유 기술 — 주제별 묶음 */
+const skills = defineCollection({
+  loader: file('./src/data/skills.json'),
+  schema: z.object({
+    id: z.string(),
+    group: z.string(),
+    items: z.array(z.string()).default([]),
+  }),
+});
+
+export const collections = {
+  notes,
+  radar,
+  moment,
+  credentials,
+  projects,
+  career,
+  education,
+  skills,
+};
 export { NOTE_CATEGORIES };

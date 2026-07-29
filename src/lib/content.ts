@@ -6,7 +6,15 @@ import type { CollectionEntry } from 'astro:content';
  * radar / projects 는 앞으로 채워질 섹션이라 초기에는 비어 있다.
  */
 async function safe<
-  T extends 'notes' | 'moment' | 'credentials' | 'radar' | 'projects' | 'career',
+  T extends
+    | 'notes'
+    | 'moment'
+    | 'credentials'
+    | 'radar'
+    | 'projects'
+    | 'career'
+    | 'education'
+    | 'skills',
 >(
   name: T,
   filter?: (e: CollectionEntry<T>) => boolean,
@@ -54,6 +62,17 @@ export async function getCareer() {
 export async function getCurrentRole() {
   const c = await getCareer();
   return c.find((e) => e.data.current) ?? c[0];
+}
+
+/** 학력 (최신순) */
+export async function getEducation() {
+  const e = await safe('education');
+  return e.sort((a, b) => (b.data.endYear ?? 0) - (a.data.endYear ?? 0));
+}
+
+/** 보유 기술 (skills.json 순서 유지) */
+export async function getSkills() {
+  return safe('skills');
 }
 
 export async function getCredentials() {
