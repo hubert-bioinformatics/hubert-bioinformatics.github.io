@@ -1,0 +1,120 @@
+# Radar Agent 설정
+#
+# 검색어를 바꾸고 싶으면 여기만 고치면 된다. 코드는 안 건드려도 된다.
+# 설계 배경은 docs/radar-agent.md 참고.
+
+run:
+  pick: 5            # 회차당 발행 건수
+  shortlist: 20      # LLM 에 넘길 후보 수
+  days: 7            # 수집 범위 (일)
+
+# ── 주제 ────────────────────────────────────────────────────────
+#
+# pubmed   : PubMed esearch 검색식. 없으면 PubMed 에서 안 찾는다.
+# keywords : RSS(프리프린트·저널·뉴스)를 거를 때 쓰는 단어. 소문자 부분일치.
+# weight   : 점수 가중치. 관심이 큰 주제일수록 높게.
+#
+# 옆의 건수는 2026-07-30 기준 최근 7일 PubMed 실측치다.
+topics:
+  - id: single-cell            # 75건/주
+    label: 단일세포
+    weight: 3
+    pubmed: '"single cell RNA-seq"[tiab] OR "scRNA-seq"[tiab] OR "single-cell transcriptomics"[tiab]'
+    keywords: [single-cell, single cell, scrna, 10x genomics, chromium, cell atlas]
+
+  - id: spatial                # 54건/주
+    label: 공간전사체
+    weight: 3
+    pubmed: '"spatial transcriptomics"[tiab] OR "Visium"[tiab] OR "Xenium"[tiab]'
+    keywords: [spatial transcriptom, visium, xenium, merfish, seqfish]
+
+  - id: bioinformatics         # 16건/주
+    label: 생물정보학
+    weight: 3
+    pubmed: '"bioinformatics"[tiab] AND ("tool"[tiab] OR "pipeline"[tiab] OR "benchmark"[tiab] OR "software"[tiab])'
+    keywords: [bioinformatic, pipeline, workflow, nextflow, snakemake, benchmark]
+
+  - id: transcriptome
+    label: 전사체
+    weight: 2
+    pubmed: '"RNA-seq"[tiab] AND ("method"[tiab] OR "benchmark"[tiab] OR "pipeline"[tiab])'
+    keywords: [rna-seq, rna seq, transcriptome, differential expression, isoform, splicing]
+
+  - id: ngs                    # 85건/주
+    label: NGS
+    weight: 2
+    # "NGS"[tiab] 단독은 약어가 다른 뜻으로 쓰인 논문이 섞여서 조건을 붙였다
+    pubmed: '"next-generation sequencing"[tiab] AND ("method"[tiab] OR "platform"[tiab] OR "quality"[tiab])'
+    keywords: [next-generation sequencing, library prep, base calling, read depth, coverage]
+
+  - id: omics                  # 좁히기 전 386건/주 — 전체의 절반을 먹어서 통합 쪽으로 제한
+    label: 오믹스
+    weight: 2
+    pubmed: '("multi-omics"[tiab] OR "multiomics"[tiab]) AND ("integration"[tiab] OR "method"[tiab])'
+    keywords: [multi-omics, multiomics, proteomic, metabolomic, epigenomic]
+
+  - id: seq-tech               # 42건/주
+    label: 시퀀싱 기술
+    weight: 2
+    pubmed: '"long-read sequencing"[tiab] OR "nanopore"[tiab] OR "PacBio HiFi"[tiab]'
+    keywords: [long-read, long read, nanopore, pacbio, hifi]
+
+  - id: clinical-genomics      # 10건/주
+    label: 임상유전체
+    weight: 2
+    pubmed: '"clinical exome"[tiab] OR ("whole genome sequencing"[tiab] AND "diagnosis"[tiab])'
+    keywords: [clinical exome, whole genome sequencing, variant interpretation, acmg, rare disease]
+
+# ── 소스 ────────────────────────────────────────────────────────
+#
+# tier 는 점수 가산용이다. 저널이 프리프린트보다 높다.
+# 전부 2026-07-30 에 직접 요청해 응답을 확인했다.
+sources:
+  preprint:
+    tier: 1
+    kind: paper
+    feeds:
+      - name: bioRxiv Genomics
+        url: https://connect.biorxiv.org/biorxiv_xml.php?subject=genomics
+      - name: bioRxiv Bioinformatics
+        url: https://connect.biorxiv.org/biorxiv_xml.php?subject=bioinformatics
+      - name: medRxiv Genetic and Genomic Medicine
+        url: https://connect.medrxiv.org/medrxiv_xml.php?subject=genetic_and_genomic_medicine
+
+  journal:
+    tier: 3
+    kind: paper
+    feeds:
+      - name: Nature Genetics
+        url: https://www.nature.com/ng.rss
+      - name: Nature Methods
+        url: https://www.nature.com/nmeth.rss
+      - name: Nature Biotechnology
+        url: https://www.nature.com/nbt.rss
+      - name: Nature Reviews Genetics
+        url: https://www.nature.com/nrg.rss
+
+  news:
+    tier: 1
+    kind: news
+    feeds:
+      - name: ScienceDaily Genetics
+        url: https://www.sciencedaily.com/rss/plants_animals/genetics.xml
+      - name: ScienceDaily Personalized Medicine
+        url: https://www.sciencedaily.com/rss/health_medicine/personalized_medicine.xml
+      - name: GEN
+        url: https://www.genengnews.com/feed/
+      - name: Nature News
+        url: https://www.nature.com/nature.rss
+
+# 살아있지 않아 뺀 소스 (다시 시도하지 말 것)
+#   PubMed RSS                     500  → E-utilities 로 대체
+#   Genome Biology / Genome Medicine 200 이지만 HTML, item 0
+#   Bioinformatics(OUP), NAR       404
+#   GenomeWeb, Bio-IT World,
+#   Endpoints, The Scientist       403  봇 차단
+#   EurekAlert, EMBL-EBI, NHGRI    404
+#   Illumina IR, Oxford Nanopore   연결 실패
+#   Broad, Sanger                  200 이지만 유전체 매칭 0
+#   phys.org Biology               ETIMEDOUT (3회 재시도 모두). 죽은 피드를 물고
+#                                  있으면 매 실행마다 90초를 버려서 뺐다
