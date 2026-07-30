@@ -15,9 +15,23 @@
  *   --geocode          GPS 좌표를 장소 이름으로 변환한다
  *                      ⚠ OpenStreetMap(Nominatim) 에 좌표를 전송한다. 기본은 꺼져 있다.
  *   --location "..."   이번에 처리하는 모든 사진에 같은 장소를 넣는다
+ *   --ask              비어 있는 항목을 하나씩 물어본다 (EXIF 없는 사진용)
+ *
+ * EXIF 가 없을 때 값을 채우는 방법 (우선순위 높은 순):
+ *   1. 파일별 사이드카   photos-inbox/<파일명>.json   예: Sunset.jpg.json
+ *   2. --ask 대화형 입력
+ *   3. 배치 기본값       photos-inbox/meta.json
+ *   4. --location 옵션 (장소만)
+ *   5. 나중에 Keystatic 의 Moment 항목에서 편집
+ *
+ * meta.json / 사이드카 형식 (필요한 키만):
+ *   { "camera": "Sony A6000", "lens": "Sigma 30mm f1.4",
+ *     "location": "뚝섬한강공원, 서울", "shotAt": "2019-02-01",
+ *     "focalLength": "30mm", "aperture": "f/1.4", "shutter": "1/250s", "iso": 100 }
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import readline from 'node:readline/promises';
 import sharp from 'sharp';
 import exifr from 'exifr';
 
@@ -25,6 +39,7 @@ const ARGV = process.argv.slice(2);
 const DRY = ARGV.includes('--dry');
 const KEEP = ARGV.includes('--keep');
 const GEOCODE = ARGV.includes('--geocode');
+const ASK = ARGV.includes('--ask');
 const FORCED_LOCATION = (() => {
   const i = ARGV.indexOf('--location');
   return i >= 0 ? ARGV[i + 1] : undefined;
@@ -107,6 +122,15 @@ async function reverseGeocode(lat, lon) {
   return parts.join(', ') || j.display_name;
 }
 
+/** JSON 파일을 읽되 없으면 {} */
+async function readJson(p) {
+  try {
+    return JSON.parse(await fs.readFile(p, 'utf8'));
+  } catch {
+    return {};
+  }
+}
+
 // ── 메인 ─────────────────────────────────────────────────────────
 let files;
 try {
@@ -140,6 +164,36 @@ const existing = new Set(
 
 const rows = [];
 
+// 배치 기본값 (EXIF 가 없을 때 채워 넣는 값)
+const batchDefaults = await readJson(path.join(INBOX, 'meta.json'));
+
+// --ask 는 사람이 앉아 있는 터미널에서만 의미가 있다.
+// 파이프·리다이렉트·CI 에서는 물어볼 상대가 없으므로 조용히 건너뛴다.
+if (ASK && !process.stdin.isTTY) {
+  console.log('--ask 는 터미널에서 직접 실행할 때만 동작합니다. 이번에는 건너뜁니다.');
+  console.log('대신 photos-inbox/meta.json 이나 --location 을 쓰세요.\n');
+}
+const canAsk = ASK && Boolean(process.stdin.isTTY);
+const rl = canAsk ? readline.createInterface({ input: process.stdin, output: process.stdout }) : null;
+
+/**
+ * 값이 비었을 때만 물어본다. 그냥 Enter 치면 건너뛴다.
+ * 표준입력이 터미널이 아니거나(파이프·리다이렉트) 입력이 끊기면
+ * 예외 대신 현재 값을 그대로 쓴다 — 스크립트가 죽지 않게 한다.
+ */
+let askDisabled = false;
+async function askIfEmpty(label, current) {
+  if (current || !rl || askDisabled) return current;
+  try {
+    const a = (await rl.question(`      ${label}: `)).trim();
+    return a || undefined;
+  } catch {
+    askDisabled = true;
+    console.log('      (입력을 받을 수 없어 대화형 입력을 건너뜁니다)');
+    return current;
+  }
+}
+
 for (const file of files.sort()) {
   const src = path.join(INBOX, file);
   const stat = await fs.stat(src);
@@ -151,23 +205,48 @@ for (const file of files.sort()) {
     x = {};
   }
 
-  const camera = cameraOf(x.Make, x.Model);
-  const lens = x.LensModel ?? x.LensID ?? x.Lens ?? undefined;
-  const shotAt = ymd(x.DateTimeOriginal ?? x.CreateDate ?? x.ModifyDate ?? stat.mtime);
-  const aperture = x.FNumber ? `f/${x.FNumber}` : undefined;
-  const shutter = shutterOf(x.ExposureTime);
+  // 파일별 사이드카 → 배치 기본값 순으로 폴백
+  const sidecar = await readJson(path.join(INBOX, `${file}.json`));
+  const manual = { ...batchDefaults, ...sidecar };
+
   // ISO 태그명은 EXIF 버전·기종마다 다르다
   const isoRaw = x.ISO ?? x.ISOSpeedRatings ?? x.PhotographicSensitivity ?? x.StandardOutputSensitivity;
-  const iso = isoRaw ? Number(Array.isArray(isoRaw) ? isoRaw[0] : isoRaw) : undefined;
-  const focalLength = x.FocalLength ? `${Math.round(x.FocalLength)}mm` : undefined;
 
-  let location = FORCED_LOCATION;
+  // EXIF 우선, 없으면 사이드카/기본값
+  let camera = cameraOf(x.Make, x.Model) ?? manual.camera;
+  let lens = x.LensModel ?? x.LensID ?? x.Lens ?? manual.lens;
+  let shotAt = ymd(x.DateTimeOriginal ?? x.CreateDate) ?? manual.shotAt ?? ymd(stat.mtime);
+  let aperture = (x.FNumber ? `f/${x.FNumber}` : undefined) ?? manual.aperture;
+  let shutter = shutterOf(x.ExposureTime) ?? manual.shutter;
+  let iso = isoRaw ? Number(Array.isArray(isoRaw) ? isoRaw[0] : isoRaw) : manual.iso;
+  let focalLength = (x.FocalLength ? `${Math.round(x.FocalLength)}mm` : undefined) ?? manual.focalLength;
+  let title = manual.title;
+
+  let location = FORCED_LOCATION ?? manual.location;
   if (!location && GEOCODE && x.latitude != null && x.longitude != null) {
     try {
       location = await reverseGeocode(x.latitude, x.longitude);
       await new Promise((r) => setTimeout(r, 1100)); // Nominatim 1req/s 정책
     } catch (e) {
       console.log(`  ! ${file} 지오코딩 실패: ${e.message}`);
+    }
+  }
+
+  // --ask : 아직 빈 항목만 물어본다
+  if (canAsk) {
+    const hasEmpty = !camera || !lens || !location || !shotAt;
+    if (hasEmpty) {
+      console.log(`\n  ${file} — 빈 항목을 채워 주세요 (Enter 로 건너뜀)`);
+      title = await askIfEmpty('제목', title);
+      location = await askIfEmpty('장소', location);
+      shotAt = await askIfEmpty('촬영일 (YYYY-MM-DD)', shotAt);
+      camera = await askIfEmpty('카메라', camera);
+      lens = await askIfEmpty('렌즈', lens);
+      focalLength = await askIfEmpty('초점거리', focalLength);
+      aperture = await askIfEmpty('조리개', aperture);
+      shutter = await askIfEmpty('셔터', shutter);
+      const isoIn = await askIfEmpty('ISO', iso ? String(iso) : undefined);
+      iso = isoIn ? Number(isoIn) : undefined;
     }
   }
 
@@ -187,7 +266,7 @@ for (const file of files.sort()) {
 
     const lines = [
       '---',
-      `title: ${q(titleFrom(file) || slug)}`,
+      `title: ${q(title || titleFrom(file) || slug)}`,
       `date: ${ymd(new Date())}`,
       'kind: photo',
       `image: ${q(`../../assets/post/${webpName}`)}`,
@@ -224,8 +303,10 @@ for (const file of files.sort()) {
   });
 }
 
+rl?.close();
+
 // ── 리포트 ───────────────────────────────────────────────────────
-console.log(`${DRY ? '[DRY RUN] ' : ''}사진 ${rows.length}장 처리\n`);
+console.log(`\n${DRY ? '[DRY RUN] ' : ''}사진 ${rows.length}장 처리\n`);
 for (const r of rows) {
   console.log(`  ${r.file}  →  ${r.slug}.md`);
   if (r.outKB) console.log(`     용량      ${r.inKB}KB → ${r.outKB}KB`);
@@ -239,14 +320,19 @@ for (const r of rows) {
   console.log('');
 }
 
-const missing = rows.filter((r) => !r.camera);
-if (missing.length) {
-  console.log(`※ EXIF 가 없는 사진 ${missing.length}장 — 카메라·렌즈 항목이 비어 있습니다:`);
-  missing.forEach((r) => console.log(`    ${r.slug}`));
-  console.log('  Keystatic 의 Moment 항목에서 채우거나, --location 옵션을 쓰세요.');
-}
-const noLoc = rows.filter((r) => !r.location);
-if (noLoc.length) {
-  console.log(`\n※ 장소가 빈 사진 ${noLoc.length}장. 한 번에 넣으려면:`);
-  console.log('    npm run photos -- --location "Ponte Vecchio, Florence, Italy"');
+const incomplete = rows.filter((r) => !r.camera || !r.location);
+if (incomplete.length && !canAsk) {
+  console.log(`※ 정보가 빈 사진 ${incomplete.length}장:`);
+  for (const r of incomplete) {
+    const missing = [!r.camera && '카메라', !r.lens && '렌즈', !r.location && '장소']
+      .filter(Boolean)
+      .join(', ');
+    console.log(`    ${r.slug}  (${missing})`);
+  }
+  console.log('\n  채우는 방법:');
+  console.log('    npm run photos -- --ask                        하나씩 물어봄');
+  console.log('    npm run photos -- --location "뚝섬한강공원, 서울"  장소 일괄 지정');
+  console.log('    photos-inbox/meta.json 에 기본값 저장            배치 전체 적용');
+  console.log('    photos-inbox/<파일명>.json                      사진별 지정');
+  console.log('    또는 나중에 Keystatic 의 Moment 항목에서 편집');
 }
