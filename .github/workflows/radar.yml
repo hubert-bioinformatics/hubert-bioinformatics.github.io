@@ -1,0 +1,76 @@
+name: Radar
+
+# 논문·뉴스를 모아 요약하고 PR 로 올린다. 병합하면 공개된다.
+# 설계 배경은 docs/radar-agent.md 참고.
+
+on:
+  schedule:
+    # KST 월·수·금 07:00 = UTC 일·화·목 22:00
+    # GitHub 의 cron 은 부하에 따라 수십 분 밀릴 수 있는데, 이 용도에서는 상관없다.
+    - cron: '0 22 * * 0,2,4'
+
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: '발행 건수 (비우면 config.yml 값)'
+        required: false
+        type: string
+      days:
+        description: '수집 범위 (일)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  # 이전 회차가 아직 돌고 있으면 기다린다. seen.json 을 동시에 쓰면 꼬인다.
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: 수집·요약
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # 없어도 된다. 있으면 PubMed 호출 제한이 초당 3회에서 10회로 올라간다.
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+        run: |
+          node scripts/radar/run.mjs \
+            ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }} \
+            ${{ inputs.days && format('--days {0}', inputs.days) || '' }}
+
+      - name: 오늘 날짜
+        id: today
+        run: echo "date=$(TZ=Asia/Seoul date +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+
+      - name: PR 생성
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: radar/${{ steps.today.outputs.date }}
+          title: 'radar: ${{ steps.today.outputs.date }} 논문·뉴스'
+          body-path: radar-pr-body.md
+          commit-message: |
+            radar: ${{ steps.today.outputs.date }} 수집분
+
+            자동 생성된 초안이다. 사실관계 확인 후 병합할 것.
+          # 생성된 글과 중복 방지 기록만 커밋한다.
+          # radar-pr-body.md 는 PR 본문으로만 쓰고 저장소에 남기지 않는다.
+          add-paths: |
+            src/content/radar
+            scripts/radar/state/seen.json
+          delete-branch: true

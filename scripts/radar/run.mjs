@@ -14,7 +14,7 @@
  * 설계 배경은 docs/radar-agent.md 참고.
  */
 
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { parse as parseYaml } from 'yaml';
@@ -22,6 +22,10 @@ import { parse as parseYaml } from 'yaml';
 import { fetchAll } from './fetch.mjs';
 import { loadSeen, saveSeen, dedupe, remember } from './dedupe.mjs';
 import { score, shortlist, withinWindow } from './score.mjs';
+import { getLlm } from './llm/index.mjs';
+import { select } from './select.mjs';
+import { summarize } from './summarize.mjs';
+import { writeAll, prBody } from './write.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SEEN_PATH = join(HERE, 'state', 'seen.json');
@@ -55,6 +59,13 @@ async function main() {
   const shortlistSize = config.run.shortlist;
 
   const started = Date.now();
+  const root = join(HERE, '..', '..');
+  const PR_BODY = join(root, 'radar-pr-body.md');
+
+  // 자리만 먼저 잡아 둔다. 올릴 게 없어 중간에 끝나도 워크플로의 PR 단계가
+  // 파일이 없다고 실패하지 않게 하려는 것이다 (변경이 없으면 PR 은 안 생긴다).
+  await writeFile(PR_BODY, '이번 회차에 새로 올릴 것이 없다.\n', 'utf8');
+
   log(`Radar — 최근 ${days}일, ${pick}건 발행 예정\n`);
 
   // ── 1. 수집 ──────────────────────────────────────────────
@@ -89,12 +100,49 @@ async function main() {
     return;
   }
 
-  // ── 4. 선별·요약 ─────────────────────────────────────────
-  // 다음 단계에서 붙인다. 지금은 여기까지.
-  log('\n선별·요약 단계는 아직 구현 전이다. --no-llm 으로 실행하라.');
-  void pick;
-  void remember;
-  void saveSeen;
+  if (candidates.length === 0) {
+    log('\n후보가 없다. 새로 나온 게 없거나 이미 다 다뤘다는 뜻이다.');
+    return;
+  }
+
+  // ── 4. 선별 ──────────────────────────────────────────────
+  const llm = await getLlm();
+  log(`\n선별 (${llm.name})`);
+  const picked = await select(candidates, { llm, pick, log });
+  picked.forEach((p, i) => log(`  ${i + 1}. ${cut(p.title, 70)}`));
+
+  // ── 5. 요약 ──────────────────────────────────────────────
+  log('\n요약');
+  const summarized = await summarize(picked, { llm, log });
+  if (summarized.length === 0) {
+    throw new Error('요약이 한 건도 성공하지 못했다.');
+  }
+
+  if (args.dry) {
+    log('\n--dry: 파일을 쓰지 않는다.');
+    log(JSON.stringify(summarized.map((s) => s.draft), null, 2));
+    return;
+  }
+
+  // ── 6. 파일 쓰기 ─────────────────────────────────────────
+  log('\n파일');
+  const written = await writeAll(summarized, { root, log });
+
+  // 발행한 것만 기억한다. 요약이 실패한 건 다음 회차에 다시 올라와야 한다.
+  await saveSeen(SEEN_PATH, remember(seen, written));
+
+  const stats = {
+    raw: raw.length,
+    fresh: fresh.length,
+    deduped: items.length,
+    scored: scored.length,
+    candidates: candidates.length,
+    skippedSeen,
+    llm: llm.name,
+  };
+  await writeFile(PR_BODY, prBody(written, stats), 'utf8');
+
+  log(`\n완료 — ${written.length}건 (${((Date.now() - started) / 1000).toFixed(1)}초)`);
 }
 
 /** 후보를 한눈에 보이게 표로 찍는다. 검색어 튜닝할 때 이 표만 본다. */

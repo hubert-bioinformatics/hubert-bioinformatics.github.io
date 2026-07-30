@@ -24,5 +24,7 @@ pnpm-debug.log*
 .idea/
 scripts/.gist-cache/
 scripts/.migration-report.json
+# Radar 가 매 회차 만드는 PR 본문. 저장소에 남길 이유가 없다.
+radar-pr-body.md
 photos-inbox/*
 !photos-inbox/.gitkeep
