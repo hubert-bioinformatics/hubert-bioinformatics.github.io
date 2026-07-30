@@ -6,7 +6,12 @@ import { config, collection, singleton, fields } from '@keystatic/core';
  * 이 설정은 src/content.config.ts 의 스키마와 짝을 이룬다.
  * 한쪽을 고치면 다른 쪽도 맞춰야 한다.
  *
- * 저장 형식은 .md (extension: 'md') — 이전해 온 기존 129개 글과 같은 형식이다.
+ * 저장 형식은 .mdx 다.
+ * 처음엔 markdoc(.md)로 했지만, Keystatic 의 markdoc 에디터는 표를 Markdoc 전용
+ * 문법(`{% table %}`)으로 써서 우리 마크다운 파이프라인이 렌더링하지 못했다
+ * (글자 그대로 노출됨). MDX 는 표를 일반 파이프 문법으로 쓰므로 문제가 없다.
+ *
+ * 이전해 온 기존 129개 글은 .md 그대로 두고, 컬렉션 glob 이 둘 다 읽는다.
  */
 
 // 이미지 업로드 위치. 본문에 넣은 이미지는 노트 파일 기준 상대경로로 참조된다.
@@ -94,7 +99,7 @@ export default config({
           ],
           defaultValue: 'keystatic',
         }),
-        content: fields.markdoc({ label: '본문', extension: 'md', options: { image: postImage } }),
+        content: fields.mdx({ label: '본문', options: { image: postImage } }),
       },
     }),
 
@@ -133,7 +138,7 @@ export default config({
         aiGenerated: fields.checkbox({ label: 'AI 요약', defaultValue: true }),
         reviewed: fields.checkbox({ label: '검토 완료', defaultValue: false }),
         draft: fields.checkbox({ label: '임시 저장', defaultValue: false }),
-        content: fields.markdoc({ label: '본문', extension: 'md', options: { image: postImage } }),
+        content: fields.mdx({ label: '본문', options: { image: postImage } }),
       },
     }),
 
@@ -166,7 +171,7 @@ export default config({
         shutter: fields.text({ label: '셔터스피드' }),
         iso: fields.number({ label: 'ISO' }),
         draft: fields.checkbox({ label: '임시 저장', defaultValue: false }),
-        content: fields.markdoc({ label: '설명', extension: 'md', options: { image: postImage } }),
+        content: fields.mdx({ label: '설명', options: { image: postImage } }),
       },
     }),
 
@@ -198,7 +203,7 @@ export default config({
         cover: fields.image({ label: '대표 이미지', ...postImage }),
         featured: fields.checkbox({ label: '대표 프로젝트', defaultValue: false }),
         draft: fields.checkbox({ label: '임시 저장', defaultValue: false }),
-        content: fields.markdoc({ label: '상세 설명', extension: 'md', options: { image: postImage } }),
+        content: fields.mdx({ label: '상세 설명', options: { image: postImage } }),
       },
     }),
   },
