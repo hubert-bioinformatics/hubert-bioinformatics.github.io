@@ -24,3 +24,5 @@ pnpm-debug.log*
 .idea/
 scripts/.gist-cache/
 scripts/.migration-report.json
+photos-inbox/*
+!photos-inbox/.gitkeep
