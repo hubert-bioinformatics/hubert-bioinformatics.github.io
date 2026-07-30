@@ -49,7 +49,7 @@ export async function select(candidates, { llm, pick, log = () => {} }) {
   const system = await readFile(join(HERE, 'prompts', 'select.md'), 'utf8');
   const input = JSON.stringify({ pick, candidates: candidates.map(brief) }, null, 1);
 
-  const result = await llm.askJson({ system, input, schema: SCHEMA });
+  const result = await llm.askJson({ system, input, schema: SCHEMA, log });
 
   const byId = new Map(candidates.map((c) => [c.id, c]));
   const picked = [];

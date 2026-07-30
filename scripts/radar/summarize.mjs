@@ -66,6 +66,7 @@ export async function summarize(items, { llm, log = () => {} }) {
         system,
         input: JSON.stringify(payload(item), null, 1),
         schema,
+        log,
       });
 
       // 스키마를 지켜도 빈 문자열은 올 수 있다. 제목이 비면 글이 성립하지 않는다.
