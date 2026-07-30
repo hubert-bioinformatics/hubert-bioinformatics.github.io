@@ -4,9 +4,12 @@ import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import EmptyState from '../../components/EmptyState.astro';
 import { getMoments, fmtDate } from '../../lib/content';
+import { toEmbed } from '../../lib/video';
 
 const moments = await getMoments();
-const photos = moments.filter((m) => m.data.image);
+// 사진 그리드와 영상 섹션이 겹치지 않게 kind 로 나눈다
+const photos = moments.filter((m) => m.data.kind !== 'video' && m.data.image);
+const videos = moments.filter((m) => m.data.kind === 'video');
 ---
 
 <Base title="Moment" description="사진과 영상">
@@ -64,20 +67,74 @@ const photos = moments.filter((m) => m.data.image);
     }
 
     {
-      moments.some((m) => m.data.kind === 'video' && m.data.videoUrl) && (
+      videos.length > 0 && (
         <section class="mt-16">
           <h2 class="text-2xl font-black tracking-tight">Video</h2>
-          <div class="mt-6 grid gap-5 sm:grid-cols-2">
-            {moments
-              .filter((m) => m.data.kind === 'video' && m.data.videoUrl)
-              .map((m) => (
-                <a href={m.data.videoUrl} class="card card-hover block p-6">
-                  <div class="font-bold">{m.data.title}</div>
-                  <div class="mt-1 text-sm" style="color:var(--muted)">
-                    {m.data.location}
-                  </div>
-                </a>
-              ))}
+          <div class="mt-6 grid gap-6 lg:grid-cols-2">
+            {videos.map((m) => {
+              const embed = toEmbed(m.data.videoUrl);
+              return (
+                <figure class="card overflow-hidden">
+                  {embed ? (
+                    <div class="aspect-video w-full">
+                      <iframe
+                        src={embed.src}
+                        title={m.data.title}
+                        class="h-full w-full"
+                        loading="lazy"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                        allowfullscreen
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        frameborder="0"
+                      />
+                    </div>
+                  ) : m.data.image ? (
+                    /* 아직 영상 링크가 없는 항목 — 썸네일만 보여준다 */
+                    <Image
+                      src={m.data.image}
+                      alt={m.data.title}
+                      widths={[400, 800]}
+                      sizes="(max-width:1024px) 100vw, 50vw"
+                      class="aspect-video w-full object-cover"
+                    />
+                  ) : null}
+
+                  <figcaption class="p-4">
+                    <div class="flex items-baseline gap-2">
+                      <span class="font-semibold">{m.data.title}</span>
+                      {!embed && (
+                        <span
+                          class="chip"
+                          style="background:var(--line);color:var(--muted)"
+                          title="Keystatic 의 Moment 항목에서 영상 링크를 넣으면 플레이어가 나옵니다"
+                        >
+                          링크 없음
+                        </span>
+                      )}
+                    </div>
+                    {m.data.location && (
+                      <div class="mt-1 text-xs" style="color:var(--muted)">
+                        {m.data.location}
+                      </div>
+                    )}
+                    {m.data.shotAt && (
+                      <div class="mt-1 text-xs" style="color:var(--muted)">
+                        {fmtDate(m.data.shotAt)}
+                      </div>
+                    )}
+                    {!embed && m.data.videoUrl && (
+                      <a
+                        href={m.data.videoUrl}
+                        class="mt-2 inline-block text-xs font-semibold"
+                        style="color:var(--brand)"
+                      >
+                        영상 보기 →
+                      </a>
+                    )}
+                  </figcaption>
+                </figure>
+              );
+            })}
           </div>
         </section>
       )

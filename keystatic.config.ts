@@ -161,7 +161,11 @@ export default config({
           defaultValue: 'photo',
         }),
         image: fields.image({ label: '사진', ...postImage }),
-        videoUrl: fields.url({ label: '영상 링크' }),
+        videoUrl: fields.url({
+          label: '영상 링크',
+          description:
+            'YouTube 또는 Vimeo 주소를 넣으면 갤러리에 플레이어가 박힙니다. (예: https://youtu.be/xxxxx)',
+        }),
         location: fields.text({ label: '장소' }),
         shotAt: fields.date({ label: '촬영일' }),
         camera: fields.text({ label: '카메라' }),
