@@ -43,7 +43,9 @@ function frontmatter(item) {
     `date: ${item.date || new Date().toISOString().slice(0, 10)}`,
     `kind: ${item.kind}`,
     `summary: ${yamlString(d.summary)}`,
-    `sourceName: ${yamlString(item.sourceName)}`,
+    // 논문은 저널명이 출처로 더 쓸모 있다. PubMed 로 찾았다는 사실은 독자에게
+    // 의미가 없다 ("PubMed" 대신 "RNA (New York, N.Y.)" 가 보이게).
+    `sourceName: ${yamlString(item.journal || item.sourceName)}`,
     `sourceUrl: ${yamlString(item.url)}`,
   ];
   if (item.journal) lines.push(`journal: ${yamlString(item.journal)}`);

@@ -19,17 +19,31 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 /**
  * 응답에서 본문 텍스트를 꺼낸다.
  *
- * 문서에 `output_text` 라는 편의 필드가 있다고 나와 있지만 raw REST 응답의
- * 정확한 경로까지는 안 나와 있다. 그래서 알려진 형태를 순서대로 시도하고,
- * 다 실패하면 응답 전체를 에러에 실어 던진다 (조용히 빈 값을 돌려주면
- * 원인 찾기가 훨씬 어려워진다).
+ * 실제 응답 구조 (2026-07-30 확인):
+ *
+ *   { id, status, usage, model, steps: [
+ *       { type: 'thought',      signature: '<암호화된 사고 과정>' },
+ *       { type: 'model_output', content: [ { type: 'text', text: '<본문>' } ] },
+ *   ]}
+ *
+ * 문서에는 `output_text` 편의 필드가 있다고 나와 있지만 REST 응답에는 없었다.
+ * SDK 쪽 헬퍼로 보인다. 그래서 model_output 스텝을 직접 집는다.
+ *
+ * thought 스텝의 signature 까지 긁어 오면 JSON.parse 가 깨지므로 type 을
+ * 반드시 봐야 한다. 형태가 또 바뀔 수 있으니 순서대로 폴백하고, 다 실패하면
+ * 응답을 에러에 실어 던진다 — 조용히 빈 값을 돌려주면 원인을 못 찾는다.
  */
 function extractText(body) {
   if (typeof body?.output_text === 'string' && body.output_text.trim()) {
     return body.output_text;
   }
 
-  // steps[] 안의 텍스트 블록을 모은다
+  // 본문은 model_output 스텝에만 있다
+  const outputs = (body?.steps ?? []).filter((s) => s?.type === 'model_output');
+  const fromOutput = collectText(outputs);
+  if (fromOutput) return fromOutput;
+
+  // 형태가 바뀌었을 때를 위한 폴백. thought 는 text 필드가 없어 안 섞인다.
   const fromSteps = collectText(body?.steps);
   if (fromSteps) return fromSteps;
 
