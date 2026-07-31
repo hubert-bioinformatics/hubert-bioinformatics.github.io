@@ -35,9 +35,14 @@ jobs:
     timeout-minutes: 20
 
     steps:
-      - uses: actions/checkout@v4
+      # 액션 버전은 Node 24 를 쓰는 것으로 맞춰 뒀다. v4 계열은 Node 20 을
+      # 타깃해서 러너가 강제로 24 로 올려 돌리며 deprecation 경고를 낸다.
+      #   checkout          v5 부터 node24
+      #   setup-node        v6 부터 node24
+      #   create-pull-request v8 부터 node24
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: npm
@@ -59,7 +64,7 @@ jobs:
         run: echo "date=$(TZ=Asia/Seoul date +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
 
       - name: PR 생성
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: radar/${{ steps.today.outputs.date }}
           title: 'radar: ${{ steps.today.outputs.date }} 논문·뉴스'
