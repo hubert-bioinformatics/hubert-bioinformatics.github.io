@@ -4,6 +4,7 @@ import '../styles/global.css';
 import { site } from '../lib/site';
 import { NAV, url } from '../lib/nav';
 import { getCurrentRole } from '../lib/content';
+import ScrollJump from '../components/ScrollJump.astro';
 
 const role = await getCurrentRole();
 
@@ -127,5 +128,7 @@ const isActive = (href: string) => path.endsWith(href);
         }
       </div>
     </nav>
+
+    <ScrollJump />
   </body>
 </html>

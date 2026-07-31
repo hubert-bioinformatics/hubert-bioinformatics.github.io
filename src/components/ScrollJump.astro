@@ -1,0 +1,100 @@
+---
+/**
+ * 맨 위 / 맨 아래로 보내는 버튼 하나.
+ *
+ * 방향은 스크롤 위치에 따라 뒤집힌다. 위쪽 절반에 있으면 아래로, 아래쪽
+ * 절반에 있으면 위로 간다. 버튼을 두 개 놓으면 모바일에서 하단 탭 위가
+ * 답답해져서 하나로 합쳤다.
+ *
+ * 위치를 잡을 때 신경 쓴 것:
+ *   - 모바일 하단 탭(Base.astro 의 fixed bottom-0, sm 미만에서만 보임)을
+ *     피하려고 모바일에서는 bottom 을 더 띄운다.
+ *   - z-30 은 헤더·탭(z-40)과 moment 라이트박스(z-50) 아래다. 사진을 확대한
+ *     화면 위로 버튼이 떠오르면 안 된다.
+ */
+---
+
+<button
+  type="button"
+  id="scroll-jump"
+  data-dir="down"
+  aria-label="맨 아래로 이동"
+  class="fixed bottom-20 right-4 z-30 grid h-11 w-11 place-items-center rounded-full border opacity-0 shadow-lg backdrop-blur transition-all duration-200 sm:bottom-6 sm:right-6"
+  style="border-color:var(--line);background:color-mix(in srgb, var(--bg) 88%, transparent);color:var(--muted);pointer-events:none;transform:translateY(0.5rem)"
+>
+  <svg
+    id="scroll-jump-icon"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+    style="transition:transform .2s"
+  >
+    <path d="M12 19V5" />
+    <path d="m5 12 7-7 7 7" />
+  </svg>
+</button>
+
+<script>
+  // ClientRouter(View Transitions)를 쓰기 때문에 스크립트는 최초 1회만 돈다.
+  // astro:page-load 에 물려야 다른 글로 넘어가도 버튼이 살아 있다.
+  // window 리스너는 페이지가 바뀌어도 남으므로 AbortController 로 걷어낸다.
+  let controller: AbortController | undefined;
+
+  function setup() {
+    controller?.abort();
+    controller = new AbortController();
+    const { signal } = controller;
+
+    const btn = document.getElementById('scroll-jump');
+    const icon = document.getElementById('scroll-jump-icon');
+    if (!btn || !icon) return;
+
+    /** 한 화면 이상 스크롤될 때만 노출한다. 짧은 목록에서 어른거리지 않게. */
+    const MIN_SCROLLABLE = 400;
+
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max < MIN_SCROLLABLE) {
+        btn.style.opacity = '0';
+        btn.style.pointerEvents = 'none';
+        btn.style.transform = 'translateY(0.5rem)';
+        return;
+      }
+
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+      btn.style.transform = 'translateY(0)';
+
+      const up = window.scrollY > max / 2;
+      btn.dataset.dir = up ? 'up' : 'down';
+      btn.setAttribute('aria-label', up ? '맨 위로 이동' : '맨 아래로 이동');
+      icon.style.transform = up ? 'rotate(0deg)' : 'rotate(180deg)';
+    };
+
+    btn.addEventListener(
+      'click',
+      () => {
+        // 애니메이션을 끈 사용자에게는 즉시 이동한다
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const behavior = reduced ? 'auto' : 'smooth';
+        const top =
+          btn.dataset.dir === 'up' ? 0 : document.documentElement.scrollHeight;
+        window.scrollTo({ top, behavior });
+      },
+      { signal },
+    );
+
+    window.addEventListener('scroll', update, { passive: true, signal });
+    window.addEventListener('resize', update, { passive: true, signal });
+
+    update();
+  }
+
+  document.addEventListener('astro:page-load', setup);
+</script>
