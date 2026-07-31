@@ -26,5 +26,8 @@ scripts/.gist-cache/
 scripts/.migration-report.json
 # Radar 가 매 회차 만드는 PR 본문. 저장소에 남길 이유가 없다.
 radar-pr-body.md
+# 노트북 변환 전 원본. 되돌릴 때만 쓰고 커밋하지 않는다 (glob 로더가 .md 만 읽지만
+# 실수로 들어가면 235개 글 옆에 중복이 쌓인다)
+*.ipynb-backup
 photos-inbox/*
 !photos-inbox/.gitkeep
