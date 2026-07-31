@@ -9,7 +9,24 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return items.map((item) => ({ params: { slug: item.id }, props: { item } }));
 };
 
-const { item } = Astro.props;
+/**
+ * 정적 빌드(npm run build)에서는 위 getStaticPaths 가 props 를 채워 준다.
+ *
+ * 관리자 빌드(ADMIN=1)는 Keystatic 을 얹으려고 output:'server' 로 도는데,
+ * 그 모드에서는 getStaticPaths 가 무시되고 요청마다 SSR 로 처리된다. 그러면
+ * props 가 비어서 render(undefined) 가 500 을 던진다.
+ *
+ * prerender = true 로 막을 수도 있지만, Cloudflare 어댑터의 프리렌더는
+ * workerd 를 띄우고 그게 GLIBC 2.32+ 를 요구해서 이 WSL(2.31)에서 빌드가
+ * 통째로 실패한다. 그래서 슬러그로 직접 찾는 쪽을 택했다.
+ */
+let item = Astro.props.item;
+if (!item) {
+  const slug = Astro.params.slug;
+  item = (await getRadar()).find((entry) => entry.id === slug);
+  if (!item) return new Response(null, { status: 404 });
+}
+
 const { Content } = await render(item);
 ---
 

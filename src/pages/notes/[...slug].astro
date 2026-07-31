@@ -14,7 +14,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }));
 };
 
-const { note, all } = Astro.props;
+/**
+ * 정적 빌드에서는 getStaticPaths 가 props 를 채워 주지만, 관리자 빌드는
+ * output:'server' 라 그게 무시되고 props 가 빈 채로 SSR 된다.
+ * 한글 슬러그가 섞여 있어 그때는 400 으로 떨어졌다. 자세한 배경은
+ * radar/[...slug].astro 의 같은 자리 주석 참고.
+ */
+let note = Astro.props.note;
+let all = Astro.props.all;
+if (!note) {
+  all = await getNotes();
+  const slug = Astro.params.slug;
+  note = all.find((entry) => entry.id === slug);
+  if (!note) return new Response(null, { status: 404 });
+}
+
 const { Content, headings } = await render(note);
 const { siblings, prev, next } = seriesNeighbors(note, all);
 const c = catColor(note.data.category);
