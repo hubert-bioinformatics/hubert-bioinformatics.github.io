@@ -5,6 +5,7 @@ import { site } from '../lib/site';
 import { NAV, url } from '../lib/nav';
 import { getCurrentRole } from '../lib/content';
 import ScrollJump from '../components/ScrollJump.astro';
+import Analytics from '../components/Analytics.astro';
 
 const role = await getCurrentRole();
 
@@ -45,6 +46,7 @@ const isActive = (href: string) => path.endsWith(href);
       href={url('/rss.xml')}
     />
     <ClientRouter />
+    <Analytics />
   </head>
 
   <body class="min-h-screen">
