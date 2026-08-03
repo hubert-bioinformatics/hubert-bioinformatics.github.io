@@ -15,7 +15,9 @@
     "pmid:42536477": "2026-08-02",
     "url:https://www.genengnews.com/topics/cancer/spatiotemporal-multiomics-charts-cellular-dynamics-of-liver-metastasis/": "2026-08-02",
     "pmid:42541721": "2026-08-03",
-    "pmid:42509463": "2026-08-03"
+    "pmid:42509463": "2026-08-03",
+    "pmid:42505084": "2026-08-03",
+    "pmid:42536416": "2026-08-03"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -33,6 +35,8 @@
     "protocol for the enrichment of endosteal and periosteal mesenchymal cells from murine bone for single cell transcriptome analysis": "2026-08-02",
     "spatiotemporal multiomics charts cellular dynamics of liver metastasis": "2026-08-02",
     "protocol for automated optimization of feature selection and clustering parameters in single cell rna seq using scautotune": "2026-08-03",
-    "inflammation linked aging signals in frozen single cell foundation models donor aware detection and robustness testing": "2026-08-03"
+    "inflammation linked aging signals in frozen single cell foundation models donor aware detection and robustness testing": "2026-08-03",
+    "pasta a versatile transcriptomic clock maps the chemical and genetic determinants of aging and rejuvenation": "2026-08-03",
+    "accelerating inference in genomic and proteomic foundation models via speculative decoding": "2026-08-03"
   }
 }
