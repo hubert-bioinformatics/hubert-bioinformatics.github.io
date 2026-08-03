@@ -6,7 +6,8 @@ name: Radar
 on:
   schedule:
     # KST 월·수·금 07:00 = UTC 일·화·목 22:00
-    # GitHub 의 cron 은 부하에 따라 수십 분 밀릴 수 있는데, 이 용도에서는 상관없다.
+    # 실제로는 GitHub 부하 때문에 한 시간쯤 밀려 08:00 경에 돈다(실측).
+    # 이 용도에서는 상관없어서 그대로 둔다.
     - cron: '0 22 * * 0,2,4'
 
   workflow_dispatch:
@@ -29,6 +30,17 @@ concurrency:
   group: radar
   cancel-in-progress: false
 
+env:
+  # 회차마다 새 브랜치를 만들지 않고 이 브랜치 하나에 계속 쌓는다.
+  #
+  # 날짜별 브랜치를 쓰던 때, 이전 PR 을 병합하기 전에 다음 회차가 돌면
+  # main 의 seen.json 에 이전 회차 기록이 없어서 같은 논문을 다시 골랐고
+  # seen.json 도 양쪽에서 수정돼 충돌했다(실제로 PR #3 이 그랬다).
+  #
+  # 브랜치를 하나로 두고 매번 그 위에 이어 붙이면, 다음 회차가 이전 회차의
+  # seen.json 을 그대로 물려받아 중복도 충돌도 생기지 않는다.
+  BRANCH: radar/pending
+
 jobs:
   radar:
     runs-on: ubuntu-latest
@@ -37,10 +49,11 @@ jobs:
     steps:
       # 액션 버전은 Node 24 를 쓰는 것으로 맞춰 뒀다. v4 계열은 Node 20 을
       # 타깃해서 러너가 강제로 24 로 올려 돌리며 deprecation 경고를 낸다.
-      #   checkout          v5 부터 node24
-      #   setup-node        v6 부터 node24
-      #   create-pull-request v8 부터 node24
+      #   checkout v5+, setup-node v6+ 부터 node24
       - uses: actions/checkout@v7
+        with:
+          # 아래에서 main 을 병합하므로 전체 이력이 필요하다.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v7
         with:
@@ -48,6 +61,23 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      - name: 대기 중인 브랜치 이어받기
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+          if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
+            echo "기존 $BRANCH 를 이어서 쓴다"
+            git fetch --quiet origin "$BRANCH"
+            git checkout "$BRANCH"
+            # 그동안 main 에 들어간 변경(다른 작업, 병합된 회차)을 흡수해
+            # 나중에 병합할 때 충돌이 나지 않게 한다.
+            git merge --no-edit origin/main
+          else
+            echo "$BRANCH 가 없다. main 에서 새로 만든다"
+            git checkout -b "$BRANCH"
+          fi
 
       - name: 수집·요약
         env:
@@ -59,23 +89,58 @@ jobs:
             ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }} \
             ${{ inputs.days && format('--days {0}', inputs.days) || '' }}
 
-      - name: 오늘 날짜
-        id: today
-        run: echo "date=$(TZ=Asia/Seoul date +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+      - name: 커밋·푸시
+        id: commit
+        run: |
+          DATE=$(TZ=Asia/Seoul date +%Y-%m-%d)
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
 
-      - name: PR 생성
-        uses: peter-evans/create-pull-request@v8
-        with:
-          branch: radar/${{ steps.today.outputs.date }}
-          title: 'radar: ${{ steps.today.outputs.date }} 논문·뉴스'
-          body-path: radar-pr-body.md
-          commit-message: |
-            radar: ${{ steps.today.outputs.date }} 수집분
-
-            자동 생성된 초안이다. 사실관계 확인 후 병합할 것.
-          # 생성된 글과 중복 방지 기록만 커밋한다.
+          # 생성된 글과 중복 방지 기록만 담는다.
           # radar-pr-body.md 는 PR 본문으로만 쓰고 저장소에 남기지 않는다.
-          add-paths: |
-            src/content/radar
-            scripts/radar/state/seen.json
-          delete-branch: true
+          git add src/content/radar scripts/radar/state/seen.json
+
+          if git diff --cached --quiet; then
+            echo "이번 회차에 새로 올릴 것이 없다"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git commit -m "radar: $DATE 수집분
+
+          자동 생성된 초안이다. 사실관계 확인 후 병합할 것."
+          git push origin "$BRANCH"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: PR 생성 또는 갱신
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATE: ${{ steps.commit.outputs.date }}
+        run: |
+          if gh pr view "$BRANCH" --json number >/dev/null 2>&1; then
+            # 이미 열려 있으면 이번 회차 요약을 기존 본문 위에 덧붙인다.
+            # 병합 전까지 회차가 쌓이므로 어떤 회차에 무엇이 들어왔는지 남긴다.
+            gh pr view "$BRANCH" --json body -q .body > /tmp/old-body.md
+            {
+              echo "## $DATE 회차"
+              echo
+              cat radar-pr-body.md
+              echo
+              echo "---"
+              echo
+              cat /tmp/old-body.md
+            } > /tmp/new-body.md
+            gh pr edit "$BRANCH" --body-file /tmp/new-body.md
+            echo "기존 PR 갱신"
+          else
+            {
+              echo "## $DATE 회차"
+              echo
+              cat radar-pr-body.md
+            } > /tmp/new-body.md
+            gh pr create \
+              --base main --head "$BRANCH" \
+              --title "radar: 논문·뉴스 (검토 대기)" \
+              --body-file /tmp/new-body.md
+            echo "새 PR 생성"
+          fi
