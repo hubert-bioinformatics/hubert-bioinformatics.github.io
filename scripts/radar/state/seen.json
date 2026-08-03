@@ -4,13 +4,23 @@
     "doi:10.1038/s41588-026-02665-0": "2026-07-30",
     "pmid:42525289": "2026-07-30",
     "pmid:42497665": "2026-07-30",
-    "pmid:42507903": "2026-07-30"
+    "pmid:42507903": "2026-07-30",
+    "doi:10.1038/s41592-026-03172-0": "2026-07-31",
+    "pmid:42533054": "2026-07-31",
+    "pmid:42530368": "2026-07-31",
+    "pmid:42531606": "2026-07-31",
+    "pmid:42532042": "2026-07-31"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
     "single cell spatial mapping of human kidney development implicates the microenvironment in guiding cell fate decisions": "2026-07-30",
     "map3c a computational tool for processing multiomic single cell hi c data": "2026-07-30",
     "agsi adaptive group enhanced strategy for iterative integration of single cell multi omics": "2026-07-30",
-    "bridge an interactive application for multi omics data analysis visualization and integration": "2026-07-30"
+    "bridge an interactive application for multi omics data analysis visualization and integration": "2026-07-30",
+    "inference of secreted protein signaling activities in intercellular communication": "2026-07-31",
+    "spatialformer universal spatial representation learning from subcellular molecular to multicellular landscapes": "2026-07-31",
+    "nichedesig niche aware deconvolution and adaptive signature analysis for spatial transcriptomics": "2026-07-31",
+    "cdstate resolves malignant cell heterogeneity from bulk tumor rna sequencing data": "2026-07-31",
+    "pus7 mrna pseudouridylation is driven by rna sequence structure and cell type specific features": "2026-07-31"
   }
 }
