@@ -13,7 +13,9 @@
     "pmid:42538449": "2026-08-02",
     "doi:10.1038/s41592-026-03162-2": "2026-08-02",
     "pmid:42536477": "2026-08-02",
-    "url:https://www.genengnews.com/topics/cancer/spatiotemporal-multiomics-charts-cellular-dynamics-of-liver-metastasis/": "2026-08-02"
+    "url:https://www.genengnews.com/topics/cancer/spatiotemporal-multiomics-charts-cellular-dynamics-of-liver-metastasis/": "2026-08-02",
+    "pmid:42541721": "2026-08-03",
+    "pmid:42509463": "2026-08-03"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -29,6 +31,8 @@
     "continual integration of single cell multimodal data with miracle": "2026-08-02",
     "celltune an integrative software for accurate cell classification in spatial proteomics": "2026-08-02",
     "protocol for the enrichment of endosteal and periosteal mesenchymal cells from murine bone for single cell transcriptome analysis": "2026-08-02",
-    "spatiotemporal multiomics charts cellular dynamics of liver metastasis": "2026-08-02"
+    "spatiotemporal multiomics charts cellular dynamics of liver metastasis": "2026-08-02",
+    "protocol for automated optimization of feature selection and clustering parameters in single cell rna seq using scautotune": "2026-08-03",
+    "inflammation linked aging signals in frozen single cell foundation models donor aware detection and robustness testing": "2026-08-03"
   }
 }
