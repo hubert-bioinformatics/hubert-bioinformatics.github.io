@@ -95,6 +95,10 @@ jobs:
           DATE=$(TZ=Asia/Seoul date +%Y-%m-%d)
           echo "date=$DATE" >> "$GITHUB_OUTPUT"
 
+          # PR 본문 회차 제목에는 시각까지 넣는다. 날짜만 쓰면 같은 날 두 번
+          # 돌았을 때(수동 실행이나 재시도) 제목이 똑같아 구분되지 않는다.
+          echo "stamp=$(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')" >> "$GITHUB_OUTPUT"
+
           # 생성된 글과 중복 방지 기록만 담는다.
           # radar-pr-body.md 는 PR 본문으로만 쓰고 저장소에 남기지 않는다.
           git add src/content/radar scripts/radar/state/seen.json
@@ -115,14 +119,14 @@ jobs:
         if: steps.commit.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DATE: ${{ steps.commit.outputs.date }}
+          STAMP: ${{ steps.commit.outputs.stamp }}
         run: |
           if gh pr view "$BRANCH" --json number >/dev/null 2>&1; then
             # 이미 열려 있으면 이번 회차 요약을 기존 본문 위에 덧붙인다.
             # 병합 전까지 회차가 쌓이므로 어떤 회차에 무엇이 들어왔는지 남긴다.
             gh pr view "$BRANCH" --json body -q .body > /tmp/old-body.md
             {
-              echo "## $DATE 회차"
+              echo "# $STAMP 회차"
               echo
               cat radar-pr-body.md
               echo
@@ -134,7 +138,7 @@ jobs:
             echo "기존 PR 갱신"
           else
             {
-              echo "## $DATE 회차"
+              echo "# $STAMP 회차"
               echo
               cat radar-pr-body.md
             } > /tmp/new-body.md
