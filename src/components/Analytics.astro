@@ -1,0 +1,48 @@
+---
+/**
+ * Cloudflare Web Analytics.
+ *
+ * 쿠키를 심지 않고 개인 식별 정보도 모으지 않아 동의 배너 없이 쓴다.
+ * 토큰은 비밀이 아니다 — 페이지 소스에 그대로 박혀 방문자 누구나 본다.
+ * 통계는 dash.cloudflare.com 의 Analytics > Web Analytics 에서 본다.
+ *
+ * 개발 중에는 넣지 않는다. npm run dev 로 글을 쓰면서 새로고침하는 것이
+ * 전부 조회수로 잡히면 초기 통계가 본인 방문으로 채워진다.
+ *
+ * ── 이 사이트에서 알아 둘 것 ────────────────────────────────
+ *
+ * ClientRouter(View Transitions)를 쓰기 때문에 사이트 안에서 링크를 눌러
+ * 옮기는 것은 "새 페이지 로드"가 아니다. 그래서 위치가 중요하다.
+ *
+ * **head 에 둬야 한다.** body 에 두면 페이지가 교체될 때마다 스크립트가 다시
+ * 실행되면서 한 번 이동에 2~4건씩 중복 보고된다(실측). head 는 ClientRouter 가
+ * 유지하므로 그런 일이 없다.
+ *
+ * 이동마다 beacon 을 수동으로 다시 붙이는 방법도 시도했는데, 정적 태그의
+ * 재실행과 겹쳐 증가폭이 1·2·3·4 로 불어났다. 적게 세는 것보다 부풀려 세는
+ * 쪽이 나쁘다고 보고 되돌렸다.
+ *
+ * 실측 결과(5개 페이지를 눌러 가며 이동):
+ *   최초 로드 1건 + 이동별 0, 1, 1, 1 = 총 4건
+ * 즉 **세션당 첫 이동 하나만 누락되고 중복은 없다.** 이 정도면 충분하다고 봤다.
+ *
+ * 페이지별로 더 정확한 조회수가 필요해지면 선택지는 둘이다.
+ *   1. ClientRouter 를 끈다 (이동이 실제 페이지 로드가 되어 정확해짐)
+ *   2. 자체 집계를 붙인다 (Actions + API)
+ */
+import { site } from '../lib/site';
+
+const token = site.cfBeaconToken;
+const enabled = import.meta.env.PROD && !!token;
+---
+
+{
+  enabled && (
+    <script
+      is:inline
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon={JSON.stringify({ token })}
+    />
+  )
+}
