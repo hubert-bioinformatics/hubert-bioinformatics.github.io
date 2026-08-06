@@ -121,10 +121,16 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           STAMP: ${{ steps.commit.outputs.stamp }}
         run: |
-          if gh pr view "$BRANCH" --json number >/dev/null 2>&1; then
+          # 반드시 "열려 있는" PR 만 찾아야 한다.
+          # gh pr view 는 이미 병합된 PR 도 돌려준다. 그래서 처음에는 병합 후
+          # 브랜치가 남아 있으면 죽은 PR 의 본문만 고치고 끝나, 새 회차가
+          # 아무 데도 보이지 않았다(8/5 회차가 그렇게 묻혔다).
+          OPEN=$(gh pr list --head "$BRANCH" --state open --json number -q '.[0].number')
+
+          if [ -n "$OPEN" ]; then
             # 이미 열려 있으면 이번 회차 요약을 기존 본문 위에 덧붙인다.
             # 병합 전까지 회차가 쌓이므로 어떤 회차에 무엇이 들어왔는지 남긴다.
-            gh pr view "$BRANCH" --json body -q .body > /tmp/old-body.md
+            gh pr view "$OPEN" --json body -q .body > /tmp/old-body.md
             {
               echo "# $STAMP 회차"
               echo
@@ -134,8 +140,8 @@ jobs:
               echo
               cat /tmp/old-body.md
             } > /tmp/new-body.md
-            gh pr edit "$BRANCH" --body-file /tmp/new-body.md
-            echo "기존 PR 갱신"
+            gh pr edit "$OPEN" --body-file /tmp/new-body.md
+            echo "기존 PR #$OPEN 갱신"
           else
             {
               echo "# $STAMP 회차"
