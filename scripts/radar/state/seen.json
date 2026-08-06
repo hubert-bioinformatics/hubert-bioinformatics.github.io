@@ -17,7 +17,12 @@
     "pmid:42541721": "2026-08-03",
     "pmid:42509463": "2026-08-03",
     "pmid:42505084": "2026-08-03",
-    "pmid:42536416": "2026-08-03"
+    "pmid:42536416": "2026-08-03",
+    "doi:10.1038/s41588-026-02695-8": "2026-08-04",
+    "pmid:42544764": "2026-08-04",
+    "pmid:42546665": "2026-08-04",
+    "pmid:42545848": "2026-08-04",
+    "pmid:42549891": "2026-08-04"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -37,6 +42,11 @@
     "protocol for automated optimization of feature selection and clustering parameters in single cell rna seq using scautotune": "2026-08-03",
     "inflammation linked aging signals in frozen single cell foundation models donor aware detection and robustness testing": "2026-08-03",
     "pasta a versatile transcriptomic clock maps the chemical and genetic determinants of aging and rejuvenation": "2026-08-03",
-    "accelerating inference in genomic and proteomic foundation models via speculative decoding": "2026-08-03"
+    "accelerating inference in genomic and proteomic foundation models via speculative decoding": "2026-08-03",
+    "mapping enhancer gene regulatory interactions from single cell data": "2026-08-04",
+    "nextlongiso a comprehensive nextflow pipeline for multi dimensional long read rna seq analysis": "2026-08-04",
+    "amplicon based dna and rna unified ngs for enhanced fusion variant detection in suboptimal real world nsclc ffpe specimens": "2026-08-04",
+    "protocol for high resolution multiplexed sequencing of single cell full length transcriptome with cbti seq": "2026-08-04",
+    "deepgeseq deep learning library for genomic sequence modeling and analysis": "2026-08-04"
   }
 }
