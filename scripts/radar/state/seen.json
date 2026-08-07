@@ -24,7 +24,12 @@
     "pmid:42545848": "2026-08-04",
     "pmid:42549891": "2026-08-04",
     "pmid:42555670": "2026-08-06",
-    "doi:10.1038/s41586-026-10806-y": "2026-08-06"
+    "doi:10.1038/s41586-026-10806-y": "2026-08-06",
+    "doi:10.1038/s41586-026-10884-y": "2026-08-07",
+    "pmid:42557338": "2026-08-07",
+    "pmid:42557881": "2026-08-07",
+    "pmid:42454544": "2026-08-07",
+    "pmid:42323848": "2026-08-07"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -51,6 +56,11 @@
     "protocol for high resolution multiplexed sequencing of single cell full length transcriptome with cbti seq": "2026-08-04",
     "deepgeseq deep learning library for genomic sequence modeling and analysis": "2026-08-04",
     "addagcn spatial transcriptomics deconvolution using graph convolutional networks with adversarial discriminative domain adaptation": "2026-08-06",
-    "a compendium of next generation patient derived models for diverse cancers": "2026-08-06"
+    "a compendium of next generation patient derived models for diverse cancers": "2026-08-06",
+    "the virtual tissues foundation model resolves spatial proteomics across scales": "2026-08-07",
+    "detecting pathogenic structural variation in families with undiagnosed rare disease in a national genome project": "2026-08-07",
+    "sclncr an integrated and flexible pipeline for lncrna analysis in single cell rna sequencing data": "2026-08-07",
+    "single cell and spatial transcriptomics define a progenitor subpopulation and fibroinflammatory niche at the leading edge of parathyroid carcinoma": "2026-08-07",
+    "ultra rapid versus conventional oocyte vitrification a comparative study of clinical and molecular outcomes with single cell transcriptomic insights": "2026-08-07"
   }
 }
