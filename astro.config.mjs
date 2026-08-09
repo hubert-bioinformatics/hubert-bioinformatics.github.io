@@ -59,14 +59,10 @@ const keystaticRoutes = {
   },
 };
 
-// 개발·미리보기 중에는 프로젝트 사이트(/blog-next/) 경로를 쓴다.
-// 최종 스왑 때 이 값만 비우면 루트 사이트가 된다.
-// 관리자 배포는 자체 도메인 루트에 올라가므로 base 를 쓰지 않는다.
-const BASE = ADMIN ? undefined : '/blog-next';
-
 export default defineConfig({
+  // 저장소가 hubert-bioinformatics.github.io 라 사용자 사이트로 루트에 올라간다.
+  // 스왑 전에는 프로젝트 사이트였어서 base: '/blog-next' 가 필요했지만 이제 없다.
   site: 'https://hubert-bioinformatics.github.io',
-  base: BASE,
   trailingSlash: 'ignore',
 
   output: ADMIN ? 'server' : 'static',

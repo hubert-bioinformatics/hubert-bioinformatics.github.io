@@ -2,6 +2,7 @@
 import { render } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
 import Reading from '../../layouts/Reading.astro';
+import Comments from '../../components/Comments.astro';
 import { NOTE_CATEGORY_LABEL } from '../../lib/site';
 import { url, catColor } from '../../lib/nav';
 import { getNotes, seriesNeighbors, fmtDate } from '../../lib/content';
@@ -147,5 +148,7 @@ const toc = headings.filter((h) => h.depth <= 3);
         </details>
       )
     }
+
+    <Comments />
   </footer>
 </Reading>

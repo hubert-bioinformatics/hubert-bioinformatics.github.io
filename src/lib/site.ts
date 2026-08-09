@@ -26,6 +26,27 @@ export const site = {
   cfBeaconToken: '2d92be57ca924abdb42b4b1621d6d760',
 
   /**
+   * giscus 댓글. GitHub Discussions 를 저장소로 쓴다.
+   * 댓글을 남기려면 방문자도 GitHub 계정으로 로그인해야 한다.
+   *
+   * 여기 값들도 비밀이 아니다 — 페이지 소스에 그대로 들어간다.
+   * repoId·categoryId 는 GraphQL 로 뽑았다:
+   *   gh api graphql -f query='{repository(owner:"...",name:"..."){id discussionCategories(first:20){nodes{id name}}}}'
+   *
+   * category 를 Announcements 로 잡은 건 giscus 권장 설정이다. 이 분류는
+   * 관리자만 새 토론을 열 수 있어서, 아무나 글 없는 토론을 만들어 두는 걸 막는다
+   * (댓글용 토론은 giscus 앱이 대신 만들어 준다).
+   *
+   * repo 를 빈 문자열로 두면 댓글 영역이 통째로 빠진다.
+   */
+  giscus: {
+    repo: 'hubert-bioinformatics/hubert-bioinformatics.github.io',
+    repoId: 'R_kgDOTmvo2A',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDOTmvo2M4DC2lG',
+  },
+
+  /**
    * 소개 문구. 아래 사실에 근거해 작성했다(모두 경력 이력에서 확인된 내용):
    *   2014년 마크로젠 입사 / NGS 데이터 분석 / 임상 인증(CAP·KIGTE·식약처) 대응
    *   / 파이프라인 운영 / 현재 전사체·단일세포 분석 팀 리드

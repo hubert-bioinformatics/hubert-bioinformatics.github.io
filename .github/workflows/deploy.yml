@@ -1,0 +1,52 @@
+name: Deploy
+
+# main 에 들어오면 빌드해서 GitHub Pages 에 올린다.
+# Radar PR 을 병합하는 것만으로 사이트에 반영된다.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  # 배포는 마지막 것만 유효하다. 앞선 실행이 돌고 있으면 취소한다.
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      # ADMIN 을 켜지 않는다. 켜면 Keystatic 이 붙은 서버 빌드가 되어
+      # Pages 에 올릴 수 없다. Keystatic 편집기는 Cloudflare 쪽에 따로 있다.
+      - run: npm run build
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,0 +1,72 @@
+---
+/**
+ * giscus 댓글.
+ *
+ * 스크립트 태그를 그냥 마크업에 박지 않고 astro:page-load 에서 직접 심는다.
+ * ClientRouter(뷰 트랜지션) 로 페이지를 옮기면 브라우저가 이미 실행한
+ * <script src> 를 다시 돌려주지 않아서, 글을 넘길 때마다 댓글이 이전 글 것에
+ * 머물거나 아예 안 뜬다. 매번 컨테이너를 비우고 새로 심으면 그 문제가 없다.
+ *
+ * data-mapping="pathname" 이라 글 주소 하나가 토론 하나에 대응한다.
+ * 주소를 바꾸면 그 글의 댓글은 새 토론으로 갈라지니 슬러그는 함부로 바꾸지 않는다.
+ */
+import { site } from '../lib/site';
+
+const g = site.giscus;
+const enabled = !!g.repo;
+---
+
+{
+  enabled && (
+    <section class="mt-16 border-t pt-10" style="border-color:var(--line)">
+      <h2 class="text-xs font-bold uppercase tracking-widest" style="color:var(--muted)">
+        댓글
+      </h2>
+      <p class="mt-2 text-sm" style="color:var(--muted)">
+        GitHub 계정으로 로그인하면 댓글을 남길 수 있습니다.
+      </p>
+
+      <div class="giscus mt-6" />
+
+      <script is:inline define:vars={{ g }}>
+        (() => {
+          const mount = () => {
+            const box = document.querySelector('.giscus');
+            if (!box) return;
+            box.innerHTML = '';
+
+            const s = document.createElement('script');
+            s.src = 'https://giscus.app/client.js';
+            s.async = true;
+            s.crossOrigin = 'anonymous';
+            Object.assign(s.dataset, {
+              repo: g.repo,
+              repoId: g.repoId,
+              category: g.category,
+              categoryId: g.categoryId,
+              mapping: 'pathname',
+              // 없는 토론을 제목으로 어림짐작해 붙이지 않게 한다.
+              strict: '1',
+              reactionsEnabled: '1',
+              emitMetadata: '0',
+              inputPosition: 'top',
+              // 사이트가 다크모드를 OS 설정으로 따라가서 giscus 도 같게 맞춘다.
+              theme: 'preferred_color_scheme',
+              lang: 'ko',
+              loading: 'lazy',
+            });
+            box.appendChild(s);
+          };
+
+          // 이 인라인 스크립트 자체가 페이지 전환마다 다시 실행된다. 그때마다
+          // 리스너를 달면 계속 쌓이므로 한 번만 단다. astro:page-load 는 최초
+          // 로드에서도 발생해서 이것만으로 첫 화면까지 덮인다.
+          if (!window.__giscusHooked) {
+            window.__giscusHooked = true;
+            document.addEventListener('astro:page-load', mount);
+          }
+        })();
+      </script>
+    </section>
+  )
+}
