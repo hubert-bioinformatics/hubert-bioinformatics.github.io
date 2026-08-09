@@ -8,22 +8,22 @@ source: manual
 
 ## Python Language
 ***
- > <br>생각이나 느낌을 나타내거나 전달하기 위하여 사용하는<br> 음성, 문자, 몸짓 등의 수단 또는 그 사회관습적 체계<br><br>
+ > <br />생각이나 느낌을 나타내거나 전달하기 위하여 사용하는<br /> 음성, 문자, 몸짓 등의 수단 또는 그 사회관습적 체계<br /><br />
 
  언어의 사전적 정의입니다. 언어란 한 사회의 구성원 사이에 약속된 의사소통 규칙이자 오랜 세월 특유의 문화와 역사가 담긴 사회관습적 체계입니다.
 
  여러분은 외국어를 공부한 경험이 있을 것입니다. 처음에 어떤 방식으로 접근하셨나요? 누군가는 단어와 문법을 공부하며 언어에 대한 지식을 쌓아갑니다. 누군가는 외국에서 현지인들과 소통하며 자연스럽게 외국어를 익힙니다. 어떤 방식을 사용하던지 최종 목표는 그 언어에 담긴 철학을 이해하고 자유롭게 구사하여 의사 소통 하는 것입니다.
 
  Programming language도 마찬가지입니다. Python을 사용해서 code를 작성하고 다른 개발자와 의사 소통 하려면 우선 python을 이해해야 합니다.
- <br><br>
+ <br /><br />
 
 
 ## Python Philosophy
 ***
- > <br>Readability counts.<br><br>
+ > <br />Readability counts.<br /><br />
 
  Python의 철학은 [PEP20: The Zen of Python](https://peps.python.org/pep-0020/, "PEP20: The Zen of Python")에서 19개 문장으로 설명합니다. 한 마디로 요약하면 readability! Python은 누가 봐도 읽기 쉽고 간결한 code를 지향합니다.
- <br><br>
+ <br /><br />
 
 
 ## PEP8은 무엇일까요?
@@ -31,20 +31,20 @@ source: manual
  PEP(*P*ython *E*nhancement *P*roposals)는 'Python 제안 사항' 정도로 이해할 수 있습니다. Python의 새로운 기능이나 적용사항을 안내하고 사용 가이드라인과 정보를 제공합니다.
 
  PEP8은 python을 만든 Guido van Rossum을 포함하여 세 명의 저자가 작성한 문서로 python code에 대한 style guide 내용을 담고 있습니다. 일종의 code 규칙을 제안하는 문서로 이해할 수 있습니다. 이 외에도 다양한 python style guide가 존재하는데 대부분 PEP8을 기반으로 만들어졌기 때문에 알아두는 것이 좋습니다. 상세한 내용은 [PEP8 공식문서](https://peps.python.org/pep-0008/, "PEP8 공식문서")를 참고하세요. 이제부터 PEP8을 하나씩 알아보겠습니다.
- <br><br>
+ <br /><br />
 
 
 ## A Foolish Consistency is the Hobgoblin of Little Minds
 ***
  미국의 철학자이자 시인으로 활동한 Ralph Waldo Emerson의 'Self-Reliance'에 나오는 문구입니다. 원문은 아래와 같습니다.
 
- > <br>"A *foolish consistency* is the hobgoblin of little mindes, <br>adored by little statesment and philosophers and divines."<br><br><br>
- "*어리석은 일관성*은 별 볼 일 없는 정치가와 철학자, 그리고 신학자들이 사랑하는, <br>편협한 마음을 가진 홉고블린이다."<br><br>
+ > <br />"A *foolish consistency* is the hobgoblin of little mindes, <br />adored by little statesment and philosophers and divines."<br /><br /><br />
+ "*어리석은 일관성*은 별 볼 일 없는 정치가와 철학자, 그리고 신학자들이 사랑하는, <br />편협한 마음을 가진 홉고블린이다."<br /><br />
 
  문구의 앞/뒤 문맥을 살펴보면 오늘과 내일 하는 말이 모순될 지언정, 다른 사람의 시선에 휘둘리지 않고 자신을 신뢰하는 자세가 사회를 지탱하고 더 나은 방향으로 나아가도록 만든다고 이야기 합니다. 사회의 정해진 규칙과 타인이 옳다고 여기는 기준에 맞춰 바보같이 사는 것은 소인배 홉고블린에 지나지 않다는 의미이기도 합니다. 이 사상은 오늘날 미국을 지탱하는 개인주의 정신의 근간이 되었습니다.
 
  Python code에서 가독성은 매우 중요합니다. 따라서 PEP8이 제시하는 style guide에 얽매일 필요없이 더 나은 방식이 있다면 반드시 사용하시기 바랍니다.
- <br><br>
+ <br /><br />
 
 
 ## Code Lay-out
@@ -130,13 +130,13 @@ result = some_function_that_takes_arguments(
     'd', 'e', 'f',
 )
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Tabs or Spaces?
 ***
  Space가 더 선호되는 방식입니다. Tab은 이미 작성된 code에서 indent가 tab으로 작성되어 있는 경우 사용합니다. Python3에서는 space와 tab 혼용을 금지합니다. Python2에서는 혼용이 가능하지만 tab을 space로 변환하도록 강력히 권고합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Maximum Line Length
@@ -148,7 +148,7 @@ with open('/path/to/some/file/you/want/to/read') as file_1, \
     open('/path/to/some/file/being/written') as file_2:
     file_2.write(file_1.read())
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Should a Line Break Before or Agter a Binary Operator?
@@ -181,19 +181,19 @@ income = (gross_wages
         - ira_deduction
         - student_loan_interest)
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Blank Lines
 ***
  Top-level function과 class는 두 개의 blank lines로 감쌉니다. class 내 method는  한 개의 blank line으로 감쌉니다. 서로 연관된 functions 그룹을 구분하거나 논리적 섹션을 구분하기 위해서 추가 blank line을 사용할 수 있습니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Source File Encoding
 ***
  Core python 배포판 code는 UTF-8을 사용합니다. 모든 python standard library의 식별자는 반드시 ASCII 식별자와 영어 단어를 사용합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Imports
@@ -213,7 +213,7 @@ import sys, os
  Imports는 항상 파일의 최상단에 위치합니다. Module comments와 docstrings 다음에, 그리고 module globals와 constants 이전에 위치합니다.
 
  Wildcard imports(from 'module' import *)는 다른 개발자와 automated tools에 혼동을 주기 때문에 사용하지 않습니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Module Level Dunder Names
@@ -235,13 +235,13 @@ __author__ = 'Cardinal Biggles'
 import os
 import sys
 ```
-<br><br>
+<br /><br />
 
 
 ## String Quotes
 ***
  Python에서 single-quoted strings(')와 double-quoted strings(")를 동일하게 작동합니다. 둘 중 하나를 선택하면 계속 동일한 방식을 사용합니다. 다만 triple-quoted strings는 [PEP257](https://peps.python.org/pep-0257/, "PEP257")의 docstring convention에 따라 double quote characters(""")를 사용합니다.
- <br><br>
+ <br /><br />
 
 
 ## Whitespace in Expressions and Statements
@@ -332,7 +332,7 @@ x             = 1
 y             = 2
 long_variable = 3
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Other Recommendations
@@ -393,7 +393,7 @@ do_one()
 do_two()
 do_three()
 ```
-<br><br>
+<br /><br />
 
 
 ## When to Use Trailing Commas
@@ -416,7 +416,7 @@ FILES = 'setup.cfg',
 FILES = ['setup.cfg', 'tox.ini']
 initialize(FILES, error=True,)
 ```
-<br><br>
+<br /><br />
 
 
 ## Comments
@@ -426,19 +426,19 @@ initialize(FILES, error=True,)
  Block comment는 한 두 개의 paragraph로 구성되고, 각 문장은 마침표로 끝맺음 합니다. Multi-sentence comment인 경우 가장 마지막 문장을 제외하고 각 마침표 이후에 두 개의 whitespace를 사용합니다.
 
  Comment는 항상 명확하고 이해하기 쉽게 기록합니다. 비영어권 coder도 반드시 영어로  comment를 기록하세요.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Block Comments
 ***
  Block comment는 code와 동일선상에 맞춰 기록합니다. Comment 각 line은 '#'과 single space로 시작합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Inline Comments
 ***
  Inline comment는 가급적 사용하지 않습니다. 만약 사용한다면 code에서 두 개 이상의 space를 넣은 뒤 inline comment를 기록합니다. Block comment와 마찬가지로 comment는 '#'과 single space로 시작합니다. Code 내용이 명확하다면 comment를 사용하지 않습니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Documentation Strings
@@ -458,19 +458,19 @@ Optional plotz says to frobnicate the bizbaz first.
 
 """Return an ex-parrot."""
 ```
-<br><br>
+<br /><br />
 
 
 ## Naming Conventions
 ***
  이미 배포된 python library의 naming convention은 완벽한 일관성을 보이지 않고 어지러운 편입니다. 그럼에도 불구하고 앞으로 안내하는 규칙에 따라 작성하기를 권장합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Overriding Principle
 ***
  사용자에게 보이는 API의 공개적인 파트는 사용법을 반영한 conventions를 따릅니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Descriptive: Naming Styles
@@ -490,12 +490,12 @@ Optional plotz says to frobnicate the bizbaz first.
  * single_trailing_underscore_
  * __double_leading_underscore
  * \_\_double_leading_and_trailing_underscore__
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Prescriptive: Naming Styles
 ***
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Names to Avoid
@@ -504,13 +504,13 @@ Optional plotz says to frobnicate the bizbaz first.
  * ‘l’ (lowercase letter el)
  * ‘O’ (uppercase letter oh)
  * ‘I’ (uppercase letter eye)
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASCII Compatibility
 ***
  [PEP3131](https://peps.python.org/pep-3131/, "PEP3131")에서 언급하는바와 같이 standard library에 사용하는 identifier는 반드시 ASCII와 호환되어야 합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Package and Module Names
@@ -518,13 +518,13 @@ Optional plotz says to frobnicate the bizbaz first.
  Module명은 짧게, 모두 lowercase로 명명합니다. 가독성이 좋아진다면 module명 내부에 underscore를 넣을 수 있습니다.
 
  Python package명도 짧게, 모두 lowercase로 명명합니다. 하지만 underscore 사용은 권장하지 않습니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class Names
 ***
  Class명은 보통 CapWords convention을 사용합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type Variable Names
@@ -532,31 +532,31 @@ Optional plotz says to frobnicate the bizbaz first.
  [PEP484](https://peps.python.org/pep-0484/, "PEP484")에서 소개하는 type variable명은 보통 짧은 CapWords를 사용합니다.
  
  예) T, AnyStr, Num
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exception Names
 ***
  Exception은 class이기 때문에 class naming convention을 따르며 반드시 suffix로 "Error"를 사용합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Global Variable Names
 ***
  Function naming convention과 동일합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Function and Variable Names
 ***
  Function명과 Variable명은 lowercase를 사용하며 가독성을 높힐 수 있다면 word 사이에 underscore를 사용할 수 있습니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Method Names and Instance Variables
 ***
  Function naming convention과 동일합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constants
@@ -564,19 +564,19 @@ Optional plotz says to frobnicate the bizbaz first.
  Constant는 module level에서 정의됩니다. 모두 capital letter로 작성하고 word 사이에 underscore를 사용합니다.
 
  예) MAX_OVEFLOW, TOTAL
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Designing for Inheritance
 ***
  (생략)
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Public and Internal Interfaces
 ***
  (생략)
- <br><br>
+ <br /><br />
 
 
 ## Programming Recommendations
@@ -675,13 +675,13 @@ if greeting == True:
 ## Wrose:
 if greeting is True:
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Function Annotations
 ***
  Function annotation은 [PEP484](https://peps.python.org/pep-0484/, "PEP484") 규칙을 따릅니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;Variable Annotations
@@ -709,4 +709,4 @@ code : int  # Space before colon
 class Test:
     retuls: int=0   # No spaces around equality sign
 ```
-<br><br>
+<br /><br />

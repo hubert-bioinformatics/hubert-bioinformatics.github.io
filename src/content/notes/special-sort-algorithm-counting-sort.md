@@ -13,7 +13,7 @@ source: manual
 계수 정렬은 원소의 배열을 훑어보고 1부터 k까지의 자연수가 각각 몇 번 나타나는지 헤아립니다. 이 정보를 바탕으로 A[1, ..., n]의 각 원소가 몇 번째 놓이면 되는지 계산하는 알고리즘 입니다.
 
 계수 정렬은 평균 시간 복잡도가 $$ \theta(n) $$으로 소요되는 알고리즘 입니다.
-<br><br>
+<br /><br />
 
 
 ## 구현
@@ -53,7 +53,7 @@ def countingsort(array):
 test_data = [4, 2, 2, 8, 3, 3, 1]
 print(countingsort(test_data))
 ```
-<br><br>
+<br /><br />
 
 
 ## 시간 복잡도

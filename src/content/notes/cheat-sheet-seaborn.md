@@ -7,9 +7,9 @@ source: manual
 ---
 
 ![Post-Image](../../assets/post/Seaborn-cheatsheet1.webp)
-_Cheetsheet - Seaborn<br>
+_Cheetsheet - Seaborn<br />
 https://www.datacamp.com/cheat-sheet/python-seaborn-cheat-sheet_
-<br><br>
+<br /><br />
 
 
 [Cheetsheet - Seaborn](http://datacamp-community-prod.s3.amazonaws.com/263130e2-2c92-4348-a356-9ed9b5034247)

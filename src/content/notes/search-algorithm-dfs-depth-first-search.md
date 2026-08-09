@@ -11,13 +11,13 @@ source: manual
 ***
 
  몇 가지 문제로 시작해 보겠습니다.
- <br><br>
+ <br /><br />
 
  ![Post-Image](../../assets/post/DFS_MazesatHeverCastle.webp)
  _Mazes at Hever Castle, UK_
 
  영국은 유구한 역사를 지닌 나라답게 웅장한 크기를 자랑하는 castle과 오래된 건축물을 쉽게 찾아볼 수 있습니다. 사진은 영국 Hever Castle과 내부에 있는 미로입니다. 미로는 입구에서 출발하여 출구로 나가는 길을 찾아야 합니다. 갈림길이 나오면 어떤 길로 갈 것인지 선택하고, 막다른 길을 만나면 되돌아가야 합니다. 이것은 미로 문제입니다.
- <br><br>
+ <br /><br />
 
  ![Post-Image](../../assets/post/DFS_path.webp)
  _Hubert's commute path_
@@ -25,7 +25,7 @@ source: manual
  매일 오고가는 출퇴근 경로입니다. 1.5시간이 소요되는 버스+지하철 조합을 이용합니다. 우리는 목적지까지 도달하는데 버스, 지하철, 택시, 자가용 등 다양한 교통수단을 사용할 수 있고 직통, 환승 등 조합에 따라 소요 시간은 천차만별 입니다. 대부분 가장 빠른 경로를 원하겠지요? 이것은 최적경로 찾기 문제입니다.
 
  미로 문제와 최적경로 찾기 문제, 어떻게 논리적으로 해결할 수 있을까요?
- <br><br>
+ <br /><br />
 
 
 ## Algorithm: Search
@@ -50,7 +50,7 @@ source: manual
  * Path cost function: Path를 따라 goal state에 도달하기 까지 소요된 비용을 산출하는 함수입니다.
 
  * Solution: Simulation을 통해 얻은 일종의 정답입니다. 다양한 solution 중 가장 비용이 적게 드는 것을 **Optimal Solution**이라고 합니다.
- <br><br>
+ <br /><br />
 
 
 ## DFS (Deep-First Search)
@@ -74,7 +74,7 @@ source: manual
  _DFS process_
 
  위 예시 과정에서 goal state는 node(E)입니다. DFS process에서 last node(F)에 다다르면 goal state인 node(E)와 일치하는지 확인합니다. 일치하지 않으므로 마지막 분기 node(B)로 돌아가서 같은 방식으로 process를 이어갑니다. 다시 last node(E)에 다다르면 goal state인 node(E)와 비교하고 일치하므로 explored set을 solution으로 return하고 DFS process를 종료합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;DFS 공간 복잡도, 시간 복잡도
@@ -92,7 +92,7 @@ source: manual
  * 인접 행렬인 경우: O($V^2$)
 
  * 인접 리스트인 경우: O(V+E)
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;DFS 장/단점
@@ -108,7 +108,7 @@ source: manual
  1. Goal state인 node가 아닌 다른 last node들의 깊이가 깊을수록 많은 시간을 소비합니다.
 
  2. 항상 optimal solution을 찾는 것은 아닙니다. DFS는 goal state인 node를 만나는 순간 종료되기 때문입니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;DFS 적용
@@ -139,7 +139,7 @@ class Node():
 ```
 
  Node class는 node 객체를 생성합니다. Node는 앞서 언급한 것처럼 agent state, parent node, 그리고 action에 대한 정보를 가지고 있습니다.
- <br><br>
+ <br /><br />
 
  ```python
 import sys
@@ -357,7 +357,7 @@ class Maze():
  * empty function: Frontier에 담긴 node count가 0인지 확인 합니다. Frontier에 더 이상 가져올 node가 없는지 확인하는 function 입니다.
 
  * **remove** function (116 line): 본 class의 핵심 function 입니다. DFS는 stack structure를 사용하므로 가장 마지막 위치의 node를 가져옵니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;DFS 예제

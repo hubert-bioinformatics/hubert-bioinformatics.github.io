@@ -12,16 +12,16 @@ source: manual
 ***
 
 SV(Structural Variant)의 형태와 의미를 이해합니다. SV 탐색을 위한 소프트웨어들을 알아봅니다.
-<br><br>
+<br /><br />
 
 
 ## De novo SV
 ***
 
 ![Post-Image](../../assets/post/WES-SV.webp)
- _De novo SV<br>
+ _De novo SV<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 왼쪽 그래프에서 probands는 patient, siblings는 control입니다. C, F 그래프를 보면 De novo rare CNV로 인해 probands도 증가함을 확인할 수 있습니다.
@@ -29,22 +29,22 @@ SV(Structural Variant)의 형태와 의미를 이해합니다. SV 탐색을 위�
 오른쪽 그래프에서도 마찬가지로 5~10%의 환자가 de novo SV를 가지고 있음을 확인 했습니다.
 
 ![Post-Image](../../assets/post/WES-SV_tools.webp)
- _Calling SVs Algorithms of gnomAD<br>
+ _Calling SVs Algorithms of gnomAD<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 De novo SVs calling 소프트웨어는 굉장히 다양합니다. MAF Database인 gnomAD도 네 가지 algorithm으로 SV를 분석한 뒤 교집합인 SV를 사용하고 있습니다. 왜 네 가지 algorithm을 사용했는지 이어서 확인해 보겠습니다.
-<br><br>
+<br /><br />
 
 
 ## SV Calling Algorithms
 ***
 
 ![Post-Image](../../assets/post/WES-SV_algorithms.webp)
- _SV Calling Algorithms for Deletion<br>
+ _SV Calling Algorithms for Deletion<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 Deletion SV calling algorithms는 다음과 같이 여러 종류가 존재합니다.
@@ -70,9 +70,9 @@ Deletion SV calling algorithms는 다음과 같이 여러 종류가 존재합니
     RP+SR, RP+RD, RP+AS, RP+SR+AS, RP+SR+RD 등 다양한 조합의 algorithms로 SV를 찾아낼 수 있습니다.
 
 ![Post-Image](../../assets/post/WES-SV_algorithms_insertion.webp)
- _SV Calling Algorithms for Insertion<br>
+ _SV Calling Algorithms for Insertion<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 Insertion SV calling algorithms는 다음과 같이 여러 종류가 존재합니다.
@@ -94,9 +94,9 @@ Insertion SV calling algorithms는 다음과 같이 여러 종류가 존재합�
 SVs callling algorithms 유형별 장단점은 아래와 같습니다. RD가 직관적이며 빠르고 쉽게 해석 가능하지만 resolution이 가장 낮습니다. RP, SR, AS로 갈수록 resolution은 늘어나지만 conputation resource가 많이 소모됩니다. 또한 공통적으로 repeat region에서의 SV calling은 어렵고 false positive ratio가 증가하므로, 소프트웨어에서 나온 SV result를 IGV 등을 통해 직접 repeat region 여부와 FP 가능성 확인이 필요합니다.
 
 ![Post-Image](../../assets/post/WES-SV_algorithms_pros_cons.webp)
- _SV Calling Algorithms: Pros & Cons<br>
+ _SV Calling Algorithms: Pros & Cons<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 Algorithms 유형별 소프트웨어 종류는 다음과 같습니다. Bold체 네 개 소프트웨어는 gnomAD에서 사용한 네 가지 소프트웨어입니다.
@@ -110,32 +110,32 @@ Algorithms 유형별 소프트웨어 종류는 다음과 같습니다. Bold체 �
 * RP+AS: Hydra, CREST
 * RP+SR+AS: GRIDSS, **Manta**, SvABA
 * RP+SR+RD: Lympy, MATOHCUP, TIDDIT, Svelter
-<br><br>
+<br /><br />
 
 
 소프트웨어별 SV 결과의 bias 편차가 심하기 때문에 biasgnomAD는 네 개 소프트웨어를 사용하여 편차를 줄였습니다. 이처럼 multi-platform 방식으로 보완이 가능합니다.
-<br><br>
+<br /><br />
 
 
 ## Manta: De novo Deletion Result
 ***
 
 ![Post-Image](../../assets/post/WES-manta.webp)
- _Manta: De novo Deletion<br>
+ _Manta: De novo Deletion<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 Manta 소프트웨어로 분석한 결과 중 de novo deletion을 IGV로 확인한 결과입니다. De novo deletion이 존재하는 region에서 soft-clipped reads가 확인됩니다.
 
 ![Post-Image](../../assets/post/WES-manta2.webp)
- _Manta: De novo Deletion<br>
+ _Manta: De novo Deletion<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 Insert size 크기로 coloring한 뒤 sorting한 결과입니다. 마찬가지로 de novo deletion이 존재하는 region에서 insert size가 큰 reads가 확인됩니다.
-<br><br>
+<br /><br />
 
 
 ## Summary

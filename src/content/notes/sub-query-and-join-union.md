@@ -11,7 +11,7 @@ source: manual
 
 ## Intro
 ***   
-관계대수를 이해하고 설명할 수 있습니다. Sub-query문을 이해하고 활용할 수 있습니다.<br>
+관계대수를 이해하고 설명할 수 있습니다. Sub-query문을 이해하고 활용할 수 있습니다.<br />
 
 
 ## 관계대수
@@ -26,7 +26,7 @@ source: manual
    2. 데이터베이스 질의(query)를 구현하고 최적화하는 데 사용됩니다.  
    3. RDBMS의 표준 언어인 SQL이 관계대수의 일부 연산을 사용합니다.  
 ![Post-Image](../../assets/post/DBMS-DB40.webp)
-_관계대수 역할<br>
+_관계대수 역할<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 
 3. 관계대수 종류  
@@ -51,7 +51,7 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
       [ORDERED BY \<컬럼명\>[ASC | DESC]]  
    2. 연산자의 종류  
 ![Post-Image](../../assets/post/DBMS-DB41.webp)
-_연산자의 종류<br>
+_연산자의 종류<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    3. 연습문제   
       1. 질의문) 연봉이 4000 이하인 사원들의 이름과 연봉, 부서번호를 검색하세요.(단순 비교 연산자)

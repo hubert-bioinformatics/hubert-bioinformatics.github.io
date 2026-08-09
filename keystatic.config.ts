@@ -103,7 +103,7 @@ export default config({
           ],
           defaultValue: 'keystatic',
         }),
-        content: fields.mdx({ label: '본문', options: { image: postImage } }),
+        content: fields.mdx({ label: '본문', extension: 'md', options: { image: postImage } }),
       },
     }),
 
@@ -142,7 +142,7 @@ export default config({
         aiGenerated: fields.checkbox({ label: 'AI 요약', defaultValue: true }),
         reviewed: fields.checkbox({ label: '검토 완료', defaultValue: false }),
         draft: fields.checkbox({ label: '임시 저장', defaultValue: false }),
-        content: fields.mdx({ label: '본문', options: { image: postImage } }),
+        content: fields.mdx({ label: '본문', extension: 'md', options: { image: postImage } }),
       },
     }),
 
@@ -179,7 +179,7 @@ export default config({
         shutter: fields.text({ label: '셔터스피드' }),
         iso: fields.number({ label: 'ISO' }),
         draft: fields.checkbox({ label: '임시 저장', defaultValue: false }),
-        content: fields.mdx({ label: '설명', options: { image: postImage } }),
+        content: fields.mdx({ label: '설명', extension: 'md', options: { image: postImage } }),
       },
     }),
 
@@ -211,7 +211,7 @@ export default config({
         cover: fields.image({ label: '대표 이미지', ...postImage }),
         featured: fields.checkbox({ label: '대표 프로젝트', defaultValue: false }),
         draft: fields.checkbox({ label: '임시 저장', defaultValue: false }),
-        content: fields.mdx({ label: '상세 설명', options: { image: postImage } }),
+        content: fields.mdx({ label: '상세 설명', extension: 'md', options: { image: postImage } }),
       },
     }),
   },

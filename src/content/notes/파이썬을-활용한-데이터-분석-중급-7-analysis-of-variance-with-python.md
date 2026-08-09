@@ -15,14 +15,14 @@ source: manual
 ***
 
 Python을 이용하여 Analysis of variance with python 수행과정을 알아봅니다.
-<br><br>
+<br /><br />
 
 
 ## 언제 사용하는가?
 ***
 
 Analysis of variance with python은 세 개 이상의 독립적인 모집단의 수치형 자료의 평균에 차이가 있는지 분석할 때 사용하는 방법입니다. 모든 모집단의 수치형 자료가 정규분포를 따를 때 사용할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ## 가설 세우기
@@ -33,26 +33,26 @@ Analysis of variance with python은 세 개 이상의 독립적인 모집단의 
 
 * 대립가설 (Alternative Hypothesis, H<sub>1</sub> or H<sub>A</sub>)
     * 재배방법(group)에 따라 풀의 생산량(weight)에 차이가 있습니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Python_Data_Analysis22.webp)
-_SST(Sum of Square Total)<br>
+_SST(Sum of Square Total)<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475049_
-<br><br>
+<br /><br />
 
 
 * SST(Sum of Squuare Total)는 총제곱합으로 Y에 있는 모든 다름의 양을 의미합니다.
 * SST = SSE + SSB
 * SSE: 집단 내 제곱합을 의미합니다. 집단 내부적인 이유때문에 생긴 Y의 다름의 양입니다. 즉, SSE가 클수록 $$ H_{0} $$(집단 간 차이가 없음)을 지지합니다.
 * SSB: 집단 간 제곱합을 의미합니다. 집단이 달라서 생긴 Y의 다름의 양입니다. 즉, SSB가 클수록 $$ H_{1} $$(집단 간 차이가 있음)을 지지합니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Python_Data_Analysis23.webp)
-_F분포<br>
+_F분포<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475049_
-<br><br>
+<br /><br />
 
 
 ## Analysis of variance
@@ -71,7 +71,7 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475049_
 
 * 3단계: 등분산이 가정된 ANOVA 또는 이분산이 가정된 ANOVA
     * ANOVA를 시행합니다.
-<br><br>
+<br /><br />
 
 
 ## 실습
@@ -80,13 +80,13 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475049_
 * 가설 설정
     * 귀무가설: 재배방법(group)에 따라 풀의 생산량(weight)에 차이가 없습니다.
     * 대립가설: 재배방법(group)에 따라 풀의 생산량(weight)에 차이가 있습니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Python_Data_Analysis24.png)
-_데이터 로딩<br>
+_데이터 로딩<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475049_
-<br><br>
+<br /><br />
 
 
 * 분석 1단계: 정규성 검정(Normality Test)
@@ -98,39 +98,39 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475049_
         * ctrl group: 유의확률(p-value)가 0.747로 정규성 가정을 만족합니다.
         * trt1 group: 유의확률(p-value)가 0.452로 정규성 가정을 만족합니다.
         * trt2 group: 유의확률(p-value)가 0.564로 정규성 가정을 만족합니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Python_Data_Analysis25.png)
-_정규성 검정<br>
+_정규성 검정<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475049_
-<br><br>
+<br /><br />
 
 
 * 분석 2단계: Levene의 등분산 검정
     * 귀무가설: 등분산입니다.
     * 대립가설: 이분산입니다.
     * levene 등분산 검정 결과 유의확률(p-value) 0.341로 유의수준(0.05)보다 크므로 귀무가설을 기각하지 못합니다. 즉, 등분산입니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Python_Data_Analysis26.png)
-_Levene의 등분산 검정<br>
+_Levene의 등분산 검정<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475049_
-<br><br>
+<br /><br />
 
 
 * 분석 3단계: Analysis of variance
     * 귀무가설: 재배방법(group)에 따라 풀의 생산량(weight)에 차이가 없습니다.
     * 대립가설: 재배방법(group)에 따라 풀의 생산량(weight)에 차이가 있습니다.
     * 유의확률(p-value) 0.016으로 유의수준(0.05)보다 작으므로 귀무가설을 기각합니다. 즉, 재배방법(group)에 따라 풀의 생산량(weight)에 차이가 있습니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Python_Data_Analysis27.png)
-_ANOVA<br>
+_ANOVA<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475049_
-<br><br>
+<br /><br />
 
 
 ## 코드
@@ -172,11 +172,11 @@ stats.f_oneway(
     PlantGrowth.loc[PlantGrowth['group'] == 'trt2', 'weight'],
 )
 ```
-<br><br>
+<br /><br />
 
 
 ## Take Home Message
 ***
 
 Analysis of variance 이론을 학습하고 Google colab에서 실습해 보았습니다.
-<br><br>
+<br /><br />

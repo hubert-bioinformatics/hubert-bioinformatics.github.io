@@ -7,40 +7,40 @@ source: manual
 ---
 
 ![Post-Image](../../assets/post/matplotlib_cheat_sheet1.webp)
-_Cheetsheet - Matplotlib (beginner)<br>
+_Cheetsheet - Matplotlib (beginner)<br />
 https://matplotlib.org/cheatsheets/_
-<br>
+<br />
 
 [Cheetsheet - Matplotlib (beginner)](https://matplotlib.org/cheatsheets/handout-beginner.pdf)
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/matplotlib_cheat_sheet2.webp)
-_Cheetsheet - Matplotlib (intermediate)<br>
+_Cheetsheet - Matplotlib (intermediate)<br />
 https://matplotlib.org/cheatsheets/_
-<br>
+<br />
 
 [Cheetsheet - Matplotlib (intermediate)](https://matplotlib.org/cheatsheets/handout-intermediate.pdf)
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/matplotlib_cheat_sheet3.webp)
-_Cheetsheet - Matplotlib (tips)<br>
+_Cheetsheet - Matplotlib (tips)<br />
 https://matplotlib.org/cheatsheets/_
-<br>
+<br />
 
 [Cheetsheet - Matplotlib (tips)](https://matplotlib.org/cheatsheets/handout-tips.pdf)
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/matplotlib_cheat_sheet4.webp)
-_Cheetsheet - Matplotlib<br>
+_Cheetsheet - Matplotlib<br />
 https://matplotlib.org/cheatsheets/_
-<br>
+<br />
 
 ![Post-Image](../../assets/post/matplotlib_cheat_sheet5.webp)
-_Cheetsheet - Matplotlib<br>
+_Cheetsheet - Matplotlib<br />
 https://matplotlib.org/cheatsheets/_
-<br>
+<br />
 
 [Cheetsheet - Matplotlib](https://matplotlib.org/cheatsheets/cheatsheets.pdf)

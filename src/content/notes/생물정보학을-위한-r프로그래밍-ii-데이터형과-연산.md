@@ -15,7 +15,7 @@ source: manual
 ***
 
 * R 프로그래밍의 데이터형과 연산에 대해 알아봅니다.
-<br><br>
+<br /><br />
 
 
 ## 데이터의 저장과 처리
@@ -32,13 +32,13 @@ source: manual
 * 데이터형: 숫자형, 문자형, 범주형, 논리형, 특수 상수 등
 
 * 연산자: 산술(+, -, *, /), 비교(>, <), 논리 연산자(==, !=, !)
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Rprogramming6.webp)
-_데이터 구조 간 관계<br>
+_데이터 구조 간 관계<br />
 https://www.laidd.org/local/ubonline/view.php?id=181&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPSZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
-<br><br>
+<br /><br />
 
 
 변수명을 생성할 때 몇 가지 규칙이 있습니다.
@@ -63,7 +63,7 @@ z <- x+y
 # method3
 x + y -> z
 ```
-<br><br>
+<br /><br />
 
 
 R의 기본 데이터형은 다음과 같습니다.
@@ -76,7 +76,7 @@ R의 기본 데이터형은 다음과 같습니다.
 | 논리형 | TRUE(T), FALSE(F) |
 | 특수 상수 | NULL: 정의되지 않은 값, NA: 결측값, -Inf: 음의 무한대, Inf: 양의 무한대, NaN: 0/0, Inf/Inf 등과 같이 연산 불가능한 값 표시 |
 
-<br><br>
+<br /><br />
 
 
 기본 데이터형 실습 예제입니다.
@@ -104,7 +104,7 @@ xinf = Inf
 yinf = Inf
 xinf/yinf
 ```
-<br><br>
+<br /><br />
 
 
 데이터형을 확인하는 함수입니다.
@@ -119,7 +119,7 @@ xinf/yinf
 | is.character(x) | x가 문자형이면 TRUE, 아니면 FALSE |
 | is.na(x) | x가 NA이면 TRUE, 아니면 FALSE |
 
-<br><br>
+<br /><br />
 
 
 데이터형을 변환하는 함수입니다.
@@ -133,7 +133,7 @@ xinf/yinf
 | as.matrix(x) | x를 행렬로 변환 |
 | as.array(x) | x를 배열로 변환 |
 
-<br><br>
+<br /><br />
 
 
 산술 연산자는 다음과 같습니다.
@@ -148,7 +148,7 @@ xinf/yinf
 | x %% y | x를 y로 나눈 나머지 (정수 나눗셈 나머지) | 5 %% 2 |
 | x %/% y | x를 y로 나눈 몫 (정수 나눗셈 몫) | 5 %/% 2 |
 
-<br><br>
+<br /><br />
 
 
 비교, 논리 연산자는 다음과 같습니다.
@@ -166,17 +166,17 @@ xinf/yinf
 | x & y, x & & y | x and y(그리고, 교집합) | TRUE & FALSE |
 | isTRUE(x) | x의 TRUE 여부 판단 | isTRUE(TRUE) |
 
-<br><br>
+<br /><br />
 
 
 연산자를 연달아 사용할 때 우선순위를 따릅니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Rprogramming7.webp)
-_연산자 우선 순위<br>
+_연산자 우선 순위<br />
 https://www.laidd.org/local/ubonline/view.php?id=181&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPSZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
-<br><br>
+<br /><br />
 
 
 ## 벡터
@@ -191,19 +191,19 @@ https://www.laidd.org/local/ubonline/view.php?id=181&group=1&returnurl=aHR0cHM6L
 * c 함수 이용: c(1:5)
 * seq 함수 이용: 순열 벡터를 생성합니다. seq(from=n, to=n, by=n)
 * req 함수 이용: 반복 벡터를 생성합니다. rep(c(1:3), times=n), rep(c(1:3), each=n)
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Rprogramming8.webp)
-_벡터 생성: seq 함수 이용<br>
+_벡터 생성: seq 함수 이용<br />
 https://www.laidd.org/local/ubonline/view.php?id=181&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPSZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Rprogramming9.webp)
-_벡터 생성: rep 함수 이용<br>
+_벡터 생성: rep 함수 이용<br />
 https://www.laidd.org/local/ubonline/view.php?id=181&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPSZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
-<br><br>
+<br /><br />
 
 
 벡터 연산과 관련된 실습 내용입니다.
@@ -223,7 +223,7 @@ x[-c(1, 2, 3)] # x 벡터의 1, 2, 3번 요소를 제외한 값을 구합니다.
 
 x[c(1:3)] # x 벡터의 1, 2, 3번 요소 값을 구합니다.
 ```
-<br><br>
+<br /><br />
 
 
 벡터 간 연산은 벡터의 길이가 같거나 요소 개수가 배수 관계에 있을 때 가능합니다.
@@ -242,7 +242,7 @@ x + z # x 벡터의 크기가 z 벡터 크기의 정수배(2배)이므로 크기
 
 x + w # x와 w 벡터의 크기가 정수배가 아니므로 연산에 에러가 발생합니다.
 ```
-<br><br>
+<br /><br />
 
 
 벡터 연산에 유용한 함수는 다음과 같습니다.
@@ -270,7 +270,7 @@ setdiff(x, y) # 차집합(x에서 y와 동일한 요소 제외하고 출력)
 
 setequal(x, y) # x와 y에 동일한 요소가 있는지 비교
 ```
-<br><br>
+<br /><br />
 
 
 ## Take Home Message

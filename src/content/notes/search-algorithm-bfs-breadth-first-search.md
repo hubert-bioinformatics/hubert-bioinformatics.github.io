@@ -31,7 +31,7 @@ source: manual
  _BFS process_
 
  DFS와 차이점을 찾으셨나요? DFS는 search 과정에서 goal node(F)를 만날 때까지 계속 child node를 찾아갑니다. 하지만 BFS는 같은 depth의 모든 node(C, D)를 우선 찾아갑니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;BFS 공간 복잡도, 시간 복잡도
@@ -49,7 +49,7 @@ source: manual
  * 인접 행렬인 경우: O($V^2$)
 
  * 인접 리스트인 경우: O(V+E)
- <br><br>
+ <br /><br />
  
 
 ## &nbsp;&nbsp;DFS 장/단점
@@ -63,7 +63,7 @@ source: manual
  1. Search 해야 할 node가 많은 경우 필요 없는 node까지 모두 저장해야 하므로 DFS보다 큰 저장공간이 필요합니다.
 
  2. Node의 수가 많을 수록 search 시간이 오래 걸립니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;BFS 적용
@@ -96,7 +96,7 @@ class QueueFrontier(StackFrontier):
 ```python
 node = self.frontier[0]
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;BFS 예제

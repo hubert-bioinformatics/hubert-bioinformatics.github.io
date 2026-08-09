@@ -17,47 +17,47 @@ source: manual
 * 시퀀싱의 원리를 이해합니다.
 
 * ChIP-Seq 기술을 이해하고 데이터 생산과 분석 과정을 학습합니다.
-<br><br>
+<br /><br />
 
 
 ## 시퀀싱 기술의 기초
 ***
 
 Sanger sequencing은 template DNA와 primer, ddNTP, dNTP를 이용하여 서열을 분석하는 방법입니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/epigenetics50.webp)
-_Sanger Sequencing<br>
+_Sanger Sequencing<br />
 https://www.edwith.org/epigenome-2023/lecture/1473438_
-<br><br>
+<br /><br />
 
 
 최근에는 다양한 NGS platform이 개발되어 서열분석에 사용되고 있습니다. DNA methylation, TF binding regions 분석은 ChIP-Seq을 사용하여 분석할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ## ChIP-Seq
 ***
 
 Cell lysis를 통해 chromatin을 얻고 MNase digestion/sonication을 통해 뉴클레오좀 단위로 분해합니다. Immumo-precipitation을 통해 뉴클레오좀만 분리한 뒤 히스톤 단백질 가수분해 효소를 처리하여 DNA를 얻습니다. 이후 library를 생성하고 시퀀싱하여 서열을 분석합니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/epigenetics51.webp)
-_ChIP-Seq<br>
+_ChIP-Seq<br />
 https://www.edwith.org/epigenome-2023/lecture/1473438_
-<br><br>
+<br /><br />
 
 
 ChIP-Seq 데이터 분석 파이프라인은 다음과 같습니다. Rawdata를 얻은 뒤 QC를 거쳐 reference genome에 mapping, peak detection을 합니다. 이후 statistical 분석과 functional 분석을 통해 각종 epigenetic 정보를 확인합니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/epigenetics52.webp)
-_ChIP-Seq Analysis<br>
+_ChIP-Seq Analysis<br />
 https://www.edwith.org/epigenome-2023/lecture/1473438_
-<br><br>
+<br /><br />
 
 
 

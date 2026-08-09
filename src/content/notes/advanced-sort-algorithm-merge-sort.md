@@ -11,7 +11,7 @@ source: manual
 ***
 
 병합 정렬은 입력 배열을 절반으로 나눈 뒤 각각 독립적으로 정렬합니다. 그리고 마지막에 정렬된 두 배열을 병합하여 최종 정렬된 배열을 얻는 알고리즘 입니다. 즉, 분할 정복(Devide and Conquer) 기법과 재귀 알고리즘을 이용하여 정렬하는 알고리즘 입니다.
-<br><br>
+<br /><br />
 
 
 ```python
@@ -37,7 +37,7 @@ source: manual
 
 [1, 2, 3, 4, 5, 6, 7, 8]
 ```
-<br><br>
+<br /><br />
 
 
 ## 구현
@@ -71,7 +71,7 @@ def merge_sort(array):
 
 print(merge_sort(array))
 ```
-<br><br>
+<br /><br />
 
 
 ## 시간 복잡도

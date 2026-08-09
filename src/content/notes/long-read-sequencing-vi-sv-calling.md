@@ -17,14 +17,14 @@ source: manual
 * Structural variant에 대해 배웁니다.
 
 * SV calling pipeline을 실습합니다.
-<br><br>
+<br /><br />
 
 
 ## SV(Structural Variant)
 ***
 
 5V는 50bp 이상의 variant를 의미합니다. Size 기준은 short-read sequencing으로 확인하기 어려운 variant를 SV로 정의했습니다. Translocation과 같이 size 측정이 어려운 variant도 포함합니다.
-<br><br>
+<br /><br />
 
 
 SV calling은 크게 두 가지 방식이 존재합니다.
@@ -36,13 +36,13 @@ SV calling은 크게 두 가지 방식이 존재합니다.
 2. Assembly-based SV calling
     1. pros: 가장 정확합니다. 그리고 assembly만 되어있으면 분석 시간은 좀 더 짧습니다.
     2. cons: 20x 이상의 read depth가 필요합니다. 즉, 비용이 많이 듭니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/longread18.webp)
-_SV Calling<br>
+_SV Calling<br />
 https://www.edwith.org/longread-seq-2023/lecture/1475114_
-<br><br>
+<br /><br />
 
 
 ## Take Home Message

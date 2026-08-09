@@ -12,7 +12,7 @@ source: manual
  DNA는 Deoxyribo Nucleic Acid의 약자로 생물의 유전정보를 담고 있는 물질 입니다. DNA는 transcription 과정을 거쳐 RNA(mRNA)로 변환되고, translation 과정을 거쳐 Protein을 생성하는데, 이것은 근육과 결합 조직, 피부 등의 구성요소로 작용할 뿐만 아니라 각종 효소를 생성하여 신체기능을 유지하도록 작용합니다.
 
  따라서 DNA는 유전정보를 다음 세대로 전달하는 도면으로 볼 수 있습니다. NGS 기술을 사용하여 정확한 DNA 서열을 알아내는 최종 목적은 결국 이 유전물질 정보를 밝혀내기 위함입니다.
- <br><br>
+ <br /><br />
 
 
 ## DNA, RNA의 기본 구조
@@ -20,11 +20,11 @@ source: manual
 
 ![Post-Image](../../assets/post/DNA-RNA.webp)
 _DNA와 RNA 비교_
-<br><br>
+<br /><br />
 
 
  DNA와 RNA를 비교한 그림입니다. 가장 먼저 눈에 띄는 차이는 기본 구조입니다. DNA는 double-helix로 불리는 구조를 가지며 두 가닥의 strand가 서로 꼬여 있습니다. 그리고 A-T, C-G가 서로 연결된 상보적인 서열로 구성되어 있습니다. 반면 RNA는 한 가닥의 strand로 이루어진 구조를 가지고, T 대신 U를 사용하여 U, T, C, G로 구성되어 있습니다. DNA, RNA 구조를 좀 더 확대해서 자세히 들여다 볼까요?
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;DNA와 RNA 구조 비교
@@ -32,30 +32,30 @@ _DNA와 RNA 비교_
 
 ![Post-Image](../../assets/post/DNA-structure.webp)
 _DNA와 RNA 기본 구조_
-<br><br>
+<br /><br />
 
  
  DNA, RNA의 기본 구조입니다. 다섯 개의 탄소로 구성된 pentose sugar에서 1번 탄소에 nitrogenous base, 5번 탄소에 phosphate group이 연결되어 있습니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;Pentose Sugar
 ***
  
  DNA와 RNA의 차이는 pentose sugar의 2번 탄소에서 기인하는데, -OH가 붙으면 ribose로 불리는 RNA의 구조를 이루고, -H가 붙으면 ***deoxy***ribose로 불리는 DNA의 구조를 이룹니다. 보통 DNA에 비해 RNA가 불안정하다고 알려져 있는데 그 이유는 바로 -OH에 있습니다. 풍부한 전자를 가지고 있으므로 다른 원소와 화학반응을 잘 일으킵니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;Phosphate Group
 ***
 
  Phosphate group은 nucleotide와 nucleoside를 구분 짓습니다. Phosphate group은 energy를 가지고 있으며 체내에서 에너지원으로 사용되는 ATP, ADP, AMP의 구조도 phosphate group과 연관 있습니다.
- <br><br>
+ <br /><br />
 
 
 ![Post-Image](../../assets/post/DNA-ATP.webp)
 _ATP, ADP, AMP_
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Nitrogenous Base
@@ -63,7 +63,7 @@ _ATP, ADP, AMP_
  
 ![Post-Image](../../assets/post/DNA-base.webp)
 _Nitrogenous base_
-<br><br>
+<br /><br />
 
 
  1번 탄소와 연결된 nitrogenous base는 질소(nitrogen)을 가진 이중고리 혹은 단일고리로 이루어진 base입니다. NGS 기술을 사용하여 시퀀싱하고 염기서열을 찾을 때 바로 이 base의 서열을 확인하는 것입니다. DNA는 A(adenine), T(thymine), C(cytosine), G(guanine)로 구성되어 있으며, RNA는 T 대신 U(uracil)로 구성되어 있습니다.
@@ -71,7 +71,7 @@ _Nitrogenous base_
  Purine은 이중고리로 구성되어 있으며 A, G가 해당됩니다.
 
  Pyrimidine은 단일고리로 구성되어 있으며 C, T, U가 해당됩니다.
- <br><br>
+ <br /><br />
 
 
 ## DNA Replication: 5' → 3'
@@ -79,7 +79,7 @@ _Nitrogenous base_
 
 ![Post-Image](../../assets/post/DNA-phosphodiester.webp)
 _DNA Replication_
-<br><br>
+<br /><br />
 
 
  DNA replication은 항상 5'에서 3' 방향으로 진행합니다. 여기서 5'과 3'은 앞서 보셨던 DNA 구조에서 pentose sugar를 구성하는 carbon의 위치를 의미합니다. 즉, DNA는 항상 3번 탄소의 말단에서 template을 구성하는 base에 상보적인 nucleotide를 받아들여 새로운 결합을 형성하고 길이를 늘려갑니다.
@@ -87,7 +87,7 @@ _DNA Replication_
  DNA polymerase는 DNA replication을 담당하는 enzyme입니다. 전자가 풍부한 3' hydroxyl group(-OH)가 incoming nucleotide의 triphosphate group을 공격합니다. 이 때 새로운 phosphodiester 결합이 형성되고 pyrophosphage group이 떨어져 나갑니다.
 
  5'에 phosphate group, 3'에 hydroxyl group이 위치하고 있기 때문에 DNA replication은 항상 5' → 3'의 방향성을 가집니다.
- <br><br>
+ <br /><br />
 
 
 ## DNA Weight
@@ -116,7 +116,7 @@ _DNA Replication_
  $1,000pg / 6.5pg = 153 cells$
 
  약 153개 cell과 그 안에 153쌍의 염색체가 들어있으므로 총 306개의 염색체가 있음을 역산할 수 있습니다.
- <br><br>
+ <br /><br />
 
 
 ## Take Home Message

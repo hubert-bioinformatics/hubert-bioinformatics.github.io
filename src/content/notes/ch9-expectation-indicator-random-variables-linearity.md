@@ -12,7 +12,7 @@ source: manual
 ***
 
 누적분포함수를 이용하여 특정 사건의 확률과 기댓값을 구하는 방법을 알고, 지시확률변수 및 선형성을 이용하여 기댓값을 구할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ## 누적분포함수 (CDF)
@@ -23,14 +23,14 @@ source: manual
 1. increasing(증가함수)
 2. right continuous (우연속함수)
 3. $F(X) \to 0 as X \to -\infin$, $F(X) \to 1 as X \to \infin$
-<br><br>
+<br /><br />
 
 
 ## 독립확률변수
 ***
 
 모든 x, y에 대해서 $P(X \leq x, Y \leq y) = P(X=x)P(Y=y)$ 가 성립할 때, 확률변수 X, Y가 독립이라고 합니다.
-<br><br>
+<br /><br />
 
 
 ## 평균을 구하는 방법
@@ -49,7 +49,7 @@ source: manual
    예시) 1, 1, 1, 1, 1, 3, 3, 5
 
    $\frac{5}{8} \times 1 + \frac{2}{8} \times 3 + \frac{1}{8} \times 5$
-   <br><br>
+   <br /><br />
 
 
 ## 이산확률변수의 평균 (기댓값)
@@ -62,7 +62,7 @@ $E(X) = \Sigma{x} X\times P(X=x)$
 $= \Sigma 값 \times 확률질량함수$
 
 이에 대한 예시들을 살펴봅니다.
-<br><br>
+<br /><br />
 
 
 ## 베르누이 확률변수의 기댓값
@@ -79,7 +79,7 @@ $E(X) = 1 \times P(X=1) + 0 \times P(X=0) = P$
 $E(X) = P(A)$
 
 로 표현할 수 있고, X는 indicator random variable(지시확률변수)로 볼 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ## 이항 확률분포의 기댓값
@@ -111,7 +111,7 @@ j\\
 $=np$
 
 꽤 성가신 계산 과정이었습니다. 이보다 간단히 풀어낼 수 있는데 바로 기댓값의 가장 유용한 속성인 linearity를 이용하는 것입니다.
-<br><br>
+<br /><br />
 
 
 ## Linearity (선형성)
@@ -133,7 +133,7 @@ $X_{i}$는 각각 베르누이 시행일 때,
 $E(X) = n \times E{X_{1}} = np$
 
 로 계산할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ## 기하분포
@@ -166,7 +166,7 @@ PMF: $P(X=k) = q^{k}p, k \in \{0,1,2,...\}$
    = $q + cq$
 
    = $\frac{q}{1-q} = \frac{q}{p}$
-   <br><br>
+   <br /><br />
 
 
 ## IMO

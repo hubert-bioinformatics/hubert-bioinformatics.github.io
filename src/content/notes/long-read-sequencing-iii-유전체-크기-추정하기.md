@@ -19,7 +19,7 @@ source: manual
 * 시퀀싱 데이터로부터 직접 유전체 크기를 추정해봅니다.
 
 * 앞으로 강의에서 다루는 분석내용은 [STAR Protocols](https://star-protocols.cell.com/protocols/1799, "STAR Protocols")에 상세히 정리되어 있습니다.
-<br><br>
+<br /><br />
 
 
 ## 유전체 크기 추정 - Wet 실험
@@ -32,7 +32,7 @@ source: manual
 2. 몇몇 genome assembler 작동시킬 때 option으로 넣어줘야 합니다.
 
 3. 사람 같이 이미 알려진 종에서는 생략 가능합니다.
-<br><br>
+<br /><br />
 
 
 유전체 크기 단위는 C-value를 사용합니다.
@@ -48,7 +48,7 @@ haploid DNA 질량 1pg은 대략 haploid genome size 1Gb와 유사하다고 볼 
 
 2. [Single-copy gene + qPCR](https://WWW.ncbi.nlm.nih.gov/pmc/articles/PMC156059, "Single-copy gene + qPCR")
     * gDNA 추출 후 전체 질량 및 single-copy gene의 copy number를 측정합니다. 두 값을 활용하여 haploid genome size를 추정합니다.
-<br><br>
+<br /><br />
 
 
 ## 유전체 크기 추정 - 알려진 DB
@@ -59,13 +59,13 @@ haploid DNA 질량 1pg은 대략 haploid genome size 1Gb와 유사하다고 볼 
 1. [Animal Genome Size Database](https://www.genomesize.com/, "Animal Genome Size Database")
     
     * 약 6,222개 동물종에 대한 genome size data를 확인할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 2. [Plant Genome Size Database](https://cvalues.science.kew.org/, "Plant Genome Size Database")
     
     * 약 12,273개 식물종에 대한 genome size data를 확인할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ## 유전체 크기 추정 - 시퀀싱 데이터
@@ -76,13 +76,13 @@ DNA 시퀀싱 기반 유전체 크기를 추정할 수 있습니다.
 가상의 유전체 지도를 가정하고 생산한 DNA read응 유전체 지도에 mapping 합니다. 전체 생산 DNA 시퀀싱 총량을 depth로 나누어 유전체 크기를 추정할 수 있습니다.
 
 예를들어, 5Gb의 시퀀싱 데이터를 생산하여 mapping 했을 때 약 5x depth로 mapping 되었다면, genome size는 약 1Gb라고 추정할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/longread12.webp)
-_DNA 시퀀싱 활용한 유전체 크기 추정<br>
+_DNA 시퀀싱 활용한 유전체 크기 추정<br />
 https://www.edwith.org/longread-seq-2023/lecture/1475110_
-<br><br>
+<br /><br />
 
 
 
@@ -91,13 +91,13 @@ DNA와 RNA 시퀀싱을 활용해서 유전체 크기를 추정할 수 있습니
 Genome 대신 transcript 정보를 확보하고, 여기에 DNA read를 mapping해서 genome size를 추정합니다.
 
 장점으로는 DNA data가 적어도 된다는 점입니다. 단점은 transcript quality가 좋지 않으면 genome size 추정이 부정확합니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/longread11.webp)
-_DNA+RNA 시퀀싱 활용한 유전체 크기 추정<br>
+_DNA+RNA 시퀀싱 활용한 유전체 크기 추정<br />
 https://www.edwith.org/longread-seq-2023/lecture/1475110_
-<br><br>
+<br /><br />
 
 
 ## Take Home Message

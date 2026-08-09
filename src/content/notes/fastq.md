@@ -12,7 +12,7 @@ source: manual
  Fastq는 NGS 결과로 생성된 sequence data와 이에 상응하는 quality score 정보를 담고 있는 text 파일입니다.
 
  Bioinformatics 분야의 standard data format이기 때문에 대부분 분석 tool에서 input으로 사용합니다.
- <br><br>
+ <br /><br />
 
 
 ## Fastq Format
@@ -23,7 +23,7 @@ source: manual
  
  Fastq는 한 개 read당 네 개 lines로 구성되어 있습니다.
 
- 1. Line1 (sequence identifier): '@' 기호로 시작합니다. Sequencing run과 cluster 관련 정보를 담고 있습니다.<br>
+ 1. Line1 (sequence identifier): '@' 기호로 시작합니다. Sequencing run과 cluster 관련 정보를 담고 있습니다.<br />
 
     | Value | Description |
     | @ | sequence identifier start character |
@@ -44,7 +44,7 @@ source: manual
  3. Line3 (separator): '+' 기호로 시작합니다. Sequence와 quality를 분리하는 구분자 입니다.
 
  4. Line4 (base call quality score): Line2의 각각 sequence에 대한 quality 값 정보를 담고 있습니다. Phred+33 encoding 방식을 따르며 quality score 표기는 ASCII 문자로 합니다.
- <br><br>
+ <br /><br />
 
 
 ## Open Fastq

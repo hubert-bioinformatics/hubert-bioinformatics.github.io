@@ -15,7 +15,7 @@ source: manual
 ***
 
 Machine learning 관련 기초 개념을 확인하고, 공개된 논문내용 및 데이터를 바탕으로 직접 실습하고 학습하는 과정입니다.
-<br><br>
+<br /><br />
 
 
 ## 데이터를 표현하는 방식: 텐서
@@ -28,7 +28,7 @@ Machine learning 관련 기초 개념을 확인하고, 공개된 논문내용 �
 2. shape: 텐서의 각 축을 따라 얼마나 많은 차원이 있는지 나타내는 정보입니다. 
 
 3. dtype: 텐서에 포함된 데이터 타입입니다.
-<br><br>
+<br /><br />
 
 
 ## 텐서플로와 케라스
@@ -41,13 +41,13 @@ Machine learning 관련 기초 개념을 확인하고, 공개된 논문내용 �
 * 케라스(Keras)
     * TensorFlow 위에 구축된 python용 deep learning API로 deep learning model을 쉽게 만들고 훈련할 수 있는 방법을 제공합니다.
     * NumPy와 매우 비슷하며, 간단한 텐서 연산 뿐만 아니라 학습 과정에 필요한 연산들을 제공합니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/MLDL4CancerGenome25.webp)
-_<br>
+_<br />
 https://www.edwith.org/deep-learning-2023/lecture/1475088_
-<br><br>
+<br /><br />
 
 
 ## DeepDEP
@@ -60,7 +60,7 @@ https://www.edwith.org/deep-learning-2023/lecture/1475088_
 2. Gene dependency 예측을 최적화하기 위하여 limited 'labeled' CCL samples로 fine-tune을 진행합니다. (with genomics and screens)
 
 결국 DeepDEP는 high-dimensional genomic profiles of both tumor and cell line samples로부터 representations를 pretraining으로 추출한 후 이에 기반하여 gene dependency와의 상관관계를 학습합니다.
-<br><br>
+<br /><br />
 
 
 ## Autoencoder
@@ -73,11 +73,11 @@ Autoencoder란 단순히 입력을 출력으로 복사하는 신경망입니다.
 * decoder: 생성 네트워크(generative network)라고도 하며, 내부 표현을 출력으로 변환합니다.
 
 이러한 학습을 통해 입력 data에서 가장 중요한 특성을 학습하도록 합니다. 또한 여러 개의 hidden layer를 추가하여 deep autoencoder도 만들 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ## Take Home Message
 ***
 
 Google colab에서 딥러닝 구동 환경을 구축하고 분석을 실습해 보았습니다.
-<br><br>
+<br /><br />

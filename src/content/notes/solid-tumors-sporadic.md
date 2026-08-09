@@ -7,12 +7,12 @@ source: manual
 ---
 
 ![Post-Image](../../assets/post/somatic_cancer1.webp)
-_Solid Tumors - Sporadic<br>
+_Solid Tumors - Sporadic<br />
 www.amp.org_
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/somatic_cancer2.webp)
-_Solid Tumors - Sporadic<br>
+_Solid Tumors - Sporadic<br />
 www.amp.org_
-<br><br>
+<br /><br />

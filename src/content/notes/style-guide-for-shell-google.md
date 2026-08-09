@@ -8,39 +8,39 @@ source: manual
 
 ## What is the Shell and Shell Script?
 ***
- > <br>the hard outer covering of some creatures<br><br>
+ > <br />the hard outer covering of some creatures<br /><br />
 
  Shell의 사전적 의미 입니다. 컴퓨터에서의 shell도 비슷한 역할을 하는데 OS의 kernel(OS의 일부로서 컴퓨터의 메모리에 상주하는 프로그램)을 감싸고 있습니다. 더 나아가 사용자와 kernel을 연결하는 다리 역할까지 합니다. Shell은 대화창 형태의 interface를 제공하며 사용자가 command를 내리면 OS로 전달하고 OS는 hardware가 이해할 수 있는 언어로 번역합니다. Shell script의 기본 컨셉은 사용자의 command를 실행 순서대로 나열해 놓은 list 입니다.
- <br><br>
+ <br /><br />
 
 
 ## Shell Types?
 ***
 
  Linux에는 다음과 같은 여러 가지 shell이 존재합니다.
- <br><br>
+ <br /><br />
  
-|Shell|Complete<br>path-name|Prompt for<br>root user|Prompt for<br>non-root user|
+|Shell|Complete<br />path-name|Prompt for<br />root user|Prompt for<br />non-root user|
 |---|---|---|---
-|Bourne shell<br>(sh)|/bin/sh<br>/sbin/sh|#|$|
-|GNU Bourne-Again shell<br>(bash)|/bin/bash|bash-VersionNumber#|bash-VersionNumber$|
-|C shell<br>(csh)|/bin/csh|#|%|
-|Korn shell<br>(ksh)|/bin/ksh|#|$|
-|Z shell<br>(zsh)|/bin/zsh|\<hostname\>#|\<hostname\>%|
+|Bourne shell<br />(sh)|/bin/sh<br />/sbin/sh|#|$|
+|GNU Bourne-Again shell<br />(bash)|/bin/bash|bash-VersionNumber#|bash-VersionNumber$|
+|C shell<br />(csh)|/bin/csh|#|%|
+|Korn shell<br />(ksh)|/bin/ksh|#|$|
+|Z shell<br />(zsh)|/bin/zsh|\<hostname\>#|\<hostname\>%|
 
-<br>
+<br />
 
 
   * Bourne shell (sh): 1977년 AT&T사의 Bell 연구소에서 Stephen Bourne이 개발 했습니다. 최초의 bourne shell 입니다.
   
   * Bourne Again shell (bash): 1989년 Brian Fox가 GNU project를 위해 개발 했습니다. 현재 linux standard shell로 사용합니다.
-  <br><br>
+  <br /><br />
 
 
 ## Google Shell Style Guide (Revision 2.02)
 ***
  많은 Googler에 의해 [Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html, "Google Shell Style Guide")가 작성, 수정, 유지되고 있습니다.
- <br><br>
+ <br /><br />
 
 
 ## Background
@@ -50,7 +50,7 @@ source: manual
 ## &nbsp;&nbsp;Which Shell to Use
 ***
  Bash는 실행파일에 사용이 허용된 유일한 shell scripting language 입니다. 실행파일은 반드시 "**#!/bin/bash**"로 시작하고 최소한의 flag를 사용합니다. "**set**"으로 shell 옵션을 설정하여 "**bash script name**"으로 script를 실행할 수 있도록 합니다. 모든 실행가능한 shell scripts는 일관성을 위해 "*bash*"로 한정합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;When to use Shell
@@ -64,7 +64,7 @@ source: manual
  * 만약 100 lines 이상 긴 script나 직관적이지 않은 로직을 사용한다면, 지금 당장 정형화된 구조로 다시 작성하세요.
 
  * Code의 복잡성을 평가할 때 (예를 들어 다른 language로 변경을 결정할 때), code 작성자가 아닌 다른 사람들에 의해 손쉽게 유지될 수 있는지 고려하세요.
- <br><br>
+ <br /><br />
 
 
 ## Shell Files and Interpreter Invocation
@@ -74,13 +74,13 @@ source: manual
 ## &nbsp;&nbsp;File Extensions
 ***
  실행파일은 (강력하게 권장하는 바) 확장자를 사용하지 않거나, "**.sh**" 확장자를 사용합니다. Libraries는 반드시 ".sh" 확장자를 사용하며 실행가능한 상태가 아니어야 합니다. 프로그램이 실행될 때 어떤 language가 사용되었는지 알아야 할 필요가 없으므로 확장자도 사용할 필요가 없습니다. 하지만 libraries는 비슷한 기능을 하는 다른 language로 작성된 library가 필요한 경우가 종종 있으므로 어떤 language로 작성되었는지 아는 것이 중요하며 확장자를 사용합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;SUID/SGID
 ***
  SUID와 SGID는 shell scripts에서 사용을 금지합니다. Shell은 보안 관련 issue가 너무 많으며 SUID/SGID를 허용할만큼 보안이 지켜질 수 없습니다.
- <br><br>
+ <br /><br />
 
 
 ## Environment
@@ -101,7 +101,7 @@ if ! do_something; then
   exit 1
 fi
 ```
-<br><br>
+<br /><br />
 
 
 ## Comments
@@ -117,7 +117,7 @@ fi
 #
 #Perform hot backups of Oracle databases.
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Function Comments
@@ -173,13 +173,13 @@ function del_thing() {
   rm "$1"
 }
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Implementation Comments
 ***
  Code에서 까다롭거나 명확하지 않은 부분, 혹은 흥미롭거나 중요한 부분에 comment를 사용하세요. 모든 내용을 comment에 담지 말고 간단히 적으세요.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;TODO Comments
@@ -191,7 +191,7 @@ function del_thing() {
 ```bash
 # TODO(mrmonkey): Handle the unlikely edge cases (bug ####)
 ```
-<br><br>
+<br /><br />
 
 
 ## Formatting
@@ -201,7 +201,7 @@ function del_thing() {
 ## &nbsp;&nbsp;Indentation
 ***
  Indent는 2-spaces를 사용합니다. Tab은 사용하지 않습니다. 가독성을 높이기 위해 block 사이에는 blank lines를 사용합니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;Line Length and Long Strings
@@ -219,7 +219,7 @@ END
 long_string="I am an exceptionally
 long string."
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Pipelines
@@ -236,7 +236,7 @@ command1 \
   | command3 \
   | command4
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Loops
@@ -264,7 +264,7 @@ for dir in "#{dirs_to_cleanup[@]}"; do
   fi
 done
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Case statement
@@ -292,7 +292,7 @@ case "${expression}" in
     ;; 
 esac
 ```
-<br><br>
+<br /><br />
 
 
  간단한 commands는 가독성이 떨어지지 않는한 pattern, ";;" 기호와 동일한 line에 놓습니다.
@@ -312,7 +312,7 @@ while getopts 'abf:v' flag; do
   esac
 done
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Variable expansion
@@ -340,7 +340,7 @@ while read -r f; do
   echo "file=${f}"
 done < < (find /tmp)
 ```
-<br><br>
+<br /><br />
 
 
 ```bash
@@ -355,7 +355,7 @@ echo a=$avar "b=$bvar" "PID=${$}" "${1}"
 set -- a b c
 echo "$10$20$30"
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Quoting
@@ -435,7 +435,7 @@ git send-email --to "${reviewers}" ${ccs:+"--cc" "${ccs}"}
 (set -- 1 "2 two" "3 three tres"; echo $#; set -- "$*"; echo "$#, $@")
 (set -- 1 "2 two" "3 three tres"; echo $#; set -- "$@"; echo "$#, $@")
 ```
-<br><br>
+<br /><br />
 
 
 ## Features and Bugs
@@ -445,7 +445,7 @@ git send-email --to "${reviewers}" ${ccs:+"--cc" "${ccs}"}
 ## &nbsp;&nbsp;ShellCheck
 ***
  [ShellCheck Project](https://www.shellcheck.net/, "ShellCheck Project")는 입력한 shell scripts의 일반적인 bugs와 warnings를 확인해 주는 사이트 입니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;Command Substitution
@@ -461,7 +461,7 @@ var="$(command "$(commdna1)")"
 # This is not:
 var="`command \`command1\``"
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Test, [ ... ], and [[ ... ]]
@@ -489,7 +489,7 @@ if [ "filename" == f* ]; then
   echo "Match"
 fi
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Testing Strings
@@ -564,7 +564,7 @@ if [[ "${my_var}" > 3 ]]; then
   do_something
 fi
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Wildcard Expansion of Filenames
@@ -589,7 +589,7 @@ removed `./-r'
 rm: cannot remove `./somedir': Is a directory
 removed `./somefile'
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Eval
@@ -604,7 +604,7 @@ eval $(set_my_variables)
 # What happens if one of the returned values has a space in it?
 variable="$(eval some_function)"
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Arrays
@@ -643,7 +643,7 @@ declare -a files=($(ls /directory))
 # some expansion process above before turning into a list of arguments.
 mybinary $(get_arguments)
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Pipes to While
@@ -688,7 +688,7 @@ for line in "${lines[#]}"; do
 done
 echo "${last_line}"
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Arithmetic
@@ -749,7 +749,7 @@ min=5
 sec=30
 echo $(( hr * 3600 + min * 60 + sec )) # prints 7530 as expected
 ```
-<br><br>
+<br /><br />
 
 
 ## Naming Conventions
@@ -771,7 +771,7 @@ mypackage::my_func() {
   ...
 }
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Variable Names
@@ -783,7 +783,7 @@ for zone in "${zones[@]}"; do
   something_with "${zone}"
 done
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Constants and Environment Variable Names
@@ -809,13 +809,13 @@ while getopts 'v' flag; do
 done
 readonly VERBOSE
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Source Filenames
 ***
  소문자를 사용하고 두 개 이상 단어를 분리할 때 underscore를 사용합니다.
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Read-only Variables
@@ -830,7 +830,7 @@ else
   readonly zip_version
 fi
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Use Local Variables
@@ -860,19 +860,19 @@ my_func2() {
   ...
 }
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Function Location
 ***
  모든 function은 파일의 constants 바로 아래 함께 놓아두세요. Functions 사이에 executable code를 숨겨 놓지 않습니다.
- <br><br>
+ <br /><br />
 
 
 ## &nbsp;&nbsp;main
 ***
  "**main**" function은 적어도 한 개 이상의 다른 function을 포함하며 파일의 제일 아래에 위치합니다. 가장 마지막 non-comment line은 "**main**" function calling을 합니다.
- <br><br>
+ <br /><br />
 
 
 ## Calling Commands
@@ -917,7 +917,7 @@ if (( return_codes[1] != 0 )); then
   do_something_else
 fi
 ```
-<br><br>
+<br /><br />
 
 
 ## &nbsp;&nbsp;Builtin Commands vs. External Commands
@@ -933,7 +933,7 @@ substitution="${string/#foo/bar}"
 addition="$(expr "${X}" + "${Y}")"
 substitution="$(echo "${string}" | sed -e 's/^foo/bar/')"
 ```
-<br><br>
+<br /><br />
 
 
 ## Conclusion

@@ -12,7 +12,7 @@ source: manual
 ***
 
  Machine learning의 첫 단계는 data를 불러 오는 것입니다. CSV, SQL DB 등 다양한 source에서 data load 방법을 알아봅니다. pandas library 도구를 사용합니다. Toy data set은 scikit-learn을 사용합니다.
- <br><br>
+ <br /><br />
 
 
  * Toy Data Set (2.1)
@@ -22,7 +22,7 @@ source: manual
    * load_iris: Iris sample size에 대한 150개 data set 입니다. (Classification)
    
    * load_digits: 손 글씨 숫자 이미지 1,979개 data set 입니다. (Image clustering)
-   <br><br>
+   <br /><br />
 
 
  * scikit-learn을 사용한 Mock Data Set (2.2)
@@ -32,7 +32,7 @@ source: manual
    * make_classification: classification을 위한 실수 feature matrix와 정수 target vector return
 
    * make_blobs: clustering을 위한 실수 feature matrix와 정수 target vector return
-   <br><br>
+   <br /><br />
 
 
 * Pandas를 사용한 Data Load
@@ -44,7 +44,7 @@ source: manual
    * **read_json**: json file (2.5)
    
    * **read_sql_query**: SQL database (2.6)
-   <br><br>
+   <br /><br />
 
 
 ## Practice

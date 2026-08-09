@@ -12,7 +12,7 @@ source: manual
  Pandas는 data analysis에 유용한 python package 입니다. Pandas는 쉽고 편리하게 data를 다룰 수 있도록 유연한 structure를 제공하는데, 그 중 하나가 바로 Dataframe 입니다.
 
  이 post는 pandas 공식 가이드 내 [10 minutes to pandas](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html, "10 minutes to pandas")를 참고 했습니다.
- <br><br>
+ <br /><br />
  
 
 ## Dataframe이란? 
@@ -31,7 +31,7 @@ source: manual
 
  ![Post-Image](../../assets/post/DATAFRAME_df.webp)
  _Dataframe 주요 요소_
- <br><br>
+ <br /><br />
  
 
 ## Manipulating Dataframe
@@ -165,7 +165,7 @@ dir(df2)
  'where',
  'xs']
 ```
- <br><br>
+ <br /><br />
  
 
 ## &nbsp;&nbsp;Viewing data
@@ -320,7 +320,7 @@ df.sort_values(by='B') # sorting by values in 'B' column
 2020-07-24 -0.165906  1.178056  0.018960  0.032754
 2020-07-28  0.229097  1.285831 -0.852687  0.366998
 ```
- <br><br>
+ <br /><br />
  
 
 ## &nbsp;&nbsp;Selection
@@ -773,7 +773,7 @@ df2
 2020-07-28 -1.572154 -0.227942 -0.125129 -5 -4.0
 2020-07-29 -0.287700 -0.835631 -1.684919 -5 -5.0
 ```
- <br><br>
+ <br /><br />
  
 
 ## &nbsp;&nbsp;Missing data
@@ -869,7 +869,7 @@ pd.isna(df1)
 2020-07-26  False  False  False  False   True
 2020-07-27  False  False  False  False   True
 ```
- <br><br>
+ <br /><br />
  
 
 ## &nbsp;&nbsp;Operations
@@ -1098,7 +1098,7 @@ s.str.lower()
 7     cat
 dtype: object
 ```
- <br><br>
+ <br /><br />
  
 
 ## &nbsp;&nbsp;Merge
@@ -1297,7 +1297,7 @@ pd.merge(left, right, on='key')
 0  foo     1     4
 1  bar     2     5
 ```
- <br><br>
+ <br /><br />
  
 
 ## &nbsp;&nbsp;Grouping
@@ -1376,7 +1376,7 @@ bar one   -0.972429 -0.196942
 foo one   -1.947118 -0.644827
     two    0.032504  0.110837
 ```
- <br><br>
+ <br /><br />
  
 
 ## &nbsp;&nbsp;Reshaping
@@ -1570,7 +1570,7 @@ two   A       NaN  0.264459
       B -0.542979       NaN
       C       NaN  0.161660
 ```
- <br><br>
+ <br /><br />
  
 
 ## &nbsp;&nbsp;Time series
@@ -1788,7 +1788,7 @@ ts
 2021-12-01 09:00    0.009433
 Freq: H, dtype: float64
 ```
- <br><br>
+ <br /><br />
  
 
 ## &nbsp;&nbsp;Categoricals
@@ -1923,7 +1923,7 @@ good         2
 very good    3
 dtype: int64
 ```
- <br><br>
+ <br /><br />
  
 
 ## &nbsp;&nbsp;Plotting
@@ -2035,7 +2035,7 @@ df.plot()
 ```
 
 ![출력](../../assets/post/dataframe-in-pandas-147d175d87.png)
- <br><br>
+ <br /><br />
  
 
 ## &nbsp;&nbsp;Getting data in/out

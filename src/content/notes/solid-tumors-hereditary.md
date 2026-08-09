@@ -7,6 +7,6 @@ source: manual
 ---
 
 ![Post-Image](../../assets/post/germline_cancer.webp)
-_Solid Tumors - Hereditary<br>
+_Solid Tumors - Hereditary<br />
 www.amp.org_
-<br><br>
+<br /><br />

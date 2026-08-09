@@ -12,7 +12,7 @@ source: manual
 ***
 
  Category data를 machine learning에 알맞은 feature로 변환하는 다양한 전략을 알아봅니다.
- <br><br>
+ <br /><br />
 
 
  * Category Data Encoding
@@ -29,7 +29,7 @@ dataframe['Score'].replace(scale_mapper)
 # sklearn의 DictVectorizer 사용: Feature dictionary를 encoding 합니다. Sparse matrix를 return 합니다. (5.3)
 dictvectorizer.fit_transform(dictionary)
 ```
-<br><br>
+<br /><br />
 
 
  * Null Value 대체하기 (5.4)
@@ -39,7 +39,7 @@ dictvectorizer.fit_transform(dictionary)
 
 # sklearn의 SimpleImputer 사용: null value를 feature에서 가장 자주 등장하는 value로 채웁니다.
 ```
-<br><br>
+<br /><br />
 
 
  * Class Imvalence 다루기 (5.5)
@@ -53,7 +53,7 @@ dictvectorizer.fit_transform(dictionary)
 
 # 혹은 down-sampling or up-sampling을 고려합니다.
 ```
-<br><br>
+<br /><br />
 
 
 ## Practice

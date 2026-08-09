@@ -15,20 +15,20 @@ source: manual
 ***
 
 * R 프로그래밍의 데이터형과 연산에 대해 알아봅니다.
-<br><br>
+<br /><br />
 
 
 ## 배열
 ***
 
 배열은 열과 행으로 구성된 데이터형입니다. array 함수는 N차원 배열을 생성합니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Rprogramming10.webp)
-_벡터와 배열의 구성 형태<br>
+_벡터와 배열의 구성 형태<br />
 https://www.laidd.org/local/ubonline/view.php?id=181&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPSZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
-<br><br>
+<br /><br />
 
 
 ```r
@@ -38,11 +38,11 @@ x = array(1:5, c(2,4))
 # [1,]   1    3    5    2
 # [2,]   2    4    1    3
 ```
-<br><br>
+<br /><br />
 
 
 matrix 함수는 2차원 배열을 생성합니다. nrow는 행의 수를 결정합니다. byrow는 데이터를 행 단위로 배치할지 여부를 결정합니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -64,11 +64,11 @@ matrix(x, nrow=3, byrow=T)
 # [2,]   5    6    7    8
 # [3,]   9   10   11   12
 ```
-<br><br>
+<br /><br />
 
 
 cbind, rbind 함수는 열, 행 단위로 묶어 배열을 생성합니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -92,7 +92,7 @@ rbind(v1, v2, v3)
 #v2    5    6    7    8
 #v3    9   10   11   12
 ```
-<br><br>
+<br /><br />
 
 
 배열(행렬) 연산자는 다음과 같습니다.
@@ -106,7 +106,7 @@ rbind(v1, v2, v3)
 | solve() | 역행렬 |
 | det() | 행렬식 |
 
-<br><br>
+<br /><br />
 
 
 ```r
@@ -146,7 +146,7 @@ solve(x)
 det(x)
 #[1] -2
 ```
-<br><br>
+<br /><br />
 
 
 배열에서 사용 가능한 유용한 함수가 있습니다.
@@ -156,7 +156,7 @@ apply 함수는 배열의 행 또는 열별로 함수를 적용합니다.
 dim 함수는 배열의 크기(차원의 수)를 출력합니다.
 
 sample 함수는 벡터나 배열에서 샘플 데이터를 추출합니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -195,7 +195,7 @@ sample(x, 10, prob=c(1:12)/24) # 각 요소별 추출 확률을 달리할 수 �
 sample(10) # 단순히 숫자만 사용하여 샘플을 만들 수 있음
 #[1]  4 10  1  9  8  3  6  5  7  2
 ```
-<br><br>
+<br /><br />
 
 
 ## 데이터프레임
@@ -204,7 +204,7 @@ sample(10) # 단순히 숫자만 사용하여 샘플을 만들 수 있음
 데이터프레임은 가장 흔히 쓰이는 표 형태의 데이터 구조를 가집니다. 행렬과 달리 여러 데이터형을 혼합하여 저장할 수 있습니다. 리스트와 달리 행의 수를 일치시켜서 저장해야 합니다.
 
 데이터프레임을 생성할 때 data.frame 함수를 이용합니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -219,11 +219,11 @@ patients
 #2 춘향  20      F          O
 #3 길동  25      M          B
 ```
-<br><br>
+<br /><br />
 
 
 데이터프레임 요소에 접근할 때는 $, [, ], 조건식 등을 이용합니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -248,13 +248,13 @@ patients[patients$name=="철수", c("name", "age")] # 철수 이름과 나이 �
 #  name age
 #1 철수  22
 ```
-<br><br>
+<br /><br />
 
 
 데이터프레임에 사용할 수 있는 유용한 함수가 있습니다.
 
 attach/detach 함수는 데이터프레임의 속성명을 변수명으로 변경합니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -280,11 +280,11 @@ detach(cars) # detach 함수를 통해 cars의 각 속성을 변수로 사용하
 speed # detach 실행 후 더이상 cars 속성인 speed를 사용하지 못함
 #Error: object 'speed' not found
 ```
-<br><br>
+<br /><br />
 
 
 with 함수는 데이터프레임에 다양한 함수를 적용할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -300,11 +300,11 @@ with(cars, mean(speed)) # with 함수를 이용해 함수 적용
 with(cars, max(speed)) # with 함수를 이용해 함수 적용
 #[1] 25
 ```
-<br><br>
+<br /><br />
 
 
 subset 함수는 데이터프레임에서 일부 데이터만 추출할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -338,7 +338,7 @@ subset(cars, speed>20, select=c(dist)) # 속도가 20 초과인 dist 데이터�
 #49  120
 #50   85
 ```
-<br><br>
+<br /><br />
 
 
 ## 리스트
@@ -347,7 +347,7 @@ subset(cars, speed>20, select=c(dist)) # 속도가 20 초과인 dist 데이터�
 리스트는 서로 다른 데이터형을 갖는 자료 구조를 포함할 수 있습니다. 데이터프레임보다 넓은 의미의 데이터 모임입니다. 데이터프레임과 달리 모든 속성의 크기가 같을 필요는 없습니다.
 
 리스트를 생성할 때 list 함수를 이용할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -387,11 +387,11 @@ listPatients
 #5   5 65
 #6   6 58
 ```
-<br><br>
+<br /><br />
 
 
 리스트 요소에 접근할 때 $, [[ ]]를 이용합니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -413,13 +413,13 @@ listPatients[["patients"]] # 요소명을 ""에 입력
 #2 춘향  20      F          O
 #3 길동  25      M          B
 ```
-<br><br>
+<br /><br />
 
 
 리스트에 사용할 수 있는 유용한 함수가 있습니다.
 
 lapply/sapply 함수는 리스트 요소에 다양한 함수를 적용합니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -462,7 +462,7 @@ sapply(listPatients$no.patients, mean, simplify=F) # sapply()의 simplify 옵션
 #$no
 #[1] 56.66667
 ```
-<br><br>
+<br /><br />
 
 
 

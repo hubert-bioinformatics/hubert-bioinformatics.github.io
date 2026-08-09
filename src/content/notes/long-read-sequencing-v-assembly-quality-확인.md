@@ -17,7 +17,7 @@ source: manual
 * Assembly quality 확인하는 기본적인 방법들을 알아봅니다.
 
 * 간단한 visualization 스크립트를 익힙니다.
-<br><br>
+<br /><br />
 
 
 ## Assembly Quality란?
@@ -40,7 +40,7 @@ source: manual
     2. contig-level(mis-assembly)
 
     3. scaffold-level(mis-joining)
-<br><br>
+<br /><br />
 
 
 Standard quality metric을 제시한 논문 중 하나로, [Earth BioGenome Project](https://www.pnas.org/doi/10.1073/pnas.2115639118, "Earth BioGenome Project")의 Supplementary Figure S1에 자세히 기술되어 있습니다.
@@ -61,7 +61,7 @@ Standard quality metric을 제시한 논문 중 하나로, [Earth BioGenome Proj
 * 길이로 따졌을 때 90% 이상의 contig가 scaffold에 포함되고 fusion/fission/translocation 등이 다른 실험 방법으로 확인됐는지 검증한 것
 
 을 의미합니다.
-<br><br>
+<br /><br />
 
 
 ## Contig Length
@@ -70,36 +70,36 @@ Standard quality metric을 제시한 논문 중 하나로, [Earth BioGenome Proj
 [N50](https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics, "N50")은 quality metric 중 하나로 read/contig/scaffold에 모두 적용됩니다.
 
 우선 read/contig/scaffold를 길이가 긴 것부터 정렬합니다. 그 길이를 순차적으로 하나씩 더했을 때, 전체 길이의 절반이 넘는 순간 그에 해당하는 read/contig/scaffold의 길이를 N50으로 정의합니다. 그림에서 전체 길이는 135bp이며 50%는 약 68bp입니다. 길이가 긴 것부터 정렬한 뒤 68bp를 넘는 시점의 read/contig/scaffold는 30bp입니다. 즉, N50은 30bp입니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/longread15.webp)
-_N50<br>
+_N50<br />
 https://www.edwith.org/longread-seq-2023/lecture/1475113_
-<br><br>
+<br /><br />
 
 
 NGx plot은 각 contig의 길이(=y축: contig나 scaffold length)와 누적 합을 전체 genome length로 나눈 비율(=x측: cumulative coverage)로 표현한 plot입니다.)
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/longread16.webp)
-_NGx Plot<br>
+_NGx Plot<br />
 https://www.edwith.org/longread-seq-2023/lecture/1475113_
-<br><br>
+<br /><br />
 
 
 ## BUSCO
 ***
 
 BUSCO(Benchmarking Universal Single-Copy Orthologs)는 기존에 알려진 lineage-specific single-copy ortholog 유전자들이 제대로 assembly 됐는지 확인하는 tool입니다. 
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/longread17.webp)
-_BUSCO Plot<br>
+_BUSCO Plot<br />
 https://www.edwith.org/longread-seq-2023/lecture/1475113_
-<br><br>
+<br /><br />
 
 
 ## Take Home Message

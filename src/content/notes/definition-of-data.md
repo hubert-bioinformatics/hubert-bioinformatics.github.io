@@ -12,7 +12,7 @@ source: manual
 ## Intro
 ***   
 SQL의 개념을 이해하고 설명할 수 있습니다. 데이터베이스를 정의하여 활용할 수 있습니다. 테이블을 정의하여 활용할 수 있습니다.   
-<br>
+<br />
 
 
 ## SQL 개요
@@ -25,23 +25,23 @@ SQL의 개념을 이해하고 설명할 수 있습니다. 데이터베이스를 
       4. MySQL, DB2, SQL Server, ORACLE, INFORMIX, SYBASE 등 관계형데이터베이스에서 모두 사용합니다.
    2. SQL 발전과정   
 ![Post-Image](../../assets/post/DBMS-DB11.webp)
-_SQL 발전과정<br>
+_SQL 발전과정<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    3. SQL 특징   
 ![Post-Image](../../assets/post/DBMS-DB12.webp)
-_SQL 특징<br>
+_SQL 특징<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    4. 관계 연산과 SQL   
 ![Post-Image](../../assets/post/DBMS-DB13.webp)
-_관계 연산과 SQL<br>
+_관계 연산과 SQL<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 2. SQL 명령어
    1. SQL 명령어 종류   
 ![Post-Image](../../assets/post/DBMS-DB14.webp)
-_SQL 명령어 종류<br>
+_SQL 명령어 종류<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 ![Post-Image](../../assets/post/DBMS-DB15.webp)
-_SQL 명령어 예<br>
+_SQL 명령어 예<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 
 ## 데이터베이스 정의
@@ -49,21 +49,21 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
 1. 데이터 저장 구조  
    1. 관계형 DBMS   
 ![Post-Image](../../assets/post/DBMS-DB16.webp)
-_관계형 DBMS<br>
+_관계형 DBMS<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    2. ORACLE 데이터 저장 구조   
       1. 무결성을 강조하는 구조로 금융권에서 많이 사용합니다.
       2. MySQL/MariaDB 저장 구조도 이와 유사합니다.   
 ![Post-Image](../../assets/post/DBMS-DB17.webp)
-_ORACLE 데이터 저장 구조<br>
+_ORACLE 데이터 저장 구조<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_      
 ![Post-Image](../../assets/post/DBMS-DB18.webp)
-_ORACLE 데이터 저장 구조<br>
+_ORACLE 데이터 저장 구조<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 2. SQL을 이용한 데이터베이스 생성   
    1. CREATE DATABASE 명령어 - SQL Server, MySQL/MariaDB   
 ![Post-Image](../../assets/post/DBMS-DB19.webp)
-_SQL 명령어 종류<br>
+_SQL 명령어 종류<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_      
 
 ## 테이블 정의
@@ -71,17 +71,17 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
 1. SQL 테이블 정의  
    1. 테이블 구조   
 ![Post-Image](../../assets/post/DBMS-DB20.webp)
-_SQL 테이블 구조<br>
+_SQL 테이블 구조<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    2. CREATE TABLE 명령어   
 ![Post-Image](../../assets/post/DBMS-DB21.webp)
-_CREATE TABLE 명령어 - 형식<br>
+_CREATE TABLE 명령어 - 형식<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_      
 ![Post-Image](../../assets/post/DBMS-DB22.webp)
-_CREATE TABLE 명령어 - 컬럼 제약<br>
+_CREATE TABLE 명령어 - 컬럼 제약<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 ![Post-Image](../../assets/post/DBMS-DB23.webp)
-_CREATE TABLE 명령어 - 테이블 제약<br>
+_CREATE TABLE 명령어 - 테이블 제약<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 2. 제약조건   
    1. 정의   
@@ -90,53 +90,53 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
       3. 'NOT NULL', 'PRIMARY KEY', 'UNIQUE', 'DEFAULT', 'CHECK', 'FOREIGN KEY'가 존재합니다.
    2. 'PRIMARY KEY' 제약조건   
 ![Post-Image](../../assets/post/DBMS-DB24.webp)
-_PRIMARY KEY 제약조건<br>
+_PRIMARY KEY 제약조건<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    3. 'NOT NULL' 제약조건   
 ![Post-Image](../../assets/post/DBMS-DB25.webp)
-_NOT NULL 제약조건<br>
+_NOT NULL 제약조건<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    4. 'DEFAULT' 제약조건   
 ![Post-Image](../../assets/post/DBMS-DB26.webp)
-_DEFAULT 제약조건<br>
+_DEFAULT 제약조건<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    5. 'CHECK' 제약조건   
       1. 'CKECK' 제약조건을 사용하면 데이터의 무결성을 지킬 수 있지만 작업의 로드가 높아질 수 있는 단점이 있습니다.   
 ![Post-Image](../../assets/post/DBMS-DB27.webp)
-_CHECK 제약조건<br>
+_CHECK 제약조건<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    6. 'UNIQUE' 제약조건   
 ![Post-Image](../../assets/post/DBMS-DB28.webp)
-_UNIQUE 제약조건<br>
+_UNIQUE 제약조건<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    7. 'FOREIGN KEY' 제약조건 - 테이블 정의 시   
 ![Post-Image](../../assets/post/DBMS-DB29.webp)
-_FOREIGN KEY' 제약조건 - 테이블 정의 시<br>
+_FOREIGN KEY' 제약조건 - 테이블 정의 시<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    8. 'FOREIGN KEY' 제약조건 - 제약조건 추가   
 ![Post-Image](../../assets/post/DBMS-DB30.webp)
-_FOREIGN KEY' 제약조건 - 제약조건 추가<br>
+_FOREIGN KEY' 제약조건 - 제약조건 추가<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 3. SQL 테이블 변경
    1. 테이블 삭제 명령어   
 ![Post-Image](../../assets/post/DBMS-DB31.webp)
-_테이블 삭제 명령어<br>
+_테이블 삭제 명령어<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    2. 테이블 변경 명령어   
 ![Post-Image](../../assets/post/DBMS-DB32.webp)
-_테이블 변경 명령어<br>
+_테이블 변경 명령어<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    3. 컬럼의 추가   
 ![Post-Image](../../assets/post/DBMS-DB33.webp)
-_컬럼의 추가<br>
+_컬럼의 추가<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    4. 컬럼의 수정   
 ![Post-Image](../../assets/post/DBMS-DB34.webp)
-_컬럼의 수정<br>
+_컬럼의 수정<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    5. 컬럼의 삭제
 ![Post-Image](../../assets/post/DBMS-DB35.webp)
-_컬럼의 삭제<br>
+_컬럼의 삭제<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 
 ## Take Home Message

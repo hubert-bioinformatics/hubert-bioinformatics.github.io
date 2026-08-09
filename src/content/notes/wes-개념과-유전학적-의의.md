@@ -12,7 +12,7 @@ source: manual
 ***
 
 WES의 개념, 역사, 장단점, 실험적 과정, 의학유전학적 의의를 이해합니다.
-<br><br>
+<br /><br />
 
 
 ## WES의 개념
@@ -61,7 +61,7 @@ Human genome에 관련된 몇 가지 유전학 내용을 먼저 알아봅시다.
 8. \# of variants that are specific to yourself?
 
    부모로부터 유전된 variants까지 모두 제거하면 count 가능
-<br><br>
+<br /><br />
 
 
 ## WES의 장단점
@@ -76,16 +76,16 @@ Human genome에 관련된 몇 가지 유전학 내용을 먼저 알아봅시다.
    2. Not all genes are covered
    3. Low sensitivity toward structural variations
    4. Variable coverage pattern
-<br><br>
+<br /><br />
 
 
 ## WES Process
 ***
 
 ![Post-Image](../../assets/post/WES-process.webp)
- _WES Process<br>
+ _WES Process<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 WES는 그림과 같은 process를 따라 진행합니다.
@@ -95,16 +95,16 @@ WES는 그림과 같은 process를 따라 진행합니다.
 3. Wash/elute: Exon만 남기고 나머지 region은 씻어 버립니다.
 4. Sequencing: Exon 영역을 sequencing 합니다.
 5. Computational pipeline: WES 분석을 진행한 뒤 disease associated novel variants를 찾아냅니다.
-<br><br>
+<br /><br />
 
 
 ## WES 유전학적 의의
 ***
 
 ![Post-Image](../../assets/post/WES-use.webp)
- _WES 유전학적 의의<br>
+ _WES 유전학적 의의<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 2015년 논문에 발표된 내용에 따르면 human genes의 약 52%가 Mendelian phenotypes와 어떻게 연결되는지 알 수 없었습니다.
@@ -112,29 +112,29 @@ WES는 그림과 같은 process를 따라 진행합니다.
 하지만 2020년 OMIM database 내용에 따르면 그 숫자가 약 30%로 감소 했습니다.
 
 예전보다 human genome과 phenotype 사이 더 많은 사실관계를 확인한 것입니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/WES-use2.webp)
- _WES 발전과 MC 증가<br>
+ _WES 발전과 MC 증가<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 1990년대 sequencing 기술이 발전하면서 human genes-Mendelian condition의 상관관계 뿐만이 아니라 new Mendelian condition 발견도 증가했습니다. 특히 WES 방식이 널리 사용되면서 그 숫자는 폭발적으로 증가했습니다.
 
 뿐만 아니라 과거에는 전통적인 방식으로 human genes를 확인했다면 2010년 이후에는 NGS가 그 방식을 대체하고 있습니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/WES-use3.webp)
- _WES의 유전학적 의의<br>
+ _WES의 유전학적 의의<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 위 그래프에서 보는 것과 같이 WES의 사용은 new novel gene 확인 속도를 증가시켰습니다. 또한 과거에는 pheotype으로부터 시작하여 syndrome을 확인했다면, 현재는 genotype으로부터 syndrome을 확인하는 방식으로 변화했습니다. 즉, 수 천명의 환자를 대상으로 WES를 시행한 뒤 genotype을 가지고 syndrome과의 관계를 연구하는 것입니다.
-<br><br>
+<br /><br />
 
 
 ## Summary

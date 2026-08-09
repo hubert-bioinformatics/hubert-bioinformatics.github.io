@@ -13,7 +13,7 @@ source: manual
 힙 정렬은 힙 자료구조를 기반으로 동작하는 알고리즘 입니다.
 
 힙 정렬은 평균 시간 복잡도와 최악 시간 복잡도 모두 $$ \theta(nlogn) $$으로 빠른 정렬 알고리즘입니다.
-<br><br>
+<br /><br />
 
 
 ## 구현
@@ -60,7 +60,7 @@ def heap_sort(array):
 
 print(heap_sort(array))
 ```
-<br><br>
+<br /><br />
 
 
 ## 시간 복잡도

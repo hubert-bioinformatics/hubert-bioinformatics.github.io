@@ -12,7 +12,7 @@ source: manual
 ## Intro
 ***
 데이터베이스의 개념과 관계형 모델의 개념에 대해 알아봅니다. 그리고 관계형 모델을 다루는 SQL 언어에 대해 설명할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ## 데이터베이스 개요
@@ -24,13 +24,13 @@ source: manual
     1. A collection of related data (Fundamentals of Database System, Elmasri and Navathe)
     
     2. An organized collection of data, generally stored and accessed electronically from a compyter system (wikipedia)
-    <br><br>
+    <br /><br />
 
-2. 데이터베이스 특성<br>
+2. 데이터베이스 특성<br />
 ![Post-Image](../../assets/post/DBMS-DB1.webp)
-_데이터베이스 특성<br>
+_데이터베이스 특성<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
-<br><br>
+<br /><br />
 
 
    1. 실시간 접근성(Real-time Accessibility)
@@ -60,34 +60,34 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
        2. 데이터베이스는 저장된 주소나 위치가 아닌 데이터의 내용(content), 즉 값(value)으로 참조합니다.
 
        3. 찾고자 하는 데이터의 내용 조건만 제시하면 조건에 맞는 데이터가 저장된 위치에 관계없이 모두 검색합니다.
-       <br><br>
+       <br /><br />
 
-3. 데이터베이스 구축 목적<br>
+3. 데이터베이스 구축 목적<br />
 ![Post-Image](../../assets/post/DBMS-DB2.webp)
-_데이터베이스 구축 목적<br>
+_데이터베이스 구축 목적<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
-<br><br>
+<br /><br />
 
 
-4. 데이터베이스 스키마(Schema)<br>
+4. 데이터베이스 스키마(Schema)<br />
 ![Post-Image](../../assets/post/DBMS-DB3.webp)
-_데이터베이스 스키마<br>
+_데이터베이스 스키마<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
-<br><br>
+<br /><br />
 
 
 ## 관계형 모델 개요
 ***
-1. 데이터 모델링<br>
+1. 데이터 모델링<br />
 ![Post-Image](../../assets/post/DBMS-DB4.webp)
-_데이터의 세계<br>
-http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br>
+_데이터의 세계<br />
+http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_<br />
 
     데이터 모델링이란 정보시스템을 구축하기 위해, 어떤 데이터가 존재하는지 또는 업무가 필요로 하는 정보는 무엇인지를 분석/표현하는 방법입니다. 또한 고객으로부터 데이터에 대한 요구사항을 파악하고, 프로젝트에 참여하는 분석자, 설계자, 개발자, 사용자 간의 효율적인 의사 소통을 위해 필수적인 과정입니다. 신규 또는 개선 시스템 개발을 위한 기초가 됩니다.
     
     데이터 모델링 단계는 아래와 같습니다.
 ![Post-Image](../../assets/post/DBMS-DB5.webp)
-_데이터 모델링 단계<br>
+_데이터 모델링 단계<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 
 2. 데이터 모델
@@ -95,35 +95,35 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
     데이터 모델이란 현실 세계를 데이터베이스로 표현하는 과정에서 데이터베이스의 구조를 개념적/논리적으로 표현하기 위해 사용되는 도구입니다.   
     데이터 모델의 종류와 장단점은 다음과 같습니다.   
 ![Post-Image](../../assets/post/DBMS-DB6.webp)
-_데이터 모델 종류<br>
+_데이터 모델 종류<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 ![Post-Image](../../assets/post/DBMS-DB7.webp)
-_데이터 모델 장단점<br>
+_데이터 모델 장단점<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 
 3. 관계 모델
 
     1970년 IBM 연구소의 "A relational model for large shared data banks"라는 논문에서 처음으로 소개된 모델입니다. Mathmatical relation의 개념을 사용해서 table의 형태로 표현합니다. 현재 대부분의 상업용 DBMS에서 지원합니다. (ORACLE, SQL Server, MySQL, IBM DB2 등)
 
-    관계 모델에서는 데이터베이스를 relation(table)의 집합으로 정의합니다. 즉, table 형태로 데이터를 저장하는 것입니다.<br>
+    관계 모델에서는 데이터베이스를 relation(table)의 집합으로 정의합니다. 즉, table 형태로 데이터를 저장하는 것입니다.<br />
 ![Post-Image](../../assets/post/DBMS-DB8.webp)
-_관계 모델 구조<br>
+_관계 모델 구조<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 ![Post-Image](../../assets/post/DBMS-DB9.webp)
-_관계 모델 용어 정의<br>
+_관계 모델 용어 정의<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 관계 모델의 특징은 다음과 같습니다.
    1. Set theory(집합이론)에 기초합니다.
    2. 한 relation에 포함된 tuple들은 모두 상이합니다.
    3. 모든 attribute 값은 atomic value(원자 값)입니다.
-   4. 한 relation을 구성하는 tuple과 attribute 사이에는 순서가 없습니다.<br><br>
+   4. 한 relation을 구성하는 tuple과 attribute 사이에는 순서가 없습니다.<br /><br />
 
 
 ## 관계형 모델과 SQL
 ***
-1. 데이터베이스 언어<br>
+1. 데이터베이스 언어<br />
 ![Post-Image](../../assets/post/DBMS-DB10.webp)
-_데이터베이스 언어<br>
+_데이터베이스 언어<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
 
 데이터베이스 언어는 데이터베이스를 정의하고 접근하기 위한 목적으로 만들어진 언어입니다. 데이터 정의어, 데이터 조작어, 데이터 제어어로 나뉩니다.   

@@ -12,7 +12,7 @@ source: manual
 ***
 
  Numeric data를 machine learning에 알맞은 feature로 변환하는 다양한 전략을 알아봅니다.
- <br><br>
+ <br /><br />
 
 
  * Scaling (4.1)
@@ -32,7 +32,7 @@ minmax_scale.fit_transform(feature)
 
 # Neural network는 min-max scaling을 권장합니다.
 ```
-<br><br>
+<br /><br />
 
 
  * Standardization
@@ -53,7 +53,7 @@ standardized = scaler.fit_transform(feature)
 robust_scaler = sklearn.preprocessing.RobustScaler()
 robust_standardized = robust_scaler.fit_transform(feature)
 ```
-<br><br>
+<br /><br />
 
 
  * Normalization (4.3)
@@ -73,7 +73,7 @@ normalizer.transform(feature)
 
 ## max: 각 row의 max 값으로 row의 값들을 나눕니다.
 ```
-<br><br>
+<br /><br />
 
 
  * Polynominal과 Interaction feature (4.4)
@@ -85,7 +85,7 @@ normalizer.transform(feature)
 
 # sklearn의 PolynominalFeatures class를 사용합니다.
 ```
-<br><br>
+<br /><br />
 
 
  * Feature Transformation (4.5)
@@ -98,7 +98,7 @@ new_transformer.transform(features)
 # pandas의 apply도 동일한 기능을 합니다.
 df.apply(new_function)
 ```
-<br><br>
+<br /><br />
 
 
  * Outlier (4.6)
@@ -116,7 +116,7 @@ houses['outlier'] = np.where(houses['kitchen'] < 3, 0, 1)
 ## 3. outlier 영향이 줄어들도록 feature 변환하기
 houses['log_of_square_feet'] = [np.log(x) for x in houses['square_feet']]
 ```
-<br><br>
+<br /><br />
 
 
  * Feature Binarization (4.8)
@@ -129,7 +129,7 @@ binarizer.fit_transform(age)
 # digitize: numeric feature를 여러 threshold에 따라 나눕니다.
 np.digitize(age, bins=[20, 30, 64])
 ```
-<br><br>
+<br /><br />
 
 
 ## Practice

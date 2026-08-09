@@ -12,7 +12,7 @@ source: manual
 ***
 
  Dimension reduction을 위한 feature extraction의 목적은 feature에 내제된 정보는 최대한 유지하면서 feature set $$\rho_{original}$$을 새로운 set $$\rho_{new}$$로 변환하는 것입니다. Feature extraction의 한 가지 단점은 새로운 set $$\rho_{new}$$를 사람이 이해하지 못한다는 것입니다. 해석 가능한 model을 유지하고 싶다면 feature selection 사용이 더 나은 방법입니다. 
- <br><br>
+ <br /><br />
 
 
  * PCA 사용 feature 줄이기 (9.1)
@@ -23,7 +23,7 @@ pca = sklearn.decomposition.PCA(n_components=0.99, wthien=True)
 
 # Data가 선형적으로 구분되면 (즉, 다른 class 사이에 line이나 hyperplane을 그릴 수 있다면) PCA가 잘 동작합니다.
 ```
-<br><br>
+<br /><br />
 
 
  * 선형적으로 구분되지 않는 data dimension reduction (9.2)
@@ -34,7 +34,7 @@ kpca = sklearn.decomposition.KernelPCA(kernel='rbf', gamma=15, n_components=1)
 
 # Kernel이란 data를 projection하는 한 가지 방법입니다. Kernel function은 선형적으로 구분되지 않는 data를 고차원으로 projection 시킵니다.
 ```
-<br><br>
+<br /><br />
 
 
  * Class 분리 최대화하여 feature 줄이기 (9.3)
@@ -48,7 +48,7 @@ kpca = sklearn.decomposition.KernelPCA(kernel='rbf', gamma=15, n_components=1)
 
 # 반면 LDA는 class간 차이를 최대화하는 추가적인 목적에도 관심이 있습니다. 또한 target vector를 사용합니다.
 ```
-<br><br>
+<br /><br />
 
 
  * Matrix 분해를 사용하여 feature 줄이기 (9.4)
@@ -66,7 +66,7 @@ H는 r*d matrix
 
 # r값을 조정하여 필요한 dimension reduction 양을 정할 수 있습니다.
 ```
-<br><br>
+<br /><br />
 
 
  * Sparse data의 feature 줄이기 (9.5)
@@ -78,7 +78,7 @@ H는 r*d matrix
 
 # Natural language process에서 TSVD는 LSA(Latent Semantic Analysis)로도 부릅니다.
 ```
-<br><br>
+<br /><br />
 
 
 ## Practice

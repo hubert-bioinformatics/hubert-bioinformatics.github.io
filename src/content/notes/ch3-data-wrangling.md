@@ -12,7 +12,7 @@ source: manual
 ***
 
  Data wrangling은 original data를 정제하고 사용 가능한 형태로 변환하는 과정을 광범위하게 의미하는 비공식 용어입니다. 가장 일반적인 structure는 dataframe입니다.
- <br><br>
+ <br /><br />
 
 
  * Dataframe 만들기 (3.1)
@@ -31,7 +31,7 @@ pd.DataFrame(np.array(data), columns=['a', 'b'])
 # dictionary 사용
 pd.DataFrame(dict)
 ```
-<br><br>
+<br /><br />
 
 
  * Data 설명 (3.2)
@@ -54,7 +54,7 @@ dataframe.corr()
 # numeric column covariance 확인 (3.7)
 dataframe.cov()
 ```
-<br><br>
+<br /><br />
 
 
 * Dataframe 탐색 (3.3)
@@ -70,7 +70,7 @@ dataframe.iloc[0]
  
 # loc, iloc method의 slicing은 python slicing과 달리 마지막 index를 포함합니다.
 ```
-<br><br>
+<br /><br />
    
 
 * Dataframe 수정
@@ -98,7 +98,7 @@ dataframe[dataframe.index != 0]
 
 # drop_duplicates: duplicate line 삭제 (3.12)
 ```
-<br><br>
+<br /><br />
    
 
 * Dataframe Unique 값 처리 (3.8)
@@ -115,7 +115,7 @@ dataframe['Name'].value_counts()
 # nunique: dataframe 전체 unique 값 count
 dataframe.nunique()
 ```
-<br><br>
+<br /><br />
 
 
 * Dataframe null 값 (3.9)
@@ -126,7 +126,7 @@ import pandas as pd
 # isnull/notnull: null 값 확인
 dataframe['Name'].isnull()
 ```
-<br><br>
+<br /><br />
 
 
 * Dataframe grouping
@@ -143,7 +143,7 @@ dataframe.resample('W').sum()
 # groupby로 row grouping한 뒤 각 group에 apply method 연결: group에 function 적용 (3.17)
 dataframe.groupbu('Name').apply(lambda x: x.count())
 ```
-<br><br>
+<br /><br />
 
 
 * Dataframe 모든 column element에 function 적용 (3.16)
@@ -158,7 +158,7 @@ dataframe['Name'].apply(lambda x, age: x < age, age=40)
 # map: apply와 비슷하지만 dictionary 사용 가능
 dataframe['Name'].map({True: 1, False: 0})
 ```
-<br><br>
+<br /><br />
 
 
 * Dataframe 연결 (3.18)
@@ -172,7 +172,7 @@ pd.concat([dataframe_a, dataframe_b], axis=0)
 # column 방향 연결: concat + axis=1
 pd.concat([dataframe_a, dataframe_b], axis=1)
 ```
-<br><br>
+<br /><br />
 
 
 * Dataframe merge (3.19)
@@ -192,7 +192,7 @@ pd.merge(dataframe_a, dataframe_b, left_on='Name', right_on='Age')
 # left_index/right_index: column 대신 index 기준으로 병합
 pd.merge(dataframe_a, dataframe_b, left_index=True, right_index=True)
 ```
-<br><br>
+<br /><br />
 
 
 * Summary in Summary
@@ -212,7 +212,7 @@ pd.merge(dataframe_a, dataframe_b, left_index=True, right_index=True)
         3. left: left dataframe의 모든 row return
 
         4. right: right dataframe의 모든 row return
-        <br><br>
+        <br /><br />
 
 
 ## Practice

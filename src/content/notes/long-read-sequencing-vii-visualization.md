@@ -15,44 +15,44 @@ source: manual
 ***
 
 * Visualization에 가장 널리 쓰이는 circos plot에 대해 알아봅니다.
-<br><br>
+<br /><br />
 
 
 ## Circos Plot
 ***
 
 [Circos Plot](http://circos.ca/, "Circos Plot")은 chromosome, alignment, SNP/SV density를 plotting하는데 유용한 tool입니다.
-<br><br>
+<br /><br />
 
 
 Human chromosome 별로 색상을 구분하여 그린 ideogram입니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/longread19.webp)
-_Human Ideogram<br>
+_Human Ideogram<br />
 https://www.edwith.org/longread-seq-2023/lecture/1475115_
-<br><br>
+<br /><br />
 
 
 Human chromosome 별로 gene density를 표현한 plot입니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/longread20.webp)
-_Gene Density<br>
+_Gene Density<br />
 https://www.edwith.org/longread-seq-2023/lecture/1475115_
-<br><br>
+<br /><br />
 
 
 위 plot에 alignment까지 추가한 plot입니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/longread21.webp)
-_Gene Density with alignments<br>
+_Gene Density with alignments<br />
 https://www.edwith.org/longread-seq-2023/lecture/1475115_
-<br><br>
+<br /><br />
 
 
 ## Take Home Message

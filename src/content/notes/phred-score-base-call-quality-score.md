@@ -9,7 +9,7 @@ source: manual
 ## Definition
 ***
 
- Sequencing 결과로 나온 base call이 얼마나 정확한지 나타내는 수치입니다. Fastq 파일 내 각 read의 네 번 째 line을 구성합니다. Phred+33 encoding과 ASCII 표기법을 사용합니다. 아래와 같은 계산식으로 score를 산출합니다.<br>
+ Sequencing 결과로 나온 base call이 얼마나 정확한지 나타내는 수치입니다. Fastq 파일 내 각 read의 네 번 째 line을 구성합니다. Phred+33 encoding과 ASCII 표기법을 사용합니다. 아래와 같은 계산식으로 score를 산출합니다.<br />
 
  $ Q = -10log_{10}^{(e)} $ 
 
@@ -50,7 +50,7 @@ plt.legend()
  Phred score 20 = probability of error 1% = call accuracy 99%
 
  Phred score 30 = probability of error 0.1% = call accuracy 99.9%
- <br><br>
+ <br /><br />
 
 
 ## Phred+33 encoding과 ASCII 표기법

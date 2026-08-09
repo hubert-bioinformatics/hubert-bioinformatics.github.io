@@ -12,7 +12,7 @@ source: manual
 ***
 
 WES 데이터 처리 단계와 주요 parameter를 소개합니다. WES 데이터의 질적 평가를 할 수 있습니다. WES 데이터 처리를 위한 파이프라인을 소개합니다. WES 데이터 처리의 예시를 수행합니다.
-<br><br>
+<br /><br />
 
 
 ## WES 데이터 처리 단계
@@ -29,9 +29,9 @@ WES 데이터 처리 단계와 주요 parameter를 소개합니다. WES 데이�
     picard를 주로 사용합니다.
 
     ![Post-Image](../../assets/post/WES-PCR.webp)
- _PCR duplicates<br>
+ _PCR duplicates<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 3. Variant calling
@@ -41,29 +41,29 @@ WES 데이터 처리 단계와 주요 parameter를 소개합니다. WES 데이�
 4. Variant annotation
 
     SnpEff를 주로 사용합니다.
-<br><br>
+<br /><br />
 
 
 ## WES 데이터의 각종 parameter
 ***
 
 ![Post-Image](../../assets/post/WES-parameter.webp)
- _Parameters of WES data<br>
+ _Parameters of WES data<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 ## WES 데이터 분석 파이프라인
 ***
 
 ![Post-Image](../../assets/post/WES-gatkbestpractice.webp)
- _GATK Best Practice<br>
+ _GATK Best Practice<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 WES 분석 파이프라인은 [GATK best practice](https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-variant-discovery-SNPs-Indels-, "GATK best practice")가 가장 잘 알려져 있고 손쉽게 따라할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ## Summary

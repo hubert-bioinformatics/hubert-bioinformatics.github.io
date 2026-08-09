@@ -14,26 +14,26 @@ source: manual
 ## Intro
 ***
 RNA-seq data의 mapping, normalization, quantification에 대해 알아봅니다.
-<br><br>
+<br /><br />
 
 
 ## Quality Control
 ***
 - Sequencing data를 얻으면 base quality(Q score)를 확인합니다.
 - 사용 가능한 프로그램으로 FastQC, MultiQC, PRINSEQ, RSeQC 등이 있습니다.
-<br><br>
+<br /><br />
 
 
 ## Trimming
 ***
 - Mapping 전 contaminated or low-quality reads를 제거하는 과정입니다.
 - 사용 가능한 프로그램으로 Sickle, FASTX-Toolkit, Cutadapt, Trimmomatic 등이 있습니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig8.webp)
-_Reads Trimming<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Reads Trimming<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 
 ## Sample Validation
@@ -48,22 +48,22 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
 - Ethnicity inference
     - 인종별로 나타나는 allele에 기반하여 ethnicity를 추정하는 방법으로 WGS or WES data를 대상으로 사용 가능합니다.
     - tool: SeqSQC, EthSEQ, LASER 2.0
-    <br><br>
+    <br /><br />
 
 
 ## Mapping
 ***
 ![Post-Image](../../assets/post/transcriptome-fig9.webp)
-_RNA-Seq Mapping<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_RNA-Seq Mapping<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - 다양한 mapping 방법이 있습니다. 최근에는 genome에 mapping하는 방법이 주로 사용됩니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig10.webp)
-_Strategies for gapped alignments<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Strategies for gapped alignments<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - RNA-Seq data를 genome에 mapping하는 방식은 크게 두 가지로 나눠 생각할 수 있습니다.
     - Exon-first approach
@@ -73,22 +73,22 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
     - Seed-extend methods
         - N-mer의 seed reads가 어디에 matching 되는지 확인 후 확장시켜 나가는 방식입니다.
         - tool: GSNAP, QPALMA
-        <br><br>
+        <br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig11.webp)
-_Tophat: Spliced Read Mapper<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Tophat: Spliced Read Mapper<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - Tophat - spliced read mapper
     - Exon 내 mapping되는 reads를 먼저 선별합니다.
     - 두 개의 exon에 걸쳐있는 reads는 각각 exon 영역에 맞는 영역으로 나눕니다. 이 때 canonical intron이 지니고 있는 특징적인 서열(intron의 시작과 끝 서열: GT-AG, GC-AG, AT-AC)을 활용합니다.
-    <br><br>
+    <br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig12.webp)
-_STAR: spliced transcripts alignment to a reference<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_STAR: spliced transcripts alignment to a reference<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - STAR - spliced transcripts alignment to a reference
     - step1. seed searching
@@ -103,18 +103,18 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
     - 동일한 data의 mapping에 TopHat2는 480분, STAR는 27분 소요됐습니다. STAR가 월등히 빠른 것을 알 수 있습니다.
     - 하지만 정확도는 TopHat2가 약간 더 앞선 결과를 보였습니다.
     - STAR를 사용하는 것이 더 효율적인 방법임을 생각해 볼 수 있습니다.
-    <br><br>
+    <br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig13.webp)
-_SAM/BAM<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_SAM/BAM<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - Alignment Data Format (SAM/BAM)
     - mapping 결과로 나오는 output 파일입니다.
     - 6th column의 CIGAR string은 mapping 결과를 요약해서 보여주는데, RNA-Seq data에서 N은 intron 영역을 의미합니다.
     - 예) 5M14N8M: exon 5bp + intron 14bp + exon 8bp
-    <br><br>
+    <br /><br />
 
 
 ## Normalization
@@ -132,33 +132,33 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
         - 'background' correction
     - RNA-Seq과 관련된 이슈가 있습니다.
         - uneven depth of coverage
-        - uncertainties in **mapping and quantification**<br>
+        - uncertainties in **mapping and quantification**<br />
 
 ![Post-Image](../../assets/post/transcriptome-fig14.webp)
-_Normalization<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Normalization<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - Normalization은 데이터의 분포와 scale을 조정하여 데이터간 비교 가능하도록 만드는 과정입니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig15.webp)
-_Normalization for microarray data<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Normalization for microarray data<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - Microarray data의 normalization은 여러 가지 방법이 존재합니다.
-- 오른쪽 아래 그림을 보면 실제 duplicate였던 색상별 reads가 normalization 이후 동일한 수준으로 변경되었음을 확인할 수 있습니다.<br><br>
+- 오른쪽 아래 그림을 보면 실제 duplicate였던 색상별 reads가 normalization 이후 동일한 수준으로 변경되었음을 확인할 수 있습니다.<br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig16.webp)
-_Normalization for RNA-Seq data<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Normalization for RNA-Seq data<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - RNA-Seq data를 normalization 할 때 두 가지 사항을 고려해야 합니다.
     - 1-2: Sequencing depth가 높을수록(2) mapped reads도 증가합니다.
     - 3-4: transcript length가 길수록(4) mapped reads도 증가합니다.
 - 따라서 sequencing depth, transcript length에 대해 normalization이 필요합니다.
-<br><br>
+<br /><br />
 
 
 - RPKM
@@ -173,14 +173,14 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
     - normalization order: length first -> then depth
     - TPM values can be compared between different samples directly because the sum of all TPMs in each sample art the same
     - 지금은 TPM이 정석처럼 사용되고 있습니다.
-    <br><br>
+    <br /><br />
 
 
 ## Quanltification
 ***
 ![Post-Image](../../assets/post/transcriptome-fig17.webp)
-_Read Counting Rules<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Read Counting Rules<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - gene 하나의 uniquely mapping되는 read가 있지만 복수 개의 genes에 걸쳐서 mapping되는 경우도 있습니다.
 - 다음과 같은 방법으로 이러한 문제를 처리합니다.
@@ -194,14 +194,14 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
     - Expectation-Maximization
         - 현재 가장 많이 사용하는 방식입니다.
         - tool: **RSEM**, eXpress
-        <br><br>
+        <br /><br />
 
 
 ## RNA-Seq Analysis Pipeline
 ***
 ![Post-Image](../../assets/post/transcriptome-fig18.webp)
-_STAR-RSEM Anlysis Pipeline<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_STAR-RSEM Anlysis Pipeline<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - Sickle / STAR / RSEM 을 사용한 RNA-Seq analysis pipeline 입니다.
     - Trimming: Sickle
@@ -209,29 +209,29 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
     - Quantification: RSEM v1.3.0
     - Differential expression analysis: R v3.6.0 (package: edgeR, preprocessCore, gplots, RColorbrewer)
     - Fusion analysis: STARfusion v1.6.0
-    <br><br>
+    <br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig19.webp)
-_STAR-RSEM Anlysis Pipeline: trimming<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_STAR-RSEM Anlysis Pipeline: trimming<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 ![Post-Image](../../assets/post/transcriptome-fig20.webp)
-_STAR-RSEM Anlysis Pipeline: preparing reference<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_STAR-RSEM Anlysis Pipeline: preparing reference<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 ![Post-Image](../../assets/post/transcriptome-fig21.webp)
-_STAR-RSEM Anlysis Pipeline: mapping & quantification<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_STAR-RSEM Anlysis Pipeline: mapping & quantification<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 ![Post-Image](../../assets/post/transcriptome-fig22.webp)
-_STAR-RSEM Anlysis Pipeline: mapping & quantification<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_STAR-RSEM Anlysis Pipeline: mapping & quantification<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 ![Post-Image](../../assets/post/transcriptome-fig23.webp)
-_STAR-RSEM Anlysis Pipeline: mapping & quantification<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
-<br><br>
+_STAR-RSEM Anlysis Pipeline: mapping & quantification<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
+<br /><br />
 
 
 ## Take Home Message

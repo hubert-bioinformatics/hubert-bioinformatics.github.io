@@ -12,16 +12,16 @@ source: manual
 ***
 
 Compound geterozygous, rare homozygous, hemizygous variants 의미를 이해합니다. 각 recessive variants에 맞는 filtering criteria를 이해합니다.
-<br><br>
+<br /><br />
 
 
 ## Trio-based Mendelian Disorder Research
 ***
 
 ![Post-Image](../../assets/post/WES-trio.webp)
- _Trio-based Mendelian Disorder<br>
+ _Trio-based Mendelian Disorder<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 1번 pedigree는 부모 한 쪽에 dominant variant를 가지고 있어서 자녀에게도 disease가 유전된 경우를 보여주고 있습니다.
@@ -31,16 +31,16 @@ Compound geterozygous, rare homozygous, hemizygous variants 의미를 이해합�
 3번 pedigree는 부모 모두 variant가 없고 정상이지만 자녀에게서 dominant variant가 발생하여 disease가 발현된 경우를 보여주고 있습니다.
 
 1번, 3번 pedigree는 dominant variants 경우를, 2번은 recessive variants 경우를 보여주고 있습니다.
-<br><br>
+<br /><br />
 
 
 ## Dominant vs Recessive
 ***
 
 ![Post-Image](../../assets/post/WES-recessive.webp)
- _Dominant vs Recessive<br>
+ _Dominant vs Recessive<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 Dominant variants인 De novo variants와 De novo CNV(structural variants)가 약 2/3 가량, recessive variants인 나머지가 약 1/3 가량을 차지합니다.
@@ -53,24 +53,24 @@ Recessive variants는 오른쪽 그림과 같이 여러 가지 종류로 분류�
 * Compound Heterozygous (in cis): 하나의 gene에 **두 개의 서로 다른 position**에서의 variants가 **동일한 allele**에 존재하는 경우입니다.
 
 ![Post-Image](../../assets/post/WES-recessive2.webp)
- _Dominant vs Recessive<br>
+ _Dominant vs Recessive<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 ## Importance of Understanding Recessive Variants
 ***
 
 ![Post-Image](../../assets/post/WES-recessive_variants_importance.webp)
- _Importance of Understanding Recessive Variants<br>
+ _Importance of Understanding Recessive Variants<br />
  www.edwith.org/wes-beginner_
-<br><br>
+<br /><br />
 
 
 Recessive variants가 유발하는 대표적인 disease로 $\beta$-thalassaemia와 Ty-Sachs disease가 있습니다. 각각 HBB, HEXA gene의 variants로 유발되는 disease이며 specific population에서 높은 발병률을 보입니다. 어떤 recessive variants가 disease를 유발하는지 이해한 뒤로 보인자인 남녀가 결혼을 하거나 자녀를 출생하기 전 자녀의 disease 발병을 예방할 수 있습니다. 그래프에서 시간이 지남에 따라 $\beta$-thalassaemia의 새로운 환자 발병률이 점점 감소하는 것으로 볼 수 있습니다.
 
 실제로 Myriad사에서는 [Foresight Carrier Screen](https://myriad.com/womens-health/patient-foresight/, "Foresight Carrier Screen") 서비스를 제공하고 있습니다. 175개 이상의 genetic diseases 대상으로 남녀의 carrier 보유 여부를 검사하고 결과를 제공합니다.
-<br><br>
+<br /><br />
 
 
 ## Call Compound Heterozygous Variants
@@ -89,7 +89,7 @@ Recessive variants가 유발하는 대표적인 disease로 $\beta$-thalassaemia�
     다수의 정상인이 보유하고 있는 variants라면 disease를 유발할 가능성이 떨어집니다. 따라서 위와 같은 정상인 variants database에서 AF 0.01보다 작은 variants를 선별합니다.
 
 3. One mutation should come from paternal. Another from maternal.
-<br><br>
+<br /><br />
 
 
 ## Call Rare Homozygous Variants
@@ -106,7 +106,7 @@ Recessive variants가 유발하는 대표적인 disease로 $\beta$-thalassaemia�
 2. Check allele frequencies(AF) of genome databases like gnomAD, ExAC, 1000 genome, etc
 
     다수의 정상인이 보유하고 있는 variants라면 disease를 유발할 가능성이 떨어집니다. 하지만 정상인이 보유하고 있는 variants가 recessive 형태일 수 있고 결과적으로 환자가 가진 homozygous 형태에서는 AF가 그보다 높게 나타날 수 있습니다. 따라서 AF가 낮되 다른 recessive variants와 비교해서는 너무 낮지 않도록 고려합니다.
-<br><br>
+<br /><br />
 
 
 ## Call Hemizygous Variants
@@ -127,7 +127,7 @@ Recessive variants가 유발하는 대표적인 disease로 $\beta$-thalassaemia�
 3. Should be very conserved
 
     Check the number of different amino acid among species
-<br><br>
+<br /><br />
 
 
 ## Summary

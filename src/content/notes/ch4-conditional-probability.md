@@ -12,7 +12,7 @@ source: manual
 ***
 
  사건의 독립(independence)과 조건부 확률(conditional probability)의 개념을 이해하고 적용할 수 있습니다.
- <br><br>
+ <br /><br />
 
 
 ## Independence
@@ -20,12 +20,12 @@ source: manual
 
  독립의 정의는 다음과 같습니다.
 
- > Events A, B are **independnet** if $P(A \cap B) = P(A)P(B)$<br>Note: completely different from disjointness(서로소)
+ > Events A, B are **independnet** if $P(A \cap B) = P(A)P(B)$<br />Note: completely different from disjointness(서로소)
 
  사건 A, B가 독립이라면 사건 A의 발생은 B의 발생 여부에 어떤 영향도 끼치지 않습니다.
  
  혼동하기 쉬운 개념으로 서로소(disjoint)가 있습니다. 사건 A, B가 서로소라면 A가 발생했을 때 B는 발생할 수 없는 경우입니다. 독립과 완전히 다른 개념입니다.
- <br><br>
+ <br /><br />
 
 
 ## Newton-Pepys Problem (1963)
@@ -43,14 +43,14 @@ source: manual
 
  'at least'라는 표현이 나오면 합집합을 떠올립니다. 또한 합집합의 여집합은 교집합니다. 모든 사건이 독립이므로 교집합은 각 사건 확률의 곱셈으로 계산할 수 있습니다.
 
- 1. $P(A) = 1 - (\frac{5}{6})^6 \approx 0.665$<br><br>
+ 1. $P(A) = 1 - (\frac{5}{6})^6 \approx 0.665$<br /><br />
 
- 2. $P(B)$ = 1 - (6이 한 번도 안 나올 확률 + 6이 딱 한 번 나올 확률)<br><br>
-  $= 1 - \{(\frac{5}{6})^{12} + \frac{1}{6} * (\frac{5}{6})^{11} * 12\} \approx 0.619$<br><br>
+ 2. $P(B)$ = 1 - (6이 한 번도 안 나올 확률 + 6이 딱 한 번 나올 확률)<br /><br />
+  $= 1 - \{(\frac{5}{6})^{12} + \frac{1}{6} * (\frac{5}{6})^{11} * 12\} \approx 0.619$<br /><br />
  3. $P(C) = 1 - \Sigma_{k=0}^{2}(\frac{18}{k})(\frac{1}{6})^k(\frac{5}{6})^{18-k} \approx 0.597$
 
  따라서 A가 발생할 확률이 가장 높습니다.
- <br><br>
+ <br /><br />
 
 
 ## Conditional Probability
@@ -93,7 +93,7 @@ source: manual
  정리 3) **$P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}$, Bayes' Theorem (베이즈 정리)**
 
 
- <br><br>
+ <br /><br />
 
 
 ## IMO

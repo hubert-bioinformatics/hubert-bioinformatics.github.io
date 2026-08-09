@@ -15,7 +15,7 @@ source: manual
 ***
 
 * R 프로그래밍의 데이터 시각화를 학습합니다.
-<br><br>
+<br /><br />
 
 
 ## 데이터 시각화
@@ -24,7 +24,7 @@ source: manual
 데이터의 의미를 통찰하고 전달하는 가장 좋은 방법은 시각적으로 표현하는 것입니다. 데이터 시각화는 데이터를 관찰하는 과정에서 선택 사항이 아니라 반드시 거쳐야 하는 필수 과정입니다.
 
 기술 통계량은 데이터 특성을 파악하기 위해 데이터를 요약한 값입니다. 기술 통계량 관련 함수는 다음과 같습니다.
-<br><br>
+<br /><br />
 
 
 | 함수 | 기능 | x <- 1:10 일 때 결과 |
@@ -41,11 +41,11 @@ source: manual
 | IQR | 사분위수 범위 | IQR(x) -> 4.5 |
 | cor | 상관계수 | - |
 
-<br><br>
+<br /><br />
 
 
 예제 데이터를 통해 데이터 시각화의 필요성을 알아보겠습니다. anscombe 예제 데이터에서 통계 지표와 분석 수치만으로 비교해보면 네 개의 데이터 셋은 거의 동일하다고 판단할 수 있습니다. 하지만 그래프로 나타내보면 서로 다른 분포를 가진 데이터임을 알 수 있습니다. 이처럼 데이터 시각화를 통해 데이터를 파악하는 것은 매우 중요합니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -89,13 +89,13 @@ plot(anscombe$x2, anscombe$y2)
 plot(anscombe$x3, anscombe$y3)
 plot(anscombe$x4, anscombe$y4)
 ```
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Rprogramming13.png)
-_데이터 시각화 필요성<br>
+_데이터 시각화 필요성<br />
 https://www.laidd.org/local/ubonline/view.php?id=181&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPSZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
-<br><br>
+<br /><br />
 
 
 ## 데이터 시각화의 기본 기능
@@ -112,7 +112,7 @@ https://www.laidd.org/local/ubonline/view.php?id=181&group=1&returnurl=aHR0cHM6L
 * 평균적인 경향과 더불어 이상값(outlier)도 발견할 수 있습니다.
 
 * 데이터에서 문제를 빨리 찾아낼 수 있습니다.
-<br><br>
+<br /><br />
 
 
 
@@ -137,7 +137,7 @@ https://www.laidd.org/local/ubonline/view.php?id=181&group=1&returnurl=aHR0cHM6L
 | if문 활용 (if / else if / else) | if(조건식) 표현식 |
 | ifelse문 활용 | ifelse(조건식, 참인 경우 반환값, 거짓인 경우 반환값) |
 
-<br><br>
+<br /><br />
 
 
 ```r
@@ -217,23 +217,23 @@ sqrt(x)
 sqrt(ifelse(x>=0, x, NA)) # NaN이 발생하지 않게 음수면 NA로 표시
 # [1]   NA   NA   NA   NA   NA 0.00 1.00 1.41 1.73 2.00 2.24
 ```
-<br><br>
+<br /><br />
 
 
 ## 데이터 정제를 위한 반복문
 ***
 
 데이터 검토 시 반복적으로 값을 변경하면서 사용해야 하는 경우에 사용합니다. R에서 제공하는 반복문은 repeat, while, for 문이 있습니다.
-<br><br>
+<br /><br />
 
 
 | 반복문 | 의미 |
 | --- | --- |
 | repeat {</br>    반복 수행할 문장</br>} | 블록 안의 문장을 반복해서 수행합니다. |
 | while(조건식) {</br>    조건식이 참일 때 수행할 문장</br>} | 조건식이 참일 때 블록 안의 문장을 수행합니다. |
-| for(변수 in 데이터) {</br>    반복 수행할 문장<br>} | 데이터의 각 요소를 변수에 할당하면서 각각에 대해 블록 안의 문장을 수행합니다. |
+| for(변수 in 데이터) {</br>    반복 수행할 문장<br />} | 데이터의 각 요소를 변수에 할당하면서 각각에 대해 블록 안의 문장을 수행합니다. |
 
-<br><br>
+<br /><br />
 
 
 ```r
@@ -289,7 +289,7 @@ for(i in 1:10) {
 #[1] 5
 #[1] 7
 ```
-<br><br>
+<br /><br />
 
 
 ## 사용자 정의 함수: 원하는 기능 묶기
@@ -298,7 +298,7 @@ for(i in 1:10) {
 함수는 입력과 출력간의 관계식을 의미합니다. 사용자의 목적에 맞는 다양한 함수를 만들 수 있습니다.
 
 사용자 정의 함수의 구조는 아래와 같습니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -322,7 +322,7 @@ fact = function(x) { # 함수의 이름은 fact, 입력은 x
 fact(5) # 5 factorial을 계산한 결과 출력
 #[1] 120
 ```
-<br><br>
+<br /><br />
 
 
 ## 결측값 처리
@@ -331,7 +331,7 @@ fact(5) # 5 factorial을 계산한 결과 출력
 데이터에는 결측값(missing value)이 존재할 수 있는데, 데이터 중 고의 또는 실수로 누락된 값을 의미합니다. 결측값을 그대로 놔둔 채 데이터 가공을 하면 결과값에 오류가 뜨거나 잘못된 연산이 수행될 수 있으므로 정제과정에서 적절한 처리가 필요합니다.
 
 결측값 처리에는 다음과 같은 방법이 있습니다.
-<br><br>
+<br /><br />
 
 
 | 방법 | 설명 |
@@ -340,7 +340,7 @@ fact(5) # 5 factorial을 계산한 결과 출력
 | na.omit 함수 이용 | NA인 데이터를 제거합니다.</br>즉, NA가 포함된 행을 지웁니다. |
 | 함수의 속성 이용 | na.rm=T로 하여 함수 수행 시 NA를 제외합니다. |
 
-<br><br>
+<br /><br />
 
 
 ```r
@@ -356,14 +356,14 @@ mean(air_narm$Ozone)
 mean(airquality$Ozone, na.rm=T)
 #[1] 42.1
 ```
-<br><br>
+<br /><br />
 
 
 ## 이상값 처리
 ***
 
 결측값과 더불어 데이터에는 논리적 혹은 통계학적으로 이상한 데이터가 입력되어 있을 수 있습니다. 이러한 데이터를 이상값(outlier)이라 합니다. 통계학에서 이상값이란 다른 관측값과 멀리 떨어진 관측값입니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -404,11 +404,11 @@ patirents_outrm1
 #2 환자2  20      F          O
 #3 환자3  25      M          B
 ```
-<br><br>
+<br /><br />
 
 
 좀 더 실질적인 데이터를 활용하여 이상값을 처리해 봅니다. 실제 데이터에서는 이상값을 정의하기 모호한 경우가 많습니다. 이 때 boxplot을 활용하여 정상값과 이상값을 구분할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ```r
@@ -441,13 +441,13 @@ air_narm = air[!is.na(air$Ozone), ]
 mean(air_narm$Ozone)
 #[1] 40.2
 ```
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Rprogramming12.png)
-_boxplot<br>
+_boxplot<br />
 https://www.laidd.org/local/ubonline/view.php?id=181&group=1&returnurl=aHR0cHM6Ly93d3cubGFpZGQub3JnL2xvY2FsL3Vib25saW5lL2luZGV4LnBocD9vcmRlcnR5cGU9cmNfZCZrZXl3b3JkPSZwcm9ncmVzcyU1QiU1RD0xMyZlbnJvbF9zdGFydD0mZW5yb2xfZW5kPSZzdHVkeV9zdGFydD0mc3R1ZHlfZW5kPQ==_
-<br><br>
+<br /><br />
 
 
 ## Take Home Message

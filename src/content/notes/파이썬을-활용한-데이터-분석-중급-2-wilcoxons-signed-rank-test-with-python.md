@@ -15,14 +15,14 @@ source: manual
 ***
 
 Python을 이용하여 Wilcoxon's Signed Rank Test 수행과정을 알아봅니다.
-<br><br>
+<br /><br />
 
 
 ## 언제 사용하는가?
 ***
 
 Wilcoxon's Signed Rank Test는 하나의 모집단의 평균이 기존보다 커졌는지, 작아졌는지, 같지 않은지를 분석할 때 사용합니다. One sample t-test와 다른점은 정규성 가정이 깨졌을 때 사용하는 분석 방법입니다.
-<br><br>
+<br /><br />
 
 
 ## 가설 세우기
@@ -33,7 +33,7 @@ Wilcoxon's Signed Rank Test는 하나의 모집단의 평균이 기존보다 커
 
 * 대립가설 (Alternative Hypothesis, H<sub>1</sub> or H<sub>A</sub>)
     * 퀴즈 시험성적의 평균은 3.7점이 아닙니다.
-<br><br>
+<br /><br />
 
 
 ## Wilcoxon's Signed Rank Test
@@ -60,7 +60,7 @@ Wilcoxon's Signed Rank Test는 하나의 모집단의 평균이 기존보다 커
 
 * 6단계
     * Wilcoxon의 표에서 유의확률(p-value)를 구합니다.
-<br><br>
+<br /><br />
 
 
 ## 실습
@@ -69,13 +69,13 @@ Wilcoxon's Signed Rank Test는 하나의 모집단의 평균이 기존보다 커
 * 가설 설정
     * 귀무가설: iris 꽃잎의 평균 길이는 3 입니다.
     * 대립가설: iris 꽃잎의 평균 길이는 3이 아닙니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Python_Data_Analysis5.png)
-_데이터 로딩<br>
+_데이터 로딩<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475044_
-<br><br>
+<br /><br />
 
 
 * 분석 1단계: 정규성 검정(Normality Test)
@@ -84,23 +84,23 @@ https://www.edwith.org/python-data-analysis-2023/lecture/1475044_
     * n < 5,000 : Shapito-Wilk Normality Test (shapiro(data.variable))
     * n >= 5,000 : Anderson-Darling Normality Test (anderson(data.variable))
     * shapiro normality test의 유의확률(p-value)가 0.79로 귀무가설(정규분포 따름)을 만족합니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Python_Data_Analysis6.png)
-_정규성 검정<br>
+_정규성 검정<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475044_
-<br><br>
+<br /><br />
 
 
 * 분석 2단계: Wilcoxon's signed rank test
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Python_Data_Analysis7.png)
-_Wilcoxon's Signed Rank Test<br>
+_Wilcoxon's Signed Rank Test<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475044_
-<br><br>
+<br /><br />
 
 
 ## 코드
@@ -133,11 +133,11 @@ stats.wilcoxon(
 
 # 유의확률 (6.942 * 10^(-7)) < 유의수준 (0.05) -> 대립가설 지지 -> iris의 꽃잎 길이는 통계적으로 유의한 차이가 있는 것으로 나타났습니다.
 ```
-<br><br>
+<br /><br />
 
 
 ## Take Home Message
 ***
 
 Wilcoxon's Signed Rank Test 이론을 학습하고 Google colab에서 실습해 보았습니다.
-<br><br>
+<br /><br />

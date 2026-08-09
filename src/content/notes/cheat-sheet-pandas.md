@@ -7,15 +7,15 @@ source: manual
 ---
 
 ![Post-Image](../../assets/post/Pandas-cheatsheet1.webp)
-_Cheetsheet - Pandas<br>
+_Cheetsheet - Pandas<br />
 https://pandas.pydata.org/_
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/Pandas-cheatsheet2.webp)
-_Cheetsheet - Pandas<br>
+_Cheetsheet - Pandas<br />
 https://pandas.pydata.org/_
-<br><br>
+<br /><br />
 
 
 [Cheetsheet - Pandas](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)

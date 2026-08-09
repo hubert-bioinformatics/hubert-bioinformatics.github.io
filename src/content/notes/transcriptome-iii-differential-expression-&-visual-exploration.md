@@ -14,36 +14,36 @@ source: manual
 ## Intro
 ***
 RNA-seq data의 differential exporession, visual exploration에 대해 알아봅니다.
-<br><br>
+<br /><br />
 
 
 ## Differential Expression
 ***
 ![Post-Image](../../assets/post/transcriptome-fig24.webp)
-_Typical Process of Transcriptome Analysis<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Typical Process of Transcriptome Analysis<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - 전형적인 RNA-Seq analysis 과정은 다음과 같습니다. 지난 시간 data preprocessing 및 normalization, quantification까지 알아봤습니다. 이번 차시에서는 differential expression을 알아봅니다. 다음 차시에 순차적으로 classification, clustering에 대해 알아봅니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig25.webp)
-_Visual Comparison of Two data sets - Scatter plot<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Visual Comparison of Two data sets - Scatter plot<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - 두 개의 data sets를 비교하는데 visualization은 중요합니다. Scatter plot을 그려보면 data integrity, outlieres 등을 파악하는데 도움이 됩니다.
 - Gene expression range는 gene별로 큰 차이가 나기때문에(매우 작은 양부터 매우 큰 양까지) log scale에서 비교하면 보기가 좋습니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig26.webp)
-_Visual Comparison of Two data sets - MA plot<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Visual Comparison of Two data sets - MA plot<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - MA plot으로도 두 개의 data set을 비교해서 볼 수 있습니다.
 - x axis는 average express 값을 의미합니다. 즉, 오른쪽으로 갈수록 많이 expression 된다고 해석할 수 있습니다.
 - y axis는 fold-change 값을 의미합니다. 즉, 위로 올라갈수록 E1이 E2에 비해 많이 expression 된다고 해석할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ## Differential Expression
@@ -52,44 +52,44 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
     - normal vs. tumor
     - treated vs. untreated
     - time series profiles
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig27.webp)
-_Fold change does not take variation into account<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Fold change does not take variation into account<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - 그림에서 두 개 genes에 대해 평균은 각각 같지만 expression 분포가 세 가지 유형으로 나뉘는 것을 확인할 수 있습니다.
     - low variability: variable이 작고 두 개 genes 사이 express에 명확한 차이가 있음을 확인할 수 있습니다.
     - high variability: variable이 크고 두 개 genes 사이 express에 거의 차이가 없음을 확인할 수 있습니다.
-    <br><br>
+    <br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig28.webp)
-_Hypothesis Testing and p-value<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Hypothesis Testing and p-value<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - Normal과 tumor 사이 mean 값의 차이가 있는지 없는지 확인하기 위해 hypothesis testing을 진행합니다. 두 mead 값의 차이가 없다는 null hypothesis를 세우고 p-value(오른쪽 그래프의 녹색 면적)를 계산합니다. p-value가 기준(normally 0.05)보다 낮을 때 우연한 결과가 아니라고 추정할 수 있고 null hypothesis를 기각하여 두 mean 값에 차이가 있다고 결론내릴 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig29.webp)
-_t-test<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_t-test<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - t-test는 두 개 그룹의 mean 값에 차이가 없다는 hypothesis를 test하는 방식입니다. $\frac{signal}{noise}$ 두 개 그룹 mean 값의 차이(signal)를 두 개 그룹 분포의 크기의 차이(noise, standard error)로 나눠준 값으로 계산합니다.
 - 그룹이 세 개 이상일 때 t-test는 ANOVA로 변경됩니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig30.webp)
-_Volcano plot<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Volcano plot<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - p-value와 fold-change를 동시에 표현한 plot입니다.
 - x축의 fold-change는 -1 미만과 1 이상이 두 배 이상 차이나는 gene으로 볼 수 있습니다.
 - y축의 p-value는 2 이상일 때 $10^{-2} = 0.01$이하, 곧 유의미하게 차이나는 gene으로 볼 수 있습니다.
-<br><br>
+<br /><br />
 
 
 - Multiple comparison test problem
@@ -130,22 +130,22 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
 - Ethnicity inference
     - 인종별로 나타나는 allele에 기반하여 ethnicity를 추정하는 방법으로 WGS or WES data를 대상으로 사용 가능합니다.
     - tool: SeqSQC, EthSEQ, LASER 2.0
-    <br><br>
+    <br /><br />
 
 
 ## Mapping
 ***
 ![Post-Image](../../assets/post/transcriptome-fig9.webp)
-_RNA-Seq Mapping<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_RNA-Seq Mapping<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - 다양한 mapping 방법이 있습니다. 최근에는 genome에 mapping하는 방법이 주로 사용됩니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig10.webp)
-_Strategies for gapped alignments<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Strategies for gapped alignments<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - RNA-Seq data를 genome에 mapping하는 방식은 크게 두 가지로 나눠 생각할 수 있습니다.
     - Exon-first approach
@@ -155,22 +155,22 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
     - Seed-extend methods
         - N-mer의 seed reads가 어디에 matching 되는지 확인 후 확장시켜 나가는 방식입니다.
         - tool: GSNAP, QPALMA
-        <br><br>
+        <br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig11.webp)
-_Tophat: Spliced Read Mapper<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Tophat: Spliced Read Mapper<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - Tophat - spliced read mapper
     - Exon 내 mapping되는 reads를 먼저 선별합니다.
     - 두 개의 exon에 걸쳐있는 reads는 각각 exon 영역에 맞는 영역으로 나눕니다. 이 때 canonical intron이 지니고 있는 특징적인 서열(intron의 시작과 끝 서열: GT-AG, GC-AG, AT-AC)을 활용합니다.
-    <br><br>
+    <br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig12.webp)
-_STAR: spliced transcripts alignment to a reference<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_STAR: spliced transcripts alignment to a reference<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - STAR - spliced transcripts alignment to a reference
     - step1. seed searching
@@ -185,18 +185,18 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
     - 동일한 data의 mapping에 TopHat2는 480분, STAR는 27분 소요됐습니다. STAR가 월등히 빠른 것을 알 수 있습니다.
     - 하지만 정확도는 TopHat2가 약간 더 앞선 결과를 보였습니다.
     - STAR를 사용하는 것이 더 효율적인 방법임을 생각해 볼 수 있습니다.
-    <br><br>
+    <br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig13.webp)
-_SAM/BAM<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_SAM/BAM<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - Alignment Data Format (SAM/BAM)
     - mapping 결과로 나오는 output 파일입니다.
     - 6th column의 CIGAR string은 mapping 결과를 요약해서 보여주는데, RNA-Seq data에서 N은 intron 영역을 의미합니다.
     - 예) 5M14N8M: exon 5bp + intron 14bp + exon 8bp
-    <br><br>
+    <br /><br />
 
 
 ## Normalization
@@ -214,33 +214,33 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
         - 'background' correction
     - RNA-Seq과 관련된 이슈가 있습니다.
         - uneven depth of coverage
-        - uncertainties in **mapping and quantification**<br>
+        - uncertainties in **mapping and quantification**<br />
 
 ![Post-Image](../../assets/post/transcriptome-fig14.webp)
-_Normalization<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Normalization<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - Normalization은 데이터의 분포와 scale을 조정하여 데이터간 비교 가능하도록 만드는 과정입니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig15.webp)
-_Normalization for microarray data<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Normalization for microarray data<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - Microarray data의 normalization은 여러 가지 방법이 존재합니다.
-- 오른쪽 아래 그림을 보면 실제 duplicate였던 색상별 reads가 normalization 이후 동일한 수준으로 변경되었음을 확인할 수 있습니다.<br><br>
+- 오른쪽 아래 그림을 보면 실제 duplicate였던 색상별 reads가 normalization 이후 동일한 수준으로 변경되었음을 확인할 수 있습니다.<br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig16.webp)
-_Normalization for RNA-Seq data<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Normalization for RNA-Seq data<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - RNA-Seq data를 normalization 할 때 두 가지 사항을 고려해야 합니다.
     - 1-2: Sequencing depth가 높을수록(2) mapped reads도 증가합니다.
     - 3-4: transcript length가 길수록(4) mapped reads도 증가합니다.
 - 따라서 sequencing depth, transcript length에 대해 normalization이 필요합니다.
-<br><br>
+<br /><br />
 
 
 - RPKM
@@ -255,14 +255,14 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
     - normalization order: length first -> then depth
     - TPM values can be compared between different samples directly because the sum of all TPMs in each sample art the same
     - 지금은 TPM이 정석처럼 사용되고 있습니다.
-    <br><br>
+    <br /><br />
 
 
 ## Quanltification
 ***
 ![Post-Image](../../assets/post/transcriptome-fig17.webp)
-_Read Counting Rules<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_Read Counting Rules<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - gene 하나의 uniquely mapping되는 read가 있지만 복수 개의 genes에 걸쳐서 mapping되는 경우도 있습니다.
 - 다음과 같은 방법으로 이러한 문제를 처리합니다.
@@ -276,14 +276,14 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
     - Expectation-Maximization
         - 현재 가장 많이 사용하는 방식입니다.
         - tool: **RSEM**, eXpress
-        <br><br>
+        <br /><br />
 
 
 ## RNA-Seq Analysis Pipeline
 ***
 ![Post-Image](../../assets/post/transcriptome-fig18.webp)
-_STAR-RSEM Anlysis Pipeline<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_STAR-RSEM Anlysis Pipeline<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 - Sickle / STAR / RSEM 을 사용한 RNA-Seq analysis pipeline 입니다.
     - Trimming: Sickle
@@ -291,29 +291,29 @@ https://www.edwith.org/transcriptome/lecture/1382678_<br>
     - Quantification: RSEM v1.3.0
     - Differential expression analysis: R v3.6.0 (package: edgeR, preprocessCore, gplots, RColorbrewer)
     - Fusion analysis: STARfusion v1.6.0
-    <br><br>
+    <br /><br />
 
 
 ![Post-Image](../../assets/post/transcriptome-fig19.webp)
-_STAR-RSEM Anlysis Pipeline: trimming<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_STAR-RSEM Anlysis Pipeline: trimming<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 ![Post-Image](../../assets/post/transcriptome-fig20.webp)
-_STAR-RSEM Anlysis Pipeline: preparing reference<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_STAR-RSEM Anlysis Pipeline: preparing reference<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 ![Post-Image](../../assets/post/transcriptome-fig21.webp)
-_STAR-RSEM Anlysis Pipeline: mapping & quantification<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_STAR-RSEM Anlysis Pipeline: mapping & quantification<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 ![Post-Image](../../assets/post/transcriptome-fig22.webp)
-_STAR-RSEM Anlysis Pipeline: mapping & quantification<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
+_STAR-RSEM Anlysis Pipeline: mapping & quantification<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
 
 ![Post-Image](../../assets/post/transcriptome-fig23.webp)
-_STAR-RSEM Anlysis Pipeline: mapping & quantification<br>
-https://www.edwith.org/transcriptome/lecture/1382678_<br>
-<br><br>
+_STAR-RSEM Anlysis Pipeline: mapping & quantification<br />
+https://www.edwith.org/transcriptome/lecture/1382678_<br />
+<br /><br />
 
 
 ## Take Home Message

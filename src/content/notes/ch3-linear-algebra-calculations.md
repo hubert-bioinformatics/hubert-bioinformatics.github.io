@@ -105,7 +105,7 @@ source: manual
         * 1차원의 무수히 많은 해: 세 개의 평면 중 두 평면이 일치하는 경우, 평행하지 않은 두 평면은 직선으로 표차하며 하나의 직선에서 만남
         * 2차원의 무수히 많은 해: 세 개의 평면이 모두 일치하고 0이 아닌 식일 경우, 해집합은 평면임
         * 해가 존재하지 않는 경우: 세 개의 평면이 교차점이 없는 경우
-<br><br>
+<br /><br />
 
 
 ## 행렬방정식 (3.2)
@@ -147,10 +147,10 @@ $A^{-1}$를 찾는 데 들이는 노력은 첨가행렬 $[A \mid \vec{b} ]$를 R
 
     ![Post-Image](../../assets/post/matrix_cal1.webp)
  _행렬과 벡터의 곱_
- <br><br>
+ <br /><br />
 
     $A\vec{x} = \vec{b}$에서 때때로 행렬 A의 역행렬이 존재하지 않는 경우가 있습니다. 연립방정식이 부족하게 설정된 경우(A가 높이보다 더 넓은 경우), 가능한 해 $\vec{x}$의 부분공간(subspace)이 존재합니다. 이전 절에서 살펴본 해가 무수히 많은 경우에 해당합니다.
-<br><br>
+<br /><br />
 
 
 ## 행렬곱셈 (3.3)
@@ -160,7 +160,7 @@ $A^{-1}$를 찾는 데 들이는 노력은 첨가행렬 $[A \mid \vec{b} ]$를 R
 
 ![Post-Image](../../assets/post/matrix_cal2.webp)
  _행렬의 곱셈_
- <br><br>
+ <br /><br />
 
 
 * 행렬의 곱셈 법칙
@@ -178,7 +178,7 @@ $A^{-1}$를 찾는 데 들이는 노력은 첨가행렬 $[A \mid \vec{b} ]$를 R
     $T_{A} : \mathbb{R}^{n} \to \mathbb{R}^{m}$
 
     선형변환 $T_{A}$를 입력 $\vec{x}$에 적용하는 것은 행렬과 벡터의 곱 $A\vec{x}$를 계산하는 것과 동일합니다. $\mathbb{R}^{n}$에서 $\mathbb{R}^{m}$으로의 모든 선형변환은 어떤 행렬 $A \in \mathbb{R}^{m \times n}$와 같은 행렬 곱으로 설명할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ## 행렬식 (3.4)
@@ -212,7 +212,7 @@ $A^{-1}$를 찾는 데 들이는 노력은 첨가행렬 $[A \mid \vec{b} ]$를 R
 
 ![Post-Image](../../assets/post/matrix_cal3.webp)
  _햏렬식이 선형변환 비례인자로 작용_
- <br><br>
+ <br /><br />
 
 * 행렬식 공식
 
@@ -220,7 +220,7 @@ $A^{-1}$를 찾는 데 들이는 노력은 첨가행렬 $[A \mid \vec{b} ]$를 R
 
 ![Post-Image](../../assets/post/determinant1.webp)
  _2x2 행렬의 행렬식_
-<br><br>
+<br /><br />
 
 
 3x3 행렬의 행렬식은 다음과 같습니다.
@@ -230,7 +230,7 @@ $A^{-1}$를 찾는 데 들이는 노력은 첨가행렬 $[A \mid \vec{b} ]$를 R
 
 ![Post-Image](../../assets/post/determinant3.webp)
  _3x3 행렬의 행렬식 쉽게 구하기_
-<br><br>
+<br /><br />
 
 
 $n \times n$ 행렬의 행렬식은 더이상 쉬운 공식으로 간략히 구하기 어렵습니다. 대신 체계적으로 구할 수 있는 과정을 알아봅니다.
@@ -240,8 +240,8 @@ $n \times n$ 행렬의 행렬식은 더이상 쉬운 공식으로 간략히 구�
 
 ![Post-Image](../../assets/post/determinant5.webp)
  _nxn 행렬의 행렬식_
-<br><br>
+<br /><br />
 
 ![Post-Image](../../assets/post/determinant6.webp)
  _nxn 행렬의 행렬식_
-<br><br>
+<br /><br />

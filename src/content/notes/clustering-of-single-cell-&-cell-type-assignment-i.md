@@ -13,30 +13,30 @@ source: manual
 ***
 
 Clustering analysis의 의미와 종류, 방법을 이해합니다. Cell type assignment 과정을 이해합니다.
-<br><br>
+<br /><br />
 
 
 ## Clustering Analysis
 ***
 
 ![Post-Image](../../assets/post/SC-pre13.webp)
-_Clustering Analysis<br>
+_Clustering Analysis<br />
 https://www.edwith.org/single-cell/lecture/1417886_
-<br><br>
+<br /><br />
 
 
 Clustering이란 그림과 같이 특정 기준에 따라 유사한 것끼리 묶는 과정입니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/SC-pre14.webp)
-_Evaluation of Clustering<br>
+_Evaluation of Clustering<br />
 https://www.edwith.org/single-cell/lecture/1417886_
-<br><br>
+<br /><br />
 
 
 Clustering 평가 방법은, 같은 cluster에 속하는 요소끼리 거리는 가까울수록(intra-scluster distance), 서로 다른 cluster끼리 거리는 멀수록(inter-cluster distance) good clustering으로 평가할 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ## Clustering 방법과 종류

@@ -13,16 +13,16 @@ source: manual
 ***
 
 NGS 최적 분석 파이프라인에 대해 알아봅니다.
-<br><br>
+<br /><br />
 
 
 ## Artigacts of variant calling
 ***
 
 ![Post-Image](../../assets/post/Variants-artifacts.webp)
-_Artifacts of variant calling<br>
+_Artifacts of variant calling<br />
 https://www.edwith.org/ngs-data-variation/joinLectures/356132_
-<br><br>
+<br /><br />
 
 
 Variant calling 과정에 다양한 종류의 artifacts가 나타납니다. Sequencing error, uneven read depth, platform specific errors, misclassification, DNA damage, PCR-induced error, read mapping error, DNA contamination 등이 있습니다.
@@ -35,13 +35,13 @@ Variant calling 과정에 다양한 종류의 artifacts가 나타납니다. Sequ
         1. 환자 A, B의 시료가 서로 뒤바뀌는 case로 생각보다 빈번하게 일어납니다.
         2. 해결1) Tumor, matched normal을 함께 가지고 있는 경우, 두 시료로부터 germline variants를 calling한 뒤 matrix를 그려보면 sample swap을 확인할 수 있습니다.
         3. 해결2) HYSYS, NGSCheckMate, BAMixChecker 등의 이미 개발된 tool을 활용하여 sample swap을 확인할 수 있습니다.
-        <br><br>
+        <br /><br />
 
 
         ![Post-Image](../../assets/post/Variants-swap1.webp)
-        _Check Sample Swap by Calling Germline Variants<br>
+        _Check Sample Swap by Calling Germline Variants<br />
         https://www.edwith.org/ngs-data-variation/joinLectures/356132_
-        <br><br>
+        <br /><br />
 
 
     2. Sample Contamination
@@ -70,7 +70,7 @@ Variant calling 과정에 다양한 종류의 artifacts가 나타납니다. Sequ
 
     1. Ion-Torrent: homopolymer 영역에서 정확한 base calling이 어렵습니다.
     2. 해결) ion-torrent에 특화된 analysis tool을 활용하여 해결할 수 있습니다.
-    <br><br>
+    <br /><br />
 
 
 ## Take Home Message

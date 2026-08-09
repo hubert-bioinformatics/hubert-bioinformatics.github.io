@@ -15,40 +15,40 @@ source: manual
 ***
 
 ![Post-Image](../../assets/post/Python_Data_Analysis36.webp)
-_일표본 검정<br>
+_일표본 검정<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475052_
-<br><br>
+<br /><br />
 
 
 ## 독립2표본 검정
 ***
 
 ![Post-Image](../../assets/post/Python_Data_Analysis37.webp)
-_독립2표본 검정<br>
+_독립2표본 검정<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475052_
-<br><br>
+<br /><br />
 
 
 ## 대응2표본 검정
 ***
 
 ![Post-Image](../../assets/post/Python_Data_Analysis38.webp)
-_대응2표본 검정<br>
+_대응2표본 검정<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475052_
-<br><br>
+<br /><br />
 
 
 ## ANOVA
 ***
 
 ![Post-Image](../../assets/post/Python_Data_Analysis39.webp)
-_ANOVA<br>
+_ANOVA<br />
 https://www.edwith.org/python-data-analysis-2023/lecture/1475052_
-<br><br>
+<br /><br />
 
 
 ## Take Home Message
 ***
 
 Python을 활용하여 데이터에 알맞은 통계분석 방법을 학습했습니다.
-<br><br>
+<br /><br />

@@ -11,7 +11,7 @@ source: manual
 
 ## Intro
 ***   
-데이터 삽입문을 이해하고 활용할 수 있습니다. 데이터 삭제/수정문을 이해하고 활용할 수 있습니다. 데이터 검색문을 이해하고 활용할 수 있습니다.<br>  
+데이터 삽입문을 이해하고 활용할 수 있습니다. 데이터 삭제/수정문을 이해하고 활용할 수 있습니다. 데이터 검색문을 이해하고 활용할 수 있습니다.<br />  
 
 
 ## 데이터 삽입
@@ -22,7 +22,7 @@ source: manual
       2. 데이터의 삽입은 행(row, tuple) 단위로 이루어집니다.
       3. DEFAULT 제약조건이 있는 경우, 삽입되는 값이 없을 때 DEFAULT 값이 들어갑니다.   
 ![Post-Image](../../assets/post/DBMS-DB36.webp)
-_INSERT INTO 예시<br>
+_INSERT INTO 예시<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    2. 데이터 삽입 확인   
       1. **SELECT 명령어**를 사용해서 테이블에 입력된 데이터를 확인합니다.
@@ -36,7 +36,7 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
       2. 데이터의 삭제는 행(row, tuple) 단위로 이루어집니다.
       3. 삭제 조건을 주어서 원하는 행만 삭제할 수 있습니다.   
 ![Post-Image](../../assets/post/DBMS-DB37.webp)
-_DELETE FROM 예시<br>
+_DELETE FROM 예시<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    2. 연습문제   
       1. 질의문) student 테이블에서 성별이 남자인 행을 삭제하세요.
@@ -49,7 +49,7 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
       2. 데이터의 수정은 컬럼(column, attribute) 단위로 이루어집니다.
       3. 조건에 맞는 행(row)들의 지정한 컬럼을 주어진 값으로 바꿉니다.
 ![Post-Image](../../assets/post/DBMS-DB38.webp)
-_UPDATE 예시<br>
+_UPDATE 예시<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    2. 연습문제
       1. 질의문) 최현주 학생의 주소를 '부산'으로 변경하세요.
@@ -65,7 +65,7 @@ http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_
       2. 데이터의 검색은 행(row, tuple, record) 단위로 이루어집니다.   
       3. 원하는 행 또는 원하는 열의 데이터만 가져올 수 있습니다.   
 ![Post-Image](../../assets/post/DBMS-DB39.webp)
-_SELECT 예시<br>
+_SELECT 예시<br />
 http://www.kmooc.kr/courses/course-v1:MA_CUK+MATCHUP_CUK03+2022_2/course/_   
    2. 연습문제  
       1. 질의문) 학생에 대한 모든 정보를 검색하세요. (테이블의 모든 컬럼에 대한 데이터를 보여주고 싶을 경우)

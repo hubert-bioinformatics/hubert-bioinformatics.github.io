@@ -7,6 +7,6 @@ source: manual
 ---
 
 ![Post-Image](../../assets/post/Interpretation_databases.webp)
-_Interpretation Databases<br>
+_Interpretation Databases<br />
 www.amp.org_
-<br><br>
+<br /><br />

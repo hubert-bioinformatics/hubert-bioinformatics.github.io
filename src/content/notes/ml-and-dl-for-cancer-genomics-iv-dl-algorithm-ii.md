@@ -15,7 +15,7 @@ source: manual
 ***
 
 Machine learning 관련 기초 개념을 확인하고, 공개된 논문내용 및 데이터를 바탕으로 직접 실습하고 학습하는 과정입니다.
-<br><br>
+<br /><br />
 
 
 ## 오차 역전파 알고리즘
@@ -44,7 +44,7 @@ a는 실제 출력
 * 절대값은 미분불가능 수식이기 때문입니다.
 
 Gradient descent(경사 하강법)을 기반으로 backpropagation을 진행하며 학습을 수행합니다.
-<br><br>
+<br /><br />
 
 
 ## MSE와 Gradient Descent
@@ -61,13 +61,13 @@ MSE를 최소로 만드는 w와 b의 해를 찾는 방법입니다. 우선 b를 
 4. 증가하면 안되니 반대방향으로 가야합니다.
 
 5. 접선 만큼의 크기를 원래 w에서 빼주면 최소값으로 갈 수 있습니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/MLDL4CancerGenome18.webp)
-_Gradient Descent<br>
+_Gradient Descent<br />
 https://www.edwith.org/deep-learning-2023/lecture/1475086_
-<br><br>
+<br /><br />
 
 
 ## Gradient Descent를 위한 편미분
@@ -80,13 +80,13 @@ Neural network 크기가 커지고 입력이나 출력의 개수가 많아지면
 Cost function이 weight와 bias의 함수로 이루어졌기 때문에 출력 부분부터 시작해서 입력 쪽으로(역방향으로) 순차적으로 cost function에 대한 편미분을 구하고 여기에서 얻은 편미분 값을 이용하여 weight와 bias 값을 갱신합니다.
 
 모든 training data에 대해 이 작업을 반복적으로 수행하다 보면, training data에 최적화된 weight와 bias 값들을 얻을 수 있습니다. Backpropagation은 출력부터 반대 방향으로 순차적으로 편미분을 수행해 나가면서 weight와 bias 값들을 갱신시킨다는 의미입니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/MLDL4CancerGenome19.webp)
-_Neural Network에서의 편미분<br>
+_Neural Network에서의 편미분<br />
 https://www.edwith.org/deep-learning-2023/lecture/1475086_
-<br><br>
+<br /><br />
 
 
 ## Backpropagation 상세: Chain Rule
@@ -97,13 +97,13 @@ Chain rule을 이용하면 backpropagation 식을 좀 더 쉽게 풀어낼 수 �
 $$
 \frac{dy}{dx} = \frac{dy}{dt} \frac{dt}{dx}
 $$
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/MLDL4CancerGenome20.webp)
-_Backpropagation<br>
+_Backpropagation<br />
 https://www.edwith.org/deep-learning-2023/lecture/1475086_
-<br><br>
+<br /><br />
 
 
 ## Backpropagation 장단점
@@ -116,7 +116,7 @@ Backpropagation neural network는 강력한 능력으로 인해 overfitting 현�
 1. Early stopping(조기 종료): Data를 training set과 validation set으로 분리합니다. Training set은 gradient descent를 계산하고 weight와 bias를 갱신하는데 사용합니다. Validation set는 error를 예측하는데 사용되고 만약 training set의 error가 줄어들 때 validation set의 error가 높아진다면 즉시 훈련을 종료하는 방법입니다.
 
 2. Regularization(정규화): Cost function에 weight와 bias의 제곱합과 같은 network 복잡도를 표현하는 부분을 추가하는 방법입니다.
-<br><br>
+<br /><br />
 
 
 ## Deep Learning
@@ -129,7 +129,7 @@ Backpropagation neural network는 강력한 능력으로 인해 overfitting 현�
 Hidden layer가 많으면 상응하는 neuron 연결 weight, 임계값 등의 parameter 수가 늘어납니다. Model의 복잡성도 단순히 hidden layer neuron 수를 증가시키는 것만으로 늘릴 수 있습니다. 하지만 model의 복잡성을 증가시키는 관점에서 바라보면 hidden layer의 개수를 증가시키는 것이 hidden layer neuron의 수를 증가시키는 것보다 효율적입니다. Hidden layer의 수를 증가시키면 activation function을 가진 neuron의 개수를 늘리게 될 뿐 아니라 activation function이 내장된 층 수도 증가하기 때문입니다.
 
 그러나 여러 hidden layer를 가진 neural network는 전통적인 algorithm(backpropagation)을 사용하여 훈련시키기 힘든 점이 있습니다. 오차가 hidden layer에서 backpropagation 될 때 vanishing(소실)되어 update 하기 어려운 점이 있기 때문입니다. 이러한 현상을 vanishing gradient라고 합니다.
-<br><br>
+<br /><br />
 
 
 ## Global Minimum and Local Minimum
@@ -140,25 +140,25 @@ Hidden layer가 많으면 상응하는 neuron 연결 weight, 임계값 등의 pa
 Local minimum은 parameter 공간의 어떤 점이 되고 주변 점들의 cost function(loss function, error 함수값)이 해당 점의 함수값보다 작으면 안됩니다. 이와 비슷하게 global minimum의 해는 parameter 공간 내의 모든 점들이 error 함수값보다 작지 않다는 것을 의미합니다.
 
 Gradient descent 방법은 임의의 시작점에서 출발해 반복적으로 최적의 parameter 값을 찾아 나갑니다. 매번 반복할 때마다 우리는 먼저 cost function이 해당 점에서 갖는 기울기를 계산하고 그 기울기에 따라 탐색 방향을 정합니다. 만약 해당 점에서 cost function의 기울기가 0이라면 이미 local minimum에 도달한 것입니다. 이는 parameter 반복 갱신이 그 점에서 멈출 것이라는 의미입니다. 또한 cost function이 하나의 local minimum만을 갖는다면 해당 값이 바로 global minimum이 됩니다.
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/MLDL4CancerGenome22.webp)
-_Local Minimum 함정 탈출 전략<br>
+_Local Minimum 함정 탈출 전략<br />
 https://www.edwith.org/deep-learning-2023/lecture/1475086_
-<br><br>
+<br /><br />
 
 
 ## Take Home Message
 ***
 
 ![Post-Image](../../assets/post/MLDL4CancerGenome21.webp)
-_Summary 1<br>
+_Summary 1<br />
 https://www.edwith.org/deep-learning-2023/lecture/1475086_
-<br><br>
+<br /><br />
 
 
 ![Post-Image](../../assets/post/MLDL4CancerGenome23.webp)
-_Summary 2<br>
+_Summary 2<br />
 https://www.edwith.org/deep-learning-2023/lecture/1475086_
-<br><br>
+<br /><br />
