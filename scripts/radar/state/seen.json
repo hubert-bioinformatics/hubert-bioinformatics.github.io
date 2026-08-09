@@ -29,7 +29,12 @@
     "pmid:42557338": "2026-08-07",
     "pmid:42557881": "2026-08-07",
     "pmid:42454544": "2026-08-07",
-    "pmid:42323848": "2026-08-07"
+    "pmid:42323848": "2026-08-07",
+    "doi:10.64898/2026.08.03.739553": "2026-08-09",
+    "pmid:42568117": "2026-08-09",
+    "pmid:42569928": "2026-08-09",
+    "pmid:42561954": "2026-08-09",
+    "pmid:42570487": "2026-08-09"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -61,6 +66,11 @@
     "detecting pathogenic structural variation in families with undiagnosed rare disease in a national genome project": "2026-08-07",
     "sclncr an integrated and flexible pipeline for lncrna analysis in single cell rna sequencing data": "2026-08-07",
     "single cell and spatial transcriptomics define a progenitor subpopulation and fibroinflammatory niche at the leading edge of parathyroid carcinoma": "2026-08-07",
-    "ultra rapid versus conventional oocyte vitrification a comparative study of clinical and molecular outcomes with single cell transcriptomic insights": "2026-08-07"
+    "ultra rapid versus conventional oocyte vitrification a comparative study of clinical and molecular outcomes with single cell transcriptomic insights": "2026-08-07",
+    "benchmarking single cell foundation models in a zero shot setting": "2026-08-09",
+    "an integrated spatial multi omics workflow for sequential rna and protein profiling in ffpe tumor tissue": "2026-08-09",
+    "hyper gem connecting metabolite signatures to enzyme coding genes via genome scale metabolic models": "2026-08-09",
+    "single library chromosome scale diploid assemblies of vole genomes resolve a species specific duplication implicated in pair bonding": "2026-08-09",
+    "chemical induction enhances patient derived organoid fidelity to primary colorectal cancer at the single cell level a re analysis of public scrna seq dataset gse261012": "2026-08-09"
   }
 }
