@@ -11,7 +11,8 @@
 | 저장소 코드 | GitHub 에 있다. clone 하면 끝 |
 | Radar 자동 실행 | GitHub Actions 에서 돈다. **어느 컴퓨터도 켜져 있을 필요가 없다** |
 | `GEMINI_API_KEY` | 저장소 Secrets 에 있다. 그대로 동작한다 |
-| 배포된 사이트 | Cloudflare 에 올라가 있다. 주소만 알면 어디서든 본다 |
+| 배포된 사이트 | GitHub Pages 가 `main` 을 자동 배포한다. 주소만 알면 어디서든 본다 |
+| 글쓰기 편집기 | Cloudflare Worker 에 따로 올라가 있다. 브라우저만 있으면 된다 |
 
 즉 **아무것도 안 해도 블로그는 계속 돈다.** 아래는 "집에서 코드를 고치고
 배포까지 하려면" 필요한 것들이다.
@@ -36,10 +37,10 @@ nvm install 22 && nvm use 22
 ### 저장소
 
 ```bash
-git clone https://github.com/hubert-bioinformatics/blog-next
-cd blog-next
+git clone https://github.com/hubert-bioinformatics/hubert-bioinformatics.github.io
+cd hubert-bioinformatics.github.io
 npm install
-npm run dev          # http://localhost:3030/blog-next
+npm run dev          # http://localhost:3030
 ```
 
 여기까지면 글을 쓰고 미리 보는 건 다 된다.
@@ -47,6 +48,9 @@ npm run dev          # http://localhost:3030/blog-next
 > **WSL 을 쓴다면 `/mnt/c` 아래에 두지 말 것.**
 > 파일 감시가 동작하지 않아 저장해도 화면이 안 바뀐다. 회사 노트북도 그것 때문에
 > `/root/blog-next` 로 옮겼다. 한글이 들어간 Windows 경로는 인코딩 문제도 겹친다.
+>
+> 회사 노트북의 작업 폴더 이름은 저장소 이름을 바꾸기 전 그대로 `blog-next` 다.
+> 폴더 이름은 아무 데도 영향을 주지 않아서 굳이 바꾸지 않았다.
 
 ---
 
@@ -67,15 +71,24 @@ gh auth login          # 브라우저로 GitHub 로그인
 
 웹 GitHub 에서 클릭으로 해도 되므로 필수는 아니다.
 
-### Cloudflare 에 배포한다 → `wrangler` 로그인
+### 글쓰기 편집기를 다시 배포한다 → `wrangler` 로그인
 
-`npm run deploy:admin` 을 돌리려면 필요하다.
+사이트 본체는 Cloudflare 와 무관하다. GitHub Pages 가 `main` 을 자동 배포한다.
+Cloudflare Worker 에는 **Keystatic 편집기만** 올라가 있다.
 
 ```bash
 npx wrangler login     # 브라우저로 Cloudflare 로그인
+npm run deploy:admin
 ```
 
-계정은 `kjhyug93@gmail.com` 이다.
+계정은 `kjhyug93@gmail.com`, Worker 이름은 `blog-next` 다.
+
+> Worker 이름은 `package.json` 의 `name` 에서 나온다. 저장소 이름을 바꿨어도
+> 이건 그대로 뒀다 — 이름을 바꾸면 편집기 주소가 바뀌고, 그러면 Keystatic 용
+> GitHub App 의 콜백 URL 까지 GitHub 에서 손으로 고쳐야 한다. 얻는 게 없다.
+
+편집기는 콘텐츠(`src/content/`)와 스키마(`keystatic.config.ts`)를 바꿨을 때만
+다시 배포하면 된다. 일반 페이지 수정은 Pages 쪽이라 관계없다.
 
 ### 로컬에서 Keystatic 편집기를 띄운다 → `.env`
 
@@ -93,8 +106,13 @@ npm run dev:admin      # http://localhost:3030/keystatic
 ```
 
 로컬 편집기는 `KEYSTATIC_STORAGE=local` 로 돌아서 파일을 직접 읽고 쓴다.
-OAuth 설정이 필요 없다. 배포본 편집기(`/keystatic`)는 Cloudflare 에 이미
-설정돼 있어 브라우저만 있으면 된다.
+OAuth 설정이 필요 없다.
+
+배포본 편집기는 이미 설정돼 있어 브라우저만 있으면 된다.
+
+**https://blog-next.kjhyug93.workers.dev/keystatic**
+
+이쪽은 GitHub 로그인 후 저장소에 직접 커밋한다.
 
 ### Radar 를 로컬에서 돌려 본다 → `GEMINI_API_KEY`
 
@@ -125,7 +143,7 @@ node scripts/radar/run.mjs --dry        # 선별·요약까지, 파일은 안 �
 | `npm run dev` | 개발 서버 (3030) | — |
 | `npm run build` | 정적 빌드 | — |
 | `npm run dev:admin` | 로컬 Keystatic 편집기 | `.env` |
-| `npm run deploy:admin` | Cloudflare 배포 | wrangler 로그인 |
+| `npm run deploy:admin` | 편집기를 Cloudflare Worker 로 배포 | wrangler 로그인 |
 | `npm run photos` | 사진 EXIF 처리 | — |
 | `node scripts/notebooks.mjs --dry` | 노트북 JSON 변환 미리보기 | — |
 | `node scripts/radar/run.mjs --no-llm` | Radar 수집만 | — |

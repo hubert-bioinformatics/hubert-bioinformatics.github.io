@@ -35,10 +35,14 @@ export default config({
    *
    *   개발(로컬)  → local  : 파일을 바로 읽고 쓴다
    *   배포(운영)  → github : GitHub 로그인 후 저장소에 커밋한다
+   *
+   * repo 는 저장소 이름을 바꾸면 반드시 같이 고쳐야 한다. GitHub 이 옛 이름을
+   * 리다이렉트해 주긴 하지만 GraphQL 은 따라가지 않아서, 이름이 어긋나면
+   * 편집기가 글 목록조차 못 읽는다.
    */
   storage: import.meta.env.DEV
     ? { kind: 'local' }
-    : { kind: 'github', repo: 'hubert-bioinformatics/blog-next' },
+    : { kind: 'github', repo: 'hubert-bioinformatics/hubert-bioinformatics.github.io' },
 
   ui: {
     brand: { name: 'Hubert Effect' },
