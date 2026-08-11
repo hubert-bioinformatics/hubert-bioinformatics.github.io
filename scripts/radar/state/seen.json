@@ -34,7 +34,12 @@
     "pmid:42568117": "2026-08-09",
     "pmid:42569928": "2026-08-09",
     "pmid:42561954": "2026-08-09",
-    "pmid:42570487": "2026-08-09"
+    "pmid:42570487": "2026-08-09",
+    "doi:10.64898/2026.08.06.743410": "2026-08-11",
+    "pmid:42573854": "2026-08-11",
+    "pmid:42576322": "2026-08-11",
+    "pmid:42578411": "2026-08-11",
+    "pmid:42574221": "2026-08-11"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -71,6 +76,11 @@
     "an integrated spatial multi omics workflow for sequential rna and protein profiling in ffpe tumor tissue": "2026-08-09",
     "hyper gem connecting metabolite signatures to enzyme coding genes via genome scale metabolic models": "2026-08-09",
     "single library chromosome scale diploid assemblies of vole genomes resolve a species specific duplication implicated in pair bonding": "2026-08-09",
-    "chemical induction enhances patient derived organoid fidelity to primary colorectal cancer at the single cell level a re analysis of public scrna seq dataset gse261012": "2026-08-09"
+    "chemical induction enhances patient derived organoid fidelity to primary colorectal cancer at the single cell level a re analysis of public scrna seq dataset gse261012": "2026-08-09",
+    "nf cavalier a nextflow pipeline for rare disease variant prioritization and reporting": "2026-08-11",
+    "integrated inference of cellular compositions and gene expression programs by deconvolution": "2026-08-11",
+    "how sturgeon guides the surgeon in pediatric neuro oncology": "2026-08-11",
+    "spatial and single nuclei transcriptomics reveals idiosyncratic and generic patterns in papillary and anaplastic thyroid cancers": "2026-08-11",
+    "click code seq protocol for genome wide single nucleotide resolution mapping of major types of dna modifications": "2026-08-11"
   }
 }
