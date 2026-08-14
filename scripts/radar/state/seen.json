@@ -39,7 +39,12 @@
     "pmid:42573854": "2026-08-11",
     "pmid:42576322": "2026-08-11",
     "pmid:42578411": "2026-08-11",
-    "pmid:42574221": "2026-08-11"
+    "pmid:42574221": "2026-08-11",
+    "doi:10.64898/2026.08.07.743439": "2026-08-13",
+    "pmid:42586061": "2026-08-13",
+    "pmid:42587037": "2026-08-13",
+    "pmid:42586205": "2026-08-13",
+    "pmid:42581402": "2026-08-13"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -81,6 +86,11 @@
     "integrated inference of cellular compositions and gene expression programs by deconvolution": "2026-08-11",
     "how sturgeon guides the surgeon in pediatric neuro oncology": "2026-08-11",
     "spatial and single nuclei transcriptomics reveals idiosyncratic and generic patterns in papillary and anaplastic thyroid cancers": "2026-08-11",
-    "click code seq protocol for genome wide single nucleotide resolution mapping of major types of dna modifications": "2026-08-11"
+    "click code seq protocol for genome wide single nucleotide resolution mapping of major types of dna modifications": "2026-08-11",
+    "a comprehensive benchmark of transcriptome wide fusion detection using long read rna sequencing": "2026-08-13",
+    "a single cell multi omic atlas of the human pancreas reveals potential for cellular plasticity across development health and disease": "2026-08-13",
+    "epigenetic modulation of stromal cell states underpins pathological tissue niches in crohn s disease": "2026-08-13",
+    "single cell and spatial transcriptomics across populations with perianal fistulizing crohn s disease shows pro inflammatory cd4 macrophage involvement in disease progression": "2026-08-13",
+    "pithos a scalable and secure data container for fair compliant research data management in life sciences": "2026-08-13"
   }
 }
