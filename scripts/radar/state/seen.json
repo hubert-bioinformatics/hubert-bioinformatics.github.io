@@ -44,7 +44,12 @@
     "pmid:42586061": "2026-08-13",
     "pmid:42587037": "2026-08-13",
     "pmid:42586205": "2026-08-13",
-    "pmid:42581402": "2026-08-13"
+    "pmid:42581402": "2026-08-13",
+    "pmid:42595446": "2026-08-16",
+    "pmid:42596574": "2026-08-16",
+    "pmid:42574452": "2026-08-16",
+    "pmid:42601252": "2026-08-16",
+    "pmid:42603286": "2026-08-16"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -91,6 +96,11 @@
     "a single cell multi omic atlas of the human pancreas reveals potential for cellular plasticity across development health and disease": "2026-08-13",
     "epigenetic modulation of stromal cell states underpins pathological tissue niches in crohn s disease": "2026-08-13",
     "single cell and spatial transcriptomics across populations with perianal fistulizing crohn s disease shows pro inflammatory cd4 macrophage involvement in disease progression": "2026-08-13",
-    "pithos a scalable and secure data container for fair compliant research data management in life sciences": "2026-08-13"
+    "pithos a scalable and secure data container for fair compliant research data management in life sciences": "2026-08-13",
+    "detecting somatic mutations in rare clones using single cell multiomics": "2026-08-16",
+    "hoodscanr profiling single cell neighborhoods in spatial transcriptomics data": "2026-08-16",
+    "skim a fast sketching strategy integrated with model s dynamic feedback for large scale single cell transcriptomic analysis": "2026-08-16",
+    "a categorization of spatial transcriptomics methods for cell cell communication analysis": "2026-08-16",
+    "multi omics integration identifies a cdh3 associated malignant epithelial state and immunosuppressive niche to predict prognosis in thymic epithelial tumors": "2026-08-16"
   }
 }
