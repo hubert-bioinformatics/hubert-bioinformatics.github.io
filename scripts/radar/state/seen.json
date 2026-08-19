@@ -49,7 +49,12 @@
     "pmid:42596574": "2026-08-16",
     "pmid:42574452": "2026-08-16",
     "pmid:42601252": "2026-08-16",
-    "pmid:42603286": "2026-08-16"
+    "pmid:42603286": "2026-08-16",
+    "pmid:42608830": "2026-08-18",
+    "pmid:42608546": "2026-08-18",
+    "pmid:42608579": "2026-08-18",
+    "pmid:42609482": "2026-08-18",
+    "url:https://www.genengnews.com/topics/omics/human-cell-atlas-at-10-a-decade-of-discovery-and-the-road-to-hca-2-0/": "2026-08-18"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -101,6 +106,11 @@
     "hoodscanr profiling single cell neighborhoods in spatial transcriptomics data": "2026-08-16",
     "skim a fast sketching strategy integrated with model s dynamic feedback for large scale single cell transcriptomic analysis": "2026-08-16",
     "a categorization of spatial transcriptomics methods for cell cell communication analysis": "2026-08-16",
-    "multi omics integration identifies a cdh3 associated malignant epithelial state and immunosuppressive niche to predict prognosis in thymic epithelial tumors": "2026-08-16"
+    "multi omics integration identifies a cdh3 associated malignant epithelial state and immunosuppressive niche to predict prognosis in thymic epithelial tumors": "2026-08-16",
+    "spcc inferring spatial cell cell interaction by integrating single cell and spatial transcriptomics": "2026-08-18",
+    "profiling maize embryonic leaf development and discovering new genes using high resolution spatial long read isoform sequencing": "2026-08-18",
+    "joint rpca domain aware multi omics integration for systems microbiology": "2026-08-18",
+    "the phageexpressionatlas reveals shared and unique transcriptional patterns across phage host interactions": "2026-08-18",
+    "human cell atlas at 10 a decade of discovery and the road to hca 2 0": "2026-08-18"
   }
 }
