@@ -59,7 +59,12 @@
     "doi:10.1038/s41588-026-02694-9": "2026-08-20",
     "pmid:42616853": "2026-08-20",
     "pmid:42623145": "2026-08-20",
-    "pmid:42619640": "2026-08-20"
+    "pmid:42619640": "2026-08-20",
+    "doi:10.1038/s41586-026-10776-1": "2026-08-23",
+    "pmid:42631565": "2026-08-23",
+    "pmid:42625378": "2026-08-23",
+    "pmid:42633556": "2026-08-23",
+    "pmid:42630107": "2026-08-23"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -121,6 +126,11 @@
     "toward the clinical application of long read sequencing in repeat expansion disorders": "2026-08-20",
     "pesci fast and user friendly software to compare single cell gene expression across species": "2026-08-20",
     "histopathology and spatial transcriptomics jointly map myofiber specific pathological programs in mtorc1 driven myopathy": "2026-08-20",
-    "multi omic analyses of the same sample using metabolomics lipidomics proteomics phosphoproteomics and glycoproteomics": "2026-08-20"
+    "multi omic analyses of the same sample using metabolomics lipidomics proteomics phosphoproteomics and glycoproteomics": "2026-08-20",
+    "reply to artefacts in single cell mtdna analyses misinform phylogenies": "2026-08-23",
+    "a practical workflow for spatial transcriptomics data analysis from data acquisition to advanced analyses": "2026-08-23",
+    "modtector ultra fast modification signal mining on mapped sequencing reads": "2026-08-23",
+    "plant spatio temporal integration network a framework for dynamic single cell and spatial transcriptomics in fungal plant interactions": "2026-08-23",
+    "genetics in heterotaxy a case series and literature review on dnah9 pkd1l1 mmp21 and gdf1": "2026-08-23"
   }
 }
