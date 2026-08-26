@@ -64,7 +64,12 @@
     "pmid:42631565": "2026-08-23",
     "pmid:42625378": "2026-08-23",
     "pmid:42633556": "2026-08-23",
-    "pmid:42630107": "2026-08-23"
+    "pmid:42630107": "2026-08-23",
+    "doi:10.1038/s41592-026-03194-8": "2026-08-25",
+    "pmid:42636813": "2026-08-25",
+    "pmid:42635531": "2026-08-25",
+    "pmid:42640826": "2026-08-25",
+    "pmid:42640781": "2026-08-25"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -131,6 +136,11 @@
     "a practical workflow for spatial transcriptomics data analysis from data acquisition to advanced analyses": "2026-08-23",
     "modtector ultra fast modification signal mining on mapped sequencing reads": "2026-08-23",
     "plant spatio temporal integration network a framework for dynamic single cell and spatial transcriptomics in fungal plant interactions": "2026-08-23",
-    "genetics in heterotaxy a case series and literature review on dnah9 pkd1l1 mmp21 and gdf1": "2026-08-23"
+    "genetics in heterotaxy a case series and literature review on dnah9 pkd1l1 mmp21 and gdf1": "2026-08-23",
+    "beyond benchmarking an expert guided consensus approach to spatially aware clustering": "2026-08-25",
+    "identifying memory gene expression from single sample scrna seq data using power law signatures": "2026-08-25",
+    "snpannotator automated functional annotation of genetic variants and linked proxies": "2026-08-25",
+    "community driven updates for comprehensive long read metagenomics and enhanced binning in nf core mag v5": "2026-08-25",
+    "protocol to improve isoform level quantification of low abundance transcripts via stalard pre amplification": "2026-08-25"
   }
 }
