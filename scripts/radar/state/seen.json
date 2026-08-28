@@ -69,7 +69,12 @@
     "pmid:42636813": "2026-08-25",
     "pmid:42635531": "2026-08-25",
     "pmid:42640826": "2026-08-25",
-    "pmid:42640781": "2026-08-25"
+    "pmid:42640781": "2026-08-25",
+    "pmid:42649290": "2026-08-28",
+    "pmid:42658653": "2026-08-28",
+    "pmid:42642330": "2026-08-28",
+    "doi:10.64898/2026.08.23.746230": "2026-08-28",
+    "doi:10.64898/2026.08.22.746432": "2026-08-28"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -141,6 +146,11 @@
     "identifying memory gene expression from single sample scrna seq data using power law signatures": "2026-08-25",
     "snpannotator automated functional annotation of genetic variants and linked proxies": "2026-08-25",
     "community driven updates for comprehensive long read metagenomics and enhanced binning in nf core mag v5": "2026-08-25",
-    "protocol to improve isoform level quantification of low abundance transcripts via stalard pre amplification": "2026-08-25"
+    "protocol to improve isoform level quantification of low abundance transcripts via stalard pre amplification": "2026-08-25",
+    "ultrafast and reference free sequence discovery in single cell data": "2026-08-28",
+    "nf core pacsomatic a scalable somatic analytic pipeline using pacbio hifi data": "2026-08-28",
+    "accurate reconstruction of spatial cell type maps and characterization of domain specific functions based on a gene aware heterogeneous network": "2026-08-28",
+    "benchmarking imputation methods for single cell rna sequencing data using peripheral blood mononuclear cells from acute myocardial infarction patients": "2026-08-28",
+    "teddy an integrative workflow for te chimeric isoform reconstruction and systematic characterization of te dependent transcriptional regulation": "2026-08-28"
   }
 }
