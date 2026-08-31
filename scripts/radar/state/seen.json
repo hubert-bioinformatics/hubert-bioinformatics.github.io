@@ -74,7 +74,12 @@
     "pmid:42658653": "2026-08-28",
     "pmid:42642330": "2026-08-28",
     "doi:10.64898/2026.08.23.746230": "2026-08-28",
-    "doi:10.64898/2026.08.22.746432": "2026-08-28"
+    "doi:10.64898/2026.08.22.746432": "2026-08-28",
+    "doi:10.64898/2026.08.26.747171": "2026-08-31",
+    "doi:10.1038/s41592-026-03193-9": "2026-08-31",
+    "pmid:42658029": "2026-08-31",
+    "doi:10.64898/2026.08.27.747499": "2026-08-31",
+    "pmid:42667167": "2026-08-31"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -151,6 +156,11 @@
     "nf core pacsomatic a scalable somatic analytic pipeline using pacbio hifi data": "2026-08-28",
     "accurate reconstruction of spatial cell type maps and characterization of domain specific functions based on a gene aware heterogeneous network": "2026-08-28",
     "benchmarking imputation methods for single cell rna sequencing data using peripheral blood mononuclear cells from acute myocardial infarction patients": "2026-08-28",
-    "teddy an integrative workflow for te chimeric isoform reconstruction and systematic characterization of te dependent transcriptional regulation": "2026-08-28"
+    "teddy an integrative workflow for te chimeric isoform reconstruction and systematic characterization of te dependent transcriptional regulation": "2026-08-28",
+    "closing the fusion detection gap in single cell rna seq with a scalable probe based workflow": "2026-08-31",
+    "benchmark pitfalls expose need for expert guided spatial clustering": "2026-08-31",
+    "st2traj deconvolution informed trajectory inference for multi timepoint spatial transcriptomics": "2026-08-31",
+    "salrr scalable analysis of long read rna seq enables comprehensive transcriptome profiling in human brain": "2026-08-31",
+    "optimized cas9 enriched nanopore sequencing and analysis workflow for clinical diagnosis of repeat expansion disorders": "2026-08-31"
   }
 }
