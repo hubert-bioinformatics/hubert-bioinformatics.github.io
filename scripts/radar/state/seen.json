@@ -79,7 +79,12 @@
     "doi:10.1038/s41592-026-03193-9": "2026-08-31",
     "pmid:42658029": "2026-08-31",
     "doi:10.64898/2026.08.27.747499": "2026-08-31",
-    "pmid:42667167": "2026-08-31"
+    "pmid:42667167": "2026-08-31",
+    "pmid:42671391": "2026-09-01",
+    "pmid:42678358": "2026-09-01",
+    "pmid:42667121": "2026-09-01",
+    "pmid:42678848": "2026-09-01",
+    "pmid:42678953": "2026-09-01"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -161,6 +166,11 @@
     "benchmark pitfalls expose need for expert guided spatial clustering": "2026-08-31",
     "st2traj deconvolution informed trajectory inference for multi timepoint spatial transcriptomics": "2026-08-31",
     "salrr scalable analysis of long read rna seq enables comprehensive transcriptome profiling in human brain": "2026-08-31",
-    "optimized cas9 enriched nanopore sequencing and analysis workflow for clinical diagnosis of repeat expansion disorders": "2026-08-31"
+    "optimized cas9 enriched nanopore sequencing and analysis workflow for clinical diagnosis of repeat expansion disorders": "2026-08-31",
+    "semanticst a scalable multi contextual graph learning framework for uncovering spatial niches and robust multi sample integration in spatial transcriptomics": "2026-09-01",
+    "echo a nanopore sequencing based workflow for genetic profiling of the human repeatome": "2026-09-01",
+    "predicting single cell perturbation responses across biological contexts with a deep generative model integrating optimal transport": "2026-09-01",
+    "sccmia mutual information guided decoupled learning for robust single cell cross modal integration": "2026-09-01",
+    "characterization of mettl3 14 mediated m6a modification in human transcriptome using nanopore direct rna sequencing": "2026-09-01"
   }
 }
