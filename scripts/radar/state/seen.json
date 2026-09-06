@@ -89,7 +89,12 @@
     "pmid:42684056": "2026-09-04",
     "pmid:42687963": "2026-09-04",
     "pmid:42691061": "2026-09-04",
-    "pmid:42685966": "2026-09-04"
+    "pmid:42685966": "2026-09-04",
+    "doi:10.64898/2026.09.01.748518": "2026-09-06",
+    "pmid:42697995": "2026-09-06",
+    "pmid:42696754": "2026-09-06",
+    "pmid:42691621": "2026-09-06",
+    "pmid:42697962": "2026-09-06"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -181,6 +186,11 @@
     "cobra cell type specific orthogonal batch effect removal algorithm in single cell rna sequencing data": "2026-09-04",
     "benchmarking cell type annotation in spatial transcriptomics resolving cellular hierarchies biological fidelity and dynamic cell states": "2026-09-04",
     "high auroc can mask decision failure in sepsis transcriptomic classifiers preprocessing stability outweighs post hoc calibration across cohorts": "2026-09-04",
-    "nanopore sequencing enhances the detection of low frequency variants and mutational linkage in hiv 1 drug resistance": "2026-09-04"
+    "nanopore sequencing enhances the detection of low frequency variants and mutational linkage in hiv 1 drug resistance": "2026-09-04",
+    "systematic benchmarking of commercial workflows for isoform resolved single nucleus transcriptomics": "2026-09-06",
+    "spatial isoform sequencing at single cell resolution reveals cell type specific spatial isoform variability in multiple brain cell types": "2026-09-06",
+    "gene chronos parameter efficient developmental time inference using a pretrained single cell foundation model": "2026-09-06",
+    "leakage controlled benchmarking of multi omics patient graph construction for pan cancer tumor type classification and prognosis analysis": "2026-09-06",
+    "beyond in silico prediction multi omics to identify a pathogenic deep intronic hnrnpk variant in au kline syndrome": "2026-09-06"
   }
 }
