@@ -94,7 +94,12 @@
     "pmid:42697995": "2026-09-06",
     "pmid:42696754": "2026-09-06",
     "pmid:42691621": "2026-09-06",
-    "pmid:42697962": "2026-09-06"
+    "pmid:42697962": "2026-09-06",
+    "pmid:42709043": "2026-09-09",
+    "pmid:42709872": "2026-09-09",
+    "pmid:42709893": "2026-09-09",
+    "pmid:42707020": "2026-09-09",
+    "pmid:42704667": "2026-09-09"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -191,6 +196,11 @@
     "spatial isoform sequencing at single cell resolution reveals cell type specific spatial isoform variability in multiple brain cell types": "2026-09-06",
     "gene chronos parameter efficient developmental time inference using a pretrained single cell foundation model": "2026-09-06",
     "leakage controlled benchmarking of multi omics patient graph construction for pan cancer tumor type classification and prognosis analysis": "2026-09-06",
-    "beyond in silico prediction multi omics to identify a pathogenic deep intronic hnrnpk variant in au kline syndrome": "2026-09-06"
+    "beyond in silico prediction multi omics to identify a pathogenic deep intronic hnrnpk variant in au kline syndrome": "2026-09-06",
+    "impact of single cell rna reference selection for the deconvolution of breast cancer spatial transcriptomics datasets": "2026-09-09",
+    "scgsi graph guided self supervised integration of paired single cell multi omics": "2026-09-09",
+    "spatially guided translation from histology images to transcriptomic profiles using foundation model driven contrastive learning": "2026-09-09",
+    "analytical choices drive toxicogenomic potency estimates a systematic evaluation of transcriptomic points of departure": "2026-09-09",
+    "decant decoupling mechanism from context in single cell drug perturbation representation": "2026-09-09"
   }
 }
