@@ -99,7 +99,12 @@
     "pmid:42709872": "2026-09-09",
     "pmid:42709893": "2026-09-09",
     "pmid:42707020": "2026-09-09",
-    "pmid:42704667": "2026-09-09"
+    "pmid:42704667": "2026-09-09",
+    "doi:10.64898/2026.09.09.26362331": "2026-09-10",
+    "pmid:42719292": "2026-09-10",
+    "pmid:42721175": "2026-09-10",
+    "pmid:42714244": "2026-09-10",
+    "doi:10.1038/d41586-026-02598-y": "2026-09-10"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -201,6 +206,11 @@
     "scgsi graph guided self supervised integration of paired single cell multi omics": "2026-09-09",
     "spatially guided translation from histology images to transcriptomic profiles using foundation model driven contrastive learning": "2026-09-09",
     "analytical choices drive toxicogenomic potency estimates a systematic evaluation of transcriptomic points of departure": "2026-09-09",
-    "decant decoupling mechanism from context in single cell drug perturbation representation": "2026-09-09"
+    "decant decoupling mechanism from context in single cell drug perturbation representation": "2026-09-09",
+    "yield of long read genome sequencing for rare disease diagnosis in short read genome negative cases": "2026-09-10",
+    "long read based detection of large copy number variants with potential functional significance using the contextsv structural variant caller": "2026-09-10",
+    "scgraphtrans pathway guided graph learning and domain adaptation for cell type annotation in single cell rna seq": "2026-09-10",
+    "stratum structured framework for reporting assessment and translational utility of metagenomics": "2026-09-10",
+    "popular open science platform to stop hosting data and code amid funding concerns": "2026-09-10"
   }
 }
