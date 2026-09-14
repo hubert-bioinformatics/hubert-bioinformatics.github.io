@@ -104,7 +104,12 @@
     "pmid:42719292": "2026-09-10",
     "pmid:42721175": "2026-09-10",
     "pmid:42714244": "2026-09-10",
-    "doi:10.1038/d41586-026-02598-y": "2026-09-10"
+    "doi:10.1038/d41586-026-02598-y": "2026-09-10",
+    "doi:10.64898/2026.09.07.749899": "2026-09-14",
+    "pmid:42720591": "2026-09-14",
+    "pmid:42730630": "2026-09-14",
+    "doi:10.1038/s41586-026-11001-9": "2026-09-14",
+    "pmid:42725707": "2026-09-14"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -211,6 +216,11 @@
     "long read based detection of large copy number variants with potential functional significance using the contextsv structural variant caller": "2026-09-10",
     "scgraphtrans pathway guided graph learning and domain adaptation for cell type annotation in single cell rna seq": "2026-09-10",
     "stratum structured framework for reporting assessment and translational utility of metagenomics": "2026-09-10",
-    "popular open science platform to stop hosting data and code amid funding concerns": "2026-09-10"
+    "popular open science platform to stop hosting data and code amid funding concerns": "2026-09-10",
+    "rna aware tissue preservation workflows for high quality spatial transcriptomics": "2026-09-14",
+    "scmustree a multi scale functional hierarchy for single cell transcriptomic analysis": "2026-09-14",
+    "dchichip a comprehensive nextflow based pipeline for multiscale analysis of chromatin architecture from hichip data": "2026-09-14",
+    "an operational perturbation proteomics based virtual cell model": "2026-09-14",
+    "spatial transcriptomics identifies characteristic immunological niches in atopic dermatitis": "2026-09-14"
   }
 }
