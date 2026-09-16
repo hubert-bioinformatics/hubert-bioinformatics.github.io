@@ -109,7 +109,12 @@
     "pmid:42720591": "2026-09-14",
     "pmid:42730630": "2026-09-14",
     "doi:10.1038/s41586-026-11001-9": "2026-09-14",
-    "pmid:42725707": "2026-09-14"
+    "pmid:42725707": "2026-09-14",
+    "pmid:42736018": "2026-09-16",
+    "pmid:42743262": "2026-09-16",
+    "doi:10.1038/s41587-026-03322-x": "2026-09-16",
+    "pmid:42734902": "2026-09-16",
+    "pmid:42742416": "2026-09-16"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -221,6 +226,11 @@
     "scmustree a multi scale functional hierarchy for single cell transcriptomic analysis": "2026-09-14",
     "dchichip a comprehensive nextflow based pipeline for multiscale analysis of chromatin architecture from hichip data": "2026-09-14",
     "an operational perturbation proteomics based virtual cell model": "2026-09-14",
-    "spatial transcriptomics identifies characteristic immunological niches in atopic dermatitis": "2026-09-14"
+    "spatial transcriptomics identifies characteristic immunological niches in atopic dermatitis": "2026-09-14",
+    "k mer based upstream preprocessing of long reads for isoform discovery": "2026-09-16",
+    "ten quick tips for spatial transcriptomics analysis": "2026-09-16",
+    "a versatile nanopore identifies four classes of analytes simultaneously": "2026-09-16",
+    "cell type resolved causal inference and spatial transcriptomic integration reveal immune specific genetic drivers of autoimmune and malignant thyroid disease": "2026-09-16",
+    "hypoxia response is associated with reduced hpv activity and tumor microenvironment remodeling in cervical cancer": "2026-09-16"
   }
 }
