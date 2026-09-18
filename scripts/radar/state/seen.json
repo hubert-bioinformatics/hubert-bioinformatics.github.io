@@ -114,7 +114,12 @@
     "pmid:42743262": "2026-09-16",
     "doi:10.1038/s41587-026-03322-x": "2026-09-16",
     "pmid:42734902": "2026-09-16",
-    "pmid:42742416": "2026-09-16"
+    "pmid:42742416": "2026-09-16",
+    "pmid:42752856": "2026-09-18",
+    "pmid:42747312": "2026-09-18",
+    "pmid:42752570": "2026-09-18",
+    "pmid:42745550": "2026-09-18",
+    "doi:10.1038/s41586-026-11055-9": "2026-09-18"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -231,6 +236,11 @@
     "ten quick tips for spatial transcriptomics analysis": "2026-09-16",
     "a versatile nanopore identifies four classes of analytes simultaneously": "2026-09-16",
     "cell type resolved causal inference and spatial transcriptomic integration reveal immune specific genetic drivers of autoimmune and malignant thyroid disease": "2026-09-16",
-    "hypoxia response is associated with reduced hpv activity and tumor microenvironment remodeling in cervical cancer": "2026-09-16"
+    "hypoxia response is associated with reduced hpv activity and tumor microenvironment remodeling in cervical cancer": "2026-09-16",
+    "post hoc long read sequencing links leukemic mutation status to single cell transcriptomes": "2026-09-18",
+    "macs3 a peak calling platform for bulk and single cell regulatory genomics": "2026-09-18",
+    "a molecularly anchored spatial transcriptomic framework for precise ca1 subiculum parcellation and region resolved analysis in alzheimer s disease": "2026-09-18",
+    "nanodel identification of large scale mitochondrial dna deletions using long read sequencing": "2026-09-18",
+    "identification of broadly tumour reactive tcrs from multiple myeloma": "2026-09-18"
   }
 }
