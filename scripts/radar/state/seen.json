@@ -119,7 +119,12 @@
     "pmid:42747312": "2026-09-18",
     "pmid:42752570": "2026-09-18",
     "pmid:42745550": "2026-09-18",
-    "doi:10.1038/s41586-026-11055-9": "2026-09-18"
+    "doi:10.1038/s41586-026-11055-9": "2026-09-18",
+    "pmid:42754741": "2026-09-21",
+    "doi:10.64898/2026.09.17.26363321": "2026-09-21",
+    "pmid:42748914": "2026-09-21",
+    "pmid:42744283": "2026-09-21",
+    "pmid:42752543": "2026-09-21"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -241,6 +246,11 @@
     "macs3 a peak calling platform for bulk and single cell regulatory genomics": "2026-09-18",
     "a molecularly anchored spatial transcriptomic framework for precise ca1 subiculum parcellation and region resolved analysis in alzheimer s disease": "2026-09-18",
     "nanodel identification of large scale mitochondrial dna deletions using long read sequencing": "2026-09-18",
-    "identification of broadly tumour reactive tcrs from multiple myeloma": "2026-09-18"
+    "identification of broadly tumour reactive tcrs from multiple myeloma": "2026-09-18",
+    "spatiotemporal single cell profiling reveals t cell clonal dynamics and phenotypic plasticity in human graft versus host disease": "2026-09-21",
+    "cast as a tumor specific suppressor in colorectal cancer discovery through integrative analysis of unannotated isoforms proteomics and epigenetic regulation": "2026-09-21",
+    "single cell and spatial multi omics reveal a recurrent multicellular niche at the tumor stroma interface in multidrug resistance": "2026-09-21",
+    "parallel analysis of repeat expansions an updated clinical nanopore cas9 targeted sequencing workflow for nanopore r10 flow cells": "2026-09-21",
+    "cosag nf a scalable nextflow pipeline for co assembly optimization and interactive visualization of high throughput single cell genomes": "2026-09-21"
   }
 }
