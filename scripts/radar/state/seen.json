@@ -124,7 +124,10 @@
     "doi:10.64898/2026.09.17.26363321": "2026-09-21",
     "pmid:42748914": "2026-09-21",
     "pmid:42744283": "2026-09-21",
-    "pmid:42752543": "2026-09-21"
+    "pmid:42752543": "2026-09-21",
+    "doi:10.1038/s41592-026-03219-2": "2026-09-23",
+    "pmid:42768111": "2026-09-23",
+    "pmid:42768301": "2026-09-23"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -251,6 +254,9 @@
     "cast as a tumor specific suppressor in colorectal cancer discovery through integrative analysis of unannotated isoforms proteomics and epigenetic regulation": "2026-09-21",
     "single cell and spatial multi omics reveal a recurrent multicellular niche at the tumor stroma interface in multidrug resistance": "2026-09-21",
     "parallel analysis of repeat expansions an updated clinical nanopore cas9 targeted sequencing workflow for nanopore r10 flow cells": "2026-09-21",
-    "cosag nf a scalable nextflow pipeline for co assembly optimization and interactive visualization of high throughput single cell genomes": "2026-09-21"
+    "cosag nf a scalable nextflow pipeline for co assembly optimization and interactive visualization of high throughput single cell genomes": "2026-09-21",
+    "svpg a pangenome based structural variant detection approach and rapid augmentation of pangenome graphs with new samples": "2026-09-23",
+    "ramanomics decodes the spatial vibrational molecular architecture of senescence in aging and repair": "2026-09-23",
+    "a scalable workflow for sensitive detection and genomic profiling of tumour cells in lymph nodes from ffpe tissue": "2026-09-23"
   }
 }
