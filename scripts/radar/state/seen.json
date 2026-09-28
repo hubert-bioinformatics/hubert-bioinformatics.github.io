@@ -132,7 +132,12 @@
     "doi:10.1038/s41592-026-03225-4": "2026-09-25",
     "pmid:42608147": "2026-09-25",
     "pmid:42772859": "2026-09-25",
-    "doi:10.1038/d41586-026-02770-4": "2026-09-25"
+    "doi:10.1038/d41586-026-02770-4": "2026-09-25",
+    "doi:10.64898/2026.09.20.752837": "2026-09-28",
+    "pmid:42788664": "2026-09-28",
+    "pmid:42786276": "2026-09-28",
+    "pmid:42801638": "2026-09-28",
+    "pmid:42789703": "2026-09-28"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -267,6 +272,11 @@
     "nanots a deep learning tool for accurate snp calling in nanopore long read transcriptome data": "2026-09-25",
     "characterizing intra and intertumor heterogeneity in ovarian high grade serous carcinoma subtypes using single cell and spatial transcriptomics": "2026-09-25",
     "integrative multi omics landscape and diagnostic therapeutic modelling of steatohepatitic hepatocellular carcinoma": "2026-09-25",
-    "vast cellular gene expression atlas could transform how scientists understand brain ageing and disease": "2026-09-25"
+    "vast cellular gene expression atlas could transform how scientists understand brain ageing and disease": "2026-09-25",
+    "mcseg ai agent guided workflow search for no code cell segmentation and transcript attribution in spatial transcriptomics": "2026-09-28",
+    "multispacenet graph based joint representation learning for paired spatial transcriptome proteome data": "2026-09-28",
+    "the dual enhanced graph learning framework depass allows paired data integration in single cell and spatial multiomics": "2026-09-28",
+    "disentangling heterogeneous molecular networks for multi omics driven cancer driver discovery": "2026-09-28",
+    "multiplatform single cell and spatial transcriptomics reveal sex specific malignant states and architecture in male breast cancer": "2026-09-28"
   }
 }
