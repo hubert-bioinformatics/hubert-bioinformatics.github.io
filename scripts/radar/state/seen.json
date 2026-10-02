@@ -142,7 +142,12 @@
     "pmid:42804522": "2026-09-30",
     "pmid:42804722": "2026-09-30",
     "doi:10.1038/s41586-026-10836-6": "2026-09-30",
-    "pmid:42806090": "2026-09-30"
+    "pmid:42806090": "2026-09-30",
+    "doi:10.64898/2026.09.25.754510": "2026-10-02",
+    "pmid:42810347": "2026-10-02",
+    "pmid:42815157": "2026-10-02",
+    "pmid:42813815": "2026-10-02",
+    "pmid:42817219": "2026-10-02"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -287,6 +292,11 @@
     "spatial cell cell communication inference based on cell spot ligand receptor heterogeneous graphs": "2026-09-30",
     "pileup hi an ultra high throughput customizable alignment pileup program for large datasets": "2026-09-30",
     "single nucleus transcriptome wide association study of human brain disorders": "2026-09-30",
-    "spatially resolved multiomics of human meningeal development reveal lineage and disease dynamics": "2026-09-30"
+    "spatially resolved multiomics of human meningeal development reveal lineage and disease dynamics": "2026-09-30",
+    "rank preserving alignment enables cross platform learning and phenotyping for single cell and spatial proteomics": "2026-10-02",
+    "openfish enables same section spatial transcriptomics and maldi msi integration": "2026-10-02",
+    "resolving structural variants in hemophilia insights from long read sequencing and molecular and clinical implications": "2026-10-02",
+    "rarefaction is better than robust aitchison pca and other compositional data analysis methods at controlling for uneven sequencing effort": "2026-10-02",
+    "hidden outcomes of crispr cas9 genome editing revealed by targeted sequencing in isogenic human ipsc clones": "2026-10-02"
   }
 }
