@@ -147,7 +147,10 @@
     "pmid:42810347": "2026-10-02",
     "pmid:42815157": "2026-10-02",
     "pmid:42813815": "2026-10-02",
-    "pmid:42817219": "2026-10-02"
+    "pmid:42817219": "2026-10-02",
+    "pmid:42813985": "2026-10-05",
+    "pmid:42825456": "2026-10-05",
+    "pmid:42828772": "2026-10-05"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -297,6 +300,9 @@
     "openfish enables same section spatial transcriptomics and maldi msi integration": "2026-10-02",
     "resolving structural variants in hemophilia insights from long read sequencing and molecular and clinical implications": "2026-10-02",
     "rarefaction is better than robust aitchison pca and other compositional data analysis methods at controlling for uneven sequencing effort": "2026-10-02",
-    "hidden outcomes of crispr cas9 genome editing revealed by targeted sequencing in isogenic human ipsc clones": "2026-10-02"
+    "hidden outcomes of crispr cas9 genome editing revealed by targeted sequencing in isogenic human ipsc clones": "2026-10-02",
+    "reference based cell type deconvolution using self supervised contrastive learning in spatial transcriptomics with ctdecon": "2026-10-05",
+    "stpularity spatial domain identification via purity constrained louvain clustering on spatially smoothed cell type proportions": "2026-10-05",
+    "omesim a genetics based nonlinear simulator for in between ome and phenotype": "2026-10-05"
   }
 }
