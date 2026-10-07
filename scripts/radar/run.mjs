@@ -26,6 +26,7 @@ import { getLlm } from './llm/index.mjs';
 import { select } from './select.mjs';
 import { summarize } from './summarize.mjs';
 import { writeAll, prBody } from './write.mjs';
+import { pickByScore, stubDraft } from './fallback.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SEEN_PATH = join(HERE, 'state', 'seen.json');
@@ -108,14 +109,35 @@ async function main() {
   // ── 4. 선별 ──────────────────────────────────────────────
   const llm = await getLlm();
   log(`\n선별 (${llm.name})`);
-  const picked = await select(candidates, { llm, pick, log });
+  // LLM 이 통째로 막혀도 회차를 버리지 않는다. 모델 폴백(gemini.mjs)으로도
+  // 안 되는 경우가 남아서, 그때는 점수 순으로 고르고 요약 없이 올린다.
+  // 수집·점수는 이미 끝나 있으니 그 결과까지 버릴 이유가 없다 (fallback.mjs).
+  let degraded = '';
+  let picked;
+  try {
+    picked = await select(candidates, { llm, pick, log });
+  } catch (err) {
+    degraded = `선별 실패 — ${err.message}`;
+    log(`  ! ${degraded}`);
+    picked = pickByScore(candidates, pick);
+    log(`  · 점수 순 상위 ${picked.length}건으로 대체한다`);
+  }
   picked.forEach((p, i) => log(`  ${i + 1}. ${cut(p.title, 70)}`));
 
   // ── 5. 요약 ──────────────────────────────────────────────
-  log('\n요약');
-  const summarized = await summarize(picked, { llm, log });
+  // 선별부터 막혔으면 요약도 될 리 없다. 호출해 봐야 건당 30초씩 버린다.
+  let summarized = [];
+  if (!degraded) {
+    log('\n요약');
+    summarized = await summarize(picked, { llm, log });
+  }
+
+  // 일부만 실패한 건 그대로 둔다 — seen 에 안 남아 다음 회차에 다시 올라온다.
+  // 여기서 받아 내는 건 '한 건도 못 만든' 경우뿐이다.
   if (summarized.length === 0) {
-    throw new Error('요약이 한 건도 성공하지 못했다.');
+    degraded ||= '요약이 한 건도 성공하지 못했다.';
+    summarized = picked.map((item) => ({ ...item, draft: stubDraft(item) }));
+    log(`\n요약 없는 초안 ${summarized.length}건으로 올린다 (${degraded})`);
   }
 
   if (args.dry) {
@@ -139,6 +161,7 @@ async function main() {
     candidates: candidates.length,
     skippedSeen,
     llm: llm.name,
+    degraded,
   };
   await writeFile(PR_BODY, prBody(written, stats), 'utf8');
 
