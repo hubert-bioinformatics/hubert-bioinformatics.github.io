@@ -150,7 +150,12 @@
     "pmid:42817219": "2026-10-02",
     "pmid:42813985": "2026-10-05",
     "pmid:42825456": "2026-10-05",
-    "pmid:42828772": "2026-10-05"
+    "pmid:42828772": "2026-10-05",
+    "pmid:42834230": "2026-10-07",
+    "pmid:42836654": "2026-10-07",
+    "pmid:42824964": "2026-10-07",
+    "pmid:42837398": "2026-10-07",
+    "pmid:42832612": "2026-10-07"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -303,6 +308,11 @@
     "hidden outcomes of crispr cas9 genome editing revealed by targeted sequencing in isogenic human ipsc clones": "2026-10-02",
     "reference based cell type deconvolution using self supervised contrastive learning in spatial transcriptomics with ctdecon": "2026-10-05",
     "stpularity spatial domain identification via purity constrained louvain clustering on spatially smoothed cell type proportions": "2026-10-05",
-    "omesim a genetics based nonlinear simulator for in between ome and phenotype": "2026-10-05"
+    "omesim a genetics based nonlinear simulator for in between ome and phenotype": "2026-10-05",
+    "cellart a unified framework for extracting single cell information from high resolution spatial transcriptomics": "2026-10-07",
+    "stile automated tissue microarray dearraying for spatial transcriptomics": "2026-10-07",
+    "novel strategy for structural variant genotyping by short read genomic sequencing from restriction circles experimental and bioinformatics proof of concept": "2026-10-07",
+    "omics data discovery agents agent supported retrieval reanalysis and synthesis of published omics data": "2026-10-07",
+    "sub consensus haploid variant calling in long read sequencing technology": "2026-10-07"
   }
 }
