@@ -134,6 +134,14 @@ export async function askJson({ system, input, schema, log = () => {} }) {
         log(`  · ${model} 이 JSON 을 안 지킨다 → 다음 모델로`);
         continue;
       }
+      if (err.overloaded) {
+        // 과부하는 모델마다 따로 난다. exhausted 에는 넣지 않는다 — 몇 분이면
+        // 풀리는 일이라, 다음 호출에서 주 모델이 살아 있으면 그쪽 요약이 낫다.
+        // 대신 매번 30초(재시도 3회)를 버리게 되는데, 주 3회 도는 작업이라
+        // 그 시간보다 요약 품질을 택했다.
+        log(`  · ${model} 과부하 → 다음 모델로`);
+        continue;
+      }
       throw err; // 그 밖의 오류는 모델을 바꿔도 소용없다
     }
   }
@@ -169,6 +177,11 @@ async function callOnce({ apiKey, model, system, input, schema }) {
         } else if (res.status < 500) {
           err.fatal = true;
           throw err;
+        } else {
+          // 5xx 는 대개 그 모델에 사람이 몰려서 난다 — 503 본문이 모델 이름을
+          // 집어서 "high demand" 라고 말한다. 재시도로 안 풀리면 호출부가
+          // 다른 모델로 넘어가야 한다.
+          err.overloaded = true;
         }
         throw err; // 5xx 와 분당 429 는 재시도 대상
       }
