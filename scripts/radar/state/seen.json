@@ -155,7 +155,12 @@
     "pmid:42836654": "2026-10-07",
     "pmid:42824964": "2026-10-07",
     "pmid:42837398": "2026-10-07",
-    "pmid:42832612": "2026-10-07"
+    "pmid:42832612": "2026-10-07",
+    "doi:10.64898/2026.10.01.755876": "2026-10-09",
+    "pmid:42842680": "2026-10-09",
+    "pmid:42840349": "2026-10-09",
+    "doi:10.1038/s41586-026-11125-y": "2026-10-09",
+    "pmid:42841722": "2026-10-09"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -313,6 +318,11 @@
     "stile automated tissue microarray dearraying for spatial transcriptomics": "2026-10-07",
     "novel strategy for structural variant genotyping by short read genomic sequencing from restriction circles experimental and bioinformatics proof of concept": "2026-10-07",
     "omics data discovery agents agent supported retrieval reanalysis and synthesis of published omics data": "2026-10-07",
-    "sub consensus haploid variant calling in long read sequencing technology": "2026-10-07"
+    "sub consensus haploid variant calling in long read sequencing technology": "2026-10-07",
+    "scstable assessing scrna seq analysis stability under bulk derived between sample variation": "2026-10-09",
+    "translocation induced enhancer rewiring reveals cryptic oncogenic circuits in multiple myeloma": "2026-10-09",
+    "nanopore sequencing combined with adaptive sampling and nanoexpansion enables accurate characterization of repeat expansion disorders": "2026-10-09",
+    "dynamics of human cardiogenesis and its disruption in trisomy 21": "2026-10-09",
+    "noibic a noise tolerant biclustering algorithm for high throughput gene expression data analysis": "2026-10-09"
   }
 }
