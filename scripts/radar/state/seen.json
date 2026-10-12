@@ -160,7 +160,12 @@
     "pmid:42842680": "2026-10-09",
     "pmid:42840349": "2026-10-09",
     "doi:10.1038/s41586-026-11125-y": "2026-10-09",
-    "pmid:42841722": "2026-10-09"
+    "pmid:42841722": "2026-10-09",
+    "doi:10.64898/2026.10.09.758116": "2026-10-12",
+    "doi:10.64898/2026.10.08.757673": "2026-10-12",
+    "doi:10.64898/2026.10.08.757494": "2026-10-12",
+    "pmid:42853736": "2026-10-12",
+    "pmid:42853677": "2026-10-12"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -323,6 +328,11 @@
     "translocation induced enhancer rewiring reveals cryptic oncogenic circuits in multiple myeloma": "2026-10-09",
     "nanopore sequencing combined with adaptive sampling and nanoexpansion enables accurate characterization of repeat expansion disorders": "2026-10-09",
     "dynamics of human cardiogenesis and its disruption in trisomy 21": "2026-10-09",
-    "noibic a noise tolerant biclustering algorithm for high throughput gene expression data analysis": "2026-10-09"
+    "noibic a noise tolerant biclustering algorithm for high throughput gene expression data analysis": "2026-10-09",
+    "a unified comparison of 10x genomics and parse biosciences scrna seq technologies": "2026-10-12",
+    "a unified framework for quantitative splicing and transcript prediction": "2026-10-12",
+    "scalable methylome transcriptome profiling resolves clonal organization in human hematopoiesis": "2026-10-12",
+    "schcl sda a homophily aware contrastive learning with spectral distribution alignment for scrna seq data clustering": "2026-10-12",
+    "protocol for genome wide differential methylation using long read dna sequencing in the cortex of a mouse model of alzheimer s disease": "2026-10-12"
   }
 }
