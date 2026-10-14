@@ -165,7 +165,12 @@
     "doi:10.64898/2026.10.08.757673": "2026-10-12",
     "doi:10.64898/2026.10.08.757494": "2026-10-12",
     "pmid:42853736": "2026-10-12",
-    "pmid:42853677": "2026-10-12"
+    "pmid:42853677": "2026-10-12",
+    "pmid:42841543": "2026-10-14",
+    "pmid:42864382": "2026-10-14",
+    "doi:10.64898/2026.10.09.26365004": "2026-10-14",
+    "pmid:42349015": "2026-10-14",
+    "doi:10.64898/2026.10.09.26365121": "2026-10-14"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -333,6 +338,11 @@
     "a unified framework for quantitative splicing and transcript prediction": "2026-10-12",
     "scalable methylome transcriptome profiling resolves clonal organization in human hematopoiesis": "2026-10-12",
     "schcl sda a homophily aware contrastive learning with spectral distribution alignment for scrna seq data clustering": "2026-10-12",
-    "protocol for genome wide differential methylation using long read dna sequencing in the cortex of a mouse model of alzheimer s disease": "2026-10-12"
+    "protocol for genome wide differential methylation using long read dna sequencing in the cortex of a mouse model of alzheimer s disease": "2026-10-12",
+    "single cell and spatial transcriptomics reveal chchd3 as a therapeutic target to activate cgas sting and overcome immunosuppression in lung adenocarcinoma": "2026-10-14",
+    "optimized rna seq workflow for routine diagnosis of mitochondrial diseases using aberrant expression analysis and phenotype driven prioritization": "2026-10-14",
+    "long read sequencing and benchmarking of saliva against blood for genomic variant detection in autism": "2026-10-14",
+    "rapid and reproducible karyotyping with long read sequencing in patients with aml": "2026-10-14",
+    "a national ecosystem for long read genome sequencing integrating population genomics and rare disease diagnostics in sweden": "2026-10-14"
   }
 }
