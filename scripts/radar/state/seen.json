@@ -170,7 +170,12 @@
     "pmid:42864382": "2026-10-14",
     "doi:10.64898/2026.10.09.26365004": "2026-10-14",
     "pmid:42349015": "2026-10-14",
-    "doi:10.64898/2026.10.09.26365121": "2026-10-14"
+    "doi:10.64898/2026.10.09.26365121": "2026-10-14",
+    "doi:10.64898/2026.10.14.758627": "2026-10-16",
+    "pmid:42870119": "2026-10-16",
+    "pmid:42867153": "2026-10-16",
+    "url:https://www.genengnews.com/topics/omics/illumina-combines-multiomics-informatics-applications-in-new-bioinsight-platform/": "2026-10-16",
+    "doi:10.1038/s41586-026-11119-w": "2026-10-16"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -343,6 +348,11 @@
     "optimized rna seq workflow for routine diagnosis of mitochondrial diseases using aberrant expression analysis and phenotype driven prioritization": "2026-10-14",
     "long read sequencing and benchmarking of saliva against blood for genomic variant detection in autism": "2026-10-14",
     "rapid and reproducible karyotyping with long read sequencing in patients with aml": "2026-10-14",
-    "a national ecosystem for long read genome sequencing integrating population genomics and rare disease diagnostics in sweden": "2026-10-14"
+    "a national ecosystem for long read genome sequencing integrating population genomics and rare disease diagnostics in sweden": "2026-10-14",
+    "beyond the gene contextualizing novel isoforms through pathway analysis in long read single cell rna sequencing": "2026-10-16",
+    "cross scale genetic analysis prioritizes shared regulatory variation cell type contributions co expression programs and exon level patterns in atopic dermatitis and asthma": "2026-10-16",
+    "seumetry a versatile and comprehensive r toolkit to accelerate high dimensional flow and mass cytometry data analysis": "2026-10-16",
+    "illumina combines multiomics informatics applications in new bioinsight platform": "2026-10-16",
+    "a microexon regulatory code reveals autism linked genetic variation": "2026-10-16"
   }
 }
