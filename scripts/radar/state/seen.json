@@ -180,7 +180,12 @@
     "doi:10.1038/s41592-026-03264-x": "2026-10-19",
     "doi:10.64898/2026.10.15.759112": "2026-10-19",
     "pmid:42886297": "2026-10-19",
-    "doi:10.64898/2026.10.11.758362": "2026-10-19"
+    "doi:10.64898/2026.10.11.758362": "2026-10-19",
+    "doi:10.64898/2026.10.14.759117": "2026-10-21",
+    "doi:10.1038/s41576-026-01020-7": "2026-10-21",
+    "pmid:42887383": "2026-10-21",
+    "pmid:42899409": "2026-10-21",
+    "pmid:42892321": "2026-10-21"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -363,6 +368,11 @@
     "ampliconsuite an end to end workflow for analyzing focal amplifications in cancer genomes": "2026-10-19",
     "navigating the rapidly evolving landscape of sequencing based spatial transcriptomics technologies a comprehensive multi platform benchmark": "2026-10-19",
     "tissue dissociation workflows influence reactive astrocyte recovery in single cell transcriptomics": "2026-10-19",
-    "benchmarking the alphagenome variant impact score against spliceai on post release clinvar classifications and experimental splicing assays": "2026-10-19"
+    "benchmarking the alphagenome variant impact score against spliceai on post release clinvar classifications and experimental splicing assays": "2026-10-19",
+    "multiomer a pipeline for reproducible analysis of large scale single nucleus epi multiome datasets": "2026-10-21",
+    "small variant calling in the era of long read sequencing": "2026-10-21",
+    "donor aware integration of public single cell and spatial transcriptomes identifies a vic remodeling program and fn1 nt5e spatial association in calcific aortic valve disease": "2026-10-21",
+    "integration of polygenic risk with single cell methylation data using met scdrs": "2026-10-21",
+    "optimizing pathogen detection in clinical metagenomics a comprehensive benchmarking of bioinformatic pipelines for single end short reads": "2026-10-21"
   }
 }
