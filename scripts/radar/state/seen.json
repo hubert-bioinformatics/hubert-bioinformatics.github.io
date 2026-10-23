@@ -185,7 +185,12 @@
     "doi:10.1038/s41576-026-01020-7": "2026-10-21",
     "pmid:42887383": "2026-10-21",
     "pmid:42899409": "2026-10-21",
-    "pmid:42892321": "2026-10-21"
+    "pmid:42892321": "2026-10-21",
+    "doi:10.1038/s41588-026-02793-7": "2026-10-23",
+    "doi:10.64898/2026.10.20.760397": "2026-10-23",
+    "doi:10.64898/2026.10.16.759546": "2026-10-23",
+    "pmid:42901338": "2026-10-23",
+    "pmid:42901719": "2026-10-23"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -373,6 +378,11 @@
     "small variant calling in the era of long read sequencing": "2026-10-21",
     "donor aware integration of public single cell and spatial transcriptomes identifies a vic remodeling program and fn1 nt5e spatial association in calcific aortic valve disease": "2026-10-21",
     "integration of polygenic risk with single cell methylation data using met scdrs": "2026-10-21",
-    "optimizing pathogen detection in clinical metagenomics a comprehensive benchmarking of bioinformatic pipelines for single end short reads": "2026-10-21"
+    "optimizing pathogen detection in clinical metagenomics a comprehensive benchmarking of bioinformatic pipelines for single end short reads": "2026-10-21",
+    "co regulation confounds direction of genetic effects in transcriptome wide association studies": "2026-10-23",
+    "t2g fast and accurate transcriptome to genome bam liftover for short and long read rna sequencing": "2026-10-23",
+    "spacepath enables pathway and molecular family analysis beyond annotation ambiguity in spatial metabolomics and lipidomics": "2026-10-23",
+    "longitudinal proteomics integrated with multi omics reveal molecular drivers of responses to neoadjuvant chemotherapy in rectal cancer": "2026-10-23",
+    "neutrophil epithelial niches arrest b cell maturation in dysfunctional tertiary lymphoid structures of gastric cancer neoadjuvant immunochemotherapy": "2026-10-23"
   }
 }
