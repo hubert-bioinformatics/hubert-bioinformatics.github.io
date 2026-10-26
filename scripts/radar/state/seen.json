@@ -190,7 +190,12 @@
     "doi:10.64898/2026.10.20.760397": "2026-10-23",
     "doi:10.64898/2026.10.16.759546": "2026-10-23",
     "pmid:42901338": "2026-10-23",
-    "pmid:42901719": "2026-10-23"
+    "pmid:42901719": "2026-10-23",
+    "doi:10.1038/s41592-026-03272-x": "2026-10-26",
+    "pmid:42912785": "2026-10-26",
+    "pmid:42922195": "2026-10-26",
+    "pmid:42912787": "2026-10-26",
+    "pmid:42925120": "2026-10-26"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -383,6 +388,11 @@
     "t2g fast and accurate transcriptome to genome bam liftover for short and long read rna sequencing": "2026-10-23",
     "spacepath enables pathway and molecular family analysis beyond annotation ambiguity in spatial metabolomics and lipidomics": "2026-10-23",
     "longitudinal proteomics integrated with multi omics reveal molecular drivers of responses to neoadjuvant chemotherapy in rectal cancer": "2026-10-23",
-    "neutrophil epithelial niches arrest b cell maturation in dysfunctional tertiary lymphoid structures of gastric cancer neoadjuvant immunochemotherapy": "2026-10-23"
+    "neutrophil epithelial niches arrest b cell maturation in dysfunctional tertiary lymphoid structures of gastric cancer neoadjuvant immunochemotherapy": "2026-10-23",
+    "benchmarking segmentation methods for spatial transcriptomics": "2026-10-26",
+    "the revised diploid genome sequence of an individual human a workflow for near telomere to telomere assemblies using only oxford nanopore technologies simplex reads": "2026-10-26",
+    "lrp2 a proteogenomics pipeline for long read informed protein isoform analysis and discovery": "2026-10-26",
+    "si scrna seq enabling ambient stable single cell transcriptomics through spatially confined biosilicification": "2026-10-26",
+    "whole genome and transcriptome analysis in relapsed refractory non hodgkin lymphoma results from a multicentre precision oncology cohort": "2026-10-26"
   }
 }
