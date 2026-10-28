@@ -195,7 +195,12 @@
     "pmid:42912785": "2026-10-26",
     "pmid:42922195": "2026-10-26",
     "pmid:42912787": "2026-10-26",
-    "pmid:42925120": "2026-10-26"
+    "pmid:42925120": "2026-10-26",
+    "pmid:42934226": "2026-10-28",
+    "pmid:42931921": "2026-10-28",
+    "pmid:42935241": "2026-10-28",
+    "pmid:42935243": "2026-10-28",
+    "url:https://www.genengnews.com/topics/omics/bonjour-genomics-a-video-from-ashg/": "2026-10-28"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -393,6 +398,11 @@
     "the revised diploid genome sequence of an individual human a workflow for near telomere to telomere assemblies using only oxford nanopore technologies simplex reads": "2026-10-26",
     "lrp2 a proteogenomics pipeline for long read informed protein isoform analysis and discovery": "2026-10-26",
     "si scrna seq enabling ambient stable single cell transcriptomics through spatially confined biosilicification": "2026-10-26",
-    "whole genome and transcriptome analysis in relapsed refractory non hodgkin lymphoma results from a multicentre precision oncology cohort": "2026-10-26"
+    "whole genome and transcriptome analysis in relapsed refractory non hodgkin lymphoma results from a multicentre precision oncology cohort": "2026-10-26",
+    "a droplet based long read single cell epigenome sequencing method for the high throughput profiling of multidimensional regulatory elements within individual cells": "2026-10-28",
+    "genomic in vitro transcription and nanopore direct rna sequencing of a human b lymphocyte cell line": "2026-10-28",
+    "cellmarker 3 0 an updated resource of manually curated and computationally predicted cell markers in human mouse and interactive web tools for single cell and spatial transcriptomics analysis": "2026-10-28",
+    "oscar an omics atlas of paired single cell atac seq and rna seq for decoding cell specific gene regulation": "2026-10-28",
+    "bonjour genomics a video from ashg": "2026-10-28"
   }
 }
