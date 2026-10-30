@@ -200,7 +200,11 @@
     "pmid:42931921": "2026-10-28",
     "pmid:42935241": "2026-10-28",
     "pmid:42935243": "2026-10-28",
-    "url:https://www.genengnews.com/topics/omics/bonjour-genomics-a-video-from-ashg/": "2026-10-28"
+    "url:https://www.genengnews.com/topics/omics/bonjour-genomics-a-video-from-ashg/": "2026-10-28",
+    "doi:10.1038/s41586-026-10721-2": "2026-10-30",
+    "pmid:42950829": "2026-10-30",
+    "pmid:42949909": "2026-10-30",
+    "doi:10.1038/s41586-026-11173-4": "2026-10-30"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -403,6 +407,10 @@
     "genomic in vitro transcription and nanopore direct rna sequencing of a human b lymphocyte cell line": "2026-10-28",
     "cellmarker 3 0 an updated resource of manually curated and computationally predicted cell markers in human mouse and interactive web tools for single cell and spatial transcriptomics analysis": "2026-10-28",
     "oscar an omics atlas of paired single cell atac seq and rna seq for decoding cell specific gene regulation": "2026-10-28",
-    "bonjour genomics a video from ashg": "2026-10-28"
+    "bonjour genomics a video from ashg": "2026-10-28",
+    "rare and common genetic variants shape single cell immune gene expression": "2026-10-30",
+    "interpretable models for scrna seq data embedding with multi scale structure preservation": "2026-10-30",
+    "starlng stability analysis of coregulated nests of genes": "2026-10-30",
+    "genetic variants shape single cell chromatin accessibility and disease risk": "2026-10-30"
   }
 }
