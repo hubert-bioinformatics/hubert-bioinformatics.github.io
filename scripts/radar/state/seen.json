@@ -204,7 +204,12 @@
     "doi:10.1038/s41586-026-10721-2": "2026-10-30",
     "pmid:42950829": "2026-10-30",
     "pmid:42949909": "2026-10-30",
-    "doi:10.1038/s41586-026-11173-4": "2026-10-30"
+    "doi:10.1038/s41586-026-11173-4": "2026-10-30",
+    "pmid:42962014": "2026-11-02",
+    "pmid:42966957": "2026-11-02",
+    "doi:10.64898/2026.10.30.763227": "2026-11-02",
+    "pmid:42958969": "2026-11-02",
+    "doi:10.1038/d41586-026-03067-2": "2026-11-02"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -411,6 +416,11 @@
     "rare and common genetic variants shape single cell immune gene expression": "2026-10-30",
     "interpretable models for scrna seq data embedding with multi scale structure preservation": "2026-10-30",
     "starlng stability analysis of coregulated nests of genes": "2026-10-30",
-    "genetic variants shape single cell chromatin accessibility and disease risk": "2026-10-30"
+    "genetic variants shape single cell chromatin accessibility and disease risk": "2026-10-30",
+    "decoder ffpe seq enables sensitive genome wide spatial transcriptomics of archival tissues at single cell resolution": "2026-11-02",
+    "directclean artifact aware preprocessing and read rescue for oxford nanopore direct cdna transcriptome sequencing": "2026-11-02",
+    "pycea a scverse toolkit for single cell lineage tracing analysis": "2026-11-02",
+    "strand a comprehensive subcellular resolved spatial transcriptome rna architecture and navigation database": "2026-11-02",
+    "genetic variants that alter gene regulation in specific cell types are closely tied to disease": "2026-11-02"
   }
 }
