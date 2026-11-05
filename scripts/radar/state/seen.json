@@ -209,7 +209,11 @@
     "pmid:42966957": "2026-11-02",
     "doi:10.64898/2026.10.30.763227": "2026-11-02",
     "pmid:42958969": "2026-11-02",
-    "doi:10.1038/d41586-026-03067-2": "2026-11-02"
+    "doi:10.1038/d41586-026-03067-2": "2026-11-02",
+    "url:https://www.genengnews.com/topics/omics/sentira-brings-claudes-ai-to-10x-genomics-chromium-platform/": "2026-11-04",
+    "pmid:42970540": "2026-11-04",
+    "pmid:42955413": "2026-11-04",
+    "pmid:42975825": "2026-11-04"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -421,6 +425,10 @@
     "directclean artifact aware preprocessing and read rescue for oxford nanopore direct cdna transcriptome sequencing": "2026-11-02",
     "pycea a scverse toolkit for single cell lineage tracing analysis": "2026-11-02",
     "strand a comprehensive subcellular resolved spatial transcriptome rna architecture and navigation database": "2026-11-02",
-    "genetic variants that alter gene regulation in specific cell types are closely tied to disease": "2026-11-02"
+    "genetic variants that alter gene regulation in specific cell types are closely tied to disease": "2026-11-02",
+    "sentira brings claude s ai to 10x genomics chromium platform": "2026-11-04",
+    "enhancing cell type deconvolution in spatial transcriptomics through incorporating multiple reference panels": "2026-11-04",
+    "bilbo a self hosted platform for large scale rna seq analysis with a functional annotation clustering framework": "2026-11-04",
+    "lc wgs based chromosomal instability analysis of eus fna specimens for diagnosing solid pancreatic lesions": "2026-11-04"
   }
 }
