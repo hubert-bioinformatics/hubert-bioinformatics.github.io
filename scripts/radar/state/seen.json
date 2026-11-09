@@ -218,7 +218,12 @@
     "doi:10.64898/2026.11.01.763496": "2026-11-06",
     "pmid:42986757": "2026-11-06",
     "pmid:42986356": "2026-11-06",
-    "pmid:42986739": "2026-11-06"
+    "pmid:42986739": "2026-11-06",
+    "pmid:42993079": "2026-11-09",
+    "pmid:42984424": "2026-11-09",
+    "doi:10.1038/s41586-026-11234-8": "2026-11-09",
+    "doi:10.64898/2026.11.05.764753": "2026-11-09",
+    "pmid:42988928": "2026-11-09"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -439,6 +444,11 @@
     "oncospot enables benchmarking of cancer spatial transcriptomics methods across tumor evolutionary modes": "2026-11-06",
     "protocol for reference free single cell resolution deconvolution of spot based spatial transcriptomics with coexpressdeconvolve": "2026-11-06",
     "discovery locked cross platform evaluation of a cervical epithelial transcriptional state": "2026-11-06",
-    "bridging scrna seq and scatac seq with graph domain adaptation for cell type annotation": "2026-11-06"
+    "bridging scrna seq and scatac seq with graph domain adaptation for cell type annotation": "2026-11-06",
+    "descent deconvolutional single cell rna seq enhances transcriptome based cancer survival analysis": "2026-11-09",
+    "scspas an integrated single cell and spatial atlas of transcript isoform regulation": "2026-11-09",
+    "a spatiotemporal cancer cell trajectory underlies glioblastoma heterogeneity": "2026-11-09",
+    "sccircasim a circadian simulator for single cell and spatial transcriptomics": "2026-11-09",
+    "comprehensive m6a landscape from direct rna sequencing reveals synpo2l rna isoform regulation mechanisms in heart failure": "2026-11-09"
   }
 }
