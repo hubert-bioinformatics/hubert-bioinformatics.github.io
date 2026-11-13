@@ -228,7 +228,12 @@
     "doi:10.1038/s41588-026-02830-5": "2026-11-11",
     "pmid:43006921": "2026-11-11",
     "url:https://www.genengnews.com/topics/omics/illumina-offers-early-access-to-duplex-sequencing-for-mrd-tumor-evolution-research/": "2026-11-11",
-    "pmid:43006146": "2026-11-11"
+    "pmid:43006146": "2026-11-11",
+    "pmid:43011234": "2026-11-13",
+    "pmid:43016319": "2026-11-13",
+    "doi:10.64898/2026.11.09.765522": "2026-11-13",
+    "pmid:43019391": "2026-11-13",
+    "pmid:43015262": "2026-11-13"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -459,6 +464,11 @@
     "efficient count based models improve power and robustness for large scale single cell eqtl mapping": "2026-11-11",
     "cellsavior an open source framework for improved cell calling in targeted single cell dna sequencing": "2026-11-11",
     "illumina offers early access to duplex sequencing for mrd tumor evolution research": "2026-11-11",
-    "isoapa a multi species long read rna seq atlas of isoform resolved alternative polyadenylation": "2026-11-11"
+    "isoapa a multi species long read rna seq atlas of isoform resolved alternative polyadenylation": "2026-11-11",
+    "scmina an interpretable workflow for paired scrna scatac multiome integration and regulatory prioritization": "2026-11-13",
+    "deep learning based enhancing spatial biological context parsing": "2026-11-13",
+    "de rigor agent an agentic workflow for assumption aware differential expression analysis of bulk rna seq data": "2026-11-13",
+    "a cellular atlas of the preinvasive breast cancer microenvironment": "2026-11-13",
+    "development and clinical validation of a multiplex pcr based targeted next generation sequencing panel for simultaneous dna rna pathogen detection in respiratory tract infections a comprehensive performance evaluation": "2026-11-13"
   }
 }
