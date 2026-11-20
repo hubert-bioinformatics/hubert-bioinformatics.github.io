@@ -238,7 +238,15 @@
     "pmid:43020067": "2026-11-16",
     "pmid:43023421": "2026-11-16",
     "pmid:43021296": "2026-11-16",
-    "pmid:43020026": "2026-11-16"
+    "pmid:43020026": "2026-11-16",
+    "url:https://www.genengnews.com/topics/genome-editing/single-cell-method-reveals-on-and-off-target-effects-of-cas9-edits-on-gene-expression/": "2026-11-18",
+    "doi:10.64898/2026.11.14.766684": "2026-11-18",
+    "pmid:43043564": "2026-11-18",
+    "pmid:43055992": "2026-11-20",
+    "pmid:43053329": "2026-11-20",
+    "doi:10.1038/s41586-026-11270-4": "2026-11-20",
+    "pmid:43055723": "2026-11-20",
+    "url:https://www.genengnews.com/topics/artificial-intelligence/former-verily-leaders-build-ai-platform-to-get-more-from-proteomics-data/": "2026-11-20"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -479,6 +487,14 @@
     "multivib a unified probabilistic contrastive learning framework for atlas scale integration of single cell multi omics data": "2026-11-16",
     "analyzing epigenetic modifications at sample specific cpg loci in long read data using a likelihood based framework in bsseq": "2026-11-16",
     "community benchmarking of generative models for privacy preserving synthetic bulk rna seq data generation": "2026-11-16",
-    "single cell multimodal atlas reveals regulatory programs in the human brain": "2026-11-16"
+    "single cell multimodal atlas reveals regulatory programs in the human brain": "2026-11-16",
+    "single cell method reveals on and off target effects of cas9 edits on gene expression": "2026-11-18",
+    "gatoranchor cross modal uncertainty aware learning of reliable cell neighborhoods in single cell multi omics": "2026-11-18",
+    "iterative geometric structure guided nonnegative matrix factorization scheme for bulk tissue rna seq data deconvolution": "2026-11-18",
+    "kmer based reference free assembly enables scalable and accurate single cell rna seq analysis": "2026-11-20",
+    "tisch3 an expanded resource for single cell and spatial transcriptomics of the tumor microenvironment": "2026-11-20",
+    "conservation of the tumour microenvironment across organs and species": "2026-11-20",
+    "clinical utility of nanopore based targeted and metagenomic sequencing for rapid diagnosis of infections": "2026-11-20",
+    "former verily leaders build ai platform to get more from proteomics data": "2026-11-20"
   }
 }
