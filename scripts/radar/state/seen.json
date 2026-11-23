@@ -246,7 +246,12 @@
     "pmid:43053329": "2026-11-20",
     "doi:10.1038/s41586-026-11270-4": "2026-11-20",
     "pmid:43055723": "2026-11-20",
-    "url:https://www.genengnews.com/topics/artificial-intelligence/former-verily-leaders-build-ai-platform-to-get-more-from-proteomics-data/": "2026-11-20"
+    "url:https://www.genengnews.com/topics/artificial-intelligence/former-verily-leaders-build-ai-platform-to-get-more-from-proteomics-data/": "2026-11-20",
+    "doi:10.1038/s41592-026-03310-8": "2026-11-23",
+    "pmid:43058889": "2026-11-23",
+    "pmid:43063019": "2026-11-23",
+    "pmid:43062499": "2026-11-23",
+    "pmid:43060744": "2026-11-23"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -495,6 +500,11 @@
     "tisch3 an expanded resource for single cell and spatial transcriptomics of the tumor microenvironment": "2026-11-20",
     "conservation of the tumour microenvironment across organs and species": "2026-11-20",
     "clinical utility of nanopore based targeted and metagenomic sequencing for rapid diagnosis of infections": "2026-11-20",
-    "former verily leaders build ai platform to get more from proteomics data": "2026-11-20"
+    "former verily leaders build ai platform to get more from proteomics data": "2026-11-20",
+    "space map 3d single cell atlas reconstruction from serial sections": "2026-11-23",
+    "evaluating long read rna sequencing for mendelian disorder diagnosis": "2026-11-23",
+    "calibrated analysis framework for nanopore direct rna sequencing uncovers cell specific m a proportions at conserved sites": "2026-11-23",
+    "single molecule whole genome sequencing reveals genomic and epigenomic concordance between ultrasonic aspiration and surgical resection in meningioma prospective feasibility series": "2026-11-23",
+    "integrative bioinformatics driven discovery of the novel chimeric antigen receptor t cell targets erb b2 receptor tyrosine kinase 3 and solute carrier family 1 member 5 in melanoma": "2026-11-23"
   }
 }
