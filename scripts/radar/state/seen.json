@@ -251,7 +251,12 @@
     "pmid:43058889": "2026-11-23",
     "pmid:43063019": "2026-11-23",
     "pmid:43062499": "2026-11-23",
-    "pmid:43060744": "2026-11-23"
+    "pmid:43060744": "2026-11-23",
+    "doi:10.64898/2026.11.23.768692": "2026-11-25",
+    "pmid:43077291": "2026-11-25",
+    "pmid:43074186": "2026-11-25",
+    "url:https://www.genengnews.com/topics/omics/bcr-merfish-reveals-diversity-and-spatial-organization-of-antibody-producing-cells/": "2026-11-25",
+    "pmid:43074717": "2026-11-25"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -505,6 +510,11 @@
     "evaluating long read rna sequencing for mendelian disorder diagnosis": "2026-11-23",
     "calibrated analysis framework for nanopore direct rna sequencing uncovers cell specific m a proportions at conserved sites": "2026-11-23",
     "single molecule whole genome sequencing reveals genomic and epigenomic concordance between ultrasonic aspiration and surgical resection in meningioma prospective feasibility series": "2026-11-23",
-    "integrative bioinformatics driven discovery of the novel chimeric antigen receptor t cell targets erb b2 receptor tyrosine kinase 3 and solute carrier family 1 member 5 in melanoma": "2026-11-23"
+    "integrative bioinformatics driven discovery of the novel chimeric antigen receptor t cell targets erb b2 receptor tyrosine kinase 3 and solute carrier family 1 member 5 in melanoma": "2026-11-23",
+    "benchmarking sample mispairing detection tools in complex cancer datasets": "2026-11-25",
+    "protocol for quantifying locus specific transposable element transcripts in single cell rna seq data with stellarscope": "2026-11-25",
+    "spatialmusc spatial graph conditioned diffusion refinement for robust spatial multi omics integration": "2026-11-25",
+    "bcr merfish reveals diversity and spatial organization of antibody producing cells": "2026-11-25",
+    "nicking loop streamlined circular dna libraries for precise targeted sequencing and universal ngs read out": "2026-11-25"
   }
 }
