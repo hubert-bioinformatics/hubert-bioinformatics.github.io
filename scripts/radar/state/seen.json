@@ -256,7 +256,12 @@
     "pmid:43077291": "2026-11-25",
     "pmid:43074186": "2026-11-25",
     "url:https://www.genengnews.com/topics/omics/bcr-merfish-reveals-diversity-and-spatial-organization-of-antibody-producing-cells/": "2026-11-25",
-    "pmid:43074717": "2026-11-25"
+    "pmid:43074717": "2026-11-25",
+    "pmid:43084618": "2026-11-27",
+    "pmid:43096658": "2026-11-27",
+    "pmid:43095778": "2026-11-27",
+    "pmid:43097476": "2026-11-27",
+    "doi:10.1038/s41586-026-11275-z": "2026-11-27"
   },
   "titles": {
     "a systematic evaluation of the sources of non uniform coverage in rna seq and limitations of current practices": "2026-07-30",
@@ -515,6 +520,11 @@
     "protocol for quantifying locus specific transposable element transcripts in single cell rna seq data with stellarscope": "2026-11-25",
     "spatialmusc spatial graph conditioned diffusion refinement for robust spatial multi omics integration": "2026-11-25",
     "bcr merfish reveals diversity and spatial organization of antibody producing cells": "2026-11-25",
-    "nicking loop streamlined circular dna libraries for precise targeted sequencing and universal ngs read out": "2026-11-25"
+    "nicking loop streamlined circular dna libraries for precise targeted sequencing and universal ngs read out": "2026-11-25",
+    "systematic clustering alignment and feature characterization for single cell omics using ace of clust": "2026-11-27",
+    "spamo spatial multi omics integration via dual graph encoding and neighborhood constrained cross modal fusion": "2026-11-27",
+    "the molecular phenotypes of null alleles in cells data resource": "2026-11-27",
+    "snputils a high performance python library for genetic variation and population structure": "2026-11-27",
+    "single cell variant to enhancer to gene map for coronary artery disease": "2026-11-27"
   }
 }
